@@ -1,5 +1,8 @@
-# dailymumm
-this is the official repository for dailymumm application to collect food orders from colleges in one place
-
-## To Open server open CMD or Terminal in the server folder then run this command
-grunt workon
+# __Daily Mumm__
+_This is the official repository for dailymumm application to collect food orders from colleges in one place_
+***
+### _Server App_
+_Open CMD in server folder then run this command:_
+`grunt workon`
+***
+### _Client App_
