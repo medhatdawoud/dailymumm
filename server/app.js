@@ -22,10 +22,10 @@ if (process.env.NODE_ENV === 'production') {
 
 } else {
     // Locate the views
-    app.set('views', '../client');
+    app.set('views', '../client/app');
     
     // Locate the assets
-    app.use(express.static('../client'));
+    app.use(express.static('../client/app'));
 }
 
 /*
