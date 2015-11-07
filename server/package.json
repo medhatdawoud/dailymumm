@@ -5,7 +5,8 @@
   "dependencies": {
     "body-parser": "^1.14.1",
     "express": "~4.0.0",
-    "express3-handlebars": "0.4.x"
+    "express3-handlebars": "0.4.x",
+    "mongoose": "^4.2.4"
   },
   "devDependencies": {
     "grunt": "~0.4.1",
