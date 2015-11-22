@@ -1,7 +1,12 @@
 body {
     background: #fafafa;
-    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-family: 'Lora', serif;
     color: #333;
+}
+
+h1, h2, h3, h4, h5, h6, a, span, label {
+    font-family: 'Lora', serif;
+    font-style: italic;
 }
 
 .hero-unit {
@@ -19,3 +24,8 @@ body {
         letter-spacing: -1px;
     }
 }
+
+
+
+@import 'components/signup';
+@import 'components/videoBackground';

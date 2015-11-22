@@ -25,3 +25,8 @@ build/Release
 # Dependency directory
 # https://www.npmjs.org/doc/misc/npm-faq.html#should-i-check-my-node_modules-folder-into-git
 node_modules
+
+.brackets.json
+
+big_buck_bunny.ogv
+big_buck_bunny.webm

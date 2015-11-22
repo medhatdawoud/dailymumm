@@ -1,11 +1,17 @@
 /* line 1, ../scss/main.scss */
 body {
   background: #fafafa;
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-family: 'Lora', serif;
   color: #333;
 }
 
 /* line 7, ../scss/main.scss */
+h1, h2, h3, h4, h5, h6, a, span, label {
+  font-family: 'Lora', serif;
+  font-style: italic;
+}
+
+/* line 12, ../scss/main.scss */
 .hero-unit {
   margin: 50px auto 0 auto;
   width: 600px;
@@ -16,9 +22,89 @@ body {
   border-radius: 6px;
   padding: 60px;
 }
-/* line 16, ../scss/main.scss */
+/* line 21, ../scss/main.scss */
 .hero-unit h1 {
   font-size: 60px;
   line-height: 1;
   letter-spacing: -1px;
+}
+
+/* line 1, ../scss/components/_signup.scss */
+.signup-box {
+  border: 1px solid #606062;
+  background: rgba(36, 36, 41, 0.65);
+  padding: 20px 25px 10px;
+  border-radius: 5px;
+  color: #fff;
+  box-shadow: 2px 2px 5px #242429;
+}
+/* line 10, ../scss/components/_signup.scss */
+.signup-box h3 {
+  font-size: 22px;
+  margin: 10px 0px 30px;
+  text-shadow: none;
+}
+/* line 16, ../scss/components/_signup.scss */
+.signup-box a {
+  color: #75BAF5;
+  cursor: pointer;
+}
+/* line 20, ../scss/components/_signup.scss */
+.signup-box a.active {
+  cursor: default;
+}
+/* line 22, ../scss/components/_signup.scss */
+.signup-box a.active, .signup-box a.active:hover, .signup-box a.active:active {
+  color: #fff;
+}
+/* line 27, ../scss/components/_signup.scss */
+.signup-box a:hover, .signup-box a:active {
+  color: #AACEEC;
+  text-decoration: none;
+}
+
+/* line 1, ../scss/components/_videoBackground.scss */
+.fullscreen-bg {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index: -100;
+}
+
+/* line 11, ../scss/components/_videoBackground.scss */
+.videoBg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-aspect-ratio: 16 / 9) {
+  /* line 20, ../scss/components/_videoBackground.scss */
+  .videoBg {
+    height: 300%;
+    top: -100%;
+  }
+}
+@media (max-aspect-ratio: 16 / 9) {
+  /* line 27, ../scss/components/_videoBackground.scss */
+  .videoBg {
+    width: 300%;
+    left: -100%;
+  }
+}
+@media (max-width: 767px) {
+  /* line 34, ../scss/components/_videoBackground.scss */
+  .fullscreen-bg {
+    background: url("/images/fastfood.jpg") center center/cover no-repeat;
+  }
+
+  /* line 38, ../scss/components/_videoBackground.scss */
+  .videoBg {
+    display: none;
+  }
 }
