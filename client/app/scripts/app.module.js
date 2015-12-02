@@ -1,5 +1,10 @@
 'use strict';
 
 (function(){
-    angular.module('dailyMummApp', ['ngCookies', 'ngResource', 'ngSanitize', 'ui.router']);
+    angular.module('dailyMummApp', 
+    	['ngCookies', 
+		 'ngResource', 
+		 'ngSanitize', 
+		 'ui.router',
+		 'pascalprecht.translate']);
 })();
