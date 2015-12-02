@@ -1,12 +1,15 @@
+@import 'helpers/vars';
+@import 'helpers/mixins';
+@import 'helpers/fonts';
+
 body {
     background: #fafafa;
-    font-family: 'Lora', serif;
-    color: #333;
+    font-family: $fontPrimary;
+    color: $colorFirst;
 }
 
 h1, h2, h3, h4, h5, h6, a, span, label {
-    font-family: 'Lora', serif;
-    font-style: italic;
+    font-family: $fontPrimary;
 }
 
 .hero-unit {
@@ -25,7 +28,7 @@ h1, h2, h3, h4, h5, h6, a, span, label {
     }
 }
 
-
-
 @import 'components/signup';
 @import 'components/videoBackground';
+
+@import 'pages/home';

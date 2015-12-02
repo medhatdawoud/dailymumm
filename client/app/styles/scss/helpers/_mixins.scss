@@ -1,0 +1,33 @@
+@function calculateRem($size) {
+  $remSize: $size / 16px;
+  @return $remSize * 1rem;
+}
+
+@mixin font-size($size) {
+  font-size: $size;
+  font-size: calculateRem($size);
+}
+
+%clearfix {
+  *zoom: 1;
+  &:before, &:after {
+    content: " ";
+    display: table;
+  }
+  &:after {
+    clear: both;
+  }
+} // usage:  @extend %clearfix;
+
+@mixin font-face($styleName, $file) {
+    @font-face {
+	   font-family: $styleName;
+	      src: url($file+'.eot');
+	      src: url($file+'.eot?#iefix') format('embedded-opentype'),
+	           url($file+'.woff') format('woff'),
+	           url($file+'.ttf') format('truetype'),
+	           url($file+'.svg#UbuntuItalic') format('svg');
+	   font-weight: normal;
+	   font-style: normal;
+	}
+}
