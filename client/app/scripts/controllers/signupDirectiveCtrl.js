@@ -5,9 +5,9 @@
         .module('dailyMummApp')
         .controller('SignupDirectiveCtrl', SignupDirectiveController);
     
-    SignupDirectiveController.$inject = ['$scope','UserService'];
+    SignupDirectiveController.$inject = ['$scope','UserService','AuthService'];
     
-    function SignupDirectiveController($scope, UserService) {
+    function SignupDirectiveController($scope, UserService, AuthService) {
 
         $scope.title = "Signup Page";
         $scope.current = 'login';
@@ -35,8 +35,19 @@
             $scope.processing = false;
         }
         
-        function login() {
-            alert('login');
+        function login(isValid) {
+            $scope.processing = true;
+            if(isValid) {
+                var data = $scope.logindata;
+                AuthService.login( data.email, data.password, function(data){
+                    if(data.success) {
+                        console.log(data);
+                    } else {
+                        alert('cannot be found');
+                    }
+                });
+            }
+            $scope.processing = false;
         }
         
     }

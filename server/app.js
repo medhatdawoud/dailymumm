@@ -50,9 +50,15 @@ router.post('/user',function(req,res){
 router.get('/user',function(req,res){
     var email = req.param('email');
     var password = req.param('password');
+    
     User.findOne({email:email, password:password},function (err, data){
         if (err) return console.error(err);
-        res.json(data);
+        
+        if(data)
+            res.json(data);
+        else {
+            res.json(null);
+        }
     });
 });
 
