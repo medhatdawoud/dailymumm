@@ -27,7 +27,9 @@
             if(isValid) {
                 var data = $scope.registerdata;
                 UserService.createNewUser(data.username, data.email, data.password, function(data){
-                    console.log(data);
+                    if(data.success) {
+                        console.log(data);
+                    }
                 });
             }
             $scope.processing = false;
