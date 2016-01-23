@@ -6,22 +6,22 @@
             <form ng-show="current == 'register'">
                 <div class="form-group">
                     <label>Username:</label>
-                    <input type="text" class="form-control" />
+                    <input ng-model="registerdata.username" type="text" class="form-control" />
                 </div>
                 <div class="form-group">
                     <label>Email:</label>
-                    <input type="text" class="form-control" />
+                    <input ng-model="registerdata.email" type="text" class="form-control" />
                 </div>
                 <div class="form-group">
                     <label>Password:</label>
-                    <input type="password" class="form-control" />
+                    <input ng-model="registerdata.password" type="password" class="form-control" />
                 </div>
                 <div class="form-group">
                     <label>Retype Password:</label>
-                    <input type="password" class="form-control" />
+                    <input ng-model="registerdata.retypepassword" type="password" class="form-control" />
                 </div>
                 <div class="form-group">
-                    <input type="button" class="btn btn-primary" value="Register" />
+                    <input type="button" class="btn btn-primary" ng-click="register()" value="Register" />
                 </div>
             </form>
             
@@ -35,7 +35,7 @@
                     <input type="password" class="form-control" />
                 </div>
                 <div class="form-group">
-                    <input type="button" class="btn btn-success" value="Login" />
+                    <input type="button" class="btn btn-success" ng-click="login()" value="Login" />
                 </div>
             </form>
         </div>
