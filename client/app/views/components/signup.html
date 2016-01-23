@@ -13,8 +13,10 @@
                        class="help-block">Your name is required.</p>
                     <span ng-show="!formRegister.username.$error.required && (formRegister.username.$error.minlength || formRegister.username.$error.maxlength) && formRegister.username.$dirty"
                        class="help-block">Username must be between 3 and 20 characters.</span>
-                    <p ng-show="!formRegister.username.$error.required && formRegister.username.$error.isunique && !formRegister.username.$pristine" 
+                    <p ng-show="!formRegister.username.$error.required && !formRegister.username.$error.minlength && !formRegister.username.$error.maxlength && formRegister.username.$error.isunique && !formRegister.username.$pristine" 
                        class="help-block">This username is not available, choose anther one.</p>
+                    <p ng-show="!formRegister.username.$error.required && !formRegister.username.$error.minlength && !formRegister.username.$error.maxlength && !formRegister.username.$error.isunique && !formRegister.username.$pristine" 
+                       class="help-block">This username is available</p>
                 </div>
                 <div class="form-group" 
                      ng-class="formRegister.email.$invalid && (!formRegister.email.$pristine || formRegister.$submitted) ? 'has-error' : 'has-success'">
@@ -26,6 +28,8 @@
                        class="help-block">Please enter a valid email.</p>
                     <p ng-show="!formRegister.email.$error.required && !formRegister.email.$error.email && formRegister.email.$error.isunique && !formRegister.email.$pristine" 
                        class="help-block">This email is not available, choose anther one.</p>
+                    <p ng-show="!formRegister.email.$error.required && !formRegister.email.$error.email && !formRegister.email.$error.isunique && !formRegister.email.$pristine" 
+                       class="help-block">This email is available</p>
                 </div>
                 <div class="form-group" 
                      ng-class="formRegister.password.$invalid && (!formRegister.password.$pristine || formRegister.$submitted) ? 'has-error' : 'has-success'">
