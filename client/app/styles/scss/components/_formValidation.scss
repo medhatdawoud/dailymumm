@@ -1,0 +1,17 @@
+form {
+    .form-group {
+        &.has-error {
+            .form-control {
+                border-radius: 4px 4px 0px 0px;
+            }
+            
+            .help-block {
+                background: #a94442;
+                margin-top: 0px;
+                color: #fff;
+                padding: 1px 5px;
+                border-radius: 0px 0px 4px 4px;
+            }
+        }
+    }
+}

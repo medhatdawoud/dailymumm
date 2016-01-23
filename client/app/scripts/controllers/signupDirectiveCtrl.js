@@ -23,10 +23,12 @@
         }
         
         function register() {
+            $scope.processing = true;
             var data = $scope.registerdata;
             UserService.createNewUser(data.username, data.email, data.password, function(data){
                 console.log(data);
             });
+            $scope.processing = false;
         }
         
         function login() {
