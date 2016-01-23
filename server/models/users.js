@@ -1,4 +1,4 @@
-var mongoose = require('./../config');
+var mongoose = require('./../mongo.config');
 
 var UserSchema = mongoose.Schema({
 	username: String,

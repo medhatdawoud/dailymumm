@@ -6,6 +6,7 @@
     "body-parser": "^1.14.1",
     "express": "~4.0.0",
     "express3-handlebars": "0.4.x",
+    "jsonwebtoken": "^5.5.4",
     "mongoose": "^4.2.4"
   },
   "devDependencies": {

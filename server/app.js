@@ -5,9 +5,11 @@
  */
 var express = require('express');
 var app = express();
+var jwt = require('jsonwebtoken'); // used to create, sign, and verify tokens
 var bodyParser = require('body-parser');
 var router = express.Router(); 
 var port = process.env.PORT || 3000;
+var config = require('./config.js');
 var User = require('./models/users');
 
 
@@ -54,9 +56,22 @@ router.get('/user',function(req,res){
     User.findOne({email:email, password:password},function (err, data){
         if (err) return console.error(err);
         
-        if(data)
-            res.json(data);
-        else {
+        if(data) {
+            // create a token
+            var token = jwt.sign(data, "AnySecurityTestPhrase", {
+                expiresIn: 86520 // expires in 24 hours
+            });
+            
+            var object = {
+                id: data._id,
+                email: data.email,
+                username: data.username,
+                signup_date: data.created_at,
+                token: token
+            }
+            
+            res.json(object);
+        } else {
             res.json(null);
         }
     });
@@ -78,6 +93,33 @@ router.get('/verifyuserunique',function(req,res){
         });
     }
 });
+
+app.use(function(req, res, next) {
+  // check header or url parameters or post parameters for token
+  var token = req.body.token || req.query.token || req.headers['x-access-token'];
+  // decode token
+  if (token) {
+
+    // verifies secret and checks exp
+    jwt.verify(token, app.get('superSecret'), function(err, decoded) {      
+      if (err) {
+        return res.json({ success: false, message: 'Failed to authenticate token.' });    
+      } else {
+        // if everything is good, save to request for use in other routes
+        req.decoded = decoded;    
+        next();
+      }
+    });
+  } else {
+    // if there is no token
+    // return an error
+    return res.status(403).send({ 
+        success: false, 
+        message: 'No token provided.' 
+    });
+  }
+});
+
 
 router.get('/user/:id',function(req,res){
     User.findOne({'_id':req.params.id},function (err, data) {

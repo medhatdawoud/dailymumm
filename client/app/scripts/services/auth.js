@@ -21,7 +21,7 @@
                 .then(function(response) {
                     var result;
                     if (response.data)
-                        result = { success: true, user: response.data };
+                        result = { success: true, data: response.data };
                     else
                         result = { success: false, code: 'ERROR_INVALID_USER_OR_PASSWORD' };
                     callback(result);
