@@ -6,10 +6,16 @@
             //delete $httpProvider.defaults.headers.common['X-Requested-With'];
             $urlRouterProvider.otherwise('/');
             $stateProvider
-              .state('index', {
+              .state('home', {
                 url: '/',
                 templateUrl: 'views/home.html',
                 controller:'HomeCtrl',
+                controllerAs: 'vm'
+              })
+              .state('profile', {
+                url: '/profile',
+                templateUrl: 'views/profile.html',
+                controller: 'ProfileCtrl',
                 controllerAs: 'vm'
               });
 

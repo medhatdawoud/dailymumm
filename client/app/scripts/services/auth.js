@@ -23,12 +23,12 @@
                     if (response.data)
                         result = { success: true, user: response.data };
                     else
-                        result = { success: false, code: 'ERROR_INVALID_USER' };
+                        result = { success: false, code: 'ERROR_INVALID_USER_OR_PASSWORD' };
                     callback(result);
                 }, function(response) {
 
                     if (response.status == 404) {
-                        callback({ success: false, code: 'ERROR_INVALID_USER' });
+                        callback({ success: false, code: 'ERROR_INVALID_USER_OR_PASSWORD' });
                     } else if (response.status == 500) {
                         callback({ success: false, code: 'ERROR_SOMETHING_WRONG' });
                     } else {
@@ -48,10 +48,9 @@
             }
         };
 
-        function setCredintials(user, loginInfo) {
+        function setCredintials(loginInfo) {
             $rootScope.globals = {
                 currentUser: {
-                    username: user.username,
                     loginData: loginInfo,
                     token: loginInfo.token
                 }
