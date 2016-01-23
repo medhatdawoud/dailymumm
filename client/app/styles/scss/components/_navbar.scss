@@ -1,0 +1,14 @@
+.navbar {
+    &.navbar-transparent {
+        background: rgba(0,0,0,0.5);
+        height:60px;
+        
+        .navbar-header {
+            .navbar-brand {
+                font-family: $fontLogo;
+                color: $colorSecond;
+                font-size: 30px;
+            }
+        }
+    }
+}
