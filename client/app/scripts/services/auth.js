@@ -5,18 +5,69 @@
         .module('dailyMummApp')
         .service('AuthService', AuthService);
 
-    AuthService.$inject = ['$http','UserService'];
+    AuthService.$inject = ['$http','UserService','$cookieStore','$rootScope'];
 
-    function AuthService($http, UserService) {
+    function AuthService($http, UserService, $cookieStore, $rootScope) {
         var service = {};
         
         service.login = login;
+        service.getCurrentUserInfo = getCurrentUserInfo;
+        service.isLoggedIn = isLoggedIn;
+        service.setCredintials = setCredintials;
+        service.clearCredintials = clearCredintials;
         
         function login( email, password, callback) {
-            UserService.checkForUserByEmailAndPassword(email, password, function(data){
-                callback(data);
-            });
+            UserService.checkForUserByEmailAndPassword(email, password)
+                .then(function(response) {
+                    var result;
+                    if (response.data)
+                        result = { success: true, user: response.data };
+                    else
+                        result = { success: false, code: 'ERROR_INVALID_USER' };
+                    callback(result);
+                }, function(response) {
+
+                    if (response.status == 404) {
+                        callback({ success: false, code: 'ERROR_INVALID_USER' });
+                    } else if (response.status == 500) {
+                        callback({ success: false, code: 'ERROR_SOMETHING_WRONG' });
+                    } else {
+                        callback({ success: false, code: 'ERROR_CANNOT_CONNECT' });
+                    }
+                });
         }
+        
+        function isLoggedIn() {
+            return !!$cookieStore.get('globals');
+        };
+
+        function getCurrentUserInfo() {
+            if (this.isLoggedIn()) {
+                var cookies = $cookieStore.get('globals').currentUser;
+                return cookies;
+            }
+        };
+
+        function setCredintials(user, loginInfo) {
+            $rootScope.globals = {
+                currentUser: {
+                    username: user.username,
+                    loginData: loginInfo,
+                    token: loginInfo.token
+                }
+            };
+
+            $cookieStore.put('globals', $rootScope.globals);
+            RequestFactory.setToken(loginInfo.token);
+        };
+
+        function clearCredintials() {
+            $http.defaults.headers.common['x-access-token'] = RequestFactory.getToken();
+            UserService.logout();
+            $rootScope.globals = {};
+            $cookieStore.remove('globals');
+            RequestFactory.setToken(null);
+        };
         
         return service;
     }

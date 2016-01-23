@@ -22,16 +22,8 @@
                 });
         }
         
-        function checkForUserByEmailAndPassword(email, password, callback) {
-            $http.get('/api/user',{ params: {"email": email, "password": password }})
-                .then(function(response){
-                    if(response.data)
-                        callback({success:true, data:response.data});
-                    else
-                        callback({success:false, code:response.data});
-                },function(response){
-                    callback({success:false, code:response.data});
-                });
+        function checkForUserByEmailAndPassword(email, password) {
+            return $http.get('/api/user',{ params: {"email": email, "password": password }});
         }
         
         return service;
