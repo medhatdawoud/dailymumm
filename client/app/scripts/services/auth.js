@@ -62,7 +62,6 @@
 
         function clearCredintials() {
             $http.defaults.headers.common['x-access-token'] = RequestFactory.getToken();
-            UserService.logout();
             $rootScope.globals = {};
             $cookieStore.remove('globals');
             RequestFactory.setToken(null);
