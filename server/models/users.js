@@ -1,5 +1,4 @@
-var mongoose = require('./config');
-
+var mongoose = require('./../config');
 
 var UserSchema = mongoose.Schema({
 	username: String,
@@ -9,5 +8,5 @@ var UserSchema = mongoose.Schema({
 	password: String
 },{ timestamps:{createdAt:'created_at',updatedAt:'updated_at'}});
 
-var User = mongoose.model('Users',UserSchema);
-module.exports = User;
+var usersModel = mongoose.model('Users',UserSchema);
+module.exports = usersModel;
