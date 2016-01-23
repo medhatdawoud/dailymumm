@@ -5,9 +5,9 @@
         .module('dailyMummApp')
         .service('AuthService', AuthService);
 
-    AuthService.$inject = ['$http','UserService','$cookieStore','$rootScope'];
+    AuthService.$inject = ['$http','UserService','$cookieStore','$rootScope','RequestFactory'];
 
-    function AuthService($http, UserService, $cookieStore, $rootScope) {
+    function AuthService($http, UserService, $cookieStore, $rootScope, RequestFactory) {
         var service = {};
         
         service.login = login;
