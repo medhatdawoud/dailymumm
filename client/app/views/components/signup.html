@@ -4,10 +4,13 @@
             <div ng-show="hasError" class="alert alert-danger">
                 {{errorMessage}}
             </div>
+            <div ng-show="hasSuccess" class="alert alert-success">
+                {{registerSuccessMessage}}
+            </div>
             <h3><a ng-click="showPanel('login')" ng-class="{'active':current == 'login'}">Login</a>
                 / <a ng-click="showPanel('register')" ng-class="{'active':current == 'register'}">Register</a></h3>
                 
-            <form ng-show="current == 'register'" name="formRegister" ng-submit="register(formRegister.$valid)" novalidate>
+            <form ng-show="current == 'register'" name="formRegister" ng-submit="register(formRegister.$valid, formRegister)" novalidate>
                 <div class="form-group" 
                      ng-class="formRegister.username.$invalid && (!formRegister.username.$pristine || formRegister.$submitted) ? 'has-error' : 'has-success'">
                     <label>Username:</label>
@@ -57,7 +60,7 @@
                 </div>
             </form>
             
-            <form ng-show="current == 'login'" name="formLogin" ng-submit="login(formLogin.$valid)" novalidate>
+            <form ng-show="current == 'login'" name="formLogin" ng-submit="login(formLogin.$valid, formLogin)" novalidate>
                 <div class="form-group">
                     <label>Email:</label>
                     <input type="text" ng-model="logindata.email" class="form-control" />

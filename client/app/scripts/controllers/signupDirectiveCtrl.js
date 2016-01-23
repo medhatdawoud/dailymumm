@@ -26,13 +26,20 @@
             $scope.current = panel;
         }
         
-        function register(isValid) {
+        function register(isValid,form) {
             $scope.processing = true;
             if(isValid) {
                 var data = $scope.registerdata;
                 UserService.createNewUser(data.username, data.email, data.password, function(data){
                     if(data.success) {
-                        console.log(data);
+                        $scope.hasError = false;
+                        $scope.hasSuccess = true;
+                        $translate("ALERT_REGISTER_SUCCESS").then(function(translatedValue){
+                            $scope.registerSuccessMessage = translatedValue;
+                        });
+                        $scope.current = 'login';
+                        $scope.registerdata = {};
+                        form.$setPristine();
                     }
                 });
             }
@@ -49,6 +56,7 @@
                         $state.go('profile');
                     } else {
                         $scope.hasError = true;
+                        $scope.hasSuccess = false;
                         $translate(result.code).then(function(translatedValue){
                             $scope.errorMessage = translatedValue;
                         });

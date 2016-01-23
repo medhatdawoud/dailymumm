@@ -2,5 +2,6 @@
 	"GENERAL_SITE_TITLE": "Daily Mumm",
 	"HOME_PAGE_ABOUT_QUOTES": "Daily Mumm is a web application that enable you and your colleges to order foods with each others without duplicating the same processes in the same day within different individuals in th same place, order together is simple and easy.",
 	"HOME_PAGE_HOW_TO_USE_LABEL": "How to use",
-	"ERROR_INVALID_USER_OR_PASSWORD": "Invalid username or password"
+	"ERROR_INVALID_USER_OR_PASSWORD": "Invalid username or password",
+    "ALERT_REGISTER_SUCCESS": "You have registered successfully, try to login now"
 }
