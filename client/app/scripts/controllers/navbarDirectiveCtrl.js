@@ -10,6 +10,7 @@
     function NavbarDirectiveController($scope, AuthService, $state) {
         
         $scope.logout = logout;
+        $scope.currentUsername = (AuthService.getCurrentUserInfo()).loginData.username;
         
         function logout() {
             AuthService.clearCredintials();
