@@ -22,12 +22,14 @@
             $scope.current = panel;
         }
         
-        function register() {
+        function register(isValid) {
             $scope.processing = true;
-            var data = $scope.registerdata;
-            UserService.createNewUser(data.username, data.email, data.password, function(data){
-                console.log(data);
-            });
+            if(isValid) {
+                var data = $scope.registerdata;
+                UserService.createNewUser(data.username, data.email, data.password, function(data){
+                    console.log(data);
+                });
+            }
             $scope.processing = false;
         }
         
