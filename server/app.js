@@ -56,6 +56,23 @@ router.get('/user',function(req,res){
     });
 });
 
+router.get('/verifyuserunique',function(req,res){
+    var email = req.query.email;
+    var username = req.query.username;
+    
+    if (email) {
+        User.findOne({email:email},function (err, data){
+            if (err) return console.error(err);
+            res.json(data);
+        });
+    } else if (username) {
+        User.findOne({username:username},function (err, data){
+            if (err) return console.error(err);
+            res.json(data);
+        });
+    }
+});
+
 router.get('/user/:id',function(req,res){
     User.findOne({'_id':req.params.id},function (err, data) {
       if (err) return console.error(err);
