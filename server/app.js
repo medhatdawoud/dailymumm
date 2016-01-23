@@ -39,18 +39,20 @@ if (process.env.NODE_ENV === 'production') {
 // all of our routes will be prefixed with /api
 app.use('/api', router);
 
-router.post('/user/add',function(req,res){
-    var user = new User({name:req.body.username,email:req.body.email,password:req.body.password});
+router.post('/user',function(req,res){
+    var user = new User({username:req.body.username, email:req.body.email, password:req.body.password});
     user.save(function (err, data) {
       if (err) return console.error(err);
       res.json(data);
     });
 });
 
-router.get('/users',function(req,res){
-    User.find({},function (err, data) {
-      if (err) return console.error(err);
-      res.json(data);
+router.get('/user',function(req,res){
+    var username = req.param('username');
+    var password = req.param('password');
+    User.findOne({username:username, password:password},function (err, data){
+        if (err) return console.error(err);
+        res.json(data);
     });
 });
 
@@ -61,15 +63,21 @@ router.get('/user/:id',function(req,res){
     });
 });
 
-router.post('/user/delete',function(req,res){
-    User.remove({'_id':req.body.id},function(err,data){
+router.delete('/user',function(req,res){
+    var id = req.param('id');
+    User.remove({'_id':id},function(err,data){
         if (err) return console.error(err);
         res.json(data);
     });
 });
 
-router.post('/user/update',function(req,res){
-    User.update({'_id':req.body.id},{name:req.body.username,email:req.body.email,password:req.body.password},function(err,data){
+router.put('/user',function(req,res){
+    var id = req.body.id;
+    var username = req.body.username;
+    var email = req.body.email;
+    var password = req.body.password;
+    
+    User.update({'_id':id} , {username:username, email:email, password:password},function(err,data){
         if (err) return console.error(err);
         res.json(data);
     });
