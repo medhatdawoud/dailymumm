@@ -17,6 +17,16 @@
                 templateUrl: 'views/profile.html',
                 controller: 'ProfileCtrl',
                 controllerAs: 'vm'
+              })
+              .state('profile.view', {
+                url: '/view',
+                templateUrl: 'views/profile.view.html',
+                parent: 'profile'
+              })
+              .state('profile.edit', {
+                url: '/edit',
+                templateUrl: 'views/profile.edit.html',
+                parent: 'profile'
               });
 
             $translateProvider.useUrlLoader('local/en.json');

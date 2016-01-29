@@ -1,0 +1,38 @@
+<div class="row">
+    <h4 class="pull-left">User Details:</h4>
+    <a ui-sref="profile.edit" ng-click="vm.showEditProfile()" class="btn btn-sm btn-success pull-right"><i class="glyphicon glyphicon-cog"></i> Edit</a>
+</div>
+<div class="row profile-view" ng-show="!vm.changePassword">
+    <div class="form-group">
+        <label for="username">Username</label>
+        <div class="form-control form-text">Medhatdawoud</div>
+    </div>
+    <div class="form-group">
+        <label for="username">Full name</label>
+        <div class="form-control form-text">Medhat Dawoud</div>
+    </div>
+    <div class="form-group">
+        <label for="username">Email</label>
+        <div class="form-control form-text">Medhatdawoud@gmail.com</div>
+    </div>
+</div>
+<div class="row" ng-show="!vm.changePassword">
+    <button class="btn btn-primary form-control" ng-click="vm.showChangePasswordPanel()">Change Password</button>
+</div>
+<div class="row profile-change-password" ng-show="vm.changePassword">
+    <form action="">
+        <div class="form-group">
+            <label for="username">Old Password</label>
+            <input type="password" placeholder="Old Password" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="username">New Password</label>
+            <input type="password" placeholder="New Password" class="form-control" />
+        </div>
+        <div class="form-group">
+            <label for="username">Confirm New Password</label>
+            <input type="password" placeholder="Confirm Password" class="form-control" />
+        </div>
+        <button class="btn btn-success" ng-click="vm.saveChangePassword()"><i class="glyphicon glyphicon-save"></i> Save</button>
+    </form>
+</div>
