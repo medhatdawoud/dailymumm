@@ -17,7 +17,13 @@
     </div>
 </div>
 <div class="row" ng-show="!vm.changePassword">
-    <button class="btn btn-primary form-control" ng-click="vm.showChangePasswordPanel()">Change Password</button>
+    <button class="btn btn-primary form-control" ng-click="vm.showChangePasswordPanel()"><i class="glyphicon glyphicon-edit"></i> Change Password</button>
+</div>
+<div class="row">
+    <button class="btn btn-warning form-control"><i class="glyphicon glyphicon-list"></i> Manage My Lists</button>
+</div>
+<div class="row">
+    <button class="btn btn-danger form-control"><i class="glyphicon glyphicon-ban-circle"></i> Mute My Account</button>
 </div>
 <div class="row profile-change-password" ng-show="vm.changePassword">
     <form action="">
