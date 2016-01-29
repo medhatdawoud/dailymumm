@@ -3,10 +3,45 @@
 <div class="container">
     <div class="col-md-8">
         <div class="row lists">
-            <h4>Lists:</h4>
+            <div class="clear-fix">
+                <h4 class="pull-left">Lists:</h4>
+                <a ui-sref="profile.lists" class="btn btn-sm btn-success pull-right"><i class="glyphicon glyphicon-cutlery"></i>  Manage</a>
+            </div>
+            <div class="list-groups">
+                <a href="/profile/list" class="one-list owned">
+                    <div class="img-container">
+                        <img src="{{ imgSrc || 'images/fastfood.jpg' }}" alt="#">
+                    </div>
+                    <p>List</p>
+                </a>
+                <a href="/profile/list" class="one-list owned">
+                    <div class="img-container">
+                        <img src="{{ imgSrc || 'images/fastfood.jpg' }}" alt="#">
+                    </div>
+                    <p>List 1</p>
+                </a>
+                <a href="/profile/list" class="one-list subscribed">
+                    <div class="img-container">
+                        <img src="{{ imgSrc || 'images/fastfood.jpg' }}" alt="#">
+                    </div>
+                    <p>List 2</p>
+                </a>
+                <a href="/profile/list" class="one-list subscribed">
+                    <div class="img-container">
+                        <img src="{{ imgSrc || 'images/fastfood.jpg' }}" alt="#">
+                    </div>
+                    <p>List 3</p>
+                </a>
+                <a href="/profile/list" class="one-list subscribed">
+                    <div class="img-container">
+                        <img src="{{ imgSrc || 'images/fastfood.jpg' }}" alt="#">
+                    </div>
+                    <p>List 4</p>
+                </a>
+            </div>
         </div>
         <div class="row history">
-            <h4>History:</h4>
+            <h4>Orders History:</h4>
         </div>
     </div>
     <div class="col-md-4">
