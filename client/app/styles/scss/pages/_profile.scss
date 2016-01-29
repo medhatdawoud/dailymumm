@@ -6,6 +6,7 @@
         margin-right:7px;
         width: 115px;
         text-align: center;
+        vertical-align: top;
         
         .img-container {
             position: relative;
@@ -24,6 +25,7 @@
                 color: #fff;
                 font-family: arial;
                 background: #333;
+                font-size: 12px;
             }
             
             img {
@@ -103,4 +105,9 @@
         display: block;
         clear: both;
     }
+}
+
+h4 {
+   text-transform: uppercase;
+   font-weight: bold; 
 }
