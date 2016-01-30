@@ -38,17 +38,10 @@
                 owned: false
             },
             {
-                id:5,
-                title: "My List 5",
+                id:3,
+                title: "My List 3",
                 imgPath: "images/fastfood.jpg",
                 count: 15,
-                owned: false
-            },
-            {
-                id:6,
-                title: "My List 6",
-                imgPath: "images/fastfood.jpg",
-                count: 30,
                 owned: false
             }
         ];
