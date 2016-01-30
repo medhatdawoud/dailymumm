@@ -37,7 +37,7 @@
                     navigationText : ["<i class='glyphicon glyphicon-chevron-left'></i>","<i class='glyphicon glyphicon-chevron-right'></i>"]
                 });
             }
-        },100);
+        },500);
         
         
         return service;
