@@ -26,6 +26,15 @@
             return $http.get('/api/user',{ params: {"email": email, "password": password }});
         }
         
+        $(".list-groups").owlCarousel({
+            items : 4,
+            lazyLoad : true,
+            navigation : true,
+            pagination: false,
+            rewindNav: false,
+            navigationText : ["<i class='glyphicon glyphicon-chevron-left'></i>","<i class='glyphicon glyphicon-chevron-right'></i>"]
+        });
+        
         return service;
     }
 })();

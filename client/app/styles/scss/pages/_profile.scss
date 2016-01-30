@@ -1,9 +1,42 @@
 .list-groups {
     margin: 20px 0px;
+    position: relative;
+    
+    .owl-item {
+        text-align: center;
+    }
+    
+    .owl-prev, .owl-next {
+        position: absolute;
+        top: -5px;
+        height: 100%;
+        width: 7%;
+        margin: 0px !important;
+        border-radius: 0px !important;
+        background: rgba(0,0,0,0.5) !important;
+        
+        &.disabled {
+            display: none !important;
+        }
+        
+        i {
+            top: 45%;
+            font-size: 20px;
+        }
+    }
+    
+    .owl-prev {
+        border-left: 2px solid #121212;
+        left: 0px;
+    }
+    
+    .owl-next {
+        border-right: 2px solid #121212;
+        right: 0px;
+    }
     
     .one-list {
         display: inline-block;
-        margin-right:7px;
         width: 115px;
         text-align: center;
         vertical-align: top;
