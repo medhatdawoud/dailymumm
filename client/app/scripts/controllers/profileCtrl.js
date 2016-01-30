@@ -24,6 +24,13 @@
         vm.showEditProfile = showEditProfile;
         vm.listOfGroups = [
             {
+                id:77,
+                title: "مها مدحت",
+                imgPath: "images/fastfood.jpg",
+                count: 2,
+                owned: true
+            },
+            {
                 id:1,
                 title: "My List",
                 imgPath: "images/fastfood.jpg",

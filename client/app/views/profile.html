@@ -5,8 +5,9 @@
         <div class="row lists">
             <div class="clear-fix">
                 <a ui-sref="profile.lists" class="btn btn-sm btn-success pull-right"><i class="glyphicon glyphicon-cutlery"></i>  Manage</a>
+                <a ui-sref="profile.lists" class="btn btn-sm btn-info pull-right"><i class="glyphicon glyphicon-plus"></i>  Add New</a>
                 <h4>Lists:</h4>
-                <p>You are subscribed to <span class="badge">11</span> Lists. <br>
+                <p>You are subscribed to <span class="badge">{{vm.listOfGroups.length}}</span> Lists. <br>
                 <em><small>Note that: lists with orange are owned by you and lists with green borders you just subscribered to them.</small></em></p>
             </div>
             <div class="list-groups">
