@@ -8,7 +8,7 @@
                 <a ui-sref="profile.lists" class="btn btn-sm btn-info pull-right"><i class="glyphicon glyphicon-plus"></i>  Add New</a>
                 <h4>Lists:</h4>
                 <p>You are subscribed to <span class="badge">{{vm.listOfGroups.length}}</span> Lists. <br>
-                <em><small>Note that: lists with orange are owned by you and lists with green borders you just subscribered to them.</small></em></p>
+                <u>Note that</u>: lists with <small><span class="label label-warning">&nbsp;&nbsp;</span></small> are owned by you and lists with <small><span class="label label-success">&nbsp;&nbsp;</span></small> you just subscribered to them.</p>
             </div>
             <div class="list-groups">
                 <a href="/profile/list/{{item.id}}" ng-repeat="item in vm.listOfGroups" class="one-list" ng-class="{'owned' : item.owned, 'subscribed': !item.owned}">

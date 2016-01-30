@@ -24,13 +24,6 @@
         vm.showEditProfile = showEditProfile;
         vm.listOfGroups = [
             {
-                id:77,
-                title: "مها مدحت",
-                imgPath: "images/fastfood.jpg",
-                count: 2,
-                owned: true
-            },
-            {
                 id:1,
                 title: "My List",
                 imgPath: "images/fastfood.jpg",
@@ -43,20 +36,6 @@
                 imgPath: "images/fastfood.jpg",
                 count: 5,
                 owned: false
-            },
-            {
-                id:3,
-                title: "My List 3",
-                imgPath: "images/fastfood.jpg",
-                count: 2,
-                owned: false
-            },
-            {
-                id:4,
-                title: "My List 4",
-                imgPath: "images/fastfood.jpg",
-                count: 12,
-                owned: true
             },
             {
                 id:5,
