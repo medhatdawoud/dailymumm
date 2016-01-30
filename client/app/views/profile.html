@@ -4,10 +4,10 @@
     <div class="col-md-8">
         <div class="row lists">
             <div class="clear-fix">
-                <a ui-sref="profile.lists" class="btn btn-sm btn-success pull-right"><i class="glyphicon glyphicon-cutlery"></i>  Manage</a>
+                <a ng-show="vm.listOfGroups.length > 0" ui-sref="profile.lists" class="btn btn-sm btn-success pull-right"><i class="glyphicon glyphicon-cutlery"></i>  Manage</a>
                 <a ui-sref="profile.lists" class="btn btn-sm btn-info pull-right"><i class="glyphicon glyphicon-plus"></i>  Add New</a>
                 <h4>Lists:</h4>
-                <p>You are subscribed to <span class="badge">{{vm.listOfGroups.length}}</span> Lists. <br>
+                <p ng-show="vm.listOfGroups.length > 0">You are subscribed to <span class="badge">{{vm.listOfGroups.length}}</span> Lists. <br>
                 <u>Note that</u>: lists with <small><span class="label label-warning">&nbsp;&nbsp;</span></small> are owned by you and lists with <small><span class="label label-success">&nbsp;&nbsp;</span></small> you just subscribered to them.</p>
             </div>
             <div class="list-groups">
@@ -18,6 +18,9 @@
                     </div>
                     <p>{{item.title}}</p>
                 </a>
+                <p class="no-lists" ng-show="vm.listOfGroups.length == 0">
+                    You have not Subscribed to any list yet, you can <a href="#">Create</a> one now.
+                </p>
             </div>
         </div>
         <div class="row history">
