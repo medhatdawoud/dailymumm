@@ -10,68 +10,12 @@
                 <em><small>Note that: lists with orange are owned by you and lists with green borders you just subscribered to them.</small></em></p>
             </div>
             <div class="list-groups">
-                <a href="/profile/list" class="one-list owned">
+                <a href="/profile/list/{{item.id}}" ng-repeat="item in vm.listOfGroups" class="one-list" ng-class="{'owned' : item.owned, 'subscribed': !item.owned}">
                     <div class="img-container">
-                        <span class="subscribers-count">19</span>
-                        <img class="lazyOwl" data-src="images/fastfood.jpg" alt="#">
+                        <span class="subscribers-count">{{item.count}}</span>
+                        <img class="lazyOwl" data-src="{{item.imgPath}}" alt="{{item.title}}">
                     </div>
-                    <p>List of the best friends in the world</p>
-                </a>
-                <a href="/profile/list" class="one-list owned">
-                    <div class="img-container">
-                        <span class="subscribers-count">3</span>
-                        <img class="lazyOwl" data-src="images/fastfood.jpg" alt="#">
-                    </div>
-                    <p>فريق ام حسن</p>
-                </a>
-                <a href="/profile/list" class="one-list subscribed">
-                    <div class="img-container">
-                        <span class="subscribers-count">23</span>
-                        <img class="lazyOwl" data-src="images/fastfood.jpg" alt="#">
-                    </div>
-                    <p>فريق الاحلام باكا بورتا باكا بورتا</p>
-                </a>
-                <a href="/profile/list" class="one-list subscribed">
-                    <div class="img-container">
-                        <span class="subscribers-count">56</span>
-                        <img class="lazyOwl" data-src="images/fastfood.jpg" alt="#">
-                    </div>
-                    <p>List 3</p>
-                </a>
-                <a href="/profile/list" class="one-list subscribed">
-                    <div class="img-container">
-                        <span class="subscribers-count">10</span>
-                        <img class="lazyOwl" data-src="images/fastfood.jpg" alt="#">
-                    </div>
-                    <p>List 4</p>
-                </a>
-                <a href="/profile/list" class="one-list subscribed">
-                    <div class="img-container">
-                        <span class="subscribers-count">10</span>
-                        <img class="lazyOwl" data-src="images/fastfood.jpg" alt="#">
-                    </div>
-                    <p>List 5</p>
-                </a>
-                <a href="/profile/list" class="one-list subscribed">
-                    <div class="img-container">
-                        <span class="subscribers-count">10</span>
-                        <img class="lazyOwl" data-src="images/fastfood.jpg" alt="#">
-                    </div>
-                    <p>List 6</p>
-                </a>
-                <a href="/profile/list" class="one-list subscribed">
-                    <div class="img-container">
-                        <span class="subscribers-count">10</span>
-                        <img class="lazyOwl" data-src="images/fastfood.jpg" alt="#">
-                    </div>
-                    <p>List 7</p>
-                </a>
-                <a href="/profile/list" class="one-list subscribed">
-                    <div class="img-container">
-                        <span class="subscribers-count">10</span>
-                        <img class="lazyOwl" data-src="images/fastfood.jpg" alt="#">
-                    </div>
-                    <p>List 8</p>
+                    <p>{{item.title}}</p>
                 </a>
             </div>
         </div>

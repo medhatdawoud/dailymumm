@@ -5,9 +5,9 @@
         .module('dailyMummApp')
         .service('UserService', UserService);
 
-    UserService.$inject = ['$http'];
+    UserService.$inject = ['$http','$timeout'];
 
-    function UserService($http) {
+    function UserService($http, $timeout) {
         var service = {};
         
         service.createNewUser = createNewUser;
@@ -26,14 +26,17 @@
             return $http.get('/api/user',{ params: {"email": email, "password": password }});
         }
         
-        $(".list-groups").owlCarousel({
-            items : 4,
-            lazyLoad : true,
-            navigation : true,
-            pagination: false,
-            rewindNav: false,
-            navigationText : ["<i class='glyphicon glyphicon-chevron-left'></i>","<i class='glyphicon glyphicon-chevron-right'></i>"]
-        });
+        $timeout(function(){
+            $(".list-groups").owlCarousel({
+                items : 5,
+                lazyLoad : true,
+                navigation : true,
+                pagination: false,
+                rewindNav: false,
+                navigationText : ["<i class='glyphicon glyphicon-chevron-left'></i>","<i class='glyphicon glyphicon-chevron-right'></i>"]
+            });
+        },100);
+        
         
         return service;
     }
