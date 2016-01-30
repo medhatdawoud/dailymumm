@@ -12,6 +12,12 @@
                 controller:'HomeCtrl',
                 controllerAs: 'vm'
               })
+              .state('order', {
+                url: '/order',
+                templateUrl: 'views/startOrder.html',
+                controller:'OrderCtrl',
+                controllerAs: 'vm'
+              })
               .state('profile', {
                 url: '/profile',
                 templateUrl: 'views/profile.html',

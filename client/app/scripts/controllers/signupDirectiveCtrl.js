@@ -53,7 +53,7 @@
                 AuthService.login( data.email, data.password, function(result){
                     if(result.success) {
                         AuthService.setCredintials(result.data);
-                        $state.go('profile');
+                        $state.go('profile.view');
                     } else {
                         $scope.hasError = true;
                         $scope.hasSuccess = false;
