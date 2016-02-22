@@ -33,7 +33,8 @@
   },
   "engines": {
     "node": ">=0.8.0",
-    "npm": ">=2.14.7"
+    "npm": ">=2.14.7",
+    "bower": "latest"
   },
   "scripts": {
     "postinstall": "bower install"
