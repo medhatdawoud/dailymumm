@@ -105,7 +105,7 @@ module.exports = function (grunt) {
         // Open Config
         open: {
             site: {
-                path: 'http://localhost:3000',
+                path: 'https://dailymumm.herokuapp.com:3000',
                 app: ''
             }
         },
