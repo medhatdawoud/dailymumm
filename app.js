@@ -33,7 +33,7 @@ if (process.env.NODE_ENV === 'production') {
     app.set('views', 'client/app');
     
     // Locate the assets
-    app.use(express.static('client/app'));
+    app.use(express.static(process.env.PWD+'/client/app'));
 }
 
 
