@@ -23,23 +23,27 @@ app.use(bodyParser.json());
  */
 if (process.env.NODE_ENV === 'production') {
     // Locate the views
-    app.set('views', '../client');
+    app.set('views', 'client');
     
     // Locate the assets
-    app.use(express.static('../client'));
+    app.use(express.static('client'));
 
 } else {
     // Locate the views
-    app.set('views', '../client/app');
+    app.set('views', 'client/app');
     
     // Locate the assets
-    app.use(express.static('../client/app'));
+    app.use(express.static('client/app'));
 }
 
 
 // REGISTER OUR ROUTES ------------------------
 // all of our routes will be prefixed with /api
 app.use('/api', router);
+
+router.get('/',function(req,res){
+    res.send("api here");
+});
 
 router.post('/user',function(req,res){
     var user = new User({username:req.body.username, email:req.body.email, password:req.body.password});
