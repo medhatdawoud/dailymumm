@@ -10,6 +10,7 @@
     "mongoose": "^4.2.4"
   },
   "devDependencies": {
+    "bower": "latest",
     "grunt": "~0.4.1",
     "grunt-contrib-copy": "~0.4.1",
     "grunt-contrib-concat": "~0.3.0",
@@ -33,10 +34,9 @@
   },
   "engines": {
     "node": ">=0.8.0",
-    "npm": ">=2.14.7",
-    "bower": "latest"
+    "npm": ">=2.14.7"
   },
   "scripts": {
-    "postinstall": "bower install"
+    "postinstall": "./node_modules/bower/bin/bower install"
    }
 }
