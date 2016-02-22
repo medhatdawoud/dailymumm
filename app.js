@@ -8,7 +8,7 @@ var app = express();
 var jwt = require('jsonwebtoken'); // used to create, sign, and verify tokens
 var bodyParser = require('body-parser');
 var router = express.Router(); 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 80;
 var config = require('./config.js');
 var User = require('./models/users');
 
