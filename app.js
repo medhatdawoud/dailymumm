@@ -23,14 +23,14 @@ app.use(bodyParser.json());
  */
 if (process.env.NODE_ENV === 'production') {
     // Locate the views
-    app.set('views', 'client/app');
+    app.set('views', __dirname+'client/app');
     
     // Locate the assets
     app.use(express.static(__dirname+'/client/app'));
 
 } else {
     // Locate the views
-    app.set('views', 'client/app');
+    app.set('views', __dirname+'client/app');
     
     // Locate the assets
     app.use(express.static(__dirname+'/client/app'));
