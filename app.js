@@ -36,10 +36,14 @@ if (process.env.NODE_ENV === 'production') {
     app.use(express.static('client/app'));
 }
 
-
 // REGISTER OUR ROUTES ------------------------
 // all of our routes will be prefixed with /api
 app.use('/api', router);
+
+router.get('/', function(req,res){
+    console.log(123);
+    res.json('welcome to dailymumm app please use /api before your commands');
+});
 
 router.post('/user',function(req,res){
     var user = new User({username:req.body.username, email:req.body.email, password:req.body.password});
@@ -94,31 +98,31 @@ router.get('/verifyuserunique',function(req,res){
     }
 });
 
-app.use(function(req, res, next) {
-  // check header or url parameters or post parameters for token
-  var token = req.body.token || req.query.token || req.headers['x-access-token'];
-  // decode token
-  if (token) {
+// app.use(function(req, res, next) {
+//   // check header or url parameters or post parameters for token
+//   var token = req.body.token || req.query.token || req.headers['x-access-token'];
+//   // decode token
+//   if (token) {
 
-    // verifies secret and checks exp
-    jwt.verify(token, app.get('superSecret'), function(err, decoded) {      
-      if (err) {
-        return res.json({ success: false, message: 'Failed to authenticate token.' });    
-      } else {
-        // if everything is good, save to request for use in other routes
-        req.decoded = decoded;    
-        next();
-      }
-    });
-  } else {
-    // if there is no token
-    // return an error
-    return res.status(403).send({ 
-        success: false, 
-        message: 'No token provided.' 
-    });
-  }
-});
+//     // verifies secret and checks exp
+//     jwt.verify(token, app.get('superSecret'), function(err, decoded) {      
+//       if (err) {
+//         return res.json({ success: false, message: 'Failed to authenticate token.' });    
+//       } else {
+//         // if everything is good, save to request for use in other routes
+//         req.decoded = decoded;    
+//         next();
+//       }
+//     });
+//   } else {
+//     // if there is no token
+//     // return an error
+//     return res.status(403).send({ 
+//         success: false, 
+//         message: 'No token provided.' 
+//     });
+//   }
+// });
 
 
 router.get('/user/:id',function(req,res){
