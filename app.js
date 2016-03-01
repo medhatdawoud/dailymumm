@@ -11,6 +11,7 @@ var router = express.Router();
 var port = process.env.PORT || 80;
 var config = require('./config.js');
 var User = require('./models/users');
+var path = require('path');
 
 
 // configure app to use bodyParser()
