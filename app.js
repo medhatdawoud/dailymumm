@@ -26,16 +26,14 @@ if (process.env.NODE_ENV === 'production') {
     app.set('views', __dirname+'client/app');
     
     // Locate the assets
-    app.use(express.static(__dirname+'/client/app/styles'));
-	app.use(express.static(__dirname+'/client/app/scripts'));
+    app.use(express.static(__dirname+'/client/app'));
 
 } else {
     // Locate the views
     app.set('views', __dirname+'client/app');
     
     // Locate the assets
-    app.use(express.static(__dirname+'/client/app/styles'));
-	app.use(express.static(__dirname+'/client/app/scripts'));
+    app.use(express.static(__dirname+'/client/app'));
 }
 
 
