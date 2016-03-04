@@ -1,91 +1,41 @@
 'use strict';
 
-(function(){
+(function () {
     angular
         .module('dailyMummApp')
         .controller('ProfileCtrl', ProfileController);
-    
-    ProfileController.$inject = ['$scope','AuthService','$state'];
-    
-    function ProfileController($scope, AuthService, $state) {
+
+    ProfileController.$inject = ['$scope', 'AuthService', '$state', 'ListsService'];
+
+    function ProfileController($scope, AuthService, $state, ListsService) {
         var vm = this;
-        
-        if(!AuthService.isLoggedIn()) {
-			$state.go('home');
-		} else {
+
+        if (!AuthService.isLoggedIn()) {
+            $state.go('home');
+        } else {
             $state.go('profile.view');
         }
-        
+
         vm.changePassword = false;
-        
+
         vm.showChangePasswordPanel = showChangePasswordPanel;
         vm.saveChangePassword = saveChangePassword;
         vm.showViewProfile = showViewProfile;
         vm.showEditProfile = showEditProfile;
-        vm.listOfGroups = [
-            {
-                id:1,
-                title: "My List",
-                imgPath: "images/fastfood.jpg",
-                count: 1,
-                owned: true
-            },
-            {
-                id:2,
-                title: "My List 2",
-                imgPath: "images/fastfood.jpg",
-                count: 5,
-                owned: false
-            },
-            {
-                id:3,
-                title: "My List 3",
-                imgPath: "images/fastfood.jpg",
-                count: 15,
-                owned: false
-            },
-			{
-                id:2,
-                title: "My List 2",
-                imgPath: "images/fastfood.jpg",
-                count: 5,
-                owned: false
-            },
-            {
-                id:3,
-                title: "My List 3",
-                imgPath: "images/fastfood.jpg",
-                count: 15,
-                owned: false
-            },
-			{
-                id:2,
-                title: "My List 2",
-                imgPath: "images/fastfood.jpg",
-                count: 5,
-                owned: false
-            },
-            {
-                id:3,
-                title: "My List 3",
-                imgPath: "images/fastfood.jpg",
-                count: 15,
-                owned: false
-            }
-        ];
-        
-        function showChangePasswordPanel(){
+        vm.listOfGroups = ListsService.getLists();
+
+        function showChangePasswordPanel() {
             vm.changePassword = true;
-        } 
-        
+        }
+
         function saveChangePassword() {
             vm.changePassword = false;
         }
-        
-        function showViewProfile(){
+
+        function showViewProfile() {
             vm.changePassword = false;
         }
-        
-        function showEditProfile(){}
+
+        function showEditProfile() { }
     }
 })();
