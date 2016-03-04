@@ -1,6 +1,6 @@
 'use strict';
 
-(function(){
+(function () {
     angular
         .module('dailyMummApp')
         .directive('bwSignup', Signup);
@@ -11,7 +11,7 @@
             controller: 'SignupDirectiveCtrl',
             restric: 'EA'
         };
-        
+
         return directive;
     }
 })();

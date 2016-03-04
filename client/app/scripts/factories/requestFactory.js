@@ -1,15 +1,15 @@
 'use strict';
 
-(function(){
+(function () {
     angular
         .module('dailyMummApp')
         .factory('RequestFactory', RequestFactory);
 
-    RequestFactory.$inject = ['$cookies','$cookieStore'];
+    RequestFactory.$inject = ['$cookies', '$cookieStore'];
 
     function RequestFactory($cookies, $cookieStore) {
         var token = null;
-        
+
         var factory = {};
         factory.getToken = getToken;
         factory.setToken = setToken;

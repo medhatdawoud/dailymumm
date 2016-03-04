@@ -1,77 +1,71 @@
-
-   <div class="col-sm-12 col-md-4 col-lg-4 col-xs-12 pull-right">
-        <div class="signup-box ">
-            <div ng-show="hasError" class="alert alert-danger">
-                {{errorMessage}}
-            </div>
-            <div ng-show="hasSuccess" class="alert alert-success">
-                {{registerSuccessMessage}}
-            </div>
-            <h3><a ng-click="showPanel('login')" ng-class="{'active':current == 'login'}">Login</a>
-                / <a ng-click="showPanel('register')" ng-class="{'active':current == 'register'}">Register</a></h3>
-                
-            <form ng-show="current == 'register'" name="formRegister" ng-submit="register(formRegister.$valid, formRegister)" novalidate>
-                <div class="form-group" 
-                     ng-class="formRegister.username.$invalid && (!formRegister.username.$pristine || formRegister.$submitted) ? 'has-error' : 'has-success'">
-                    <label>Username:</label>
-                    <input name="username" bw-validate-unique="username" ng-model="registerdata.username" ng-minlength="3" ng-maxlength="20" type="text" class="form-control" required/>
-                    <p ng-show="formRegister.username.$error.required && (!formRegister.username.$pristine || formRegister.$submitted)" 
-                       class="help-block">Your name is required.</p>
-                    <span ng-show="!formRegister.username.$error.required && (formRegister.username.$error.minlength || formRegister.username.$error.maxlength) && formRegister.username.$dirty"
-                       class="help-block">Username must be between 3 and 20 characters.</span>
-                    <p ng-show="!formRegister.username.$error.required && !formRegister.username.$error.minlength && !formRegister.username.$error.maxlength && formRegister.username.$error.isunique && !formRegister.username.$pristine" 
-                       class="help-block">This username is not available, choose anther one.</p>
-                    <p ng-show="!formRegister.username.$error.required && !formRegister.username.$error.minlength && !formRegister.username.$error.maxlength && !formRegister.username.$error.isunique && !formRegister.username.$pristine" 
-                       class="help-block">This username is available</p>
-                </div>
-                <div class="form-group" 
-                     ng-class="formRegister.email.$invalid && (!formRegister.email.$pristine || formRegister.$submitted) ? 'has-error' : 'has-success'">
-                    <label>Email:</label>
-                    <input name="email" bw-validate-unique="email" ng-model="registerdata.email" type="email" class="form-control" required/>
-                    <p ng-show="formRegister.email.$error.required && (!formRegister.email.$pristine || formRegister.$submitted)" 
-                       class="help-block">Your email is required.</p>
-                    <p ng-show="!formRegister.email.$error.required && formRegister.email.$error.email && !formRegister.email.$pristine" 
-                       class="help-block">Please enter a valid email.</p>
-                    <p ng-show="!formRegister.email.$error.required && !formRegister.email.$error.email && formRegister.email.$error.isunique && !formRegister.email.$pristine" 
-                       class="help-block">This email is not available, choose anther one.</p>
-                    <p ng-show="!formRegister.email.$error.required && !formRegister.email.$error.email && !formRegister.email.$error.isunique && !formRegister.email.$pristine" 
-                       class="help-block">This email is available</p>
-                </div>
-                <div class="form-group" 
-                     ng-class="formRegister.password.$invalid && (!formRegister.password.$pristine || formRegister.$submitted) ? 'has-error' : 'has-success'">
-                    <label>Password:</label>
-                    <input name="password" ng-model="registerdata.password" ng-minlength="8" ng-maxlength="20" type="password" class="form-control" required/>
-                    <p ng-show="formRegister.password.$error.required && (!formRegister.password.$pristine || formRegister.$submitted)" 
-                       class="help-block">Your password is required.</p>
-                    <span ng-show="!formRegister.password.$error.required && (formRegister.password.$error.minlength || formRegister.password.$error.maxlength) && formRegister.password.$dirty"
-                       class="help-block">Password must be between 8 and 20 characters.</span>
-                </div>
-                <div class="form-group" 
-                     ng-class="formRegister.retypepassword.$invalid && !formRegister.retypepassword.$pristine ? 'has-error' : 'has-success'">
-                    <label>Retype Password:</label>
-                    <input name="retypepassword" bw-validate-password ng-model="registerdata.retypepassword" type="password" class="form-control" required/>
-                    <p ng-show="formRegister.retypepassword.$error.require && !formRegister.retypepassword.$pristine  && formRegister.retypepassword.$dirty" 
-                       class="help-block">Please confirm your password.</p>
-                    <p ng-show="!formRegister.retypepassword.$error.require && formRegister.retypepassword.$error.noMatch && !formRegister.retypepassword.$pristine && formRegister.retypepassword.$dirty" 
-                       class="help-block">The two passwords are not match.</p>
-                </div>
-                <div class="form-group">
-                    <input type="submit" ng-disabled="processing" class="btn btn-primary" value="Register" />
-                </div>
-            </form>
-            
-            <form ng-show="current == 'login'" name="formLogin" ng-submit="login(formLogin.$valid, formLogin)" novalidate>
-                <div class="form-group">
-                    <label>Email:</label>
-                    <input type="text" ng-model="logindata.email" class="form-control" />
-                </div>
-                <div class="form-group">
-                    <label>Password:</label>
-                    <input type="password" ng-model="logindata.password" class="form-control" />
-                </div>
-                <div class="form-group">
-                    <input type="submit" class="btn btn-success" value="Login" />
-                </div>
-            </form>
+<div class="col-sm-12 col-md-4 col-lg-4 col-xs-12 pull-right">
+    <div class="signup-box ">
+        <div ng-show="hasError" class="alert alert-danger">
+            {{errorMessage}}
         </div>
+        <div ng-show="hasSuccess" class="alert alert-success">
+            {{registerSuccessMessage}}
+        </div>
+        <h3><a ng-click="showPanel('login')" ng-class="{'active':current == 'login'}">Login</a>
+                / <a ng-click="showPanel('register')" ng-class="{'active':current == 'register'}">Register</a></h3>
+
+        <form ng-show="current == 'register'" name="formRegister" ng-submit="register(formRegister.$valid, formRegister)" novalidate>
+            <div class="form-group" ng-class="formRegister.username.$invalid && (!formRegister.username.$pristine || formRegister.$submitted) ? 'has-error' : 'has-success'">
+                <label>Username:</label>
+                <input name="username" bw-validate-unique="username" ng-model="registerdata.username" ng-minlength="3" ng-maxlength="20"
+                type="text" class="form-control" required/>
+                <p ng-show="formRegister.username.$error.required && (!formRegister.username.$pristine || formRegister.$submitted)" class="help-block">Your name is required.</p>
+                <span ng-show="!formRegister.username.$error.required && (formRegister.username.$error.minlength || formRegister.username.$error.maxlength) && formRegister.username.$dirty"
+                class="help-block">Username must be between 3 and 20 characters.</span>
+                <p ng-show="!formRegister.username.$error.required && !formRegister.username.$error.minlength && !formRegister.username.$error.maxlength && formRegister.username.$error.isunique && !formRegister.username.$pristine"
+                class="help-block">This username is not available, choose anther one.</p>
+                <p ng-show="!formRegister.username.$error.required && !formRegister.username.$error.minlength && !formRegister.username.$error.maxlength && !formRegister.username.$error.isunique && !formRegister.username.$pristine"
+                class="help-block">This username is available</p>
+            </div>
+            <div class="form-group" ng-class="formRegister.email.$invalid && (!formRegister.email.$pristine || formRegister.$submitted) ? 'has-error' : 'has-success'">
+                <label>Email:</label>
+                <input name="email" bw-validate-unique="email" ng-model="registerdata.email" type="email" class="form-control" required/>
+                <p ng-show="formRegister.email.$error.required && (!formRegister.email.$pristine || formRegister.$submitted)" class="help-block">Your email is required.</p>
+                <p ng-show="!formRegister.email.$error.required && formRegister.email.$error.email && !formRegister.email.$pristine" class="help-block">Please enter a valid email.</p>
+                <p ng-show="!formRegister.email.$error.required && !formRegister.email.$error.email && formRegister.email.$error.isunique && !formRegister.email.$pristine"
+                class="help-block">This email is not available, choose anther one.</p>
+                <p ng-show="!formRegister.email.$error.required && !formRegister.email.$error.email && !formRegister.email.$error.isunique && !formRegister.email.$pristine"
+                class="help-block">This email is available</p>
+            </div>
+            <div class="form-group" ng-class="formRegister.password.$invalid && (!formRegister.password.$pristine || formRegister.$submitted) ? 'has-error' : 'has-success'">
+                <label>Password:</label>
+                <input name="password" ng-model="registerdata.password" ng-minlength="8" ng-maxlength="20" type="password" class="form-control"
+                required/>
+                <p ng-show="formRegister.password.$error.required && (!formRegister.password.$pristine || formRegister.$submitted)" class="help-block">Your password is required.</p>
+                <span ng-show="!formRegister.password.$error.required && (formRegister.password.$error.minlength || formRegister.password.$error.maxlength) && formRegister.password.$dirty"
+                class="help-block">Password must be between 8 and 20 characters.</span>
+            </div>
+            <div class="form-group" ng-class="formRegister.retypepassword.$invalid && !formRegister.retypepassword.$pristine ? 'has-error' : 'has-success'">
+                <label>Retype Password:</label>
+                <input name="retypepassword" bw-validate-password ng-model="registerdata.retypepassword" type="password" class="form-control"
+                required/>
+                <p ng-show="formRegister.retypepassword.$error.require && !formRegister.retypepassword.$pristine  && formRegister.retypepassword.$dirty"
+                class="help-block">Please confirm your password.</p>
+                <p ng-show="!formRegister.retypepassword.$error.require && formRegister.retypepassword.$error.noMatch && !formRegister.retypepassword.$pristine && formRegister.retypepassword.$dirty"
+                class="help-block">The two passwords are not match.</p>
+            </div>
+            <div class="form-group">
+                <input type="submit" ng-disabled="processing" class="btn btn-primary" value="Register" />
+            </div>
+        </form>
+
+        <form ng-show="current == 'login'" name="formLogin" ng-submit="login(formLogin.$valid, formLogin)" novalidate>
+            <div class="form-group">
+                <label>Email:</label>
+                <input type="text" ng-model="logindata.email" class="form-control" />
+            </div>
+            <div class="form-group">
+                <label>Password:</label>
+                <input type="password" ng-model="logindata.password" class="form-control" />
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-success" value="Login" />
+            </div>
+        </form>
     </div>
+</div>

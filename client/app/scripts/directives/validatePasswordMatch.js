@@ -1,6 +1,6 @@
 'use strict';
 
-(function(){
+(function () {
     angular
         .module('dailyMummApp')
         .directive('bwValidatePassword', ValidatePassword);
@@ -12,11 +12,11 @@
                 ctrl.$parsers.unshift(function (viewValue, $scope) {
                     var noMatch = viewValue != scope.formRegister.password.$viewValue;
                     ctrl.$setValidity('noMatch', !noMatch);
-                    return noMatch ? true: false;
+                    return noMatch ? true : false;
                 })
             }
         };
-        
+
         return directive;
     }
 })();

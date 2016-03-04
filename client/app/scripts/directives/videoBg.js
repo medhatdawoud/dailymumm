@@ -1,6 +1,6 @@
 'use strict';
 
-(function(){
+(function () {
     angular
         .module('dailyMummApp')
         .directive('bwVideoBg', Signup);
@@ -10,7 +10,7 @@
             templateUrl: '/views/components/videoBg.html',
             restric: 'EA'
         };
-        
+
         return directive;
     }
 })();

@@ -1,6 +1,6 @@
 'use strict';
 
-(function(){
+(function () {
     angular
         .module('dailyMummApp')
         .directive('bwNavbar', Navbar);
@@ -11,7 +11,7 @@
             controller: 'NavbarDirectiveCtrl',
             restric: 'EA'
         };
-        
+
         return directive;
     }
 })();

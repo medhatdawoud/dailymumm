@@ -1,31 +1,31 @@
 'use strict';
 
-(function(){
+(function () {
     angular
         .module('dailyMummApp')
         .service('AuthService', AuthService);
 
-    AuthService.$inject = ['$http','UserService','$cookieStore','$rootScope','RequestFactory'];
+    AuthService.$inject = ['$http', 'UserService', '$cookieStore', '$rootScope', 'RequestFactory'];
 
     function AuthService($http, UserService, $cookieStore, $rootScope, RequestFactory) {
         var service = {};
-        
+
         service.login = login;
         service.getCurrentUserInfo = getCurrentUserInfo;
         service.isLoggedIn = isLoggedIn;
         service.setCredintials = setCredintials;
         service.clearCredintials = clearCredintials;
-        
-        function login( email, password, callback) {
+
+        function login(email, password, callback) {
             UserService.checkForUserByEmailAndPassword(email, password)
-                .then(function(response) {
+                .then(function (response) {
                     var result;
                     if (response.data)
                         result = { success: true, data: response.data };
                     else
                         result = { success: false, code: 'ERROR_INVALID_USER_OR_PASSWORD' };
                     callback(result);
-                }, function(response) {
+                }, function (response) {
 
                     if (response.status == 404) {
                         callback({ success: false, code: 'ERROR_INVALID_USER_OR_PASSWORD' });
@@ -36,7 +36,7 @@
                     }
                 });
         }
-        
+
         function isLoggedIn() {
             return !!$cookieStore.get('globals');
         };
@@ -66,7 +66,7 @@
             $cookieStore.remove('globals');
             RequestFactory.setToken(null);
         };
-        
+
         return service;
     }
 })();

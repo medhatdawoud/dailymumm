@@ -1,14 +1,13 @@
 <div class="container" id="homepage">
     <div class="row">
-	    <div class="col-md-8">
-	    	<h1 class="title">{{ "GENERAL_SITE_TITLE" | translate }}</h1>
-	    	<p class="about">{{ "HOME_PAGE_ABOUT_QUOTES" | translate }}</p>
-	    	<ol class="steps" ng-hide="true">
-	    		<h3>{{ "HOME_PAGE_HOW_TO_USE_LABEL" | translate }} <span class="brand">{{ "GENERAL_SITE_TITLE" | translate }}</span> ?</h3>
-	    		<li ng-repeat="step in vm.steps">{{ step }}</li>
-	    	</ol>
-		</div>
-    	<div bw-signup></div>
+        <div class="col-md-8">
+            <h1 class="title">{{ "GENERAL_SITE_TITLE" | translate }}</h1>
+            <p class="about">{{ "HOME_PAGE_ABOUT_QUOTES" | translate }}</p>
+            <ol class="steps" ng-hide="true">
+                <h3>{{ "HOME_PAGE_HOW_TO_USE_LABEL" | translate }} <span class="brand">{{ "GENERAL_SITE_TITLE" | translate }}</span> ?</h3>
+                <li ng-repeat="step in vm.steps">{{ step }}</li>
+            </ol>
+        </div>
+        <div bw-signup></div>
     </div>
 </div>
-
