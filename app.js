@@ -8,9 +8,10 @@ var app = express();
 var jwt = require('jsonwebtoken'); // used to create, sign, and verify tokens
 var bodyParser = require('body-parser');
 var router = express.Router(); 
-var port = process.env.PORT || 3000;
+var port = process.env.PORT || 80;
 var config = require('./config.js');
 var User = require('./models/users');
+var path = require('path');
 
 
 // configure app to use bodyParser()
@@ -23,23 +24,27 @@ app.use(bodyParser.json());
  */
 if (process.env.NODE_ENV === 'production') {
     // Locate the views
-    app.set('views', '../client');
+    app.set('views',path.join(__dirname,'client/app'));
     
     // Locate the assets
-    app.use(express.static('../client'));
+    app.use(express.static(path.join(__dirname,'client/app')));
 
 } else {
     // Locate the views
-    app.set('views', '../client/app');
+    app.set('views', path.join(__dirname,'client/app'));
     
     // Locate the assets
-    app.use(express.static('../client/app'));
+    app.use(express.static(path.join(__dirname,'client/app')));
 }
 
 
 // REGISTER OUR ROUTES ------------------------
 // all of our routes will be prefixed with /api
 app.use('/api', router);
+
+router.get('/',function(req,res){
+    res.send("api here");
+});
 
 router.post('/user',function(req,res){
     var user = new User({username:req.body.username, email:req.body.email, password:req.body.password});
