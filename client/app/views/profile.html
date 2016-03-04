@@ -5,8 +5,16 @@
         <div class="lists">
             <div class="clear-fix">
                 <div class="pull-right">
-                    <a ng-show="vm.listOfGroups.length > 0" ui-sref="profile.lists" class="btn btn-sm btn-info"><i class="glyphicon glyphicon-plus"></i>  Add New</a>
-                    <a ng-show="vm.listOfGroups.length > 0" ui-sref="profile.lists" class="btn btn-sm btn-success"><i class="glyphicon glyphicon-cutlery"></i>  Manage</a>
+                    <a ng-show="vm.listOfGroups.length > 0" 
+                       ui-sref="profile.lists" 
+                       class="btn btn-sm btn-info">
+                        <i class="glyphicon glyphicon-plus"></i>  Add New
+                    </a>
+                    <a ng-show="vm.listOfGroups.length > 0" 
+                       ui-sref="profile.lists" 
+                       class="btn btn-sm btn-success">
+                        <i class="glyphicon glyphicon-cutlery"></i>  Manage
+                    </a>
                 </div>
                 <h4>Lists:</h4>
                 <p ng-show="vm.listOfGroups.length > 0">You are subscribed to <span class="badge">{{vm.listOfGroups.length}}</span> Lists. <br>
