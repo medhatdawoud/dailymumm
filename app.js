@@ -14,6 +14,20 @@ var User = require('./models/users');
 var path = require('path');
 
 
+app.use(function(req, res, next) {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
+    res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
+
+    // intercept OPTIONS method
+    if ('OPTIONS' == req.method) {
+      res.send(200);
+    }
+    else {
+      next();
+    }
+});
+
 // configure app to use bodyParser()
 // this will let us get the data from a POST
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -36,7 +50,6 @@ if (process.env.NODE_ENV === 'production') {
     // Locate the assets
     app.use(express.static(path.join(__dirname, 'client/app')));
 }
-
 
 // REGISTER OUR ROUTES ------------------------
 // all of our routes will be prefixed with /api

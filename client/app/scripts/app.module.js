@@ -7,6 +7,6 @@
                                 'ngSanitize',
                                 'ui.router',
                                 'pascalprecht.translate']);
-                                
-    app.value("apiServer", "https://dailymumm.heroku.com");
+    
+    app.value("apiServer", "https://dailymumm.herokuapp.com");
 })();
