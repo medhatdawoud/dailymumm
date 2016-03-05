@@ -8,5 +8,5 @@
                                 'ui.router',
                                 'pascalprecht.translate']);
                                 
-    app.value("apiServer", "https://http://dailymumm.herokuapp.com");
+    app.value("apiServer", "https://dailymumm.heroku.com");
 })();
