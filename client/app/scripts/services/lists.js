@@ -5,9 +5,9 @@
         .module('dailyMummApp')
         .service('ListsService', ListsService);
 
-    ListsService.$inject = ['$http'];
+    ListsService.$inject = ['$http', 'apiServer'];
 
-    function ListsService($http) {
+    function ListsService($http, apiServer) {
         var service = {};
 
         service.getLists = getLists;
