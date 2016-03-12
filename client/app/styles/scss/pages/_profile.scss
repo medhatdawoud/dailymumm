@@ -101,6 +101,12 @@ p.no-lists {
             }
         }
     }
+    
+    &.lists-order {
+        .one-list {
+            margin: 0px 10px;
+        }
+    }
 }
 .profile-view, .profile-edit, .profile-change-password {
     background: rgba(200,200,200,0.5);

@@ -21,7 +21,7 @@
             <p class="no-lists" ng-show="vm.listOfGroups.length == 0">
                 You have not Subscribed to any list yet, you can <a href="#">Create</a> one now.
             </p>
-            <div class="list-groups">
+            <div class="lists-profile list-groups">
                 <a href="/profile/list/{{item.id}}" ng-repeat="item in vm.listOfGroups" class="one-list" ng-class="{'owned' : item.owned, 'subscribed': !item.owned}">
                     <div class="img-container">
                         <span class="subscribers-count">{{item.count}}</span>

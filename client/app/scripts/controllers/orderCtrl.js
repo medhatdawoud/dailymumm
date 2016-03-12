@@ -5,9 +5,9 @@
         .module('dailyMummApp')
         .controller('OrderCtrl', OrderController);
 
-    OrderController.$inject = ['$scope'];
+    OrderController.$inject = ['$scope', 'ListsService'];
 
-    function OrderController($scope) {
+    function OrderController($scope, ListsService) {
         var vm = this;
 
         vm.restaurants = [
@@ -16,7 +16,9 @@
             "KFC",
             "Wel3teen"
         ];
-
+        
         vm.restaurant = vm.restaurants[0];
+        
+        vm.listOfGroups = ListsService.getLists();
     }
 })();

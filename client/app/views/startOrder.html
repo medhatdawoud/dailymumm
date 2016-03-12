@@ -1,17 +1,27 @@
 <bw-navbar></bw-navbar>
 
 <div class="container">
-    <div class="col-sm-6">
-        <div class="form-group">
-            <h4><i class="glyphicon glyphicon-th-list"></i>&nbsp; Choose/add a restaurant:</h4>
-            <select class="form-control" ng-model="vm.restaurant" ng-options="r for r in vm.restaurants"></select>
+    <div class="row">
+        <div class="col-sm-12">
+            <h4><i class="glyphicon glyphicon-bullhorn"></i>&nbsp; Select a Group to shout to:</h4>
+            <div class="list-groups lists-order">
+                <a href="javascript:void(0)" ng-repeat="item in vm.listOfGroups" class="one-list" ng-class="{'owned' : item.owned, 'subscribed': !item.owned}">
+                    <div class="img-container">
+                        <span class="subscribers-count">{{item.count}}</span>
+                        <img src="{{item.imgPath}}" alt="{{item.title}}">
+                    </div>
+                    <p>{{item.title}}</p>
+                </a>
+            </div>
+            
         </div>
     </div>
-    <div class="col-sm-6">
-        <div class="form-group">
-            <h4><i class="glyphicon glyphicon-bullhorn"></i>&nbsp; Choose a Group to shout to:</h4>
-            <input type="text" class="form-control">
+    <div class="row">
+        <div class="col-sm-12">
+            <div class="form-group">
+                <h4><i class="glyphicon glyphicon-th-list"></i>&nbsp; Choose/add a restaurant:</h4>
+                <input type="text" class="form-control">
+            </div>
         </div>
     </div>
-
 </div>

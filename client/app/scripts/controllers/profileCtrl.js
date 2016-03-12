@@ -25,8 +25,8 @@
         vm.listOfGroups = ListsService.getLists();
 
         $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams, options) {
-            if(toState.parent == "profile") {
-                $timeout(function () {
+            $timeout(function() {
+                if(toState.parent == "profile") {
                     if ($("a.one-list").length > 0) {
                         $(".list-groups").owlCarousel({
                             items: 5,
@@ -37,8 +37,8 @@
                             navigationText: ["<i class='glyphicon glyphicon-chevron-left'></i>", "<i class='glyphicon glyphicon-chevron-right'></i>"]
                         });
                     }
-                }, 100);
-            }
+                } 
+            }, 500);
         });
 
         function showChangePasswordPanel() {
