@@ -5,9 +5,9 @@
         .module('dailyMummApp')
         .controller('ProfileCtrl', ProfileController);
 
-    ProfileController.$inject = ['$scope', 'AuthService', '$state', 'ListsService'];
+    ProfileController.$inject = ['$scope', '$rootScope', 'AuthService', '$state', 'ListsService', '$timeout'];
 
-    function ProfileController($scope, AuthService, $state, ListsService) {
+    function ProfileController($scope, $rootScope, AuthService, $state, ListsService, $timeout) {
         var vm = this;
 
         if (!AuthService.isLoggedIn()) {
@@ -23,6 +23,23 @@
         vm.showViewProfile = showViewProfile;
         vm.showEditProfile = showEditProfile;
         vm.listOfGroups = ListsService.getLists();
+
+        $rootScope.$on('$stateChangeStart', function (event, toState, toParams, fromState, fromParams, options) {
+            if(toState.parent == "profile") {
+                $timeout(function () {
+                    if ($("a.one-list").length > 0) {
+                        $(".list-groups").owlCarousel({
+                            items: 5,
+                            lazyLoad: true,
+                            navigation: true,
+                            pagination: false,
+                            rewindNav: false,
+                            navigationText: ["<i class='glyphicon glyphicon-chevron-left'></i>", "<i class='glyphicon glyphicon-chevron-right'></i>"]
+                        });
+                    }
+                }, 100);
+            }
+        });
 
         function showChangePasswordPanel() {
             vm.changePassword = true;
