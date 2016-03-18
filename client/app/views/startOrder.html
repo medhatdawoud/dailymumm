@@ -13,15 +13,13 @@
                     <p>{{item.title}}</p>
                 </a>
             </div>
-
         </div>
     </div>
     <div class="row">
         <div class="col-sm-12">
             <div class="form-group">
                 <h4><i class="glyphicon glyphicon-th-list"></i>&nbsp; Choose/add a restaurant:</h4>
-                <select ng-change="vm.restChanged()" ng-model="vm.restaurant">
-                    <option value="-1">choose Restaurant ..</option>
+                <select class="chosen-select" data-placeholder="choose Restaurant .." ng-model="vm.restaurant">
                     <option value="{{r.id}}" ng-repeat="r in vm.restaurants">{{r.name}}</option>
                 </select>
             </div>

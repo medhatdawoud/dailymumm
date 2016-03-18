@@ -443,3 +443,16 @@ h4 {
   font-weight: bold;
   color: #F5E156;
 }
+
+/* line 2, ../scss/pages/_order.scss */
+.chosen-container .chosen-single {
+  height: 32px;
+}
+/* line 5, ../scss/pages/_order.scss */
+.chosen-container .chosen-single span {
+  margin-top: 3px;
+}
+/* line 10, ../scss/pages/_order.scss */
+.chosen-container .chosen-single div b {
+  background-position: 0px 5px;
+}
