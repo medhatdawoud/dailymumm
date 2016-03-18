@@ -5,20 +5,19 @@
         .module('dailyMummApp')
         .controller('OrderCtrl', OrderController);
 
-    OrderController.$inject = ['$scope', 'ListsService'];
+    OrderController.$inject = ['$scope', 'ListsService', 'RestaurantsService'];
 
-    function OrderController($scope, ListsService) {
+    function OrderController($scope, ListsService, RestaurantsService) {
         var vm = this;
-
-        vm.restaurants = [
-            "Majesty",
-            "McDonalds",
-            "KFC",
-            "Wel3teen"
-        ];
-        
-        vm.restaurant = vm.restaurants[0];
         
         vm.listOfGroups = ListsService.getLists();
+
+        vm.restaurants = RestaurantsService.getRestaurants();
+        
+        vm.restChanged = function() {
+            console.log(vm.restaurant);
+        }
+        
+        vm.restaurant = "-1";
     }
 })();

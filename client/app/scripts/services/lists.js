@@ -24,8 +24,6 @@
                 { id: 3, title: "My List 8", imgPath: "images/fastfood.jpg", count: 15, owned: false },
                 { id: 3, title: "My List 9", imgPath: "images/fastfood.jpg", count: 15, owned: false },
                 { id: 3, title: "My List 10", imgPath: "images/fastfood.jpg", count: 15, owned: false },
-                { id: 3, title: "My List 11", imgPath: "images/fastfood.jpg", count: 15, owned: false },
-                { id: 3, title: "My List 12", imgPath: "images/fastfood.jpg", count: 15, owned: false },
                 { id: 3, title: "My List 13", imgPath: "images/fastfood.jpg", count: 15, owned: false }
             ];
         }
