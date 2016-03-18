@@ -223,6 +223,19 @@ form .form-group.has-success .help-block {
   border-radius: 0px 0px 4px 4px;
 }
 
+/* line 2, ../scss/components/_chosen.scss */
+.chosen-container .chosen-single {
+  height: 32px;
+}
+/* line 5, ../scss/components/_chosen.scss */
+.chosen-container .chosen-single span {
+  margin-top: 3px;
+}
+/* line 10, ../scss/components/_chosen.scss */
+.chosen-container .chosen-single div b {
+  background-position: 0px 5px;
+}
+
 /* line 1, ../scss/pages/_home.scss */
 #homepage {
   text-shadow: 0px 1px 10px #333;
@@ -442,17 +455,4 @@ h4 {
   text-transform: uppercase;
   font-weight: bold;
   color: #F5E156;
-}
-
-/* line 2, ../scss/pages/_order.scss */
-.chosen-container .chosen-single {
-  height: 32px;
-}
-/* line 5, ../scss/pages/_order.scss */
-.chosen-container .chosen-single span {
-  margin-top: 3px;
-}
-/* line 10, ../scss/pages/_order.scss */
-.chosen-container .chosen-single div b {
-  background-position: 0px 5px;
 }

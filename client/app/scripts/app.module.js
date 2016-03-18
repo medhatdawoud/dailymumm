@@ -8,6 +8,6 @@
                                 'ui.router',
                                 'pascalprecht.translate']);
     
-    app.value("apiServer", "https://dailymumm.herokuapp.com");
-    // app.value("apiServer", "http://localhost");
+    // app.value("apiServer", "https://dailymumm.herokuapp.com");
+    app.value("apiServer", "http://localhost");
 })();

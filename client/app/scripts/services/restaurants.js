@@ -14,21 +14,32 @@
 
         function getRestaurants() {
             return [
-                { 
-                    id: 1, 
-                    name: "My List 1", 
-                    addresses: [
-                        {
-                            city: "Maadi",
-                            address: "12 Nasr st."
-                        }
-                    ], 
-                    phone_numbers: [
-                        0123456789,
-                        0123456789,
-                        0123456789
+                {
+                    id: 1,
+                    name: "Majesty",
+                    menus: [
+                        { sitename: "elmenus", link: "http://elmenus.com" }
                     ],
-                    logo_path: "/images/logo.jpg" 
+                    phone_numbers: [0123456789, 0123456789, 0123456789 ],
+                    logo_path: "/images/logo.jpg"
+                },
+                {
+                    id: 2,
+                    name: "Macdonalds",
+                    menus: [
+                        { sitename: "elmenus", link: "http://elmenus.com" }
+                    ],
+                    phone_numbers: [0123456789, 0123456789, 0123456789 ],
+                    logo_path: "/images/logo.jpg"
+                },
+                {
+                    id: 3,
+                    name: "KFC",
+                    menus: [
+                        { sitename: "elmenus", link: "http://elmenus.com" }
+                    ],
+                    phone_numbers: [0123456789, 0123456789, 0123456789 ],
+                    logo_path: "/images/logo.jpg"
                 }
             ];
         }
