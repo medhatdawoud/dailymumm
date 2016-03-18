@@ -19,28 +19,30 @@
         <div class="col-sm-12">
             <div class="form-group">
                 <h4><i class="glyphicon glyphicon-th-list"></i>&nbsp; Choose/add a restaurant:</h4>
-                <select class="chosen-select" 
-                        ng-change="vm.changeRestaurant()" 
-                        ng-options="r.name for r in vm.restaurants" 
-                        data-placeholder="choose Restaurant .." 
-                        ng-model="vm.restaurant"></select>
+                <select class="chosen-select" ng-change="vm.changeRestaurant()" ng-options="r.name for r in vm.restaurants" data-placeholder="choose Restaurant .."
+                ng-model="vm.restaurant"></select>
             </div>
-            
-            <div class="one-restautant">
-                <div class="rest-logo">
-                    <img src="#" alt="elmenus">
-                </div>
-                <div class="rest-details">
-                    <h1 class="title">Elmenus</h1>
-                    <p class="phoneNumbers">
-                        <ul>
-                            <li>0123456789</li>
-                        </ul>
-                    </p>
-                    <div class="menus">
-                        <ul>
-                            <li><a href="#">elmenus</a></li>
-                        </ul>
+
+            <div class="one-restautant" ng-show="vm.restaurant">
+                <div class="row">
+                    <div class="col-sm-3 rest-logo">
+                        <img src="{{vm.restaurant.logo_path}}" alt="{{vm.restaurant.name}}">
+                    </div>
+                    <div class="col-sm-9 rest-details">
+                        <h1 class="title">{{vm.restaurant.name}}</h1>
+                        <div class="phone-numbers">
+                            <ul>
+                                <p class="phone-label">PHONES:</p>
+                                <li ng-repeat="phone in vm.restaurant.phone_numbers track by $index">{{phone}}</li>
+                            </ul>
+                        </div>
+                        <div class="menus">
+                            <ul>
+                                <li ng-repeat="menu in vm.restaurant.menus">
+                                    <a target="_blank" href="{{menu.link}}">{{menu.sitename}}</a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>

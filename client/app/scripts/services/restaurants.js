@@ -20,8 +20,8 @@
                     menus: [
                         { sitename: "elmenus", link: "http://elmenus.com" }
                     ],
-                    phone_numbers: [0123456789, 0123456789, 0123456789 ],
-                    logo_path: "/images/logo.jpg"
+                    phone_numbers: ["0123456789", "0123456789", "0123456789" ],
+                    logo_path: "/images/restaurants/majesty.jpg"
                 },
                 {
                     id: 2,
@@ -29,8 +29,8 @@
                     menus: [
                         { sitename: "elmenus", link: "http://elmenus.com" }
                     ],
-                    phone_numbers: [0123456789, 0123456789, 0123456789 ],
-                    logo_path: "/images/logo.jpg"
+                    phone_numbers: ["0123456789", "0123456789", "0123456789" ],
+                    logo_path: "/images/restaurants/mac.jpg"
                 },
                 {
                     id: 3,
@@ -38,8 +38,8 @@
                     menus: [
                         { sitename: "elmenus", link: "http://elmenus.com" }
                     ],
-                    phone_numbers: [0123456789, 0123456789, 0123456789 ],
-                    logo_path: "/images/logo.jpg"
+                    phone_numbers: ["0123456789", "0123456789", "0123456789" ],
+                    logo_path: "/images/restaurants/kfc.jpg"
                 }
             ];
         }

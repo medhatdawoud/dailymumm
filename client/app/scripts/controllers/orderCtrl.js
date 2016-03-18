@@ -18,13 +18,14 @@
 
         function changeRestaurant() {
             var currentRest = vm.restaurant;
-            
+
             console.log(currentRest);
 
             $(".chosen-select").trigger("chosen:updated");
         }
         $timeout(function () {
-            $(".chosen-select").chosen({ width: "100%", allow_single_deselect: true });
+            $(".chosen-select").chosen({ width: "100%" });
+            console.log(vm.restaurant);
         }, 300);
 
     }
