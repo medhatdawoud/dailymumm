@@ -1,7 +1,6 @@
 .one-restautant {
     padding: 20px;
     margin: 20px 0px;
-    text-shadow: 0px 1px 3px #333;
     background: rgba(200, 200, 200, 0.5);
     
     .rest-logo {
@@ -13,11 +12,12 @@
     
     .rest-details {
         .title {
-            margin:3px 0px 10px;
+            margin:15px 0px 30px;
             font-weight: bold;
+            text-shadow: 0px 1px 3px #333;
         }
         .stats {
-            background: #333;
+            background: #A92F29;
             margin-top: 10px;
             padding: 5px 10px;
             
@@ -25,6 +25,7 @@
                 display: inline-block;
                 
                 .name {
+                    color: #333;
                     color: $colorSecond;
                     text-transform: uppercase;
                 }
@@ -39,6 +40,7 @@
             }
         }
         .phone-numbers {
+            margin-top: 15px;
             font-family: arial;
             ul {
                 list-style: none;
@@ -79,7 +81,6 @@
                     a {
                         color: #fff;
                         padding: 5px 10px;
-                        text-shadow: none;
                         
                         &:hover, &:active, &:focus {
                             text-decoration: none;
