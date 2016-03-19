@@ -5,9 +5,9 @@
         .module('dailyMummApp')
         .controller('OrderCtrl', OrderController);
 
-    OrderController.$inject = ['$scope', '$state', 'ListsService', 'RestaurantsService', '$timeout'];
+    OrderController.$inject = ['$scope', '$rootScope', '$state', 'ListsService', 'RestaurantsService', '$timeout', 'CountDownService'];
 
-    function OrderController($scope, $state, ListsService, RestaurantsService, $timeout) {
+    function OrderController($scope, $rootScope, $state, ListsService, RestaurantsService, $timeout, CountDownService) {
         var vm = this;
 
         vm.listOfGroups = ListsService.getLists();
@@ -19,9 +19,10 @@
         vm.startOrder = startOrder;
 
         function startOrder() {
-            var confirmed = confirm("By clicking on this button, you will start order from the selected restaurant, are you sure ?");
+            var confirmed = confirm("By clicking on this button, you will start order from the selected restaurant. \n \n Are you sure ?");
             if (confirmed) {
                 $state.go("orderlist");
+                $rootScope.$broadcast('orderStarted');
             }
         }
 
@@ -32,6 +33,5 @@
         $timeout(function () {
             $(".chosen-select").chosen({ width: "100%" });
         }, 300);
-
     }
 })();

@@ -18,6 +18,12 @@
                     controller: 'OrderCtrl',
                     controllerAs: 'vm'
                 })
+                .state('orderlist', {
+                    url: '/order/list',
+                    templateUrl: 'views/orderList.html',
+                    controller: 'OrderCtrl',
+                    controllerAs: 'vm'
+                })
                 .state('profile', {
                     url: '/profile',
                     templateUrl: 'views/profile.html',

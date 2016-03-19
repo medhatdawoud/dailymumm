@@ -12,6 +12,13 @@
   font-weight: normal;
   font-style: normal;
 }
+@font-face {
+  font-family: "digital";
+  src: url("../fonts/Digital/digital-7.eot");
+  src: url("../fonts/Digital/digital-7.eot?#iefix") format("embedded-opentype"), url("../fonts/Digital/digital-7.woff") format("woff"), url("../fonts/Digital/digital-7.ttf") format("truetype"), url("../fonts/Digital/digital-7.svg#UbuntuItalic") format("svg");
+  font-weight: normal;
+  font-style: normal;
+}
 /* line 5, ../scss/main.scss */
 body {
   background: #fafafa;
@@ -109,43 +116,50 @@ h1, h2, h3, h4, h5, h6, a, span, label {
   color: #F5E156;
   font-size: 30px;
 }
-/* line 26, ../scss/components/_navbar.scss */
+/* line 25, ../scss/components/_navbar.scss */
+.navbar.navbar-transparent .order-count-down {
+  font-size: 30px;
+  font-family: "digital";
+  margin: 9px 15px;
+  color: #F5E156;
+}
+/* line 33, ../scss/components/_navbar.scss */
 .navbar.navbar-transparent .navbar-collapse .navbar-btn {
   margin-top: 12px;
   margin-bottom: 12px;
   margin-right: 20px;
 }
-/* line 33, ../scss/components/_navbar.scss */
+/* line 40, ../scss/components/_navbar.scss */
 .navbar.navbar-transparent .navbar-collapse .navbar-nav li a {
   background-color: transparent;
   padding: 19px 15px;
   color: #fff;
 }
-/* line 38, ../scss/components/_navbar.scss */
+/* line 45, ../scss/components/_navbar.scss */
 .navbar.navbar-transparent .navbar-collapse .navbar-nav li a:hover, .navbar.navbar-transparent .navbar-collapse .navbar-nav li a:focus {
   background-color: #0a0a0a;
   color: #eee;
 }
-/* line 44, ../scss/components/_navbar.scss */
+/* line 51, ../scss/components/_navbar.scss */
 .navbar.navbar-transparent .navbar-collapse .navbar-nav li.dropdown {
   font-size: 16px;
 }
-/* line 50, ../scss/components/_navbar.scss */
+/* line 57, ../scss/components/_navbar.scss */
 .navbar.navbar-transparent .navbar-collapse .navbar-nav li.dropdown ul.dropdown-menu {
   background-color: #0a0a0a;
   border: none;
 }
-/* line 54, ../scss/components/_navbar.scss */
+/* line 61, ../scss/components/_navbar.scss */
 .navbar.navbar-transparent .navbar-collapse .navbar-nav li.dropdown ul.dropdown-menu li a {
   text-align: left;
   padding: 5px 15px;
   background-color: #0a0a0a;
 }
-/* line 59, ../scss/components/_navbar.scss */
+/* line 66, ../scss/components/_navbar.scss */
 .navbar.navbar-transparent .navbar-collapse .navbar-nav li.dropdown ul.dropdown-menu li a:hover {
   background-color: #000;
 }
-/* line 64, ../scss/components/_navbar.scss */
+/* line 71, ../scss/components/_navbar.scss */
 .navbar.navbar-transparent .navbar-collapse .navbar-nav li.dropdown ul.dropdown-menu li.divider {
   margin: 3px 0px;
   background-color: #333;
