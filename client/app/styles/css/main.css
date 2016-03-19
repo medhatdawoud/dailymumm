@@ -479,100 +479,109 @@ h4 {
 }
 
 /* line 1, ../scss/pages/_order.scss */
-.one-restautant {
+.select-restaurant {
+  min-height: 400px;
+}
+/* line 3, ../scss/pages/_order.scss */
+.select-restaurant .one-restautant {
   padding: 20px;
   margin: 20px 0px;
   background: rgba(200, 200, 200, 0.5);
 }
-/* line 7, ../scss/pages/_order.scss */
-.one-restautant .rest-logo img {
+/* line 9, ../scss/pages/_order.scss */
+.select-restaurant .one-restautant .rest-logo img {
   height: 100%;
   width: 100%;
 }
-/* line 14, ../scss/pages/_order.scss */
-.one-restautant .rest-details .title {
+/* line 16, ../scss/pages/_order.scss */
+.select-restaurant .one-restautant .rest-details .title {
   margin: 15px 0px 30px;
   font-weight: bold;
   text-shadow: 0px 1px 3px #333;
 }
-/* line 19, ../scss/pages/_order.scss */
-.one-restautant .rest-details .stats {
+/* line 21, ../scss/pages/_order.scss */
+.select-restaurant .one-restautant .rest-details .stats {
   background: #A92F29;
   margin-top: 10px;
   padding: 5px 10px;
 }
-/* line 24, ../scss/pages/_order.scss */
-.one-restautant .rest-details .stats .one-count {
+/* line 26, ../scss/pages/_order.scss */
+.select-restaurant .one-restautant .rest-details .stats .one-count {
   display: inline-block;
 }
-/* line 27, ../scss/pages/_order.scss */
-.one-restautant .rest-details .stats .one-count .name {
+/* line 29, ../scss/pages/_order.scss */
+.select-restaurant .one-restautant .rest-details .stats .one-count .name {
   color: #333;
   color: #F5E156;
   text-transform: uppercase;
 }
-/* line 33, ../scss/pages/_order.scss */
-.one-restautant .rest-details .stats .one-count .order-month {
+/* line 35, ../scss/pages/_order.scss */
+.select-restaurant .one-restautant .rest-details .stats .one-count .order-month {
   font-family: arial;
 }
-/* line 37, ../scss/pages/_order.scss */
-.one-restautant .rest-details .stats .one-count + .one-count {
+/* line 39, ../scss/pages/_order.scss */
+.select-restaurant .one-restautant .rest-details .stats .one-count + .one-count {
   margin-left: 10px;
 }
-/* line 42, ../scss/pages/_order.scss */
-.one-restautant .rest-details .phone-numbers {
+/* line 44, ../scss/pages/_order.scss */
+.select-restaurant .one-restautant .rest-details .phone-numbers {
+  display: inline-block;
   margin-top: 15px;
   font-family: arial;
 }
-/* line 45, ../scss/pages/_order.scss */
-.one-restautant .rest-details .phone-numbers ul {
+/* line 48, ../scss/pages/_order.scss */
+.select-restaurant .one-restautant .rest-details .phone-numbers ul {
   list-style: none;
   margin: 0px;
   padding: 5px 10px;
   background: #333;
 }
-/* line 51, ../scss/pages/_order.scss */
-.one-restautant .rest-details .phone-numbers ul .phone-label {
+/* line 54, ../scss/pages/_order.scss */
+.select-restaurant .one-restautant .rest-details .phone-numbers ul .phone-label {
   margin-right: 10px;
   color: #F5E156;
   float: left;
   font-family: "Titillium";
 }
-/* line 58, ../scss/pages/_order.scss */
-.one-restautant .rest-details .phone-numbers ul li {
+/* line 61, ../scss/pages/_order.scss */
+.select-restaurant .one-restautant .rest-details .phone-numbers ul li {
   display: inline;
   margin-right: 10px;
 }
-/* line 63, ../scss/pages/_order.scss */
-.one-restautant .rest-details .phone-numbers ul li + li::before {
+/* line 66, ../scss/pages/_order.scss */
+.select-restaurant .one-restautant .rest-details .phone-numbers ul li + li::before {
   content: '|';
   margin-right: 10px;
 }
-/* line 71, ../scss/pages/_order.scss */
-.one-restautant .rest-details .menus {
+/* line 74, ../scss/pages/_order.scss */
+.select-restaurant .one-restautant .rest-details .menus {
   margin-top: 15px;
 }
-/* line 73, ../scss/pages/_order.scss */
-.one-restautant .rest-details .menus ul {
+/* line 76, ../scss/pages/_order.scss */
+.select-restaurant .one-restautant .rest-details .menus ul {
   list-style: none;
   margin: 0px;
   padding: 0px;
 }
-/* line 77, ../scss/pages/_order.scss */
-.one-restautant .rest-details .menus ul li {
+/* line 80, ../scss/pages/_order.scss */
+.select-restaurant .one-restautant .rest-details .menus ul li {
   display: inline;
   margin-right: 10px;
 }
-/* line 81, ../scss/pages/_order.scss */
-.one-restautant .rest-details .menus ul li a {
+/* line 84, ../scss/pages/_order.scss */
+.select-restaurant .one-restautant .rest-details .menus ul li a {
   color: #fff;
   padding: 5px 10px;
 }
-/* line 85, ../scss/pages/_order.scss */
-.one-restautant .rest-details .menus ul li a:hover, .one-restautant .rest-details .menus ul li a:active, .one-restautant .rest-details .menus ul li a:focus {
+/* line 88, ../scss/pages/_order.scss */
+.select-restaurant .one-restautant .rest-details .menus ul li a:hover, .select-restaurant .one-restautant .rest-details .menus ul li a:active, .select-restaurant .one-restautant .rest-details .menus ul li a:focus {
   text-decoration: none;
 }
-/* line 89, ../scss/pages/_order.scss */
-.one-restautant .rest-details .menus ul li a i {
+/* line 92, ../scss/pages/_order.scss */
+.select-restaurant .one-restautant .rest-details .menus ul li a i {
   font-size: 11px;
+}
+/* line 102, ../scss/pages/_order.scss */
+.select-restaurant .action-panel {
+  margin-bottom: 100px;
 }

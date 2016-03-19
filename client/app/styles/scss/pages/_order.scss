@@ -1,97 +1,105 @@
-.one-restautant {
-    padding: 20px;
-    margin: 20px 0px;
-    background: rgba(200, 200, 200, 0.5);
-    
-    .rest-logo {
-        img {
-            height: 100%;
-            width: 100%;
+.select-restaurant {
+    min-height: 400px;
+    .one-restautant {
+        padding: 20px;
+        margin: 20px 0px;
+        background: rgba(200, 200, 200, 0.5);
+        
+        .rest-logo {
+            img {
+                height: 100%;
+                width: 100%;
+            }
+        }
+        
+        .rest-details {
+            .title {
+                margin:15px 0px 30px;
+                font-weight: bold;
+                text-shadow: 0px 1px 3px #333;
+            }
+            .stats {
+                background: #A92F29;
+                margin-top: 10px;
+                padding: 5px 10px;
+                
+                .one-count {
+                    display: inline-block;
+                    
+                    .name {
+                        color: #333;
+                        color: $colorSecond;
+                        text-transform: uppercase;
+                    }
+                    
+                    .order-month {
+                        font-family: arial;
+                    }
+                    
+                    & + .one-count {
+                        margin-left: 10px;
+                    }
+                }
+            }
+            .phone-numbers {
+                display: inline-block;
+                margin-top: 15px;
+                font-family: arial;
+                ul {
+                    list-style: none;
+                    margin:0px;
+                    padding: 5px 10px;
+                    background: #333;
+                    
+                    .phone-label {
+                        margin-right: 10px;
+                        color: $colorSecond;
+                        float: left;
+                        font-family: $fontPrimary;
+                    }
+                    
+                    li {
+                        display: inline;
+                        margin-right: 10px;
+                        
+                        & + li {
+                            &::before {
+                                content: '|';
+                                margin-right: 10px;
+                            }
+                        }
+                    }
+                }
+            }
+            .menus {
+                margin-top: 15px;
+                ul {
+                    list-style: none;
+                    margin:0px;
+                    padding: 0px;
+                    li {
+                        display: inline;
+                        margin-right: 10px;
+                        
+                        a {
+                            color: #fff;
+                            padding: 5px 10px;
+                            
+                            &:hover, &:active, &:focus {
+                                text-decoration: none;
+                            }
+                            
+                            i {
+                                font-size: 11px;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
     
-    .rest-details {
-        .title {
-            margin:15px 0px 30px;
-            font-weight: bold;
-            text-shadow: 0px 1px 3px #333;
-        }
-        .stats {
-            background: #A92F29;
-            margin-top: 10px;
-            padding: 5px 10px;
-            
-            .one-count {
-                display: inline-block;
-                
-                .name {
-                    color: #333;
-                    color: $colorSecond;
-                    text-transform: uppercase;
-                }
-                
-                .order-month {
-                    font-family: arial;
-                }
-                
-                & + .one-count {
-                    margin-left: 10px;
-                }
-            }
-        }
-        .phone-numbers {
-            margin-top: 15px;
-            font-family: arial;
-            ul {
-                list-style: none;
-                margin:0px;
-                padding: 5px 10px;
-                background: #333;
-                
-                .phone-label {
-                    margin-right: 10px;
-                    color: $colorSecond;
-                    float: left;
-                    font-family: $fontPrimary;
-                }
-                
-                li {
-                    display: inline;
-                    margin-right: 10px;
-                    
-                    & + li {
-                        &::before {
-                            content: '|';
-                            margin-right: 10px;
-                        }
-                    }
-                }
-            }
-        }
-        .menus {
-            margin-top: 15px;
-            ul {
-                list-style: none;
-                margin:0px;
-                padding: 0px;
-                li {
-                    display: inline;
-                    margin-right: 10px;
-                    
-                    a {
-                        color: #fff;
-                        padding: 5px 10px;
-                        
-                        &:hover, &:active, &:focus {
-                            text-decoration: none;
-                        }
-                        
-                        i {
-                            font-size: 11px;
-                        }
-                    }
-                }
-            }
-        }
+    .action-panel {
+        margin-bottom: 100px;
     }
 }
