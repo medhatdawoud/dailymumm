@@ -18,7 +18,8 @@
                     id: 1,
                     name: "Majesty",
                     menus: [
-                        { sitename: "elmenus", link: "http://elmenus.com" }
+                        { sitename: "elmenus", link: "http://elmenus.com" },
+                        { sitename: "otlob", link: "http://otlob.com" }
                     ],
                     phone_numbers: ["0123456789", "0123456789", "0123456789" ],
                     logo_path: "/images/restaurants/majesty.jpg"

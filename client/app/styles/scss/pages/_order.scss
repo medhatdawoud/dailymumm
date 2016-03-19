@@ -13,7 +13,30 @@
     
     .rest-details {
         .title {
-            margin-top: 0px;
+            margin:3px 0px 10px;
+            font-weight: bold;
+        }
+        .stats {
+            background: #333;
+            margin-top: 10px;
+            padding: 5px 10px;
+            
+            .one-count {
+                display: inline-block;
+                
+                .name {
+                    color: $colorSecond;
+                    text-transform: uppercase;
+                }
+                
+                .order-month {
+                    font-family: arial;
+                }
+                
+                & + .one-count {
+                    margin-left: 10px;
+                }
+            }
         }
         .phone-numbers {
             font-family: arial;
@@ -44,18 +67,27 @@
             }
         }
         .menus {
-            margin-top: 20px;
+            margin-top: 15px;
             ul {
                 list-style: none;
                 margin:0px;
                 padding: 0px;
                 li {
                     display: inline;
-                    margin-left: 5px;
                     margin-right: 10px;
                     
                     a {
+                        color: #fff;
+                        padding: 5px 10px;
+                        text-shadow: none;
                         
+                        &:hover, &:active, &:focus {
+                            text-decoration: none;
+                        }
+                        
+                        i {
+                            font-size: 11px;
+                        }
                     }
                 }
             }

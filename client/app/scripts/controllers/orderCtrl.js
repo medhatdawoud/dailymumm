@@ -23,9 +23,9 @@
 
             $(".chosen-select").trigger("chosen:updated");
         }
+        
         $timeout(function () {
             $(".chosen-select").chosen({ width: "100%" });
-            console.log(vm.restaurant);
         }, 300);
 
     }

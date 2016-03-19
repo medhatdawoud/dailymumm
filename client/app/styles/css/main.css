@@ -236,6 +236,27 @@ form .form-group.has-success .help-block {
   background-position: 0px 5px;
 }
 
+/* line 1, ../scss/components/_fadeAngular.scss */
+.fade.ng-hide {
+  opacity: 0;
+}
+
+/* line 5, ../scss/components/_fadeAngular.scss */
+.fade.ng-hide-remove,
+.fade.ng-hide-add {
+  display: block !important;
+}
+
+/* line 10, ../scss/components/_fadeAngular.scss */
+.fade.ng-hide-remove {
+  transition: all linear 1000ms;
+}
+
+/* line 14, ../scss/components/_fadeAngular.scss */
+.fade.ng-hide-add {
+  transition: all linear 500ms;
+}
+
 /* line 1, ../scss/pages/_home.scss */
 #homepage {
   text-shadow: 0px 1px 10px #333;
@@ -471,49 +492,86 @@ h4 {
 }
 /* line 15, ../scss/pages/_order.scss */
 .one-restautant .rest-details .title {
-  margin-top: 0px;
+  margin: 3px 0px 10px;
+  font-weight: bold;
 }
-/* line 18, ../scss/pages/_order.scss */
+/* line 19, ../scss/pages/_order.scss */
+.one-restautant .rest-details .stats {
+  background: #333;
+  margin-top: 10px;
+  padding: 5px 10px;
+}
+/* line 24, ../scss/pages/_order.scss */
+.one-restautant .rest-details .stats .one-count {
+  display: inline-block;
+}
+/* line 27, ../scss/pages/_order.scss */
+.one-restautant .rest-details .stats .one-count .name {
+  color: #F5E156;
+  text-transform: uppercase;
+}
+/* line 32, ../scss/pages/_order.scss */
+.one-restautant .rest-details .stats .one-count .order-month {
+  font-family: arial;
+}
+/* line 36, ../scss/pages/_order.scss */
+.one-restautant .rest-details .stats .one-count + .one-count {
+  margin-left: 10px;
+}
+/* line 41, ../scss/pages/_order.scss */
 .one-restautant .rest-details .phone-numbers {
   font-family: arial;
 }
-/* line 20, ../scss/pages/_order.scss */
+/* line 43, ../scss/pages/_order.scss */
 .one-restautant .rest-details .phone-numbers ul {
   list-style: none;
   margin: 0px;
   padding: 5px 10px;
   background: #333;
 }
-/* line 26, ../scss/pages/_order.scss */
+/* line 49, ../scss/pages/_order.scss */
 .one-restautant .rest-details .phone-numbers ul .phone-label {
   margin-right: 10px;
   color: #F5E156;
   float: left;
   font-family: "Titillium";
 }
-/* line 33, ../scss/pages/_order.scss */
+/* line 56, ../scss/pages/_order.scss */
 .one-restautant .rest-details .phone-numbers ul li {
   display: inline;
   margin-right: 10px;
 }
-/* line 38, ../scss/pages/_order.scss */
+/* line 61, ../scss/pages/_order.scss */
 .one-restautant .rest-details .phone-numbers ul li + li::before {
   content: '|';
   margin-right: 10px;
 }
-/* line 46, ../scss/pages/_order.scss */
+/* line 69, ../scss/pages/_order.scss */
 .one-restautant .rest-details .menus {
-  margin-top: 20px;
+  margin-top: 15px;
 }
-/* line 48, ../scss/pages/_order.scss */
+/* line 71, ../scss/pages/_order.scss */
 .one-restautant .rest-details .menus ul {
   list-style: none;
   margin: 0px;
   padding: 0px;
 }
-/* line 52, ../scss/pages/_order.scss */
+/* line 75, ../scss/pages/_order.scss */
 .one-restautant .rest-details .menus ul li {
   display: inline;
-  margin-left: 5px;
   margin-right: 10px;
+}
+/* line 79, ../scss/pages/_order.scss */
+.one-restautant .rest-details .menus ul li a {
+  color: #fff;
+  padding: 5px 10px;
+  text-shadow: none;
+}
+/* line 84, ../scss/pages/_order.scss */
+.one-restautant .rest-details .menus ul li a:hover, .one-restautant .rest-details .menus ul li a:active, .one-restautant .rest-details .menus ul li a:focus {
+  text-decoration: none;
+}
+/* line 88, ../scss/pages/_order.scss */
+.one-restautant .rest-details .menus ul li a i {
+  font-size: 11px;
 }

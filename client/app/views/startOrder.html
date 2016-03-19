@@ -36,10 +36,20 @@
                                 <li ng-repeat="phone in vm.restaurant.phone_numbers track by $index">{{phone}}</li>
                             </ul>
                         </div>
+                        <div class="stats">
+                            <div class="one-count">
+                                <span class="name">orders this month:</span>
+                                <span class="order-month">60</span>
+                            </div>
+                            <div class="one-count">
+                                <span class="name">Orders all the time:</span>
+                                <span class="order-all-time">1000</span>
+                            </div>
+                        </div>
                         <div class="menus">
                             <ul>
                                 <li ng-repeat="menu in vm.restaurant.menus">
-                                    <a target="_blank" href="{{menu.link}}">{{menu.sitename}}</a>
+                                    <a class="btn-danger" target="_blank" href="{{menu.link}}"><i class="glyphicon glyphicon-new-window"></i>&nbsp; {{menu.sitename}}</a>
                                 </li>
                             </ul>
                         </div>
