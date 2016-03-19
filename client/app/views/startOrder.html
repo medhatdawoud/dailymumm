@@ -7,6 +7,9 @@
             <div class="list-groups lists-order">
                 <a href="javascript:void(0)" ng-repeat="item in vm.listOfGroups" class="one-list" ng-class="{'owned' : item.owned, 'subscribed': !item.owned}">
                     <div class="img-container">
+                        <label class="input-selection">
+                            <input  type="radio" value="{{item.id}}" name="list-group" />
+                        </label>
                         <span class="subscribers-count">{{item.count}}</span>
                         <img src="{{item.imgPath}}" alt="{{item.title}}">
                     </div>
@@ -19,11 +22,8 @@
         <div class="col-sm-12">
             <div class="form-group">
                 <h4><i class="glyphicon glyphicon-th-list"></i>&nbsp; Choose/add a restaurant:</h4>
-                <select class="chosen-select" 
-                        ng-change="vm.changeRestaurant()" 
-                        ng-options="r.name for r in vm.restaurants" 
-                        data-placeholder="choose Restaurant .."
-                        ng-model="vm.restaurant"></select>
+                <select class="chosen-select" ng-change="vm.changeRestaurant()" ng-options="r.name for r in vm.restaurants" data-placeholder="choose Restaurant .."
+                ng-model="vm.restaurant"></select>
             </div>
 
             <div class="one-restautant" ng-show="vm.restaurant">
@@ -32,16 +32,6 @@
                         <img src="{{vm.restaurant.logo_path}}" alt="{{vm.restaurant.name}}">
                     </div>
                     <div class="col-sm-9 rest-details">
-                        <div class="stats">
-                            <div class="one-count">
-                                <span class="name"><i class="glyphicon glyphicon-stats"></i>&nbsp; orders this month:</span>
-                                <span class="order-month">{{vm.restaurant.stats.month || 0}}</span>
-                            </div>
-                            <div class="one-count">
-                                <span class="name"><i class="glyphicon glyphicon-stats"></i>&nbsp; Orders all the time:</span>
-                                <span class="order-all-time">{{vm.restaurant.stats.all || 0}}</span>
-                            </div>
-                        </div>
                         <h1 class="title">{{vm.restaurant.name}}</h1>
                         <div class="menus">
                             <ul>
@@ -55,6 +45,16 @@
                                 <p class="phone-label"><i class="glyphicon glyphicon-phone"></i>&nbsp; PHONES:</p>
                                 <li ng-repeat="phone in vm.restaurant.phone_numbers track by $index">{{phone}}</li>
                             </ul>
+                        </div>
+                        <div class="stats">
+                            <div class="one-count">
+                                <span class="name"><i class="glyphicon glyphicon-stats"></i>&nbsp; orders this month:</span>
+                                <span class="order-month">{{vm.restaurant.stats.month || 0}}</span>
+                            </div>
+                            <div class="one-count">
+                                <span class="name"><i class="glyphicon glyphicon-stats"></i>&nbsp; Orders all the time:</span>
+                                <span class="order-all-time">{{vm.restaurant.stats.all || 0}}</span>
+                            </div>
                         </div>
                     </div>
                 </div>

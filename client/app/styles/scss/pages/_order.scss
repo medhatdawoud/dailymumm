@@ -1,5 +1,41 @@
+.lists-order {
+    .one-list {
+        .img-container {
+            .input-selection {
+                position: absolute;
+                top: 0px;
+                bottom: 0px;
+                right: 0px;
+                left: 0px;
+                margin-bottom: 0px;
+                cursor: pointer;
+                background:rgba(80,80,80,0.5);
+                
+                input {
+                    position: absolute;
+                    bottom: 5px;
+                    left: 5px;
+                    margin: 0px;
+                    width: 20px;
+                    height: 20px;
+                }
+            }
+        }
+        
+        &:hover {
+            .img-container {
+                border-color: #26C6DA;
+                
+                .subscribers-count {
+                    background:#26C6DA;
+                }
+            }
+        }
+    }
+}
 .select-restaurant {
     min-height: 400px;
+    
     .one-restautant {
         padding: 20px;
         margin: 20px 0px;
