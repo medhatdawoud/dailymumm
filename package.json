@@ -37,7 +37,7 @@
     "npm": ">=2.14.7"
   },
   "scripts": {
-    "start": "node app.js",
+    "start": "node server/app.js",
     "postinstall": "./node_modules/bower/bin/bower install"
    }
 }

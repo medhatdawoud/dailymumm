@@ -62,25 +62,28 @@
     <script src="bower_components/chosen/chosen.jquery.js"></script>
 
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
-    <script src="scripts/app.module.js"></script>
-    <script src="scripts/app.routes.js"></script>
-    <script src="scripts/controllers/homeCtrl.js"></script>
-    <script src="scripts/controllers/profileCtrl.js"></script>
-    <script src="scripts/controllers/orderCtrl.js"></script>
-    <script src="scripts/controllers/signupDirectiveCtrl.js"></script>
-    <script src="scripts/controllers/navbarDirectiveCtrl.js"></script>
-    <script src="scripts/directives/signup.js"></script>
-    <script src="scripts/directives/videoBg.js"></script>
-    <script src="scripts/directives/navbar.js"></script>
-    <script src="scripts/directives/validatePasswordMatch.js"></script>
-    <script src="scripts/directives/validateUniqueField.js"></script>
-    <script src="scripts/services/users.js"></script>
-    <script src="scripts/services/auth.js"></script>
-    <script src="scripts/services/lists.js"></script>
-    <script src="scripts/services/restaurants.js"></script>
-    <script src="scripts/services/countDown.js"></script>
-    <script src="scripts/factories/requestFactory.js"></script>
-    <script src="scripts/factories/responseFactory.js"></script>
+    <script src="app.module.js"></script>
+    <script src="app.routes.js"></script>
+
+    <script src="pages/home/home.js"></script>
+    <script src="pages/profile/profile.js"></script>
+    <script src="pages/order/order.js"></script>
+
+    <script src="components/signup/signup.js"></script>
+    <script src="components/signup/signupCtrl.js"></script>
+    <script src="components/navbar/navbar.js"></script>
+    <script src="components/navbar/navbarCtrl.js"></script>
+    <script src="components/videoBg/videoBg.js"></script>
+    <script src="components/shared/validatePasswordMatch.js"></script>
+    <script src="components/shared/validateUniqueField.js"></script>
+
+    <script src="services/users/users.service.js"></script>
+    <script src="services/users/auth.service.js"></script>
+    <script src="services/lists/lists.service.js"></script>
+    <script src="services/restaurants/restaurants.service.js"></script>
+    <script src="services/shared/count-down.service.js"></script>
+    <script src="services/shared/request.factory.js"></script>
+    <script src="services/shared/response.factory.js"></script>
     <!-- endbuild -->
 </body>
 

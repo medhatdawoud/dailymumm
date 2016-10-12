@@ -9,7 +9,7 @@
 
     function Navbar(CountDownService, $rootScope) {
         var directive = {
-            templateUrl: '/views/components/navbar.html',
+            templateUrl: 'navbar.html',
             controller: 'NavbarDirectiveCtrl',
             restric: 'EA',
             link: function (scope) {

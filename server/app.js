@@ -9,7 +9,6 @@ var jwt = require('jsonwebtoken'); // used to create, sign, and verify tokens
 var bodyParser = require('body-parser');
 var router = express.Router();
 var port = process.env.PORT || 80;
-var config = require('./config.js');
 var User = require('./models/users');
 var path = require('path');
 
@@ -38,17 +37,17 @@ app.use(bodyParser.json());
  */
 if (process.env.NODE_ENV === 'production') {
     // Locate the views
-    app.set('views', path.join(__dirname, 'client/app'));
+    app.set('views', path.join(__dirname, '../client/app'));
     
     // Locate the assets
-    app.use(express.static(path.join(__dirname, 'client/app')));
+    app.use(express.static(path.join(__dirname, '../client/app')));
 
 } else {
     // Locate the views
-    app.set('views', path.join(__dirname, 'client/app'));
+    app.set('views', path.join(__dirname, '../client/app'));
     
     // Locate the assets
-    app.use(express.static(path.join(__dirname, 'client/app')));
+    app.use(express.static(path.join(__dirname, '../client/app')));
 }
 
 // REGISTER OUR ROUTES ------------------------

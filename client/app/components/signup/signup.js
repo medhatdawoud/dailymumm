@@ -7,7 +7,7 @@
 
     function Signup() {
         var directive = {
-            templateUrl: '/views/components/signup.html',
+            templateUrl: 'signup.html',
             controller: 'SignupDirectiveCtrl',
             restric: 'EA'
         };
