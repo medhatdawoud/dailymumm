@@ -6,15 +6,15 @@
     <form action="">
         <div class="form-group">
             <label for="username">Username</label>
-            <input type="text" placeholder="login name is here" class="form-control" />
+            <input type="text" ng-model="vm.userTempData.username" placeholder="login name is here" class="form-control" />
         </div>
         <div class="form-group">
             <label for="username">Full name <small>(Real name)</small></label>
-            <input type="text" placeholder="full name, i.e: John Doe" class="form-control" />
+            <input type="text" ng-model="vm.userTempData.fullname" placeholder="full name, i.e: John Doe" class="form-control" />
         </div>
         <div class="form-group">
             <label for="username">Email</label>
-            <input type="email" placeholder="email address here" class="form-control" />
+            <input type="email" ng-model="vm.userTempData.email" placeholder="email address here" class="form-control" />
         </div>
         <button class="btn btn-success"><i class="glyphicon glyphicon-save"></i> Save</button>
     </form>

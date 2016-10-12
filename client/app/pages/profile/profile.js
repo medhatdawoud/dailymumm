@@ -23,6 +23,7 @@
         vm.showViewProfile = showViewProfile;
         vm.showEditProfile = showEditProfile;
         vm.userData = AuthService.getCurrentUserInfo();
+        vm.userTempData = angular.copy(vm.userData);
 
         function showChangePasswordPanel() {
             vm.changePassword = true;
