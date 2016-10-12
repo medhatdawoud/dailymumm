@@ -41,7 +41,7 @@
                     parent: 'profile'
                 });
 
-            $translateProvider.useUrlLoader('local/en.json');
+            $translateProvider.useUrlLoader('localization/en.json');
             $translateProvider.preferredLanguage('en');
         }]);
 })();
