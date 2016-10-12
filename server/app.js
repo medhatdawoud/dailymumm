@@ -82,6 +82,7 @@ router.get('/user', function (req, res) {
             var object = {
                 id: data._id,
                 email: data.email,
+                fullname: data.firstname+' '+data.lastname,
                 username: data.username,
                 signup_date: data.created_at,
                 token: token

@@ -22,6 +22,7 @@
         vm.saveChangePassword = saveChangePassword;
         vm.showViewProfile = showViewProfile;
         vm.showEditProfile = showEditProfile;
+        vm.userData = AuthService.getCurrentUserInfo();
 
         function showChangePasswordPanel() {
             vm.changePassword = true;

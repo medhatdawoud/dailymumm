@@ -44,7 +44,7 @@
         function getCurrentUserInfo() {
             if (this.isLoggedIn()) {
                 var cookies = $cookieStore.get('globals').currentUser;
-                return cookies;
+                return cookies.loginData;
             }
         };
 
