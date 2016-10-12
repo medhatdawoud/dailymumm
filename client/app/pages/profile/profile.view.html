@@ -1,6 +1,13 @@
 <div class="row">
-    <h4 class="pull-left">User Details:</h4>
-    <a ui-sref="profile.edit" ng-click="vm.showEditProfile()" class="btn btn-sm btn-success pull-right"><i class="glyphicon glyphicon-cog"></i> Edit</a>
+    <h4 class="pull-left">
+        <span ng-show="!vm.changePassword">User Details:</span>
+        <span ng-show="vm.changePassword">Change Password:</span>
+    </h4>
+    <a ui-sref="profile.edit" 
+        ng-click="vm.showEditProfile()" 
+        ng-show="!vm.changePassword"
+        class="btn btn-sm btn-success pull-right">
+        <i class="glyphicon glyphicon-cog"></i> Edit</a>
 </div>
 <div class="row profile-view" ng-show="!vm.changePassword">
     <div class="form-group">
@@ -15,15 +22,6 @@
         <label for="username">Email</label>
         <div class="form-control form-text">Medhatdawoud@gmail.com</div>
     </div>
-</div>
-<div class="row" ng-show="!vm.changePassword">
-    <button class="btn btn-primary form-control" ng-click="vm.showChangePasswordPanel()"><i class="glyphicon glyphicon-edit"></i> Change Password</button>
-</div>
-<div class="row">
-    <button class="btn btn-warning form-control"><i class="glyphicon glyphicon-list"></i> Manage My Lists</button>
-</div>
-<div class="row">
-    <button class="btn btn-danger form-control"><i class="glyphicon glyphicon-ban-circle"></i> Mute My Account</button>
 </div>
 <div class="row profile-change-password" ng-show="vm.changePassword">
     <form action="">
@@ -42,3 +40,10 @@
         <button class="btn btn-success" ng-click="vm.saveChangePassword()"><i class="glyphicon glyphicon-save"></i> Save</button>
     </form>
 </div>
+<div class="row" ng-show="!vm.changePassword">
+    <button class="btn btn-primary form-control" ng-click="vm.showChangePasswordPanel()"><i class="glyphicon glyphicon-edit"></i> Change Password</button>
+</div>
+<div class="row" ng-show="!vm.changePassword">
+    <button class="btn btn-danger form-control"><i class="glyphicon glyphicon-ban-circle"></i> Mute My Account</button>
+</div>
+
