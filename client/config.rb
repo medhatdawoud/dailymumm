@@ -1,3 +1,3 @@
-sass_dir = "app/styles/scss";
+sass_dir = "app/assets/styles/scss";
 
-css_dir = "app/styles/css";
+css_dir = "app/assets/styles/css";

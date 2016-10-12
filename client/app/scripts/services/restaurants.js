@@ -26,7 +26,7 @@
                         all: 123
                     },
                     phone_numbers: ["0123456789", "0123456789", "0123456789"],
-                    logo_path: "/images/restaurants/majesty.jpg"
+                    logo_path: "/assets/images/restaurants/majesty.jpg"
                 },
                 {
                     id: 2,
@@ -39,7 +39,7 @@
                         all: 10
                     },
                     phone_numbers: ["0123456789", "0123456789", "0123456789"],
-                    logo_path: "/images/restaurants/mac.jpg"
+                    logo_path: "/assets/images/restaurants/mac.jpg"
                 },
                 {
                     id: 3,
@@ -52,7 +52,7 @@
                         all: 1231
                     },
                     phone_numbers: ["0123456789"],
-                    logo_path: "/images/restaurants/kfc.jpg"
+                    logo_path: "/assets/images/restaurants/kfc.jpg"
                 }
             ];
         }

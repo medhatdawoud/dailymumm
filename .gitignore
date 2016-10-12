@@ -28,8 +28,8 @@ node_modules
 
 .brackets.json
 
-/client/app/videos/mumm_.mp4
-/client/app/videos/mumm__.mp4
+/client/app/assets/videos/mumm_.mp4
+/client/app/assets/videos/mumm__.mp4
 /typings
 
 node_modules

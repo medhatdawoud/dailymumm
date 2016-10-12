@@ -212,7 +212,7 @@ h1, h2, h3, h4, h5, h6, a, span, label {
 @media (max-width: 767px) {
   /* line 43, ../scss/components/_videoBackground.scss */
   .fullscreen-bg {
-    background: url("/images/fastfood.jpg") center center/cover no-repeat;
+    background: url("/assets/images/fastfood.jpg") center center/cover no-repeat;
   }
 
   /* line 47, ../scss/components/_videoBackground.scss */
