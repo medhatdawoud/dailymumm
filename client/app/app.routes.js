@@ -34,6 +34,16 @@
                     templateUrl: 'pages/profile/profile.view.html',
                     parent: 'profile'
                 })
+                .state('profile.lists', {
+                    url: '/lists',
+                    templateUrl: 'pages/profile/profile.lists.html',
+                    parent: 'profile'
+                })
+                .state('profile.list', {
+                    url: '/list/:id',
+                    templateUrl: 'pages/profile/profile.onelist.html',
+                    parent: 'profile'
+                })
                 .state('profile.edit', {
                     url: '/edit',
                     templateUrl: 'pages/profile/profile.edit.html',

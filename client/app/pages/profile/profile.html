@@ -1,42 +1,42 @@
 <bw-navbar></bw-navbar>
 
 <div class="container">
-    <div class="col-md-8">
-        <div class="lists">
-            <div class="clear-fix">
-                <div class="pull-right">
-                    <a ng-show="vm.listOfGroups.length > 0" ui-sref="profile.lists" class="btn btn-sm btn-info">
-                        <i class="glyphicon glyphicon-plus"></i> Add New
-                    </a>
-                    <a ng-show="vm.listOfGroups.length > 0" ui-sref="profile.lists" class="btn btn-sm btn-success">
-                        <i class="glyphicon glyphicon-cutlery"></i> Manage
-                    </a>
-                </div>
-                <h4>Lists:</h4>
-                <p ng-show="vm.listOfGroups.length > 0">You are subscribed to <span class="badge">{{vm.listOfGroups.length}}</span> Lists.
-                    <br>
-                    <u>Note that</u>: <small><span class="label label-warning">&nbsp;&nbsp;</span></small> owned by you,
-                    <small><span class="label label-success">&nbsp;&nbsp;</span></small> you just subscribered to them.</p>
-            </div>
-            <p class="no-lists" ng-show="vm.listOfGroups.length == 0">
-                You have not Subscribed to any list yet, you can <a href="#">Create</a> one now.
-            </p>
-            <div class="lists-profile list-groups">
-                <a href="/profile/list/{{item.id}}" ng-repeat="item in vm.listOfGroups" class="one-list" ng-class="{'owned' : item.owned, 'subscribed': !item.owned}">
-                    <div class="img-container">
-                        <span class="subscribers-count">{{item.count}}</span>
-                        <img class="lazyOwl" data-src="{{item.imgPath}}" alt="{{item.title}}">
-                    </div>
-                    <p>{{item.title}}</p>
-                </a>
-            </div>
-        </div>
-        <div class="history" ng-hide="true">
-            <h4>Orders History:</h4>
-        </div>
-    </div>
-    <div class="col-md-4">
-        <div class="col-xs-12" ui-view></div>
-    </div>
+	<div class="col-md-8">
+		<div class="lists">
+			<div class="clear-fix">
+				<div class="pull-right">
+					<a ng-show="vm.listOfGroups.length > 0" ui-sref="profile.lists" class="btn btn-sm btn-info">
+						<i class="glyphicon glyphicon-plus"></i> Add New
+					</a>
+					<a ng-show="vm.listOfGroups.length > 0" ui-sref="profile.lists" class="btn btn-sm btn-success">
+						<i class="glyphicon glyphicon-cutlery"></i> Manage
+					</a>
+				</div>
+				<h4>Lists:</h4>
+				<p ng-show="vm.listOfGroups.length > 0">You are subscribed to <span class="badge">{{vm.listOfGroups.length}}</span> Lists.
+					<br>
+					<u>Note that</u>: <small><span class="label label-warning">&nbsp;&nbsp;</span></small> owned by you,
+					<small><span class="label label-success">&nbsp;&nbsp;</span></small> you just subscribered to them.</p>
+			</div>
+			<p class="no-lists" ng-show="vm.listOfGroups.length == 0">
+				You have not Subscribed to any list yet, you can <a href="#">Create</a> one now.
+			</p>
+			<div class="lists-profile list-groups">
+				<a href="#/profile/list/{{item.id}}" ng-repeat="item in vm.listOfGroups" class="one-list" ng-class="{'owned' : item.owned, 'subscribed': !item.owned}">
+					<div class="img-container">
+						<span class="subscribers-count">{{item.count}}</span>
+						<img class="lazyOwl" data-src="{{item.imgPath}}" alt="{{item.title}}">
+					</div>
+					<p>{{item.title}}</p>
+				</a>
+			</div>
+		</div>
+		<div class="history" ng-hide="true">
+			<h4>Orders History:</h4>
+		</div>
+	</div>
+	<div class="col-md-4">
+		<div class="col-xs-12" ui-view></div>
+	</div>
 
 </div>
