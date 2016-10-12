@@ -7,7 +7,7 @@
 
     function Signup() {
         var directive = {
-            templateUrl: 'videoBg.html',
+            templateUrl: 'components/videoBg/videoBg.html',
             restric: 'EA'
         };
 
