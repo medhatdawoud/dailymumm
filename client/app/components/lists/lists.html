@@ -1,18 +1,14 @@
 <div class="lists">
-	<div class="clear-fix">
+	<div class="block-header clear-fix">
 		<div class="pull-right">
 			<a ng-show="lvm.listOfGroups.length > 0" ui-sref="profile.lists" class="btn btn-sm btn-info">
 				<i class="glyphicon glyphicon-plus"></i> Add New
 			</a>
 			<a ng-show="lvm.listOfGroups.length > 0" ui-sref="profile.lists" class="btn btn-sm btn-success">
-				<i class="glyphicon glyphicon-cutlery"></i> Manage
+				<i class="glyphicon glyphicon-cog"></i> Manage
 			</a>
 		</div>
-		<h4>Lists:</h4>
-		<p ng-show="lvm.listOfGroups.length > 0">You are subscribed to <span class="badge">{{lvm.listOfGroups.length}}</span> Lists.
-			<br>
-			<u>Note that</u>: <small><span class="label label-warning">&nbsp;&nbsp;</span></small> owned by you,
-			<small><span class="label label-success">&nbsp;&nbsp;</span></small> you just subscribered to them.</p>
+		<h4>Lists: <span class="badge">{{lvm.listOfGroups.length}}</span></h4>
 	</div>
 	<p class="no-lists" ng-show="lvm.listOfGroups.length == 0">
 		You have not Subscribed to any list yet, you can <a href="#">Create</a> one now.
@@ -25,5 +21,9 @@
 			</div>
 			<p>{{item.title}}</p>
 		</a>
+	</div>
+	<div class="legend">
+		<u>Note that</u>: <small><span class="label label-warning">&nbsp;&nbsp;</span></small> owned by you,
+		<small><span class="label label-success">&nbsp;&nbsp;</span></small> you just subscribered to them.</p>
 	</div>
 </div>

@@ -339,7 +339,7 @@ p.no-lists {
 
 /* line 4, ../scss/pages/_profile.scss */
 .list-groups {
-  margin: 20px 0px;
+  margin: 20px 0px 5px;
   position: relative;
   border-bottom: 1px solid #999;
 }
@@ -443,7 +443,7 @@ p.no-lists {
 /* line 111, ../scss/pages/_profile.scss */
 .profile-view, .profile-edit, .profile-change-password {
   background: rgba(200, 200, 200, 0.5);
-  margin: 10px -15px;
+  margin: 0px -15px 10px;
   padding: 20px;
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
@@ -479,13 +479,23 @@ p.no-lists {
 }
 
 /* line 150, ../scss/pages/_profile.scss */
-.clear-fix::after {
+.clear-fix::after, .clear-fix::before {
   content: ' ';
   display: block;
   clear: both;
 }
 
 /* line 157, ../scss/pages/_profile.scss */
+.block-header {
+  line-height: 30px;
+}
+/* line 160, ../scss/pages/_profile.scss */
+.block-header h4 {
+  line-height: 30px;
+  margin: 0px 0px 15px;
+}
+
+/* line 166, ../scss/pages/_profile.scss */
 h4 {
   text-transform: uppercase;
   font-weight: bold;
