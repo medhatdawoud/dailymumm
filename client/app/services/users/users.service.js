@@ -28,7 +28,7 @@
         }
 
         function updateUserBasicInfo (userData, callback) {
-            $http.put(apiServer+'/api/user', { "username": userData.username, "fullname": userData.fullname })
+            $http.put(apiServer+'/api/user', { "id": userData.id, "username": userData.username, "fullname": userData.fullname })
                 .then(function (response) {
                     callback({ success: true, data: response.data });
                 }, function (response) {
