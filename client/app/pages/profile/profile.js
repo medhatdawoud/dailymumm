@@ -32,7 +32,7 @@
 
         function saveChangePassword(form) {
             if (form.$valid) {
-                UserService.updateUserBasicInfo(vm.userTempData, function (data) {
+                UserService.changeUserPassword(vm.userData.id, vm.passwords.new1, function (data) {
                     if (data.success) {
                         discardChangePassword(form);
                     }

@@ -13,9 +13,10 @@
         service.createNewUser = createNewUser;
         service.checkForUserByEmailAndPassword = checkForUserByEmailAndPassword;
         service.updateUserBasicInfo = updateUserBasicInfo;
+        service.changeUserPassword = changeUserPassword;
 
         function createNewUser(username, email, password, callback) {
-            $http.post(apiServer+'/api/user', { "username": username, "email": email, "password": password })
+            $http.post(apiServer + '/api/user', { "username": username, "email": email, "password": password })
                 .then(function (response) {
                     callback({ success: true, data: response.data });
                 }, function (response) {
@@ -24,11 +25,11 @@
         }
 
         function checkForUserByEmailAndPassword(email, password) {
-            return $http.get(apiServer+'/api/user', { params: { "email": email, "password": password } });
+            return $http.get(apiServer + '/api/user', { params: { "email": email, "password": password } });
         }
 
-        function updateUserBasicInfo (userData, callback) {
-            $http.put(apiServer+'/api/user', { "id": userData.id, "username": userData.username, "fullname": userData.fullname })
+        function updateUserBasicInfo(userData, callback) {
+            $http.put(apiServer + '/api/user', { "id": userData.id, "username": userData.username, "fullname": userData.fullname })
                 .then(function (response) {
                     callback({ success: true, data: response.data });
                 }, function (response) {
@@ -36,15 +37,15 @@
                 });
         }
 
-        function changeUserPassword (userId, newPassword, callback) {
-            $http.put(apiServer+'/api/user', { "id": userId, "password": newPassword })
+        function changeUserPassword(userId, newPassword, callback) {
+            $http.put(apiServer + '/api/userpassword', { "id": userId, "password": newPassword })
                 .then(function (response) {
                     callback({ success: true, data: response.data });
                 }, function (response) {
                     callback({ success: false, code: response.data });
                 });
         }
-        
+
         return service;
     }
 })();
