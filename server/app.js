@@ -157,10 +157,20 @@ router.delete('/user', function (req, res) {
 router.put('/user', function (req, res) {
     var id = req.body.id;
     var username = req.body.username;
-    var email = req.body.email;
+    var firstname = req.body.fullname.split(' ')[0];
+    var lastname = req.body.fullname.split(' ')[1];
+
+    User.update({ '_id': id }, { username: username, firstname: firstname, lastname: lastname }, function (err, data) {
+        if (err) return console.error(err);
+        res.json(data);
+    });
+});
+
+router.put('/userpassword', function (req, res) {
+    var id = req.body.id;
     var password = req.body.password;
 
-    User.update({ '_id': id }, { username: username, email: email, password: password }, function (err, data) {
+    User.update({ '_id': id }, { password: password }, function (err, data) {
         if (err) return console.error(err);
         res.json(data);
     });
