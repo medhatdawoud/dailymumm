@@ -20,7 +20,7 @@
 
         vm.showChangePasswordPanel = showChangePasswordPanel;
         vm.saveChangePassword = saveChangePassword;
-        vm.cancelChangePassword = cancelChangePassword;
+        vm.discardChangePassword = discardChangePassword;
         vm.saveBasicInfo = saveBasicInfo;
         vm.discardBasicInfo = discardBasicInfo;
         vm.userData = AuthService.getCurrentUserInfo();
@@ -31,22 +31,29 @@
         }
 
         function saveChangePassword() {
-            vm.changePassword = false;
+            UserService.updateUserBasicInfo(vm.userTempData, function (data) {
+                if (data.success) {
+                    discardChangePassword();
+                }
+            });
         }
 
-        function cancelChangePassword() {
+        function discardChangePassword() {
+            vm.passwords.old = '';
+            vm.passwords.new1 = '';
+            vm.passwords.new2 = '';
             vm.changePassword = false;
         }
 
         function saveBasicInfo() {
-            UserService.updateUserBasicInfo(vm.userTempData, function(data) {
-                if(data.success){
+            UserService.updateUserBasicInfo(vm.userTempData, function (data) {
+                if (data.success) {
                     vm.userData = angular.copy(vm.userTempData);
                     AuthService.setCredintials(vm.userTempData);
                     $state.go('profile.view');
                 }
             })
-         }
+        }
 
         function discardBasicInfo() {
             vm.userTempData = angular.copy(vm.userData);

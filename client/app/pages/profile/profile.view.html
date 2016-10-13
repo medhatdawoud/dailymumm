@@ -32,19 +32,19 @@
 	<form action="">
 		<div class="form-group">
 			<label for="username">Old Password</label>
-			<input type="password" placeholder="Old Password" class="form-control" />
+			<input type="password" ng-model="vm.passwords.old" placeholder="Old Password" class="form-control" />
 		</div>
 		<div class="form-group">
 			<label for="username">New Password</label>
-			<input type="password" placeholder="New Password" class="form-control" />
+			<input type="password" ng-model="vm.passwords.new1" placeholder="New Password" class="form-control" />
 		</div>
 		<div class="form-group">
 			<label for="username">Confirm New Password</label>
-			<input type="password" placeholder="Confirm Password" class="form-control" />
+			<input type="password" ng-model="vm.passwords.new2" placeholder="Confirm Password" class="form-control" />
 		</div>
 		<div class="text-right">
 			<button class="btn btn-sm btn-success" ng-click="vm.saveChangePassword()"><i class="glyphicon glyphicon-ok"></i> Save</button>
-			<a href="javascript:void(0)" ng-click="vm.cancelChangePassword()" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i> Cancel</a>
+			<a href="javascript:void(0)" ng-click="vm.discardChangePassword()" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i> Cancel</a>
 		</div>
 	</form>
 </div>

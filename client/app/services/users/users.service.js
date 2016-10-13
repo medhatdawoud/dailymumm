@@ -35,6 +35,15 @@
                     callback({ success: false, code: response.data });
                 });
         }
+
+        function changeUserPassword (userId, newPassword, callback) {
+            $http.put(apiServer+'/api/user', { "id": userId, "password": newPassword })
+                .then(function (response) {
+                    callback({ success: true, data: response.data });
+                }, function (response) {
+                    callback({ success: false, code: response.data });
+                });
+        }
         
         return service;
     }
