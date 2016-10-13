@@ -3,14 +3,15 @@
 (function () {
     angular
         .module('dailyMummApp')
-        .directive('bwValidatePassword', ValidatePassword);
+        .directive('bwValidatePasswordMatch', ValidatePassword);
 
     function ValidatePassword() {
         var directive = {
             require: 'ngModel',
             link: function (scope, elm, attrs, ctrl) {
                 ctrl.$parsers.unshift(function (viewValue, $scope) {
-                    var noMatch = viewValue != scope.formRegister.password.$viewValue;
+                    var matchWith = attrs.matchWith;
+                    var noMatch = viewValue != matchWith;
                     ctrl.$setValidity('noMatch', !noMatch);
                     return noMatch ? true : false;
                 })

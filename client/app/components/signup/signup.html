@@ -42,7 +42,7 @@
             </div>
             <div class="form-group" ng-class="formRegister.retypepassword.$invalid && !formRegister.retypepassword.$pristine ? 'has-error' : 'has-success'">
                 <label>Retype Password:</label>
-                <input name="retypepassword" bw-validate-password ng-model="registerdata.retypepassword" type="password" class="form-control"
+                <input name="retypepassword" bw-validate-password-match match-with="{{registerdata.password}}" ng-model="registerdata.retypepassword" type="password" class="form-control"
                 required/>
                 <p ng-show="formRegister.retypepassword.$error.require && !formRegister.retypepassword.$pristine  && formRegister.retypepassword.$dirty"
                 class="help-block">Please confirm your password.</p>

@@ -50,7 +50,7 @@
 		</div>
 		<div class="form-group" ng-class="formUpdatePassword.confirmPassword.$invalid && (!formUpdatePassword.confirmPassword.$pristine || formUpdatePassword.$submitted) ? 'has-error' : 'has-success'">
 			<label for="confirmPassword">Confirm New Password</label>
-			<input type="password" bw-validate-password ng-minlength="8" ng-maxlength="20" name="confirmPassword" ng-model="vm.passwords.new2" placeholder="Confirm Password" class="form-control" required />
+			<input type="password" bw-validate-password-match match-with="{{vm.passwords.new1}}" ng-minlength="8" ng-maxlength="20" name="confirmPassword" ng-model="vm.passwords.new2" placeholder="Confirm Password" class="form-control" required />
 			<p ng-show="formUpdatePassword.confirmPassword.$error.require && !formUpdatePassword.confirmPassword.$pristine  && formUpdatePassword.confirmPassword.$dirty"
                 class="help-block">Please confirm your password.</p>
 			<p ng-show="!formUpdatePassword.confirmPassword.$error.require && formUpdatePassword.confirmPassword.$error.noMatch && !formUpdatePassword.confirmPassword.$pristine && formUpdatePassword.confirmPassword.$dirty"
