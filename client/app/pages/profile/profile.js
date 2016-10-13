@@ -43,6 +43,7 @@
                 if(data.success){
                     vm.userData = angular.copy(vm.userTempData);
                     AuthService.setCredintials(vm.userTempData);
+                    $state.go('profile.view');
                 }
             })
          }
