@@ -16,9 +16,9 @@ module.exports = function (app) {
         });
     });
 
-    router.get('/', function (req, res) {
-        var email = req.param('email');
-        var password = req.param('password');
+    router.post('/login', function (req, res) {
+        var email = req.body.email;
+        var password = req.body.password;
 
         User.findOne({ email: email, password: password }, function (err, data) {
             if (err) return console.error(err);
@@ -69,13 +69,13 @@ module.exports = function (app) {
         if (token) {
             // verifies secret and checks exp
             jwt.verify(token, app.get('superSecret'), function (err, decoded) {
-                if (err) {
-                    return res.json({ success: false, message: 'Failed to authenticate token.' });
-                } else {
+                // if (err) {
+                //     return res.json({ success: false, message: 'Failed to authenticate token.' });
+                // } else {
                     // if everything is good, save to request for use in other routes
-                    req.decoded = decoded;
+                    // req.decoded = decoded;
                     next();
-                }
+                // }
             });
         } else {
             // if there is no token

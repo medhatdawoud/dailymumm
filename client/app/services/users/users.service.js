@@ -25,7 +25,7 @@
         }
 
         function checkForUserByEmailAndPassword(email, password) {
-            return $http.get(apiServer + '/api/user', { params: { "email": email, "password": password } });
+            return $http.post(apiServer + '/api/user/login', { "email": email, "password": password });
         }
 
         function updateUserBasicInfo(userData, callback) {
