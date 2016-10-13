@@ -37,7 +37,10 @@
             <label for="username">Confirm New Password</label>
             <input type="password" placeholder="Confirm Password" class="form-control" />
         </div>
-        <button class="btn btn-success" ng-click="vm.saveChangePassword()"><i class="glyphicon glyphicon-save"></i> Save</button>
+        <div class="text-right">
+			<button class="btn btn-sm btn-success" ng-click="vm.saveChangePassword()"><i class="glyphicon glyphicon-ok"></i> Save</button>
+			<a href="javascript::void(0)" ng-click="vm.cancelChangePassword()" class="btn btn-sm btn-danger"><i class="glyphicon glyphicon-remove"></i> Cancel</a>
+		</div>
     </form>
 </div>
 <div class="row" ng-show="!vm.changePassword">

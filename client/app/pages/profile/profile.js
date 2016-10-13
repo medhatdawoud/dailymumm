@@ -20,6 +20,7 @@
 
         vm.showChangePasswordPanel = showChangePasswordPanel;
         vm.saveChangePassword = saveChangePassword;
+        vm.cancelChangePassword = cancelChangePassword;
         vm.showViewProfile = showViewProfile;
         vm.showEditProfile = showEditProfile;
         vm.userData = AuthService.getCurrentUserInfo();
@@ -30,6 +31,10 @@
         }
 
         function saveChangePassword() {
+            vm.changePassword = false;
+        }
+
+        function cancelChangePassword() {
             vm.changePassword = false;
         }
 
