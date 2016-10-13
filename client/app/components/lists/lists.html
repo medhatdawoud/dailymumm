@@ -16,10 +16,10 @@
 	<div class="lists-profile list-groups">
 		<a href="#/profile/list/{{item.id}}" ng-repeat="item in lvm.listOfGroups" class="one-list" ng-class="{'owned' : item.owned, 'subscribed': !item.owned}">
 			<div class="img-container">
-				<span class="subscribers-count">{{item.count}}</span>
-				<img class="lazyOwl" data-src="{{item.imgPath}}" alt="{{item.title}}">
+				<span class="subscribers-count">{{item.subscribers.length}}</span>
+				<img class="lazyOwl" data-src="{{item.picture}}" alt="{{item.name}}">
 			</div>
-			<p>{{item.title}}</p>
+			<p>{{item.name}}</p>
 		</a>
 	</div>
 	<div class="legend">
