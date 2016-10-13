@@ -5,9 +5,9 @@
         .module('dailyMummApp')
         .controller('ProfileCtrl', ProfileController);
 
-    ProfileController.$inject = ['$scope', '$rootScope', 'AuthService', '$state', '$timeout'];
+    ProfileController.$inject = ['$scope', '$rootScope', 'AuthService', '$state', '$timeout', 'UserService'];
 
-    function ProfileController($scope, $rootScope, AuthService, $state, $timeout) {
+    function ProfileController($scope, $rootScope, AuthService, $state, $timeout, UserService) {
         var vm = this;
 
         if (!AuthService.isLoggedIn()) {
@@ -21,8 +21,8 @@
         vm.showChangePasswordPanel = showChangePasswordPanel;
         vm.saveChangePassword = saveChangePassword;
         vm.cancelChangePassword = cancelChangePassword;
-        vm.showViewProfile = showViewProfile;
-        vm.showEditProfile = showEditProfile;
+        vm.saveBasicInfo = saveBasicInfo;
+        vm.discardBasicInfo = discardBasicInfo;
         vm.userData = AuthService.getCurrentUserInfo();
         vm.userTempData = angular.copy(vm.userData);
 
@@ -38,10 +38,17 @@
             vm.changePassword = false;
         }
 
-        function showViewProfile() {
-            vm.changePassword = false;
-        }
+        function saveBasicInfo() {
+            UserService.updateUserBasicInfo(vm.userTempData, function(data) {
+                if(data.success){
+                    vm.userData = angular.copy(vm.userTempData);
+                    AuthService.setCredintials(vm.userTempData);
+                }
+            })
+         }
 
-        function showEditProfile() { }
+        function discardBasicInfo() {
+            vm.userTempData = angular.copy(vm.userData);
+        }
     }
 })();
