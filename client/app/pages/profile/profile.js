@@ -30,19 +30,23 @@
             vm.changePassword = true;
         }
 
-        function saveChangePassword() {
-            UserService.updateUserBasicInfo(vm.userTempData, function (data) {
-                if (data.success) {
-                    discardChangePassword();
-                }
-            });
+        function saveChangePassword(form) {
+            if (form.$valid) {
+                UserService.updateUserBasicInfo(vm.userTempData, function (data) {
+                    if (data.success) {
+                        discardChangePassword(form);
+                    }
+                });
+            }
         }
 
-        function discardChangePassword() {
+        function discardChangePassword(form) {
+            vm.passwords = {};
             vm.passwords.old = '';
             vm.passwords.new1 = '';
             vm.passwords.new2 = '';
             vm.changePassword = false;
+            form.$setPristine();
         }
 
         function saveBasicInfo() {

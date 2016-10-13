@@ -13,17 +13,17 @@ var User = require('./models/users');
 var path = require('path');
 
 
-app.use(function(req, res, next) {
+app.use(function (req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
     res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, Content-Length, X-Requested-With');
 
     // intercept OPTIONS method
     if ('OPTIONS' == req.method) {
-      res.send(200);
+        res.send(200);
     }
     else {
-      next();
+        next();
     }
 });
 
@@ -38,14 +38,14 @@ app.use(bodyParser.json());
 if (process.env.NODE_ENV === 'production') {
     // Locate the views
     app.set('views', path.join(__dirname, '../client/app'));
-    
+
     // Locate the assets
     app.use(express.static(path.join(__dirname, '../client/app')));
 
 } else {
     // Locate the views
     app.set('views', path.join(__dirname, '../client/app'));
-    
+
     // Locate the assets
     app.use(express.static(path.join(__dirname, '../client/app')));
 }
@@ -82,7 +82,7 @@ router.get('/user', function (req, res) {
             var object = {
                 id: data._id,
                 email: data.email,
-                fullname: data.firstname+' '+data.lastname,
+                fullname: data.firstname + ' ' + data.lastname,
                 username: data.username,
                 signup_date: data.created_at,
                 token: token
@@ -136,6 +136,16 @@ app.use(function (req, res, next) {
             message: 'No token provided.'
         });
     }
+});
+
+router.get('/verifycurrentpassword', function (req, res) {
+    var id = req.query.id;
+    var password = req.query.password;
+
+    User.findOne({ '_id': id, 'password': password }, function (err, data) {
+        if (err) return console.error(err);
+        res.json(data);
+    });
 });
 
 
