@@ -1,7 +1,7 @@
 <div class="lists">
 	<div class="block-header clear-fix">
 		<div class="pull-right">
-			<a ng-show="lvm.listOfGroups.length > 0" ui-sref="profile.lists" class="btn btn-sm btn-info">
+			<a ng-show="lvm.listOfGroups.length > 0" data-toggle="modal" data-target="#createListModal" class="btn btn-sm btn-info">
 				<i class="glyphicon glyphicon-plus"></i> Create New
 			</a>
 			<!--<a ng-show="lvm.listOfGroups.length > 0" ui-sref="profile.lists" class="btn btn-sm btn-transperant">
@@ -11,7 +11,7 @@
 		<h4>Lists: <span class="badge">{{lvm.listOfGroups.length}}</span></h4>
 	</div>
 	<p class="no-lists" ng-show="lvm.listOfGroups.length == 0">
-		You have not Subscribed to any list yet, you can <a class="btn btn-sm btn-default" href="#">Create</a> one now.
+		You have not Subscribed to any list yet, you can <a class="btn btn-sm btn-default" data-toggle="modal" data-target="#createListModal">Create</a>		one now.
 	</p>
 	<div class="lists-profile list-groups">
 		<a href="#/profile/list/{{item.id}}" ng-repeat="item in lvm.listOfGroups" class="one-list" ng-class="{'owned' : item.owned, 'subscribed': !item.owned}">
@@ -23,8 +23,55 @@
 		</a>
 	</div>
 	<div class="legend" ng-show="lvm.listOfGroups.length > 0">
-		<u>Note that</u>: 
+		<u>Note that</u>:
 		<small class="label-warning"><i class="glyphicon"></i></small> owned by you,
 		<small class="label-success"><i class="glyphicon"></i></small> you just subscribered to them.</p>
+	</div>
+</div>
+
+<div class="modal fade" id="createListModal" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">Create new list</h4>
+			</div>
+			<div class="modal-body">
+				<form action="">
+					<div class="form-group">
+						<label for="">List Name</label>
+						<input type="text" placeholder="pick a name for the list" class="form-control">
+					</div>
+					<div class="form-group">
+						<label for="">List Picture</label>
+						<input type="text" placeholder="pick a name for the list" class="form-control">
+					</div>
+					<div class="form-group">
+						<label for="">Subscribers</label>
+						<div class="input-group">
+							<input type="text" class="form-control" aria-label="...">
+							<span class="input-group-btn">
+								<button class="btn btn-info"><i class="glyphicon glyphicon-send"></i> Invite</button>
+							</span>
+						</div>
+						<p class="help-block">you have to invite people to your list</p>
+					</div>
+					<ul class="list-group">
+						<li class="list-group-item list-group-item-success">
+							<i class="glyphicon glyphicon-remove pull-right" title="remove from list"></i>
+							medhatdawoud@gmail.com
+						</li>
+						<li class="list-group-item list-group-item-success">
+							<i class="glyphicon glyphicon-remove pull-right" title="remove from list"></i>
+							mahaelbasuony@gmail.com
+						</li>
+					</ul>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary">Create list</button>
+			</div>
+		</div>
 	</div>
 </div>
