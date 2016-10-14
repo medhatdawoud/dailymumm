@@ -1,0 +1,28 @@
+.modal {
+    .modal-content {
+        border-radius: 0px;
+        color: #333;
+
+        .modal-header, .modal-footer {
+            background: #eee;
+        }
+
+        .modal-header{
+            padding: 15px 20px;
+
+            .close {
+                font-size: 30px;
+                margin-top: -5px;
+            }
+
+            h4 {
+                color: #000;
+            }
+        }
+
+        .modal-footer {
+            margin-top: 0px;
+            padding: 10px 20px;
+        }
+    }
+}

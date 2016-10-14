@@ -281,6 +281,34 @@ form .form-group.has-success .help-block {
   transition: all linear 500ms;
 }
 
+/* line 2, ../scss/components/_modal.scss */
+.modal .modal-content {
+  border-radius: 0px;
+  color: #333;
+}
+/* line 6, ../scss/components/_modal.scss */
+.modal .modal-content .modal-header, .modal .modal-content .modal-footer {
+  background: #eee;
+}
+/* line 10, ../scss/components/_modal.scss */
+.modal .modal-content .modal-header {
+  padding: 15px 20px;
+}
+/* line 13, ../scss/components/_modal.scss */
+.modal .modal-content .modal-header .close {
+  font-size: 30px;
+  margin-top: -5px;
+}
+/* line 18, ../scss/components/_modal.scss */
+.modal .modal-content .modal-header h4 {
+  color: #000;
+}
+/* line 23, ../scss/components/_modal.scss */
+.modal .modal-content .modal-footer {
+  margin-top: 0px;
+  padding: 10px 20px;
+}
+
 /* line 1, ../scss/pages/_home.scss */
 #homepage {
   text-shadow: 0px 1px 10px #333;
