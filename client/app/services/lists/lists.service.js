@@ -12,6 +12,7 @@
 
         service.getLists = getLists;
         service.createList = createList;
+        service.updateList = updateList;
 
         function getLists(userId, callback) {
             $http.get(apiServer + '/api/lists/byuser', { params: { userId: userId } })
@@ -24,6 +25,15 @@
 
         function createList(ownerData, listData, callback) {
             $http.post(apiServer + '/api/lists', { list: JSON.stringify(listData), owner: JSON.stringify(ownerData) })
+                .then(function (response) {
+                    callback({ success: true, data: response.data });
+                }, function (response) {
+                    callback({ success: false, code: response.data });
+                });
+        }
+
+        function updateList(listData, callback) {
+            $http.put(apiServer + '/api/lists', { list: JSON.stringify(listData) })
                 .then(function (response) {
                     callback({ success: true, data: response.data });
                 }, function (response) {

@@ -51,6 +51,30 @@ module.exports = function (app) {
     });
 
     router.put('/', function (req, res) {
+        var listData = JSON.parse(req.body.list);
+        
+        console.log(listData)
+        
+        List.update({ "_id" : listData.id },{ 
+            name: listData.name,
+            picturePath: listData.picturePath,
+            $push: {
+                subscribers: {
+                    $each: listData.subscribers
+                }
+            }
+         }, function(err, data){
+            if (err) return console.error(err);
+
+            if (data) {
+                res.json(data)
+            } else {
+                res.json(null);
+            }
+        });
+    });
+
+    router.put('/invite', function (req, res) {
         var listId = req.body.listId;
         var listOfSubscribers = JSON.parse(req.body.listOfSubscribers);
         

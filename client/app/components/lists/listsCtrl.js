@@ -12,7 +12,7 @@
         lvm.listOfGroups = [];
         lvm.userData = AuthService.getCurrentUserInfo();
         lvm.tempListData = {
-            name: "my list",
+            name: "",
             picturePath: "assets/images/lists/list1.jpg",
             subscribers: []
         };
@@ -20,6 +20,21 @@
         lvm.removeFromInvitations = removeFromInvitations;
         lvm.addToInvitations = addToInvitations;
         lvm.createList = createList;
+        lvm.editList = editList;
+        lvm.editListMode = false;
+        lvm.updateList = updateList;
+
+        function editList(list) {
+            lvm.editListMode = true;
+            lvm.tempListData = {
+                id: list.id,
+                name: list.name,
+                picturePath: list.picturePath,
+                owned: list.owned,
+                subscribers: []
+            };
+            $("#createListModal").modal();
+        }
 
         function removeFromInvitations(index) {
             lvm.tempListData.subscribers.splice(index, 1);
@@ -39,12 +54,26 @@
         function createList() {
             ListsService.createList(lvm.userData, lvm.tempListData, function (response) {
                 if (response.success) {
-                    console.log(lvm.tempListData);
                     lvm.tempListData = {
                         name: "",
                         picturePath: "",
                         subscribers: []
                     }
+                    $("#createListModal").modal('hide');
+                }
+            });
+        }
+
+        function updateList() {
+            ListsService.updateList(lvm.tempListData, function (response) {
+                if (response.success) {
+                    lvm.tempListData = {
+                        name: "",
+                        picturePath: "",
+                        subscribers: []
+                    }
+
+                    $("#createListModal").modal('hide');
                 }
             });
         }
@@ -67,21 +96,35 @@
                         newLists.push(list);
                     });
                     lvm.listOfGroups = newLists;
+
+                    loadCarousel();        
                 }
             });
         }
 
-        $timeout(function () {
-            if ($("a.one-list").length) {
-                $(".list-groups").owlCarousel({
-                    items: 5,
-                    lazyLoad: true,
-                    navigation: true,
-                    pagination: false,
-                    rewindNav: false,
-                    navigationText: ["<i class='glyphicon glyphicon-chevron-left'></i>", "<i class='glyphicon glyphicon-chevron-right'></i>"]
-                });
-            }
-        }, 300);
+        $('#createListModal').on('hidden.bs.modal', function () {
+            lvm.editListMode = false;
+            getLists();
+            // $('.list-groups').trigger('refresh.owl.carousel');
+            $('.list-groups').trigger('next.owl.carousel');
+            $('.list-groups').trigger('previous.owl.carousel');
+        });
+
+        function loadCarousel() {
+            $timeout(function () {
+                if ($("a.one-list").length) {
+                    $(".list-groups").owlCarousel({
+                        items: 5,
+                        lazyLoad: true,
+                        navigation: true,
+                        pagination: false,
+                        rewindNav: false,
+                        navigationText: ["<i class='glyphicon glyphicon-chevron-left'></i>", "<i class='glyphicon glyphicon-chevron-right'></i>"]
+                    });
+                }
+            }, 300);
+        }
+
+        // loadCarousel();
     }
 })();
