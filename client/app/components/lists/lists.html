@@ -14,10 +14,14 @@
 		You have not Subscribed to any list yet, you can <a class="btn btn-sm btn-default" data-toggle="modal" data-target="#createListModal">Create</a>		one now.
 	</p>
 	<div class="lists-profile list-groups">
-		<a href="javascript:void(0)" ng-click="lvm.editList(item)" ng-repeat="item in lvm.listOfGroups" class="one-list" ng-class="{'owned' : item.owned, 'subscribed': !item.owned}">
+		<a href="javascript:void(0)" 
+			ng-click="lvm.editList(item)" 
+			ng-repeat="item in lvm.listOfGroups"
+			class="one-list" 
+			ng-class="{'owned' : item.owned, 'subscribed': !item.owned}">
 			<div class="img-container">
 				<span class="subscribers-count">{{item.subscribers.length}}</span>
-				<img class="lazyOwl" data-src="{{item.picturePath}}" alt="{{item.name}}">
+				<img ng-src="{{item.picturePath}}" alt="{{item.name}}">
 			</div>
 			<p>{{item.name}}</p>
 		</a>

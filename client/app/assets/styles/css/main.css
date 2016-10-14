@@ -388,41 +388,49 @@ p.no-lists {
 /* line 13, ../scss/pages/_profile.scss */
 .list-groups .owl-prev, .list-groups .owl-next {
   position: absolute;
-  top: -5px;
+  top: 0px;
   height: 100%;
   width: 7%;
+  cursor: pointer;
   margin: 0px !important;
   border-radius: 0px !important;
   background: rgba(0, 0, 0, 0.5) !important;
 }
-/* line 22, ../scss/pages/_profile.scss */
+/* line 23, ../scss/pages/_profile.scss */
 .list-groups .owl-prev.disabled, .list-groups .owl-next.disabled {
   display: none !important;
 }
-/* line 26, ../scss/pages/_profile.scss */
+/* line 27, ../scss/pages/_profile.scss */
 .list-groups .owl-prev i, .list-groups .owl-next i {
   top: 45%;
   font-size: 20px;
+  width: 100%;
+  text-align: center;
 }
-/* line 32, ../scss/pages/_profile.scss */
+/* line 35, ../scss/pages/_profile.scss */
 .list-groups .owl-prev {
   border-left: 2px solid #121212;
   left: 0px;
 }
-/* line 37, ../scss/pages/_profile.scss */
+/* line 40, ../scss/pages/_profile.scss */
 .list-groups .owl-next {
   border-right: 2px solid #121212;
   right: 0px;
 }
-/* line 42, ../scss/pages/_profile.scss */
-.list-groups .one-list {
+/* line 44, ../scss/pages/_profile.scss */
+.list-groups .owl-stage-outer {
+  overflow: hidden;
+  padding-top: 15px;
+}
+/* line 48, ../scss/pages/_profile.scss */
+.list-groups .owl-item, .list-groups .one-list {
   display: inline-block;
   width: 115px;
   text-align: center;
   vertical-align: top;
 }
-/* line 48, ../scss/pages/_profile.scss */
-.list-groups .one-list .img-container {
+/* line 54, ../scss/pages/_profile.scss */
+.list-groups .owl-item .img-container, .list-groups .one-list .img-container {
   position: relative;
   width: 110px;
   height: 110px;
@@ -430,8 +438,8 @@ p.no-lists {
   border: 5px solid #333;
   overflow: hidden;
 }
-/* line 56, ../scss/pages/_profile.scss */
-.list-groups .one-list .img-container .subscribers-count {
+/* line 62, ../scss/pages/_profile.scss */
+.list-groups .owl-item .img-container .subscribers-count, .list-groups .one-list .img-container .subscribers-count {
   position: absolute;
   top: 0px;
   right: 0px;
@@ -442,43 +450,43 @@ p.no-lists {
   background: #333;
   font-size: 12px;
 }
-/* line 68, ../scss/pages/_profile.scss */
-.list-groups .one-list .img-container img {
+/* line 74, ../scss/pages/_profile.scss */
+.list-groups .owl-item .img-container img, .list-groups .one-list .img-container img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
-/* line 75, ../scss/pages/_profile.scss */
-.list-groups .one-list p {
+/* line 81, ../scss/pages/_profile.scss */
+.list-groups .owl-item p, .list-groups .one-list p {
   margin-top: 10px;
   color: #fff;
 }
-/* line 80, ../scss/pages/_profile.scss */
-.list-groups .one-list:hover {
+/* line 86, ../scss/pages/_profile.scss */
+.list-groups .owl-item:hover, .list-groups .one-list:hover {
   text-decoration: none;
 }
-/* line 85, ../scss/pages/_profile.scss */
-.list-groups .one-list.subscribed .img-container {
+/* line 91, ../scss/pages/_profile.scss */
+.list-groups .owl-item.subscribed .img-container, .list-groups .one-list.subscribed .img-container {
   border: 5px solid #5cb85c;
 }
-/* line 88, ../scss/pages/_profile.scss */
-.list-groups .one-list.subscribed .img-container .subscribers-count {
+/* line 94, ../scss/pages/_profile.scss */
+.list-groups .owl-item.subscribed .img-container .subscribers-count, .list-groups .one-list.subscribed .img-container .subscribers-count {
   background: #5cb85c;
 }
-/* line 95, ../scss/pages/_profile.scss */
-.list-groups .one-list.owned .img-container {
+/* line 101, ../scss/pages/_profile.scss */
+.list-groups .owl-item.owned .img-container, .list-groups .one-list.owned .img-container {
   border: 5px solid #f0ad4e;
 }
-/* line 98, ../scss/pages/_profile.scss */
-.list-groups .one-list.owned .img-container .subscribers-count {
+/* line 104, ../scss/pages/_profile.scss */
+.list-groups .owl-item.owned .img-container .subscribers-count, .list-groups .one-list.owned .img-container .subscribers-count {
   background: #f0ad4e;
 }
-/* line 106, ../scss/pages/_profile.scss */
+/* line 112, ../scss/pages/_profile.scss */
 .list-groups.lists-order .one-list {
   margin: 0px 10px;
 }
 
-/* line 111, ../scss/pages/_profile.scss */
+/* line 117, ../scss/pages/_profile.scss */
 .profile-view, .profile-edit, .profile-change-password {
   background: rgba(200, 200, 200, 0.5);
   margin: 0px -15px 10px;
@@ -486,16 +494,16 @@ p.no-lists {
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
 }
-/* line 118, ../scss/pages/_profile.scss */
+/* line 124, ../scss/pages/_profile.scss */
 .profile-view label, .profile-edit label, .profile-change-password label {
   text-shadow: 0px 0px 3px #000;
 }
-/* line 122, ../scss/pages/_profile.scss */
+/* line 128, ../scss/pages/_profile.scss */
 .profile-view .form-control, .profile-edit .form-control, .profile-change-password .form-control {
   font-weight: bold;
   color: #000;
 }
-/* line 126, ../scss/pages/_profile.scss */
+/* line 132, ../scss/pages/_profile.scss */
 .profile-view .form-control.form-text, .profile-edit .form-control.form-text, .profile-change-password .form-control.form-text {
   height: auto;
   padding: 0px;
@@ -507,33 +515,33 @@ p.no-lists {
   color: #000;
 }
 
-/* line 140, ../scss/pages/_profile.scss */
+/* line 146, ../scss/pages/_profile.scss */
 .btn.form-control {
   margin-bottom: 10px;
 }
-/* line 144, ../scss/pages/_profile.scss */
+/* line 150, ../scss/pages/_profile.scss */
 .btn + .btn {
   margin-left: 10px;
 }
 
-/* line 150, ../scss/pages/_profile.scss */
+/* line 156, ../scss/pages/_profile.scss */
 .clear-fix::after, .clear-fix::before {
   content: ' ';
   display: block;
   clear: both;
 }
 
-/* line 157, ../scss/pages/_profile.scss */
+/* line 163, ../scss/pages/_profile.scss */
 .block-header {
   line-height: 30px;
 }
-/* line 160, ../scss/pages/_profile.scss */
+/* line 166, ../scss/pages/_profile.scss */
 .block-header h4 {
   line-height: 30px;
   margin: 0px 0px 15px;
 }
 
-/* line 166, ../scss/pages/_profile.scss */
+/* line 172, ../scss/pages/_profile.scss */
 h4 {
   text-transform: uppercase;
   font-weight: bold;

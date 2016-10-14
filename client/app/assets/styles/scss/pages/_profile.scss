@@ -12,9 +12,10 @@ p.no-lists {
     
     .owl-prev, .owl-next {
         position: absolute;
-        top: -5px;
+        top: 0px;
         height: 100%;
         width: 7%;
+        cursor: pointer;
         margin: 0px !important;
         border-radius: 0px !important;
         background: rgba(0,0,0,0.5) !important;
@@ -26,6 +27,8 @@ p.no-lists {
         i {
             top: 45%;
             font-size: 20px;
+            width: 100%;
+            text-align: center;
         }
     }
     
@@ -38,8 +41,11 @@ p.no-lists {
         border-right: 2px solid #121212;
         right: 0px;
     }
-    
-    .one-list {
+    .owl-stage-outer {
+        overflow: hidden;
+        padding-top: 15px;
+    }
+    .owl-item, .one-list {
         display: inline-block;
         width: 115px;
         text-align: center;

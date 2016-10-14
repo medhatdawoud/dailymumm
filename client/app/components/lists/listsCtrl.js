@@ -78,7 +78,7 @@
             });
         }
 
-        function getLists() {
+        function getLists(callback) {
             var userId = lvm.userData.id;
             ListsService.getLists(userId, function (response) {
                 if (response.success) {
@@ -97,17 +97,28 @@
                     });
                     lvm.listOfGroups = newLists;
 
-                    loadCarousel();        
+                    if (typeof (callback) == "function")
+                        callback();
                 }
             });
         }
 
-        $('#createListModal').on('hidden.bs.modal', function () {
+        $('#createListModal').on('hide.bs.modal', function () {
             lvm.editListMode = false;
-            getLists();
-            // $('.list-groups').trigger('refresh.owl.carousel');
-            $('.list-groups').trigger('next.owl.carousel');
-            $('.list-groups').trigger('previous.owl.carousel');
+            getLists(function () {
+                $timeout(function () {
+                    var $owl = $('.list-groups');
+                    $owl.find('.owl-stage-outer').html("");
+                    $owl.trigger('destroy.owl.carousel');
+                    $owl.find('.owl-stage-outer').remove();
+                    $owl.removeClass('owl-loaded');
+                    $owl.owlCarousel({
+                        items: 5,
+                        nav: true,
+                        navText: ["<i class='glyphicon glyphicon-chevron-left'></i>", "<i class='glyphicon glyphicon-chevron-right'></i>"]
+                    });
+                }, 10);
+            });
         });
 
         function loadCarousel() {
@@ -115,16 +126,13 @@
                 if ($("a.one-list").length) {
                     $(".list-groups").owlCarousel({
                         items: 5,
-                        lazyLoad: true,
-                        navigation: true,
-                        pagination: false,
-                        rewindNav: false,
-                        navigationText: ["<i class='glyphicon glyphicon-chevron-left'></i>", "<i class='glyphicon glyphicon-chevron-right'></i>"]
+                        nav: true,
+                        navText: ["<i class='glyphicon glyphicon-chevron-left'></i>", "<i class='glyphicon glyphicon-chevron-right'></i>"]
                     });
                 }
-            }, 300);
+            }, 100);
         }
 
-        // loadCarousel();
+        loadCarousel();
     }
 })();
