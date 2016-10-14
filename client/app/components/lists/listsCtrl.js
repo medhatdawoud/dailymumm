@@ -59,6 +59,7 @@
                         picturePath: "",
                         subscribers: []
                     }
+                    reloadLists();
                     $("#createListModal").modal('hide');
                 }
             });
@@ -72,7 +73,7 @@
                         picturePath: "",
                         subscribers: []
                     }
-
+                    reloadLists();
                     $("#createListModal").modal('hide');
                 }
             });
@@ -105,6 +106,14 @@
 
         $('#createListModal').on('hide.bs.modal', function () {
             lvm.editListMode = false;
+            lvm.tempListData = {
+                name: "",
+                picturePath: "",
+                subscribers: []
+            };
+        });
+
+        function reloadLists() {
             getLists(function () {
                 $timeout(function () {
                     var $owl = $('.list-groups');
@@ -119,7 +128,7 @@
                     });
                 }, 10);
             });
-        });
+        }
 
         function loadCarousel() {
             $timeout(function () {
