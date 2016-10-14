@@ -11,8 +11,43 @@
         var lvm = this;
         lvm.listOfGroups = [];
         lvm.userData = AuthService.getCurrentUserInfo();
-
+        lvm.tempListData = {
+            name: "my list",
+            picturePath: "assets/images/lists/list1.jpg",
+            subscribers: []
+        };
         lvm.$onInit = getLists();
+        lvm.removeFromInvitations = removeFromInvitations;
+        lvm.addToInvitations = addToInvitations;
+        lvm.createList = createList;
+
+        function removeFromInvitations(index) {
+            lvm.tempListData.subscribers.splice(index, 1);
+        }
+
+        function addToInvitations(email) {
+            for (var i = 0; i < lvm.tempListData.subscribers.length; i++) {
+                if (lvm.tempListData.subscribers[i].email == email) {
+                    lvm.inviteEmail = "";
+                    return;
+                }
+            }
+            lvm.tempListData.subscribers.push({ email: email });
+            lvm.inviteEmail = "";
+        }
+
+        function createList() {
+            ListsService.createList(lvm.userData, lvm.tempListData, function (response) {
+                if (response.success) {
+                    console.log(lvm.tempListData);
+                    lvm.tempListData = {
+                        name: "",
+                        picturePath: "",
+                        subscribers: []
+                    }
+                }
+            });
+        }
 
         function getLists() {
             var userId = lvm.userData.id;
