@@ -11,7 +11,7 @@
 		<h4>Lists: <span class="badge">{{lvm.listOfGroups.length}}</span></h4>
 	</div>
 	<p class="no-lists" ng-show="lvm.listOfGroups.length == 0">
-		You have not Subscribed to any list yet, you can <a href="#">Create</a> one now.
+		You have not Subscribed to any list yet, you can <a class="btn btn-sm btn-default" href="#">Create</a> one now.
 	</p>
 	<div class="lists-profile list-groups">
 		<a href="#/profile/list/{{item.id}}" ng-repeat="item in lvm.listOfGroups" class="one-list" ng-class="{'owned' : item.owned, 'subscribed': !item.owned}">
@@ -22,7 +22,7 @@
 			<p>{{item.name}}</p>
 		</a>
 	</div>
-	<div class="legend">
+	<div class="legend" ng-show="lvm.listOfGroups.length > 0">
 		<u>Note that</u>: 
 		<small class="label-warning"><i class="glyphicon"></i></small> owned by you,
 		<small class="label-success"><i class="glyphicon"></i></small> you just subscribered to them.</p>

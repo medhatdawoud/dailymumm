@@ -19,19 +19,24 @@
   font-weight: normal;
   font-style: normal;
 }
-/* line 5, ../scss/main.scss */
+/* line 1, ../scss/_general.scss */
 body {
   background: #fafafa;
   font-family: "Titillium";
   color: #fafafa;
 }
 
-/* line 11, ../scss/main.scss */
+/* line 7, ../scss/_general.scss */
 h1, h2, h3, h4, h5, h6, a, span, label {
   font-family: "Titillium";
 }
 
-/* line 15, ../scss/main.scss */
+/* line 11, ../scss/_general.scss */
+.btn {
+  text-transform: uppercase;
+}
+
+/* line 15, ../scss/_general.scss */
 .hero-unit {
   margin: 50px auto 0 auto;
   width: 600px;
@@ -42,11 +47,16 @@ h1, h2, h3, h4, h5, h6, a, span, label {
   border-radius: 6px;
   padding: 60px;
 }
-/* line 24, ../scss/main.scss */
+/* line 24, ../scss/_general.scss */
 .hero-unit h1 {
   font-size: 60px;
   line-height: 1;
   letter-spacing: -1px;
+}
+
+/* line 31, ../scss/_general.scss */
+.navbar-right {
+  padding-right: 0px;
 }
 
 /* line 1, ../scss/components/_signup.scss */

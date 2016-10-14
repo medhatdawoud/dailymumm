@@ -2,31 +2,7 @@
 @import 'helpers/mixins';
 @import 'helpers/fonts';
 
-body {
-    background: #fafafa;
-    font-family: $fontPrimary;
-    color: $colorFirst;
-}
-
-h1, h2, h3, h4, h5, h6, a, span, label {
-    font-family: $fontPrimary;
-}
-
-.hero-unit {
-    margin: 50px auto 0 auto;
-    width: 600px;
-    font-size: 18px;
-    font-weight: 200;
-    line-height: 30px;
-    background-color: #eee;
-    border-radius: 6px;
-    padding: 60px;
-    h1 {
-        font-size: 60px;
-        line-height: 1;
-        letter-spacing: -1px;
-    }
-}
+@import 'general';
 
 @import 'components/signup';
 @import 'components/navbar';
