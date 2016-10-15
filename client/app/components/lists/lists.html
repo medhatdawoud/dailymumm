@@ -69,7 +69,7 @@
 						<p class="help-block" ng-hide="lvm.editListMode">you have to invite people to your list</p>
 					</div>
 					<ul class="list-group" ng-show="lvm.tempListData.subscribers.length > 0">
-						<li class="list-group-item list-group-item-success" ng-repeat="user in lvm.tempListData.subscribers track by $index">
+						<li class="list-group-item" ng-repeat="user in lvm.tempListData.subscribers track by $index">
 							<a href="javascript:void(0)" ng-click="lvm.removeFromInvitations($index)"><i class="glyphicon glyphicon-remove pull-right" title="remove from list"></i></a>
 							{{ user.email }}
 						</li>

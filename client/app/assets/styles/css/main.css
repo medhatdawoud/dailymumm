@@ -309,6 +309,16 @@ form .form-group.has-success .help-block {
   padding: 10px 20px;
 }
 
+/* line 2, ../scss/components/_tooltip.scss */
+.tooltip .tooltip-inner {
+  font-family: arial;
+  color: #ddd;
+}
+/* line 6, ../scss/components/_tooltip.scss */
+.tooltip .tooltip-inner strong {
+  color: #fff;
+}
+
 /* line 1, ../scss/pages/_home.scss */
 #homepage {
   text-shadow: 0px 1px 10px #333;
@@ -554,7 +564,11 @@ h4 {
   color: #fff;
 }
 
-/* line 8, ../scss/pages/_order.scss */
+/* line 7, ../scss/pages/_order.scss */
+.lists-order .one-list .img-container {
+  overflow: initial;
+}
+/* line 9, ../scss/pages/_order.scss */
 .lists-order .one-list .img-container .input-selection {
   position: absolute;
   top: 0px;
@@ -565,7 +579,7 @@ h4 {
   cursor: pointer;
   background: rgba(80, 80, 80, 0.5);
 }
-/* line 18, ../scss/pages/_order.scss */
+/* line 19, ../scss/pages/_order.scss */
 .lists-order .one-list .img-container .input-selection input {
   position: absolute;
   bottom: 5px;
@@ -575,127 +589,127 @@ h4 {
   height: 20px;
   opacity: 0;
 }
-/* line 31, ../scss/pages/_order.scss */
+/* line 32, ../scss/pages/_order.scss */
 .lists-order .one-list.selected .img-container, .lists-order .one-list:hover .img-container {
   border-color: #26C6DA;
 }
-/* line 34, ../scss/pages/_order.scss */
+/* line 35, ../scss/pages/_order.scss */
 .lists-order .one-list.selected .img-container .subscribers-count, .lists-order .one-list:hover .img-container .subscribers-count {
   background: #26C6DA;
 }
-/* line 41, ../scss/pages/_order.scss */
+/* line 42, ../scss/pages/_order.scss */
 .lists-order .one-list.selected .img-container {
   box-shadow: 0 0 20px #333;
 }
-/* line 43, ../scss/pages/_order.scss */
+/* line 44, ../scss/pages/_order.scss */
 .lists-order .one-list.selected .img-container .input-selection {
   background: none;
 }
 
-/* line 50, ../scss/pages/_order.scss */
+/* line 51, ../scss/pages/_order.scss */
 .select-restaurant {
   min-height: 400px;
 }
-/* line 53, ../scss/pages/_order.scss */
+/* line 54, ../scss/pages/_order.scss */
 .select-restaurant .one-restautant {
   padding: 20px;
   margin: 20px 0px;
   background: rgba(200, 200, 200, 0.5);
 }
-/* line 59, ../scss/pages/_order.scss */
+/* line 60, ../scss/pages/_order.scss */
 .select-restaurant .one-restautant .rest-logo img {
   height: 100%;
   width: 100%;
 }
-/* line 66, ../scss/pages/_order.scss */
+/* line 67, ../scss/pages/_order.scss */
 .select-restaurant .one-restautant .rest-details .title {
   margin: 15px 0px 30px;
   font-weight: bold;
   text-shadow: 0px 1px 3px #333;
 }
-/* line 71, ../scss/pages/_order.scss */
+/* line 72, ../scss/pages/_order.scss */
 .select-restaurant .one-restautant .rest-details .stats {
   background: #A92F29;
   margin-top: 10px;
   padding: 5px 10px;
 }
-/* line 76, ../scss/pages/_order.scss */
+/* line 77, ../scss/pages/_order.scss */
 .select-restaurant .one-restautant .rest-details .stats .one-count {
   display: inline-block;
 }
-/* line 79, ../scss/pages/_order.scss */
+/* line 80, ../scss/pages/_order.scss */
 .select-restaurant .one-restautant .rest-details .stats .one-count .name {
   color: #333;
   color: #F5E156;
   text-transform: uppercase;
 }
-/* line 85, ../scss/pages/_order.scss */
+/* line 86, ../scss/pages/_order.scss */
 .select-restaurant .one-restautant .rest-details .stats .one-count .order-month {
   font-family: arial;
 }
-/* line 89, ../scss/pages/_order.scss */
+/* line 90, ../scss/pages/_order.scss */
 .select-restaurant .one-restautant .rest-details .stats .one-count + .one-count {
   margin-left: 10px;
 }
-/* line 94, ../scss/pages/_order.scss */
+/* line 95, ../scss/pages/_order.scss */
 .select-restaurant .one-restautant .rest-details .phone-numbers {
   display: inline-block;
   margin-top: 15px;
   font-family: arial;
 }
-/* line 98, ../scss/pages/_order.scss */
+/* line 99, ../scss/pages/_order.scss */
 .select-restaurant .one-restautant .rest-details .phone-numbers ul {
   list-style: none;
   margin: 0px;
   padding: 5px 10px;
   background: #333;
 }
-/* line 104, ../scss/pages/_order.scss */
+/* line 105, ../scss/pages/_order.scss */
 .select-restaurant .one-restautant .rest-details .phone-numbers ul .phone-label {
   margin-right: 10px;
   color: #F5E156;
   float: left;
   font-family: "Titillium";
 }
-/* line 111, ../scss/pages/_order.scss */
+/* line 112, ../scss/pages/_order.scss */
 .select-restaurant .one-restautant .rest-details .phone-numbers ul li {
   display: inline;
   margin-right: 10px;
 }
-/* line 116, ../scss/pages/_order.scss */
+/* line 117, ../scss/pages/_order.scss */
 .select-restaurant .one-restautant .rest-details .phone-numbers ul li + li::before {
   content: '|';
   margin-right: 10px;
 }
-/* line 124, ../scss/pages/_order.scss */
+/* line 125, ../scss/pages/_order.scss */
 .select-restaurant .one-restautant .rest-details .menus {
   margin-top: 15px;
 }
-/* line 126, ../scss/pages/_order.scss */
+/* line 127, ../scss/pages/_order.scss */
 .select-restaurant .one-restautant .rest-details .menus ul {
   list-style: none;
   margin: 0px;
   padding: 0px;
 }
-/* line 130, ../scss/pages/_order.scss */
+/* line 131, ../scss/pages/_order.scss */
 .select-restaurant .one-restautant .rest-details .menus ul li {
   display: inline;
   margin-right: 10px;
 }
-/* line 134, ../scss/pages/_order.scss */
+/* line 135, ../scss/pages/_order.scss */
 .select-restaurant .one-restautant .rest-details .menus ul li a {
   color: #fff;
   padding: 5px 10px;
 }
-/* line 138, ../scss/pages/_order.scss */
+/* line 139, ../scss/pages/_order.scss */
 .select-restaurant .one-restautant .rest-details .menus ul li a:hover, .select-restaurant .one-restautant .rest-details .menus ul li a:active, .select-restaurant .one-restautant .rest-details .menus ul li a:focus {
   text-decoration: none;
 }
-/* line 142, ../scss/pages/_order.scss */
+/* line 143, ../scss/pages/_order.scss */
 .select-restaurant .one-restautant .rest-details .menus ul li a i {
   font-size: 11px;
 }
-/* line 152, ../scss/pages/_order.scss */
+/* line 153, ../scss/pages/_order.scss */
 .select-restaurant .action-panel {
   margin-bottom: 100px;
 }

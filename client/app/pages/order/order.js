@@ -19,16 +19,16 @@
         vm.listSelected = listSelected;
         vm.selectedList = null;
 
-        function listSelected(list){
-            vm.listOfGroups.forEach(function(item){
-                if(item.id != list.id)
+        function listSelected(list) {
+            vm.listOfGroups.forEach(function (item) {
+                if (item.id != list.id)
                     item.selected = false;
             });
             vm.selectedList = list;
             console.log(vm.listOfGroups);
         }
 
-        function getLists(callback) {
+        function getLists() {
             var userId = vm.userData.id;
             ListsService.getLists(userId, function (response) {
                 if (response.success) {
@@ -47,8 +47,20 @@
                     });
                     vm.listOfGroups = newLists;
 
-                    if (typeof (callback) == "function")
-                        callback();
+                    $timeout(function () {
+                        $('.subscribers-count').each(function (index) {
+                            if (parseInt($(this).text())) {
+                                $(this).tooltip({
+                                    html: true,
+                                    placement: 'bottom',
+                                    title: function () {
+                                        return $(this).parent().find('.tooltip-content').html();
+                                    }
+                                });
+                            }
+                        });
+                    }, 100);
+
                 }
             });
         }

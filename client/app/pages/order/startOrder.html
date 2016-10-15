@@ -1,73 +1,78 @@
 <bw-navbar></bw-navbar>
 
 <div class="container">
-    <div class="row">
-        <div class="col-sm-12">
-            <h4>
-                <i class="glyphicon glyphicon-bullhorn"></i>&nbsp; Select a list to shout to:
-                <span class="text-right selected-list">{{ vm.selectedList.name }}</span>
-            </h4>
-            <div class="list-groups lists-order">
-                <a href="javascript:void(0)" 
-                    ng-repeat="item in vm.listOfGroups track by $index" 
-                    class="one-list" 
-                    ng-class="{'owned' : item.owned, 'subscribed': !item.owned, 'selected': item.selected }">
-                    <div class="img-container">
-                        <label class="input-selection">
+	<div class="row">
+		<div class="col-sm-12">
+			<h4>
+				<i class="glyphicon glyphicon-bullhorn"></i>&nbsp; Select a list to shout to:
+				<span class="text-right selected-list">{{ vm.selectedList.name }}</span>
+			</h4>
+			<div class="list-groups lists-order">
+				<a href="javascript:void(0)" ng-repeat="item in vm.listOfGroups track by $index" class="one-list" ng-class="{'owned' : item.owned, 'subscribed': !item.owned, 'selected': item.selected }">
+					<div class="img-container">
+						<label class="input-selection">
                             <input  type="radio" ng-change="vm.listSelected(item)" ng-model="item.selected" value="true" name="list-group" />
                         </label>
-                        <span class="subscribers-count">{{item.subscribers.length}}</span>
-                        <img src="{{item.picturePath}}" alt="{{item.name}}">
-                    </div>
-                    <p>{{item.name}}</p>
-                </a>
-            </div>
-        </div>
-    </div>
-    <div class="row select-restaurant">
-        <div class="col-sm-12">
-            <div class="form-group">
-                <h4><i class="glyphicon glyphicon-th-list"></i>&nbsp; Choose/add a restaurant:</h4>
-                <select class="chosen-select" ng-change="vm.changeRestaurant()" ng-options="r.name for r in vm.restaurants" data-placeholder="choose Restaurant .."
-                ng-model="vm.restaurant"></select>
-            </div>
+						<span class="subscribers-count">{{item.subscribers.length}}</span>
+						<div class="tooltip-content hidden">
+							<div class="text-left">
+								<strong>Subscribers:</strong>
+								<div ng-repeat="user in item.subscribers">
+									{{ user.email }}
+								</div>
+							</div>
+						</div>
+						<img src="{{item.picturePath}}" alt="{{item.name}}">
+					</div>
+					<p>{{item.name}}</p>
+				</a>
+			</div>
+		</div>
+	</div>
+	<div class="row select-restaurant">
+		<div class="col-sm-12">
+			<div class="form-group">
+				<h4><i class="glyphicon glyphicon-th-list"></i>&nbsp; Choose/add a restaurant:</h4>
+				<select class="chosen-select" ng-change="vm.changeRestaurant()" ng-options="r.name for r in vm.restaurants" data-placeholder="choose Restaurant .."
+					ng-model="vm.restaurant"></select>
+			</div>
 
-            <div class="one-restautant" ng-show="vm.restaurant">
-                <div class="row">
-                    <div class="col-sm-3 rest-logo">
-                        <img src="{{vm.restaurant.logo_path}}" alt="{{vm.restaurant.name}}">
-                    </div>
-                    <div class="col-sm-9 rest-details">
-                        <h1 class="title">{{vm.restaurant.name}}</h1>
-                        <div class="menus">
-                            <ul>
-                                <li ng-repeat="menu in vm.restaurant.menus">
-                                    <a class="btn-warning" target="_blank" href="{{menu.link}}"><i class="glyphicon glyphicon-new-window"></i>&nbsp; {{menu.sitename}}</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="phone-numbers">
-                            <ul>
-                                <p class="phone-label"><i class="glyphicon glyphicon-phone"></i>&nbsp; PHONES:</p>
-                                <li ng-repeat="phone in vm.restaurant.phone_numbers track by $index">{{phone}}</li>
-                            </ul>
-                        </div>
-                        <div class="stats">
-                            <div class="one-count">
-                                <span class="name"><i class="glyphicon glyphicon-stats"></i>&nbsp; orders this month:</span>
-                                <span class="order-month">{{vm.restaurant.stats.month || 0}}</span>
-                            </div>
-                            <div class="one-count">
-                                <span class="name"><i class="glyphicon glyphicon-stats"></i>&nbsp; Orders all the time:</span>
-                                <span class="order-all-time">{{vm.restaurant.stats.all || 0}}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="action-panel">
-                <button class="btn btn-success btn-lg pull-right" ng-disabled="!vm.restaurant" ng-click="vm.startOrder()"><i class="glyphicon glyphicon-cutlery"></i>&nbsp; Let's make an order</button>
-            </div>
-        </div>
-    </div>
+			<div class="one-restautant" ng-show="vm.restaurant">
+				<div class="row">
+					<div class="col-sm-3 rest-logo">
+						<img src="{{vm.restaurant.logo_path}}" alt="{{vm.restaurant.name}}">
+					</div>
+					<div class="col-sm-9 rest-details">
+						<h1 class="title">{{vm.restaurant.name}}</h1>
+						<div class="menus">
+							<ul>
+								<li ng-repeat="menu in vm.restaurant.menus">
+									<a class="btn-warning" target="_blank" href="{{menu.link}}"><i class="glyphicon glyphicon-new-window"></i>&nbsp; {{menu.sitename}}</a>
+								</li>
+							</ul>
+						</div>
+						<div class="phone-numbers">
+							<ul>
+								<p class="phone-label"><i class="glyphicon glyphicon-phone"></i>&nbsp; PHONES:</p>
+								<li ng-repeat="phone in vm.restaurant.phone_numbers track by $index">{{phone}}</li>
+							</ul>
+						</div>
+						<div class="stats">
+							<div class="one-count">
+								<span class="name"><i class="glyphicon glyphicon-stats"></i>&nbsp; orders this month:</span>
+								<span class="order-month">{{vm.restaurant.stats.month || 0}}</span>
+							</div>
+							<div class="one-count">
+								<span class="name"><i class="glyphicon glyphicon-stats"></i>&nbsp; Orders all the time:</span>
+								<span class="order-all-time">{{vm.restaurant.stats.all || 0}}</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="action-panel">
+				<button class="btn btn-success btn-lg pull-right" ng-disabled="!vm.restaurant" ng-click="vm.startOrder()"><i class="glyphicon glyphicon-cutlery"></i>&nbsp; Let's make an order</button>
+			</div>
+		</div>
+	</div>
 </div>
