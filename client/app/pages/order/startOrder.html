@@ -3,17 +3,23 @@
 <div class="container">
     <div class="row">
         <div class="col-sm-12">
-            <h4><i class="glyphicon glyphicon-bullhorn"></i>&nbsp; Select a Group to shout to:</h4>
+            <h4>
+                <i class="glyphicon glyphicon-bullhorn"></i>&nbsp; Select a list to shout to:
+                <span class="text-right selected-list">{{ vm.selectedList.name }}</span>
+            </h4>
             <div class="list-groups lists-order">
-                <a href="javascript:void(0)" ng-repeat="item in vm.listOfGroups" class="one-list" ng-class="{'owned' : item.owned, 'subscribed': !item.owned}">
+                <a href="javascript:void(0)" 
+                    ng-repeat="item in vm.listOfGroups track by $index" 
+                    class="one-list" 
+                    ng-class="{'owned' : item.owned, 'subscribed': !item.owned, 'selected': item.selected }">
                     <div class="img-container">
                         <label class="input-selection">
-                            <input  type="radio" value="{{item.id}}" name="list-group" />
+                            <input  type="radio" ng-change="vm.listSelected(item)" ng-model="item.selected" value="true" name="list-group" />
                         </label>
-                        <span class="subscribers-count">{{item.count}}</span>
-                        <img src="{{item.imgPath}}" alt="{{item.title}}">
+                        <span class="subscribers-count">{{item.subscribers.length}}</span>
+                        <img src="{{item.picturePath}}" alt="{{item.name}}">
                     </div>
-                    <p>{{item.title}}</p>
+                    <p>{{item.name}}</p>
                 </a>
             </div>
         </div>

@@ -1,3 +1,7 @@
+.selected-list {
+    margin-left: 15px;
+    color: #fff;
+}
 .lists-order {
     .one-list {
         .img-container {
@@ -18,16 +22,26 @@
                     margin: 0px;
                     width: 20px;
                     height: 20px;
+                    opacity: 0;
                 }
             }
         }
         
-        &:hover {
+        &.selected, &:hover {
             .img-container {
                 border-color: #26C6DA;
                 
                 .subscribers-count {
                     background:#26C6DA;
+                }
+            }
+        }
+
+        &.selected {
+            .img-container {
+                box-shadow: 0 0 20px #333;
+                .input-selection {
+                    background: none;
                 }
             }
         }
