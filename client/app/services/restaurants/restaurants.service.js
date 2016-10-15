@@ -17,6 +17,7 @@
                 {
                     id: 1,
                     name: "Majesty",
+                    rating: 3,
                     menus: [
                         { sitename: "elmenus", link: "http://elmenus.com" },
                         { sitename: "otlob", link: "http://otlob.com" }
@@ -31,6 +32,7 @@
                 {
                     id: 2,
                     name: "Macdonalds",
+                    rating: 4,
                     menus: [
                         { sitename: "elmenus", link: "http://elmenus.com" }
                     ],
@@ -44,6 +46,7 @@
                 {
                     id: 3,
                     name: "KFC",
+                    rating: 5,
                     menus: [
                         { sitename: "elmenus", link: "http://elmenus.com" }
                     ],

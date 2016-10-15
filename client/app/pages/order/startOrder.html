@@ -36,14 +36,14 @@
 				<select class="chosen-select" ng-change="vm.changeRestaurant()" ng-options="r.name for r in vm.restaurants" data-placeholder="choose Restaurant .."
 					ng-model="vm.restaurant"></select>
 			</div>
-
-			<div class="one-restautant" ng-show="vm.restaurant">
+			<div class="one-restautant" ng-show="vm.restaurant && vm.restaurant.id">
 				<div class="row">
-					<div class="col-sm-3 rest-logo">
+					<div class="col-sm-3 rest-logo hidden-xs">
 						<img src="{{vm.restaurant.logo_path}}" alt="{{vm.restaurant.name}}">
 					</div>
 					<div class="col-sm-9 rest-details">
 						<h1 class="title">{{vm.restaurant.name}}</h1>
+						<rating value="vm.restaurant.rating" color="#ffdf00" size="26px" class="text-left" max="5"></rating>
 						<div class="menus">
 							<ul>
 								<li ng-repeat="menu in vm.restaurant.menus">
@@ -51,13 +51,13 @@
 								</li>
 							</ul>
 						</div>
-						<div class="phone-numbers">
+						<!--<div class="phone-numbers">
 							<ul>
 								<p class="phone-label"><i class="glyphicon glyphicon-phone"></i>&nbsp; PHONES:</p>
 								<li ng-repeat="phone in vm.restaurant.phone_numbers track by $index">{{phone}}</li>
 							</ul>
-						</div>
-						<div class="stats">
+						</div>-->
+						<!--<div class="stats">
 							<div class="one-count">
 								<span class="name"><i class="glyphicon glyphicon-stats"></i>&nbsp; orders this month:</span>
 								<span class="order-month">{{vm.restaurant.stats.month || 0}}</span>
@@ -66,7 +66,7 @@
 								<span class="name"><i class="glyphicon glyphicon-stats"></i>&nbsp; Orders all the time:</span>
 								<span class="order-all-time">{{vm.restaurant.stats.all || 0}}</span>
 							</div>
-						</div>
+						</div>-->
 					</div>
 				</div>
 			</div>

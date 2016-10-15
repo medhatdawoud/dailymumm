@@ -6,6 +6,7 @@
                                 'ngResource',
                                 'ngSanitize',
                                 'ui.router',
+                                'angular-rating',
                                 'pascalprecht.translate']);
     
     // app.value("apiServer", "https://dailymumm.herokuapp.com");
