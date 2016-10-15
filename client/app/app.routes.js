@@ -11,15 +11,15 @@
                     controller: 'HomeCtrl',
                     controllerAs: 'vm'
                 })
-                .state('order', {
-                    url: '/order',
+                .state('startOrder', {
+                    url: '/startorder',
                     templateUrl: 'pages/order/startOrder.html',
-                    controller: 'OrderCtrl',
+                    controller: 'StartOrderCtrl',
                     controllerAs: 'vm'
                 })
-                .state('orderlist', {
-                    url: '/order/list',
-                    templateUrl: 'pages/order/orderList.html',
+                .state('order', {
+                    url: '/order/:id',
+                    templateUrl: 'pages/order/order.html',
                     controller: 'OrderCtrl',
                     controllerAs: 'vm'
                 })
