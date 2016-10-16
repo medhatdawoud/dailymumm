@@ -65,6 +65,11 @@ h1, h2, h3, h4, h5, h6, a, span, label {
   }
 }
 
+/* line 40, ../scss/_general.scss */
+#count-down {
+  cursor: pointer;
+}
+
 /* line 1, ../scss/components/_signup.scss */
 .signup-box {
   background: rgba(50, 50, 50, 0.65);
