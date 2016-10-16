@@ -22,10 +22,6 @@
                         { sitename: "elmenus", link: "http://elmenus.com" },
                         { sitename: "otlob", link: "http://otlob.com" }
                     ],
-                    stats: {
-                        month: 40,
-                        all: 123
-                    },
                     phoneNumbers: ["0123456789", "0123456789", "0123456789"],
                     picturePath: "/assets/images/restaurants/majesty.jpg"
                 },
@@ -36,10 +32,6 @@
                     menus: [
                         { sitename: "elmenus", link: "http://elmenus.com" }
                     ],
-                    stats: {
-                        month: 10,
-                        all: 10
-                    },
                     phoneNumbers: ["0123456789", "0123456789", "0123456789"],
                     picturePath: "/assets/images/restaurants/mac.jpg"
                 },
@@ -50,10 +42,6 @@
                     menus: [
                         { sitename: "elmenus", link: "http://elmenus.com" }
                     ],
-                    stats: {
-                        month: 5,
-                        all: 1231
-                    },
                     phoneNumbers: ["0123456789"],
                     picturePath: "/assets/images/restaurants/kfc.jpg"
                 }
