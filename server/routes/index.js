@@ -21,6 +21,7 @@ module.exports = function (app) {
 
     require('./users')(app);
     require('./lists')(app);
+    require('./restaurants')(app);
 
     // Error Handling
     app.use(function (err, req, res, next) {
