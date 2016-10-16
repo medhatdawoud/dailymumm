@@ -174,6 +174,14 @@ h1, h2, h3, h4, h5, h6, a, span, label {
   margin: 3px 0px;
   background-color: #333;
 }
+/* line 79, ../scss/components/_navbar.scss */
+.navbar.navbar-transparent .navbar-collapse .navbar-nav li.dropdown.user-dropdown {
+  min-width: 160px;
+}
+/* line 83, ../scss/components/_navbar.scss */
+.navbar.navbar-transparent .navbar-collapse .navbar-nav li.dropdown.user-dropdown .caret.pull-right {
+  margin-top: 7px;
+}
 
 /* line 1, ../scss/components/_videoBackground.scss */
 .fullscreen-bg {

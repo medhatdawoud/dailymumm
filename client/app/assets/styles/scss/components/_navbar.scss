@@ -75,6 +75,16 @@
                                 }
                             }
                         }
+
+                        &.user-dropdown {
+                            min-width: 160px;
+
+                            .caret {
+                                &.pull-right {
+                                    margin-top: 7px;
+                                }
+                            }
+                        }
                     }
                 }
             }
