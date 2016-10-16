@@ -775,20 +775,25 @@ h4 {
   margin-bottom: 100px;
 }
 
-/* line 3, ../scss/pages/_order.scss */
+/* line 2, ../scss/pages/_order.scss */
+.right-sidebar .create-order-button {
+  margin-bottom: 15px;
+  border-radius: 0px;
+}
+/* line 8, ../scss/pages/_order.scss */
 .right-sidebar .restaurant-block .menus-list, .right-sidebar .restaurant-block .phones-list {
   margin-top: 20px;
 }
-/* line 6, ../scss/pages/_order.scss */
+/* line 11, ../scss/pages/_order.scss */
 .right-sidebar .restaurant-block .restaurant-name {
   font-size: 34px;
 }
-/* line 11, ../scss/pages/_order.scss */
+/* line 16, ../scss/pages/_order.scss */
 .right-sidebar .restaurant-block .phones-list .numbers, .right-sidebar .restaurant-block .phones-list .numbers span {
   font-size: 28px;
   line-height: 24px;
 }
-/* line 15, ../scss/pages/_order.scss */
+/* line 20, ../scss/pages/_order.scss */
 .right-sidebar .restaurant-block .phones-list .numbers i, .right-sidebar .restaurant-block .phones-list .numbers span i {
   font-size: 22px;
   color: #F5E156;
