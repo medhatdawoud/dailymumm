@@ -17,7 +17,6 @@
         }
         
         if (CurrentOrderService.orderData && CurrentOrderService.orderData.startTime) {
-            debugger
             console.log(CurrentOrderService.orderData.startTime);
             $scope.orderStarted = true;
             CountDownService.initializeClock("count-down", new Date(Date.parse(CurrentOrderService.orderData.startTime) + 30 * 60 * 1000))
@@ -32,7 +31,7 @@
             $timeout(function () {
                 $scope.orderStarted = true;
                 CountDownService.initializeClock("count-down", new Date(Date.parse(CurrentOrderService.orderData.startTime) + 30 * 60 * 1000))
-            }, 300);
+            }, 500);
         });
     }
 })();
