@@ -40,5 +40,13 @@
                 $scope.timeout = true;
             }, 500);
         });
+
+        $scope.$on('orderCanceled', function () {
+            $timeout(function () {
+                CountDownService.stopTimer("count-down");
+                $scope.timeout = false;
+                $scope.orderStarted = false;
+            }, 100);
+        });
     }
 })();

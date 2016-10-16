@@ -9,9 +9,11 @@
 
     function CountDownService($rootScope) {
         var service = {};
+        var timeinterval;
 
         service.initializeClock = initializeClock;
-        
+        service.stopTimer = stopTimer;
+
         function getTimeRemaining(endtime) {
             var t = Date.parse(endtime) - Date.parse(new Date());
             var seconds = Math.floor((t / 1000) % 60);
@@ -29,16 +31,22 @@
 
         function initializeClock(id, endtime) {
             var clock = document.getElementById(id);
-            var timeinterval = setInterval(function () {
+            timeinterval = setInterval(function () {
                 var t = getTimeRemaining(endtime);
-                var minutes = t.minutes < 10 ? '0'+t.minutes : t.minutes;
-                var seconds = t.seconds < 10 ? '0'+t.seconds : t.seconds;
-                clock.innerHTML =  '00:' + minutes + ':' + seconds;
+                var minutes = t.minutes < 10 ? '0' + t.minutes : t.minutes;
+                var seconds = t.seconds < 10 ? '0' + t.seconds : t.seconds;
+                clock.innerHTML = '00:' + minutes + ':' + seconds;
                 if (t.total <= 0) {
                     clearInterval(timeinterval);
                     $rootScope.$broadcast('timeout');
                 }
             }, 1000);
+        }
+
+        function stopTimer(id) {
+            var clock = document.getElementById(id);
+            clock.innerHTML = "00:00:00";
+            clearInterval(timeinterval);
         }
 
         return service;

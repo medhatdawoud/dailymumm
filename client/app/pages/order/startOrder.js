@@ -69,6 +69,7 @@
             if (confirmed) {
                 CurrentOrderService.orderData.list = vm.selectedList;
                 CurrentOrderService.orderData.restaurant = vm.restaurant;
+                CurrentOrderService.orderData.creator = vm.userData;
                 CurrentOrderService.orderData.startTime = new Date();
 
                 $state.go("order");

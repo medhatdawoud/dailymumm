@@ -10,7 +10,16 @@
     function OrderController($scope, $rootScope, $state, CountDownService, AuthService, CurrentOrderService) {
         var vm = this;
 
-        vm.orderData = CurrentOrderService.orderData; 
+        vm.userData = AuthService.getCurrentUserInfo();
+        vm.orderData = CurrentOrderService.orderData;
+        vm.cancelOrder = cancelOrder;
+
+        function cancelOrder() {
+            CurrentOrderService.orderData = {};
+            $state.go('profile.view');
+            $rootScope.$broadcast('orderCanceled');
+        }
+
         console.log(CurrentOrderService.orderData);
 
         $scope.$on('orderStart', function () {

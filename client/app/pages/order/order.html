@@ -16,7 +16,7 @@
             </div>
 		</div>
 		<div class="col-sm-4 right-sidebar">
-			<div class="restaurant-block black-transperant-block no-margin-left">
+			<div class="restaurant-block black-transperant-block no-margin-left no-margin-right">
                 <div class="row">
                     <div class="col-xs-4 no-padding-right">
                         <img class="img-thumbnail img-responsive logo" ng-src="{{vm.orderData.restaurant.picturePath}}" alt="vm.orderData.restaurant.name">
@@ -30,7 +30,7 @@
                 <div class="menus-list">
                     <h4>Menus:</h4>
                     <p>menus on sites for references on order.</p>
-                    <a class="btn btn-block btn-danger" ng-repeat="menu in vm.orderData.restaurant.menus" target="_blank" href="{{menu.link}}">
+                    <a class="btn btn-block btn-info" ng-repeat="menu in vm.orderData.restaurant.menus" target="_blank" href="{{menu.link}}">
                          {{ menu.sitename }} &nbsp;&nbsp;<i class="glyphicon glyphicon-arrow-right"></i>
                     </a>
                 </div>
@@ -42,6 +42,11 @@
                     </p>
                 </div>
             </div>
+
+            <button class="btn btn-block btn-danger" ng-click="vm.cancelOrder()" ng-if="vm.orderData.creator.id == vm.userData.id">
+                <i class="glyphicon glyphicon-ban-circle"></i> Cancel the whole Order
+            </button>
+
 		</div>
 	</div>
 </div>
