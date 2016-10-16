@@ -86,7 +86,7 @@
         }
 
         function startOrder() {
-            var confirmed = confirm("By clicking on this button, you will start order from the selected restaurant. \n \n Are you sure ?");
+            var confirmed = confirm("By clicking on this button, you will start order from the selected restaurant. \n Notification emails to ("+vm.selectedList.subscribers.length+") list subscribers will be sent. \n \n Are you sure ?");
             if (confirmed) {
                 CurrentOrderService.orderData.list = vm.selectedList;
                 CurrentOrderService.orderData.restaurant = vm.restaurant;
