@@ -11,16 +11,7 @@
         var directive = {
             templateUrl: 'components/navbar/navbar.html',
             controller: 'NavbarDirectiveCtrl',
-            restric: 'EA',
-            link: function (scope) {
-                $rootScope.$on('orderStarted', startOrder);
-
-                function startOrder() {
-                    setTimeout(function () {
-                        CountDownService.initializeClock("count-down", new Date(Date.parse(new Date()) + 30 * 60 * 1000))
-                    }, 300);
-                }
-            }
+            restric: 'EA'
         };
 
         return directive;
