@@ -10,16 +10,17 @@
     function NavbarDirectiveController($scope, AuthService, $state, $timeout, CountDownService, CurrentOrderService) {
         $scope.logout = logout;
         $scope.orderStarted = false;
+        $scope.timeout = false;
         $scope.currentUsername = "";
 
         if (AuthService.isLoggedIn()) {
             $scope.currentUsername = (AuthService.getCurrentUserInfo()).username;
         }
-        
+
         if (CurrentOrderService.orderData && CurrentOrderService.orderData.startTime) {
             console.log(CurrentOrderService.orderData.startTime);
             $scope.orderStarted = true;
-            CountDownService.initializeClock("count-down", new Date(Date.parse(CurrentOrderService.orderData.startTime) + 30 * 60 * 1000))
+            CountDownService.initializeClock("count-down", new Date(Date.parse(CurrentOrderService.orderData.startTime) + 0.25 * 60 * 1000))
         }
 
         function logout() {
@@ -30,7 +31,13 @@
         $scope.$on('orderStarted', function () {
             $timeout(function () {
                 $scope.orderStarted = true;
-                CountDownService.initializeClock("count-down", new Date(Date.parse(CurrentOrderService.orderData.startTime) + 30 * 60 * 1000))
+                CountDownService.initializeClock("count-down", new Date(Date.parse(CurrentOrderService.orderData.startTime) + 0.25 * 60 * 1000))
+            }, 500);
+        });
+
+        $scope.$on('timeout', function () {
+            $timeout(function () {
+                $scope.timeout = true;
             }, 500);
         });
     }

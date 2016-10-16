@@ -1,16 +1,20 @@
 .right-sidebar{
-    .create-order-button {
-        margin-bottom: 15px;
-        border-radius: 0px;
-    }
+    
 
     .restaurant-block{
         .menus-list , .phones-list {
             margin-top: 20px;
         }
+        .rating-container {
+            margin-top: 5px;
+            text-align: left;
+        }
+
         .restaurant-name{
             font-size: 34px;
+            margin: 0px;
         }
+
         .phones-list {
             .numbers {
                 & , span {
@@ -29,10 +33,17 @@
 
 .main-container {
     .list-details {
-        height: 46px;
-        margin-bottom: 15px;
-        padding: 10px 20px;
+        // margin-bottom: 0px;
+        padding: 15px 20px;
         color: $colorSecond;
+
+        .create-order-button {
+            // margin: -16px -20px;
+            margin-top: -6px;
+            margin-right: -6px;
+            border-radius: 0px;
+            // padding: 14px 15px;
+        }
 
         h4 {
             margin: 0px;

@@ -111,6 +111,16 @@ h1, h2, h3, h4, h5, h6, a, span, label {
   margin-left: 0px;
 }
 
+/* line 80, ../scss/_general.scss */
+.no-padding-right {
+  padding-right: 0px;
+}
+
+/* line 84, ../scss/_general.scss */
+.no-padding-left {
+  padding-left: 0px;
+}
+
 /* line 1, ../scss/components/_signup.scss */
 .signup-box {
   background: rgba(50, 50, 50, 0.65);
@@ -794,44 +804,49 @@ h4 {
   margin-bottom: 100px;
 }
 
-/* line 2, ../scss/pages/_order.scss */
-.right-sidebar .create-order-button {
-  margin-bottom: 15px;
-  border-radius: 0px;
-}
-/* line 8, ../scss/pages/_order.scss */
+/* line 5, ../scss/pages/_order.scss */
 .right-sidebar .restaurant-block .menus-list, .right-sidebar .restaurant-block .phones-list {
   margin-top: 20px;
 }
-/* line 11, ../scss/pages/_order.scss */
+/* line 8, ../scss/pages/_order.scss */
+.right-sidebar .restaurant-block .rating-container {
+  margin-top: 5px;
+  text-align: left;
+}
+/* line 13, ../scss/pages/_order.scss */
 .right-sidebar .restaurant-block .restaurant-name {
   font-size: 34px;
+  margin: 0px;
 }
-/* line 16, ../scss/pages/_order.scss */
+/* line 20, ../scss/pages/_order.scss */
 .right-sidebar .restaurant-block .phones-list .numbers, .right-sidebar .restaurant-block .phones-list .numbers span {
   font-size: 28px;
   line-height: 24px;
 }
-/* line 20, ../scss/pages/_order.scss */
+/* line 24, ../scss/pages/_order.scss */
 .right-sidebar .restaurant-block .phones-list .numbers i, .right-sidebar .restaurant-block .phones-list .numbers span i {
   font-size: 22px;
   color: #F5E156;
 }
 
-/* line 31, ../scss/pages/_order.scss */
+/* line 35, ../scss/pages/_order.scss */
 .main-container .list-details {
-  height: 46px;
-  margin-bottom: 15px;
-  padding: 10px 20px;
+  padding: 15px 20px;
   color: #F5E156;
 }
-/* line 37, ../scss/pages/_order.scss */
+/* line 40, ../scss/pages/_order.scss */
+.main-container .list-details .create-order-button {
+  margin-top: -6px;
+  margin-right: -6px;
+  border-radius: 0px;
+}
+/* line 48, ../scss/pages/_order.scss */
 .main-container .list-details h4 {
   margin: 0px;
   color: #fff;
   text-transform: none;
 }
-/* line 42, ../scss/pages/_order.scss */
+/* line 53, ../scss/pages/_order.scss */
 .main-container .list-details h4 i {
   color: #F5E156;
   margin-right: 10px;
