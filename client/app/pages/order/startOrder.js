@@ -13,7 +13,7 @@
         vm.userData = AuthService.getCurrentUserInfo();
         vm.listOfGroups = [];
         vm.restaurants = [];
-        vm.changeRestaurant = changeRestaurant;
+        vm.restaurantChanged = restaurantChanged;
         vm.startOrder = startOrder;
         vm.listSelected = listSelected;
         vm.selectedList = null;
@@ -101,7 +101,7 @@
             }
         }
 
-        function changeRestaurant() {
+        function restaurantChanged() {
             $(".chosen-select").trigger("chosen:updated");
         }
     }
