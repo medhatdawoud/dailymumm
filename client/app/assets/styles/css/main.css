@@ -94,7 +94,7 @@ h1, h2, h3, h4, h5, h6, a, span, label {
 
 /* line 64, ../scss/_general.scss */
 .black-transperant-block {
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.5);
   margin: 0px -15px 10px;
   padding: 20px;
   border-top: 1px solid #000;
@@ -167,7 +167,7 @@ h1, h2, h3, h4, h5, h6, a, span, label {
 /* line 2, ../scss/components/_navbar.scss */
 .navbar.navbar-transparent {
   z-index: 100;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(0, 0, 0, 0.75);
   height: 60px;
 }
 /* line 7, ../scss/components/_navbar.scss */
