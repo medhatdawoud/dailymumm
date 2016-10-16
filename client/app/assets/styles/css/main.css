@@ -69,6 +69,10 @@ h1, h2, h3, h4, h5, h6, a, span, label {
 #count-down {
   cursor: pointer;
 }
+/* line 43, ../scss/_general.scss */
+#count-down:hover {
+  text-decoration: none;
+}
 
 /* line 1, ../scss/components/_signup.scss */
 .signup-box {
