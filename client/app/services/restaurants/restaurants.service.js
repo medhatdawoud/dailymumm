@@ -12,40 +12,13 @@
 
         service.getRestaurants = getRestaurants;
 
-        function getRestaurants() {
-            return [
-                {
-                    id: 1,
-                    name: "Majesty",
-                    rating: 3,
-                    menus: [
-                        { sitename: "elmenus", link: "http://elmenus.com" },
-                        { sitename: "otlob", link: "http://otlob.com" }
-                    ],
-                    phoneNumbers: ["0123456789", "0123456789", "0123456789"],
-                    picturePath: "/assets/images/restaurants/majesty.jpg"
-                },
-                {
-                    id: 2,
-                    name: "Macdonalds",
-                    rating: 4,
-                    menus: [
-                        { sitename: "elmenus", link: "http://elmenus.com" }
-                    ],
-                    phoneNumbers: ["0123456789", "0123456789", "0123456789"],
-                    picturePath: "/assets/images/restaurants/mac.jpg"
-                },
-                {
-                    id: 3,
-                    name: "KFC",
-                    rating: 5,
-                    menus: [
-                        { sitename: "elmenus", link: "http://elmenus.com" }
-                    ],
-                    phoneNumbers: ["0123456789"],
-                    picturePath: "/assets/images/restaurants/kfc.jpg"
-                }
-            ];
+        function getRestaurants(callback) {
+            $http.get(apiServer + '/api/restaurants')
+                .then(function (response) {
+                    callback({ success: true, data: response.data });
+                }, function (response) {
+                    callback({ success: false, code: response.data });
+                });
         }
 
         return service;

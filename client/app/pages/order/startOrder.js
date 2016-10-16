@@ -11,13 +11,15 @@
         var vm = this;
 
         vm.userData = AuthService.getCurrentUserInfo();
-        vm.$onInit = getLists();
         vm.listOfGroups = [];
-        vm.restaurants = RestaurantsService.getRestaurants();
+        vm.restaurants = [];
         vm.changeRestaurant = changeRestaurant;
         vm.startOrder = startOrder;
         vm.listSelected = listSelected;
         vm.selectedList = null;
+
+        getLists();
+        getAllRestaurants();
 
         function listSelected(list) {
             vm.listOfGroups.forEach(function (item) {
@@ -25,6 +27,25 @@
                     item.selected = false;
             });
             vm.selectedList = list;
+        }
+
+        function getAllRestaurants() {
+            RestaurantsService.getRestaurants(function (response) {
+                if (response.success) {
+                    var newRestaurants = [];
+                    response.data.forEach(function (item) {
+                        var rest = item;
+                        rest.id = item._id;
+                        rest.phoneNumbers = JSON.parse(item.phoneNumbers);
+                        newRestaurants.push(rest);
+                    });
+                    vm.restaurants = newRestaurants;
+
+                    $timeout(function () {
+                        $(".chosen-select").chosen({ width: "100%" });
+                    }, 300);
+                }
+            });
         }
 
         function getLists() {
@@ -83,9 +104,5 @@
         function changeRestaurant() {
             $(".chosen-select").trigger("chosen:updated");
         }
-
-        $timeout(function () {
-            $(".chosen-select").chosen({ width: "100%" });
-        }, 300);
     }
 })();
