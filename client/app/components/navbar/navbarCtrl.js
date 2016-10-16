@@ -15,8 +15,9 @@
         if (AuthService.isLoggedIn()) {
             $scope.currentUsername = (AuthService.getCurrentUserInfo()).username;
         }
-
-        if (CurrentOrderService.orderData && CurrentOrderService.orderData.list) {
+        
+        if (CurrentOrderService.orderData && CurrentOrderService.orderData.startTime) {
+            debugger
             console.log(CurrentOrderService.orderData.startTime);
             $scope.orderStarted = true;
             CountDownService.initializeClock("count-down", new Date(Date.parse(CurrentOrderService.orderData.startTime) + 30 * 60 * 1000))
@@ -27,10 +28,11 @@
             $state.go('home');
         }
 
-        // $scope.$on('orderStarted', function () {
-        //     $timeout(function () {
-        //         $scope.orderStarted = true;
-        //     }, 300);
-        // });
+        $scope.$on('orderStarted', function () {
+            $timeout(function () {
+                $scope.orderStarted = true;
+                CountDownService.initializeClock("count-down", new Date(Date.parse(CurrentOrderService.orderData.startTime) + 30 * 60 * 1000))
+            }, 300);
+        });
     }
 })();

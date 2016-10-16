@@ -70,7 +70,7 @@ h1, h2, h3, h4, h5, h6, a, span, label {
   cursor: pointer;
 }
 /* line 43, ../scss/_general.scss */
-#count-down:hover {
+#count-down:hover, #count-down:active, #count-down:focus {
   text-decoration: none;
 }
 
