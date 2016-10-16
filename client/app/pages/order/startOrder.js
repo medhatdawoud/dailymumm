@@ -5,9 +5,9 @@
         .module('dailyMummApp')
         .controller('StartOrderCtrl', StartOrderController);
 
-    StartOrderController.$inject = ['$scope', '$rootScope', '$state', 'ListsService', 'RestaurantsService', '$timeout', 'CountDownService', 'AuthService', 'CurrentOrderService'];
+    StartOrderController.$inject = ['$scope', '$rootScope', '$state', 'ListsService', 'RestaurantsService', '$timeout', 'CountDownService', 'AuthService', 'CurrentOrderService', 'OrdersService'];
 
-    function StartOrderController($scope, $rootScope, $state, ListsService, RestaurantsService, $timeout, CountDownService, AuthService, CurrentOrderService) {
+    function StartOrderController($scope, $rootScope, $state, ListsService, RestaurantsService, $timeout, CountDownService, AuthService, CurrentOrderService, OrdersService) {
         var vm = this;
 
         vm.userData = AuthService.getCurrentUserInfo();
@@ -86,18 +86,19 @@
         }
 
         function startOrder() {
-            var confirmed = confirm("By clicking on this button, you will start order from the selected restaurant. \n Notification emails to ("+vm.selectedList.subscribers.length+") list subscribers will be sent. \n \n Are you sure ?");
+            var confirmed = confirm("By clicking on this button, you will start order from the selected restaurant. \n Notification emails to (" + vm.selectedList.subscribers.length + ") list subscribers will be sent. \n \n Are you sure ?");
             if (confirmed) {
-                CurrentOrderService.orderData.list = vm.selectedList;
-                CurrentOrderService.orderData.restaurant = vm.restaurant;
-                CurrentOrderService.orderData.creator = vm.userData;
-                CurrentOrderService.orderData.startTime = new Date();
+                OrdersService.createOrder(vm.userData, vm.selectedList, vm.restaurant, function (response) {
+                    if (response.success) {
+                        CurrentOrderService.orderData=response.data;
 
-                $state.go("order");
+                        $state.go("order", { id: response.data._id });
 
-                $timeout(function () {
-                    $rootScope.$broadcast('orderStart');
-                }, 300);
+                        $timeout(function () {
+                            $rootScope.$broadcast('orderStart');
+                        }, 300);
+                    }
+                });
             }
         }
 
