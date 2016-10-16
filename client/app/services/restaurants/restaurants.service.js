@@ -26,8 +26,8 @@
                         month: 40,
                         all: 123
                     },
-                    phone_numbers: ["0123456789", "0123456789", "0123456789"],
-                    logo_path: "/assets/images/restaurants/majesty.jpg"
+                    phoneNumbers: ["0123456789", "0123456789", "0123456789"],
+                    picturePath: "/assets/images/restaurants/majesty.jpg"
                 },
                 {
                     id: 2,
@@ -40,8 +40,8 @@
                         month: 10,
                         all: 10
                     },
-                    phone_numbers: ["0123456789", "0123456789", "0123456789"],
-                    logo_path: "/assets/images/restaurants/mac.jpg"
+                    phoneNumbers: ["0123456789", "0123456789", "0123456789"],
+                    picturePath: "/assets/images/restaurants/mac.jpg"
                 },
                 {
                     id: 3,
@@ -54,8 +54,8 @@
                         month: 5,
                         all: 1231
                     },
-                    phone_numbers: ["0123456789"],
-                    logo_path: "/assets/images/restaurants/kfc.jpg"
+                    phoneNumbers: ["0123456789"],
+                    picturePath: "/assets/images/restaurants/kfc.jpg"
                 }
             ];
         }

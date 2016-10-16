@@ -74,6 +74,24 @@ h1, h2, h3, h4, h5, h6, a, span, label {
   text-decoration: none;
 }
 
+/* line 48, ../scss/_general.scss */
+.numbers {
+  font-family: "digital";
+}
+
+/* line 52, ../scss/_general.scss */
+.white-transperant-block {
+  background: rgba(200, 200, 200, 0.5);
+  margin: 0px -15px 10px;
+  padding: 20px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+/* line 59, ../scss/_general.scss */
+.white-transperant-block h3, .white-transperant-block p {
+  text-shadow: 1px 1px 2px #333;
+}
+
 /* line 1, ../scss/components/_signup.scss */
 .signup-box {
   background: rgba(50, 50, 50, 0.65);
@@ -572,42 +590,46 @@ p.no-lists {
 .btn + .btn {
   margin-left: 10px;
 }
+/* line 153, ../scss/pages/_profile.scss */
+.btn + .btn.btn-block {
+  margin-left: 0px;
+}
 
-/* line 156, ../scss/pages/_profile.scss */
+/* line 160, ../scss/pages/_profile.scss */
 .clear-fix::after, .clear-fix::before {
   content: ' ';
   display: block;
   clear: both;
 }
 
-/* line 163, ../scss/pages/_profile.scss */
+/* line 167, ../scss/pages/_profile.scss */
 .block-header {
   line-height: 30px;
 }
-/* line 166, ../scss/pages/_profile.scss */
+/* line 170, ../scss/pages/_profile.scss */
 .block-header h4 {
   line-height: 30px;
   margin: 0px 0px 15px;
 }
 
-/* line 172, ../scss/pages/_profile.scss */
+/* line 176, ../scss/pages/_profile.scss */
 h4 {
   text-transform: uppercase;
   font-weight: bold;
   color: #F5E156;
 }
 
-/* line 1, ../scss/pages/_order.scss */
+/* line 1, ../scss/pages/_startOrder.scss */
 .selected-list {
   margin-left: 15px;
   color: #fff;
 }
 
-/* line 7, ../scss/pages/_order.scss */
+/* line 7, ../scss/pages/_startOrder.scss */
 .lists-order .one-list .img-container {
   overflow: initial;
 }
-/* line 9, ../scss/pages/_order.scss */
+/* line 9, ../scss/pages/_startOrder.scss */
 .lists-order .one-list .img-container .input-selection {
   position: absolute;
   top: 0px;
@@ -618,7 +640,7 @@ h4 {
   cursor: pointer;
   background: rgba(80, 80, 80, 0.5);
 }
-/* line 19, ../scss/pages/_order.scss */
+/* line 19, ../scss/pages/_startOrder.scss */
 .lists-order .one-list .img-container .input-selection input {
   position: absolute;
   bottom: 5px;
@@ -628,127 +650,146 @@ h4 {
   height: 20px;
   opacity: 0;
 }
-/* line 32, ../scss/pages/_order.scss */
+/* line 32, ../scss/pages/_startOrder.scss */
 .lists-order .one-list.selected .img-container, .lists-order .one-list:hover .img-container {
   border-color: #26C6DA;
 }
-/* line 35, ../scss/pages/_order.scss */
+/* line 35, ../scss/pages/_startOrder.scss */
 .lists-order .one-list.selected .img-container .subscribers-count, .lists-order .one-list:hover .img-container .subscribers-count {
   background: #26C6DA;
 }
-/* line 42, ../scss/pages/_order.scss */
+/* line 42, ../scss/pages/_startOrder.scss */
 .lists-order .one-list.selected .img-container {
   box-shadow: 0 0 20px #333;
 }
-/* line 44, ../scss/pages/_order.scss */
+/* line 44, ../scss/pages/_startOrder.scss */
 .lists-order .one-list.selected .img-container .input-selection {
   background: none;
 }
 
-/* line 51, ../scss/pages/_order.scss */
+/* line 51, ../scss/pages/_startOrder.scss */
 .select-restaurant {
   min-height: 400px;
 }
-/* line 54, ../scss/pages/_order.scss */
+/* line 54, ../scss/pages/_startOrder.scss */
 .select-restaurant .one-restautant {
   padding: 20px;
   margin: 20px 0px;
   background: rgba(200, 200, 200, 0.5);
 }
-/* line 60, ../scss/pages/_order.scss */
+/* line 60, ../scss/pages/_startOrder.scss */
 .select-restaurant .one-restautant .rest-logo img {
   height: 100%;
   width: 100%;
 }
-/* line 67, ../scss/pages/_order.scss */
+/* line 67, ../scss/pages/_startOrder.scss */
 .select-restaurant .one-restautant .rest-details .title {
   margin: 15px 0px 10px;
   font-weight: bold;
   text-shadow: 0px 1px 3px #333;
 }
-/* line 72, ../scss/pages/_order.scss */
+/* line 72, ../scss/pages/_startOrder.scss */
 .select-restaurant .one-restautant .rest-details .stats {
   background: #A92F29;
   margin-top: 10px;
   padding: 5px 10px;
 }
-/* line 77, ../scss/pages/_order.scss */
+/* line 77, ../scss/pages/_startOrder.scss */
 .select-restaurant .one-restautant .rest-details .stats .one-count {
   display: inline-block;
 }
-/* line 80, ../scss/pages/_order.scss */
+/* line 80, ../scss/pages/_startOrder.scss */
 .select-restaurant .one-restautant .rest-details .stats .one-count .name {
   color: #333;
   color: #F5E156;
   text-transform: uppercase;
 }
-/* line 86, ../scss/pages/_order.scss */
+/* line 86, ../scss/pages/_startOrder.scss */
 .select-restaurant .one-restautant .rest-details .stats .one-count .order-month {
   font-family: arial;
 }
-/* line 90, ../scss/pages/_order.scss */
+/* line 90, ../scss/pages/_startOrder.scss */
 .select-restaurant .one-restautant .rest-details .stats .one-count + .one-count {
   margin-left: 10px;
 }
-/* line 95, ../scss/pages/_order.scss */
+/* line 95, ../scss/pages/_startOrder.scss */
 .select-restaurant .one-restautant .rest-details .phone-numbers {
   display: inline-block;
   margin-top: 15px;
   font-family: arial;
 }
-/* line 99, ../scss/pages/_order.scss */
+/* line 99, ../scss/pages/_startOrder.scss */
 .select-restaurant .one-restautant .rest-details .phone-numbers ul {
   list-style: none;
   margin: 0px;
   padding: 5px 10px;
   background: #333;
 }
-/* line 105, ../scss/pages/_order.scss */
+/* line 105, ../scss/pages/_startOrder.scss */
 .select-restaurant .one-restautant .rest-details .phone-numbers ul .phone-label {
   margin-right: 10px;
   color: #F5E156;
   float: left;
   font-family: "Titillium";
 }
-/* line 112, ../scss/pages/_order.scss */
+/* line 112, ../scss/pages/_startOrder.scss */
 .select-restaurant .one-restautant .rest-details .phone-numbers ul li {
   display: inline;
   margin-right: 10px;
 }
-/* line 117, ../scss/pages/_order.scss */
+/* line 117, ../scss/pages/_startOrder.scss */
 .select-restaurant .one-restautant .rest-details .phone-numbers ul li + li::before {
   content: '|';
   margin-right: 10px;
 }
-/* line 125, ../scss/pages/_order.scss */
+/* line 125, ../scss/pages/_startOrder.scss */
 .select-restaurant .one-restautant .rest-details .menus {
   margin-top: 15px;
 }
-/* line 127, ../scss/pages/_order.scss */
+/* line 127, ../scss/pages/_startOrder.scss */
 .select-restaurant .one-restautant .rest-details .menus ul {
   list-style: none;
   margin: 0px;
   padding: 0px;
 }
-/* line 131, ../scss/pages/_order.scss */
+/* line 131, ../scss/pages/_startOrder.scss */
 .select-restaurant .one-restautant .rest-details .menus ul li {
   display: inline;
   margin-right: 10px;
 }
-/* line 135, ../scss/pages/_order.scss */
+/* line 135, ../scss/pages/_startOrder.scss */
 .select-restaurant .one-restautant .rest-details .menus ul li a {
   color: #fff;
   padding: 5px 10px;
 }
-/* line 139, ../scss/pages/_order.scss */
+/* line 139, ../scss/pages/_startOrder.scss */
 .select-restaurant .one-restautant .rest-details .menus ul li a:hover, .select-restaurant .one-restautant .rest-details .menus ul li a:active, .select-restaurant .one-restautant .rest-details .menus ul li a:focus {
   text-decoration: none;
 }
-/* line 143, ../scss/pages/_order.scss */
+/* line 143, ../scss/pages/_startOrder.scss */
 .select-restaurant .one-restautant .rest-details .menus ul li a i {
   font-size: 11px;
 }
-/* line 153, ../scss/pages/_order.scss */
+/* line 153, ../scss/pages/_startOrder.scss */
 .select-restaurant .action-panel {
   margin-bottom: 100px;
+}
+
+/* line 3, ../scss/pages/_order.scss */
+.right-sidebar .restaurant-block .menus-list, .right-sidebar .restaurant-block .phones-list {
+  margin-top: 20px;
+}
+/* line 6, ../scss/pages/_order.scss */
+.right-sidebar .restaurant-block .restaurant-name {
+  font-size: 34px;
+}
+/* line 11, ../scss/pages/_order.scss */
+.right-sidebar .restaurant-block .phones-list .numbers, .right-sidebar .restaurant-block .phones-list .numbers span {
+  font-size: 28px;
+  line-height: 24px;
+}
+/* line 15, ../scss/pages/_order.scss */
+.right-sidebar .restaurant-block .phones-list .numbers i, .right-sidebar .restaurant-block .phones-list .numbers span i {
+  font-size: 22px;
+  color: #F5E156;
 }

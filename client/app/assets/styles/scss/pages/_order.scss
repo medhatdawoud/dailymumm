@@ -1,156 +1,23 @@
-.selected-list {
-    margin-left: 15px;
-    color: #fff;
-}
-.lists-order {
-    .one-list {
-        .img-container {
-            overflow: initial;
-            .input-selection {
-                position: absolute;
-                top: 0px;
-                bottom: 0px;
-                right: 0px;
-                left: 0px;
-                margin-bottom: 0px;
-                cursor: pointer;
-                background:rgba(80,80,80,0.5);
-                
-                input {
-                    position: absolute;
-                    bottom: 5px;
-                    left: 5px;
-                    margin: 0px;
-                    width: 20px;
-                    height: 20px;
-                    opacity: 0;
-                }
-            }
+.right-sidebar{
+    .restaurant-block{
+        .menus-list , .phones-list {
+            margin-top: 20px;
         }
-        
-        &.selected, &:hover {
-            .img-container {
-                border-color: #26C6DA;
-                
-                .subscribers-count {
-                    background:#26C6DA;
-                }
-            }
+        .restaurant-name{
+            font-size: 34px;
         }
+        .phones-list {
+            .numbers {
+                & , span {
+                    font-size: 28px;
+                    line-height: 24px;
 
-        &.selected {
-            .img-container {
-                box-shadow: 0 0 20px #333;
-                .input-selection {
-                    background: none;
-                }
-            }
-        }
-    }
-}
-.select-restaurant {
-    min-height: 400px;
-    
-    .one-restautant {
-        padding: 20px;
-        margin: 20px 0px;
-        background: rgba(200, 200, 200, 0.5);
-        
-        .rest-logo {
-            img {
-                height: 100%;
-                width: 100%;
-            }
-        }
-        
-        .rest-details {
-            .title {
-                margin:15px 0px 10px;
-                font-weight: bold;
-                text-shadow: 0px 1px 3px #333;
-            }
-            .stats {
-                background: #A92F29;
-                margin-top: 10px;
-                padding: 5px 10px;
-                
-                .one-count {
-                    display: inline-block;
-                    
-                    .name {
-                        color: #333;
+                    i {
+                        font-size: 22px;
                         color: $colorSecond;
-                        text-transform: uppercase;
-                    }
-                    
-                    .order-month {
-                        font-family: arial;
-                    }
-                    
-                    & + .one-count {
-                        margin-left: 10px;
-                    }
-                }
-            }
-            .phone-numbers {
-                display: inline-block;
-                margin-top: 15px;
-                font-family: arial;
-                ul {
-                    list-style: none;
-                    margin:0px;
-                    padding: 5px 10px;
-                    background: #333;
-                    
-                    .phone-label {
-                        margin-right: 10px;
-                        color: $colorSecond;
-                        float: left;
-                        font-family: $fontPrimary;
-                    }
-                    
-                    li {
-                        display: inline;
-                        margin-right: 10px;
-                        
-                        & + li {
-                            &::before {
-                                content: '|';
-                                margin-right: 10px;
-                            }
-                        }
-                    }
-                }
-            }
-            .menus {
-                margin-top: 15px;
-                ul {
-                    list-style: none;
-                    margin:0px;
-                    padding: 0px;
-                    li {
-                        display: inline;
-                        margin-right: 10px;
-                        
-                        a {
-                            color: #fff;
-                            padding: 5px 10px;
-                            
-                            &:hover, &:active, &:focus {
-                                text-decoration: none;
-                            }
-                            
-                            i {
-                                font-size: 11px;
-                            }
-                        }
                     }
                 }
             }
         }
-    }
-    
-    .action-panel {
-        margin-bottom: 100px;
     }
 }

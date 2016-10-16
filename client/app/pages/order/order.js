@@ -10,6 +10,7 @@
     function OrderController($scope, $rootScope, $state, CountDownService, AuthService, CurrentOrderService) {
         var vm = this;
 
+        vm.orderData = CurrentOrderService.orderData; 
         console.log(CurrentOrderService.orderData);
 
         $scope.$on('orderStart', function () {

@@ -114,7 +114,7 @@ p.no-lists {
         }
     }
 }
-.profile-view, .profile-edit, .profile-change-password {
+.profile-view, .profile-edit, .profile-change-password{
     background: rgba(200,200,200,0.5);
     margin:0px -15px 10px;
     padding:20px;
@@ -149,6 +149,10 @@ p.no-lists {
     
     & + & {
         margin-left: 10px;
+
+        &.btn-block {
+            margin-left: 0px;
+        }
     }
 }
 

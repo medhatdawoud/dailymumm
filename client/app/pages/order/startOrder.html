@@ -40,7 +40,7 @@
 			<div class="one-restautant" ng-show="vm.restaurant && vm.restaurant.id">
 				<div class="row">
 					<div class="col-sm-3 rest-logo hidden-xs">
-						<img src="{{vm.restaurant.logo_path}}" alt="{{vm.restaurant.name}}">
+						<img src="{{vm.restaurant.picturePath}}" alt="{{vm.restaurant.name}}">
 					</div>
 					<div class="col-sm-9 rest-details">
 						<h1 class="title">{{vm.restaurant.name}}</h1>
@@ -55,7 +55,7 @@
 						<!--<div class="phone-numbers">
 							<ul>
 								<p class="phone-label"><i class="glyphicon glyphicon-phone"></i>&nbsp; PHONES:</p>
-								<li ng-repeat="phone in vm.restaurant.phone_numbers track by $index">{{phone}}</li>
+								<li ng-repeat="phone in vm.restaurant.phoneNumbers track by $index">{{phone}}</li>
 							</ul>
 						</div>-->
 						<!--<div class="stats">
