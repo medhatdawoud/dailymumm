@@ -20,8 +20,6 @@
             $rootScope.$broadcast('orderCanceled');
         }
 
-        console.log(CurrentOrderService.orderData);
-
         $scope.$on('orderStart', function () {
             $rootScope.$broadcast('orderStarted');
         })

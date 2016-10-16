@@ -53,8 +53,6 @@ module.exports = function (app) {
     router.put('/', function (req, res) {
         var listData = JSON.parse(req.body.list);
         
-        console.log(listData)
-        
         List.update({ "_id" : listData.id },{ 
             name: listData.name,
             picturePath: listData.picturePath,
