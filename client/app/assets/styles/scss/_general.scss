@@ -60,3 +60,19 @@ h1, h2, h3, h4, h5, h6, a, span, label {
         text-shadow: 1px 1px 2px #333;
     }
 }
+
+.black-transperant-block {
+    background: rgba(0,0,0,0.7);
+    margin:0px -15px 10px;
+    padding:20px;
+    border-top:1px solid #000;
+    border-bottom:1px solid #000;
+}
+
+.no-margin-right {
+    margin-right: 0px;
+}
+
+.no-margin-left {
+    margin-left: 0px;
+}

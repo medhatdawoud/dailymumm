@@ -92,6 +92,25 @@ h1, h2, h3, h4, h5, h6, a, span, label {
   text-shadow: 1px 1px 2px #333;
 }
 
+/* line 64, ../scss/_general.scss */
+.black-transperant-block {
+  background: rgba(0, 0, 0, 0.7);
+  margin: 0px -15px 10px;
+  padding: 20px;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+/* line 72, ../scss/_general.scss */
+.no-margin-right {
+  margin-right: 0px;
+}
+
+/* line 76, ../scss/_general.scss */
+.no-margin-left {
+  margin-left: 0px;
+}
+
 /* line 1, ../scss/components/_signup.scss */
 .signup-box {
   background: rgba(50, 50, 50, 0.65);
@@ -797,4 +816,23 @@ h4 {
 .right-sidebar .restaurant-block .phones-list .numbers i, .right-sidebar .restaurant-block .phones-list .numbers span i {
   font-size: 22px;
   color: #F5E156;
+}
+
+/* line 31, ../scss/pages/_order.scss */
+.main-container .list-details {
+  height: 46px;
+  margin-bottom: 15px;
+  padding: 10px 20px;
+  color: #F5E156;
+}
+/* line 37, ../scss/pages/_order.scss */
+.main-container .list-details h4 {
+  margin: 0px;
+  color: #fff;
+  text-transform: none;
+}
+/* line 42, ../scss/pages/_order.scss */
+.main-container .list-details h4 i {
+  color: #F5E156;
+  margin-right: 10px;
 }

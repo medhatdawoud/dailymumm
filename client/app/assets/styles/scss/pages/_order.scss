@@ -26,3 +26,27 @@
         }
     }
 }
+
+.main-container {
+    .list-details {
+        height: 46px;
+        margin-bottom: 15px;
+        padding: 10px 20px;
+        color: $colorSecond;
+
+        h4 {
+            margin: 0px;
+            color: #fff;
+            text-transform: none;
+
+            i {
+                color: $colorSecond;
+                margin-right: 10px;
+            }
+        }
+
+    }
+    .white-transperant-block{
+        
+    }
+}
