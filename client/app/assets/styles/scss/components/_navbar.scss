@@ -1,5 +1,6 @@
 .navbar {
     &.navbar-transparent {
+        z-index: 100;
         background: rgba(0,0,0,0.5);
         height:60px;
         
@@ -30,10 +31,20 @@
         }
         
         .navbar-collapse {
+            @media (max-width:768px){
+                background: #333;
+            }
             .navbar-btn {
                 margin-top: 12px;
                 margin-bottom: 12px;
                 margin-right: 20px;
+
+                @media (max-width:768px){
+                    display: block;
+                    width: 100%;
+                    padding-right: 0;
+                    padding-left: 0;
+                }
             }
             .navbar-nav {
                 li {
@@ -82,6 +93,10 @@
                             .caret {
                                 &.pull-right {
                                     margin-top: 7px;
+
+                                    // @media (max-width:768px){
+                                    //     margin-right: 15px;
+                                    // }
                                 }
                             }
                         }

@@ -55,8 +55,14 @@ h1, h2, h3, h4, h5, h6, a, span, label {
 }
 
 /* line 31, ../scss/_general.scss */
-.navbar-right {
+.navbar-collapse.navbar-right {
   padding-right: 0px;
+}
+@media (max-width: 768px) {
+  /* line 31, ../scss/_general.scss */
+  .navbar-collapse.navbar-right {
+    padding-right: 15px;
+  }
 }
 
 /* line 1, ../scss/components/_signup.scss */
@@ -104,81 +110,97 @@ h1, h2, h3, h4, h5, h6, a, span, label {
 
 /* line 2, ../scss/components/_navbar.scss */
 .navbar.navbar-transparent {
+  z-index: 100;
   background: rgba(0, 0, 0, 0.5);
   height: 60px;
 }
-/* line 6, ../scss/components/_navbar.scss */
+/* line 7, ../scss/components/_navbar.scss */
 .navbar.navbar-transparent .navbar-header {
   height: 60px;
 }
-/* line 9, ../scss/components/_navbar.scss */
+/* line 10, ../scss/components/_navbar.scss */
 .navbar.navbar-transparent .navbar-header .navbar-toggle {
   border: 1px solid #777;
   margin-top: 12px;
 }
-/* line 13, ../scss/components/_navbar.scss */
+/* line 14, ../scss/components/_navbar.scss */
 .navbar.navbar-transparent .navbar-header .navbar-toggle .icon-bar {
   background: #777;
 }
-/* line 18, ../scss/components/_navbar.scss */
+/* line 19, ../scss/components/_navbar.scss */
 .navbar.navbar-transparent .navbar-header .navbar-brand {
   font-family: "logo";
   color: #F5E156;
   font-size: 30px;
 }
-/* line 25, ../scss/components/_navbar.scss */
+/* line 26, ../scss/components/_navbar.scss */
 .navbar.navbar-transparent .order-count-down {
   font-size: 30px;
   font-family: "digital";
   margin: 9px 15px;
   color: #F5E156;
 }
-/* line 33, ../scss/components/_navbar.scss */
+@media (max-width: 768px) {
+  /* line 33, ../scss/components/_navbar.scss */
+  .navbar.navbar-transparent .navbar-collapse {
+    background: #333;
+  }
+}
+/* line 37, ../scss/components/_navbar.scss */
 .navbar.navbar-transparent .navbar-collapse .navbar-btn {
   margin-top: 12px;
   margin-bottom: 12px;
   margin-right: 20px;
 }
-/* line 40, ../scss/components/_navbar.scss */
+@media (max-width: 768px) {
+  /* line 37, ../scss/components/_navbar.scss */
+  .navbar.navbar-transparent .navbar-collapse .navbar-btn {
+    display: block;
+    width: 100%;
+    padding-right: 0;
+    padding-left: 0;
+  }
+}
+/* line 51, ../scss/components/_navbar.scss */
 .navbar.navbar-transparent .navbar-collapse .navbar-nav li a {
   background-color: transparent;
   padding: 19px 15px;
   color: #fff;
 }
-/* line 45, ../scss/components/_navbar.scss */
+/* line 56, ../scss/components/_navbar.scss */
 .navbar.navbar-transparent .navbar-collapse .navbar-nav li a:hover, .navbar.navbar-transparent .navbar-collapse .navbar-nav li a:focus {
   background-color: #0a0a0a;
   color: #eee;
 }
-/* line 51, ../scss/components/_navbar.scss */
+/* line 62, ../scss/components/_navbar.scss */
 .navbar.navbar-transparent .navbar-collapse .navbar-nav li.dropdown {
   font-size: 16px;
 }
-/* line 57, ../scss/components/_navbar.scss */
+/* line 68, ../scss/components/_navbar.scss */
 .navbar.navbar-transparent .navbar-collapse .navbar-nav li.dropdown ul.dropdown-menu {
   background-color: #0a0a0a;
   border: none;
 }
-/* line 61, ../scss/components/_navbar.scss */
+/* line 72, ../scss/components/_navbar.scss */
 .navbar.navbar-transparent .navbar-collapse .navbar-nav li.dropdown ul.dropdown-menu li a {
   text-align: left;
   padding: 5px 15px;
   background-color: #0a0a0a;
 }
-/* line 66, ../scss/components/_navbar.scss */
+/* line 77, ../scss/components/_navbar.scss */
 .navbar.navbar-transparent .navbar-collapse .navbar-nav li.dropdown ul.dropdown-menu li a:hover {
   background-color: #000;
 }
-/* line 71, ../scss/components/_navbar.scss */
+/* line 82, ../scss/components/_navbar.scss */
 .navbar.navbar-transparent .navbar-collapse .navbar-nav li.dropdown ul.dropdown-menu li.divider {
   margin: 3px 0px;
   background-color: #333;
 }
-/* line 79, ../scss/components/_navbar.scss */
+/* line 90, ../scss/components/_navbar.scss */
 .navbar.navbar-transparent .navbar-collapse .navbar-nav li.dropdown.user-dropdown {
   min-width: 160px;
 }
-/* line 83, ../scss/components/_navbar.scss */
+/* line 94, ../scss/components/_navbar.scss */
 .navbar.navbar-transparent .navbar-collapse .navbar-nav li.dropdown.user-dropdown .caret.pull-right {
   margin-top: 7px;
 }
