@@ -41,7 +41,7 @@ module.exports = function (app) {
 
         Order.update({ "_id": orderId }, {
             $push: {
-                orders: orderItem
+                items: orderItem
             }
         }, function (err, data) {
             if (err) return console.error(err);

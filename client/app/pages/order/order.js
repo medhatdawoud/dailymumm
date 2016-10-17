@@ -19,17 +19,35 @@
             $state.go('profile.view');
         } else {
             if (!CurrentOrderService.orderData.id) {
-                OrdersService.getOrderById($stateParams.id, function (response) {
-                    if (response.success) {
-                        vm.orderData = response.data;
-                        CurrentOrderService.orderData = response.data;
-                        $rootScope.$broadcast('orderStarted');
-                    }
-                });
+                getOrderById($stateParams.id);
+                $rootScope.$broadcast('orderStarted');
             }
         }
+
+        function getOrderById(orderId) {
+            OrdersService.getOrderById(orderId, function (response) {
+                if (response.success) {
+                    vm.orderData = response.data;
+                    CurrentOrderService.orderData = response.data;
+                }
+            });
+        }
+
         function createItem() {
-            console.log(vm.orderItemTemp);
+            vm.orderItemTemp.datetime = new Date();
+            vm.orderItemTemp.user = {
+                fullname: vm.userData.fullname,
+                name: vm.userData.username,
+                id: vm.userData.id
+            }
+            OrdersService.pushOrderItem(vm.orderData._id, vm.orderItemTemp, function (response) {
+                if (response.success) {
+                    getOrderById(vm.orderData._id);
+                    console.log(vm.orderData);
+
+                    $('#createOrderModal').modal('hide');
+                }
+            });
         }
 
         function cancelOrder() {

@@ -20,7 +20,7 @@ var OrderSchema = mongoose.Schema({
         menus: Array,
         phoneNumbers: Array
     },
-    orders: Array
+    items: Array
 },{ timestamps:{createdAt:'startTime',updatedAt:'updated_at'}});
 
 var ordersModel = mongoose.model('Orders',OrderSchema);
