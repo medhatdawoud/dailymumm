@@ -58,6 +58,24 @@
 
     }
     .white-transperant-block{
-        
+        font-weight: bold;
+        &.order-item {
+            padding: 7px 15px;
+
+            .meta {
+                color: #333;
+            }
+            .item {
+                font-size: 20px;
+
+                &.owned-item {
+                    color: $colorSecond;
+                }
+            }
+
+            & + & {
+                margin-top: 7px;
+            }
+        }
     }
 }

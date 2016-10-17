@@ -11,8 +11,19 @@
                 </button>
 				<h4><i class="glyphicon glyphicon-bullhorn"></i>&nbsp; {{ vm.orderData.list.name }}</h4>
 			</div>
-			<div class="white-transperant-block">
-				123456
+			<div class="white-transperant-block order-item" ng-repeat="item in vm.orderData.items">
+				<div class="row item" ng-class="{'owned-item':item.user.id === vm.userData.id}">
+					<div class="col-xs-1">{{item.count}}</div>
+					<div class="col-sm-6 col-xs-6">{{item.item}}</div>
+					<div class="col-sm-3 col-xs-4 text-right">{{item.price | currency :"" : 2}} LE</div>
+					<div class="col-sm-2 col-xs-1 hidden-xs no-padding-left text-right">
+						<span class="label label-info">{{item.refmenu.sitename}}</span>
+					</div>
+				</div>
+				<div class="row padding-top meta">
+					<div class="col-xs-6 text-left">{{item.user.fullname}}</div>
+					<div class="col-xs-6 text-right">{{item.datetime | fromNow}}</div>
+				</div>
 			</div>
 		</div>
 		<div class="col-sm-4 right-sidebar">

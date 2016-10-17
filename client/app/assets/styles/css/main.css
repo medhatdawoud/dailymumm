@@ -121,6 +121,11 @@ h1, h2, h3, h4, h5, h6, a, span, label {
   padding-left: 0px;
 }
 
+/* line 88, ../scss/_general.scss */
+.padding-top {
+  padding-top: 7px;
+}
+
 /* line 1, ../scss/components/_signup.scss */
 .signup-box {
   background: rgba(50, 50, 50, 0.65);
@@ -850,4 +855,28 @@ h4 {
 .main-container .list-details h4 i {
   color: #F5E156;
   margin-right: 10px;
+}
+/* line 60, ../scss/pages/_order.scss */
+.main-container .white-transperant-block {
+  font-weight: bold;
+}
+/* line 62, ../scss/pages/_order.scss */
+.main-container .white-transperant-block.order-item {
+  padding: 7px 15px;
+}
+/* line 65, ../scss/pages/_order.scss */
+.main-container .white-transperant-block.order-item .meta {
+  color: #333;
+}
+/* line 68, ../scss/pages/_order.scss */
+.main-container .white-transperant-block.order-item .item {
+  font-size: 20px;
+}
+/* line 71, ../scss/pages/_order.scss */
+.main-container .white-transperant-block.order-item .item.owned-item {
+  color: #F5E156;
+}
+/* line 76, ../scss/pages/_order.scss */
+.main-container .white-transperant-block.order-item + .main-container .white-transperant-block.order-item {
+  margin-top: 7px;
 }
