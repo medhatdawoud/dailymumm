@@ -5,14 +5,28 @@
         .module('dailyMummApp')
         .controller('OrderCtrl', OrderController);
 
-    OrderController.$inject = ['$scope', '$rootScope', '$state', 'CountDownService', 'AuthService', 'CurrentOrderService'];
+    OrderController.$inject = ['$scope', '$rootScope', '$state', '$stateParams', 'CountDownService', 'AuthService', 'CurrentOrderService', 'OrdersService'];
 
-    function OrderController($scope, $rootScope, $state, CountDownService, AuthService, CurrentOrderService) {
+    function OrderController($scope, $rootScope, $state, $stateParams, CountDownService, AuthService, CurrentOrderService, OrdersService) {
         var vm = this;
 
         vm.userData = AuthService.getCurrentUserInfo();
         vm.orderData = CurrentOrderService.orderData;
         vm.cancelOrder = cancelOrder;
+
+        if (!$stateParams.id) {
+            $state.go('profile.view');
+        } else {
+            if (!CurrentOrderService.orderData.id) {
+                OrdersService.getOrderById($stateParams.id, function (response) {
+                    if (response.success) {
+                        vm.orderData = response.data;
+                        CurrentOrderService.orderData = response.data;
+                        $rootScope.$broadcast('orderStarted');
+                    }
+                });
+            }
+        }
 
         function cancelOrder() {
             CurrentOrderService.orderData = {};

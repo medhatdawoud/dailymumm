@@ -32,8 +32,8 @@
             <a ui-sref="startOrder" ng-hide="orderStarted" class="btn btn-warning navbar-btn">
                 <i class="glyphicon glyphicon-bell"></i> Start Order
             </a>
-            <a ui-sref="order" id="count-down" ng-show="orderStarted && !timeout" class="order-count-down navbar-text">00:00:00</a>
-            <a ui-sref="order" ng-show="timeout" class="btn btn-success navbar-btn">
+            <a ui-sref="order({id:order._id})" id="count-down" ng-show="orderStarted && !timeout" class="order-count-down navbar-text">00:00:00</a>
+            <a ui-sref="order({id:order._id})" ng-show="timeout" class="btn btn-success navbar-btn">
                 <i class="glyphicon glyphicon-list-alt"></i>&nbsp; Order Summary
             </a>
         </div>

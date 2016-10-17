@@ -13,6 +13,7 @@
 
         service.initializeClock = initializeClock;
         service.stopTimer = stopTimer;
+        service.getTimeRemaining = getTimeRemaining;
 
         function getTimeRemaining(endtime) {
             var t = Date.parse(endtime) - Date.parse(new Date());

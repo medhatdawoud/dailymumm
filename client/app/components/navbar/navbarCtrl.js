@@ -8,19 +8,18 @@
     NavbarDirectiveController.$inject = ['$scope', 'AuthService', '$state', '$timeout', 'CountDownService', 'CurrentOrderService'];
 
     function NavbarDirectiveController($scope, AuthService, $state, $timeout, CountDownService, CurrentOrderService) {
+
+        // 15 second
+        var collectingOrderTime =  0.25 * 60 * 1000;
+        
         $scope.logout = logout;
         $scope.orderStarted = false;
         $scope.timeout = false;
         $scope.currentUsername = "";
+        $scope.order = null;
 
         if (AuthService.isLoggedIn()) {
             $scope.currentUsername = (AuthService.getCurrentUserInfo()).username;
-        }
-
-        if (CurrentOrderService.orderData && CurrentOrderService.orderData.startTime) {
-            console.log(CurrentOrderService.orderData.startTime);
-            $scope.orderStarted = true;
-            CountDownService.initializeClock("count-down", new Date(Date.parse(CurrentOrderService.orderData.startTime) + 0.25 * 60 * 1000))
         }
 
         function logout() {
@@ -29,9 +28,17 @@
         }
 
         $scope.$on('orderStarted', function () {
+            var endTime = new Date(Date.parse(CurrentOrderService.orderData.startTime) + collectingOrderTime);
+            $scope.order = CurrentOrderService.orderData;
             $timeout(function () {
-                $scope.orderStarted = true;
-                CountDownService.initializeClock("count-down", new Date(Date.parse(CurrentOrderService.orderData.startTime) + 0.25 * 60 * 1000))
+                var remaining = CountDownService.getTimeRemaining(endTime);
+                if (remaining.minutes >= 0 && remaining.seconds > 0) {
+                    CountDownService.initializeClock("count-down", endTime)
+                    $scope.orderStarted = true;
+                } else {
+                    $scope.timeout = true;
+                    $scope.orderStarted = true;
+                }
             }, 500);
         });
 
