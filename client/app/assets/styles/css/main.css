@@ -834,49 +834,53 @@ h4 {
   color: #F5E156;
 }
 
-/* line 35, ../scss/pages/_order.scss */
+/* line 34, ../scss/pages/_order.scss */
+.main-container {
+  margin-bottom: 50px;
+}
+/* line 36, ../scss/pages/_order.scss */
 .main-container .list-details {
   padding: 15px 20px;
   color: #F5E156;
 }
-/* line 40, ../scss/pages/_order.scss */
+/* line 41, ../scss/pages/_order.scss */
 .main-container .list-details .create-order-button {
   margin-top: -6px;
   margin-right: -6px;
   border-radius: 0px;
 }
-/* line 48, ../scss/pages/_order.scss */
+/* line 49, ../scss/pages/_order.scss */
 .main-container .list-details h4 {
   margin: 0px;
   color: #fff;
   text-transform: none;
 }
-/* line 53, ../scss/pages/_order.scss */
+/* line 54, ../scss/pages/_order.scss */
 .main-container .list-details h4 i {
   color: #F5E156;
   margin-right: 10px;
 }
-/* line 60, ../scss/pages/_order.scss */
+/* line 61, ../scss/pages/_order.scss */
 .main-container .white-transperant-block {
   font-weight: bold;
 }
-/* line 62, ../scss/pages/_order.scss */
+/* line 63, ../scss/pages/_order.scss */
 .main-container .white-transperant-block.order-item {
   padding: 7px 15px;
 }
-/* line 65, ../scss/pages/_order.scss */
+/* line 66, ../scss/pages/_order.scss */
 .main-container .white-transperant-block.order-item .meta {
   color: #333;
 }
-/* line 68, ../scss/pages/_order.scss */
+/* line 69, ../scss/pages/_order.scss */
 .main-container .white-transperant-block.order-item .item {
   font-size: 20px;
 }
-/* line 71, ../scss/pages/_order.scss */
+/* line 72, ../scss/pages/_order.scss */
 .main-container .white-transperant-block.order-item .item.owned-item {
   color: #F5E156;
 }
-/* line 76, ../scss/pages/_order.scss */
+/* line 77, ../scss/pages/_order.scss */
 .main-container .white-transperant-block.order-item + .main-container .white-transperant-block.order-item {
   margin-top: 7px;
 }
