@@ -10,7 +10,9 @@
             'pascalprecht.translate']);
 
     // app.value("apiServer", "https://dailymumm.herokuapp.com");
-    app.value("apiServer", "http://localhost");
+    // app.value("apiServer", "http://localhost");
+
+    app.value("apiServer", location.origin);
 
     app.run(function ($rootScope, $state) { // just to hide the top bar in home public layout
         $rootScope.$on('$stateChangeSuccess',
