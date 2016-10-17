@@ -13,6 +13,7 @@
         vm.userData = AuthService.getCurrentUserInfo();
         vm.orderData = CurrentOrderService.orderData;
         vm.cancelOrder = cancelOrder;
+        vm.createItem = createItem;
 
         if (!$stateParams.id) {
             $state.go('profile.view');
@@ -26,6 +27,9 @@
                     }
                 });
             }
+        }
+        function createItem() {
+            console.log(vm.orderItemTemp);
         }
 
         function cancelOrder() {

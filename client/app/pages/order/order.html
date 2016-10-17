@@ -1,52 +1,100 @@
 <div class="container">
 	<div class="row">
 		<div class="col-sm-8 main-container">
-            <div class="row alert alert-info">
-                <strong>Here we go:</strong>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam eaque, ducimus doloremque nam cum cumque rem quo molestias illum libero, atque iure inventore distinctio ipsa autem dicta voluptas modi! Nam?
-            </div>
-            <div class="list-details black-transperant-block">
-                <button class="btn btn-success pull-right create-order-button">
+			<div class="row alert alert-info">
+				<strong>Here we go:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam eaque, ducimus doloremque
+				nam cum cumque rem quo molestias illum libero, atque iure inventore distinctio ipsa autem dicta voluptas modi! Nam?
+			</div>
+			<div class="list-details black-transperant-block">
+				<button class="btn btn-success pull-right create-order-button" data-toggle="modal" data-target="#createOrderModal">
                     <i class="glyphicon glyphicon-plus"></i> add order
                 </button>
-                <h4><i class="glyphicon glyphicon-bullhorn"></i>&nbsp; {{ vm.orderData.list.name }}</h4>
-            </div>
+				<h4><i class="glyphicon glyphicon-bullhorn"></i>&nbsp; {{ vm.orderData.list.name }}</h4>
+			</div>
 			<div class="white-transperant-block">
-                123456
-            </div>
+				123456
+			</div>
 		</div>
 		<div class="col-sm-4 right-sidebar">
 			<div class="restaurant-block black-transperant-block no-margin-left no-margin-right">
-                <div class="row">
-                    <div class="col-xs-4 no-padding-right">
-                        <img class="img-thumbnail img-responsive logo" ng-src="{{vm.orderData.restaurant.picturePath}}" alt="vm.orderData.restaurant.name">
-                    </div>
-                    <div class="col-xs-8">
-                        <rating value="vm.orderData.restaurant.rating" class="rating-container" color="#ffdf00" max="5"></rating>
-                        <h3 class="restaurant-name">{{vm.orderData.restaurant.name}}</h3>
-                    </div>
-                </div>                
-                
-                <div class="menus-list">
-                    <h4>Menus:</h4>
-                    <p>menus on sites for references on order.</p>
-                    <a class="btn btn-block btn-info" ng-repeat="menu in vm.orderData.restaurant.menus" target="_blank" href="{{menu.link}}">
+				<div class="row">
+					<div class="col-xs-4 no-padding-right">
+						<img class="img-thumbnail img-responsive logo" ng-src="{{vm.orderData.restaurant.picturePath}}" alt="vm.orderData.restaurant.name">
+					</div>
+					<div class="col-xs-8">
+						<rating value="vm.orderData.restaurant.rating" class="rating-container" color="#ffdf00" max="5"></rating>
+						<h3 class="restaurant-name">{{vm.orderData.restaurant.name}}</h3>
+					</div>
+				</div>
+
+				<div class="menus-list">
+					<h4>Menus:</h4>
+					<p>menus on sites for references on order.</p>
+					<a class="btn btn-block btn-info" ng-repeat="menu in vm.orderData.restaurant.menus" target="_blank" href="{{menu.link}}">
                          {{ menu.sitename }} &nbsp;&nbsp;<i class="glyphicon glyphicon-arrow-right"></i>
                     </a>
-                </div>
-                <div class="phones-list">
-                    <h4>Phone numbers:</h4>
-                    <p class="numbers" ng-repeat="phone in vm.orderData.restaurant.phoneNumbers track by $index">
-                        <i class="glyphicon glyphicon-earphone"></i>
-                        <span>{{ phone }}</span>
-                    </p>
-                </div>
-            </div>
+				</div>
+				<div class="phones-list">
+					<h4>Phone numbers:</h4>
+					<p class="numbers" ng-repeat="phone in vm.orderData.restaurant.phoneNumbers track by $index">
+						<i class="glyphicon glyphicon-earphone"></i>
+						<span>{{ phone }}</span>
+					</p>
+				</div>
+			</div>
 
-            <button class="btn btn-block btn-danger" ng-click="vm.cancelOrder()" ng-if="vm.orderData.creator.id == vm.userData.id">
+			<button class="btn btn-block btn-danger" ng-click="vm.cancelOrder()" ng-if="vm.orderData.creator.id == vm.userData.id">
                 <i class="glyphicon glyphicon-ban-circle"></i> Cancel the whole Order
             </button>
 
+		</div>
+	</div>
+</div>
+
+<div class="modal fade" id="createOrderModal" tabindex="-1" role="dialog">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title">
+					Add Order Item
+				</h4>
+			</div>
+			<div class="modal-body">
+				<form action="">
+					<div class="form-group">
+						<label for="">Item</label>
+						<input type="text" ng-model="vm.orderItemTemp.item" placeholder="i.e. Cheese Burger" class="form-control" required>
+					</div>
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label for="">Count</label>
+								<input type="number" min="1" ng-model="vm.orderItemTemp.count" class="form-control">
+							</div>
+						</div>
+						<div class="col-sm-6">
+							<div class="form-group">
+								<label for="">Price (LE)</label>
+								<input type="number" min="0" ng-model="vm.orderItemTemp.price" class="form-control">
+							</div>
+						</div>
+					</div>
+					<div class="form-group">
+						<label for="">Reference Menu</label>
+						<select ng-model="vm.orderItemTemp.refmenu" class="form-control" ng-options="menu.sitename for menu in vm.orderData.restaurant.menus"></select>
+					</div>
+					<div class="form-group">
+						<label for="">Notes</label>
+						<textarea ng-model="vm.orderItemTemp.notes" placeholder="i.e. Big size with spicy ... etc" class="form-control"></textarea>
+						<p class="help-block">you can write anything that may help detecting item.</p>
+					</div>
+				</form>
+			</div>
+			<div class="modal-footer">
+				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+				<button type="button" class="btn btn-primary" ng-click="vm.createItem()">Add Item</button>
+			</div>
 		</div>
 	</div>
 </div>
