@@ -10,8 +10,8 @@
     function NavbarDirectiveController($scope, AuthService, $state, $timeout, CountDownService, CurrentOrderService) {
 
         // 15 second
-        var collectingOrderTime =  0.25 * 60 * 1000;
-        
+        var collectingOrderTime = 30 * 60 * 1000;
+
         $scope.logout = logout;
         $scope.orderStarted = false;
         $scope.timeout = false;

@@ -20,7 +20,6 @@
         } else {
             if (!CurrentOrderService.orderData.id) {
                 getOrderById($stateParams.id);
-                $rootScope.$broadcast('orderStarted');
             }
         }
 
@@ -29,6 +28,7 @@
                 if (response.success) {
                     vm.orderData = response.data;
                     CurrentOrderService.orderData = response.data;
+                    $rootScope.$broadcast('orderStarted');
                 }
             });
         }
