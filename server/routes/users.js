@@ -32,7 +32,7 @@ module.exports = function (app) {
                 var object = {
                     id: data._id,
                     email: data.email,
-                    fullname: data.firstname + ' ' + data.lastname,
+                    fullname: data.fullname,
                     username: data.username,
                     signup_date: data.created_at,
                     token: token
@@ -105,10 +105,9 @@ module.exports = function (app) {
     router.put('/', function (req, res) {
         var id = req.body.id;
         var username = req.body.username;
-        var firstname = req.body.fullname.split(' ')[0];
-        var lastname = req.body.fullname.split(' ')[1];
+        var fullname = req.body.fullname;
 
-        User.update({ '_id': id }, { username: username, firstname: firstname, lastname: lastname }, function (err, data) {
+        User.update({ '_id': id }, { username: username, fullname: fullname}, function (err, data) {
             if (err) return console.error(err);
             res.json(data);
         });
