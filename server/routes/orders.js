@@ -55,6 +55,10 @@ module.exports = function (app) {
 
     });
 
+    router.post('/mail', function (req, res) {
+        require('../helpers/mailer')();
+    });
+
     router.delete('/', function (req, res) {
 
     });

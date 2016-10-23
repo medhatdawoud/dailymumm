@@ -7,7 +7,8 @@
     "express": "~4.0.0",
     "express3-handlebars": "0.4.x",
     "jsonwebtoken": "^5.5.4",
-    "mongoose": "^4.2.4"
+    "mongoose": "^4.2.4",
+    "nodemailer": "^2.6.4"
   },
   "devDependencies": {
     "bower": "~1.6.5",
@@ -39,5 +40,5 @@
   "scripts": {
     "start": "node server/app.js",
     "postinstall": "./node_modules/bower/bin/bower install"
-   }
+  }
 }
