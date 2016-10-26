@@ -19,6 +19,16 @@
   font-weight: normal;
   font-style: normal;
 }
+/* line 1, ../scss/base/_colors.scss */
+.green {
+  color: #5cb85c;
+}
+
+/* line 5, ../scss/base/_colors.scss */
+.orange {
+  color: #f0ad4e;
+}
+
 /* line 1, ../scss/_general.scss */
 body {
   background: #fafafa;
