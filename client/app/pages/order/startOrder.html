@@ -11,7 +11,7 @@
 						<label class="input-selection">
                             <input  type="radio" ng-change="vm.listSelected(item)" ng-model="item.selected" value="true" name="list-group" />
                         </label>
-						<span class="subscribers-count">{{item.subscribers.length}}</span>
+						<span class="subscribers-count">{{(item.subscribers | filter:{confirmed:true}).length}}</span>
 						<div class="tooltip-content hidden">
 							<div class="text-left">
 								<strong>Subscribers:</strong>
