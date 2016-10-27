@@ -56,7 +56,9 @@
 				</div>
 			</div>
 			<div class="action-panel">
-				<button class="btn btn-success btn-lg pull-right" ng-disabled="!vm.restaurant" ng-click="vm.startOrder()"><i class="glyphicon glyphicon-cutlery"></i>&nbsp; Let's make an order</button>
+				<button class="btn btn-success btn-lg pull-right" ng-disabled="!vm.restaurant.id || !vm.selectedList" ng-click="vm.startOrder()">
+					<i class="glyphicon glyphicon-cutlery"></i>&nbsp; Let's make an order
+				</button>
 			</div>
 		</div>
 	</div>
