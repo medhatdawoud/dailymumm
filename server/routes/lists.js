@@ -58,7 +58,7 @@ module.exports = function (app) {
             picturePath: listData.picturePath,
             $push: {
                 subscribers: {
-                    $each: listData.subscribers
+                    $each: listData.invitations
                 }
             }
          }, function(err, data){

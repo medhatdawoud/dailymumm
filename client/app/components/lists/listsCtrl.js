@@ -14,6 +14,7 @@
         lvm.tempListData = {
             name: "",
             picturePath: "assets/images/lists/list1.jpg",
+            invitations: [],
             subscribers: []
         };
         lvm.$onInit = getLists();
@@ -21,6 +22,7 @@
         lvm.addToInvitations = addToInvitations;
         lvm.createList = createList;
         lvm.editList = editList;
+        lvm.disableEditMode = disableEditMode;
         lvm.editListMode = false;
         lvm.updateList = updateList;
 
@@ -31,23 +33,31 @@
                 name: list.name,
                 picturePath: list.picturePath,
                 owned: list.owned,
-                subscribers: []
+                invitations: [],
+                subscribers: list.subscribers
             };
             $("#createListModal").modal();
         }
 
         function removeFromInvitations(index) {
-            lvm.tempListData.subscribers.splice(index, 1);
+            lvm.tempListData.invitations.splice(index, 1);
         }
 
         function addToInvitations(email) {
+            lvm.duplicatedEmail = false;
             for (var i = 0; i < lvm.tempListData.subscribers.length; i++) {
                 if (lvm.tempListData.subscribers[i].email == email) {
-                    lvm.inviteEmail = "";
+                    lvm.duplicatedEmail = true;
                     return;
                 }
             }
-            lvm.tempListData.subscribers.push({ email: email });
+            for (var i = 0; i < lvm.tempListData.invitations.length; i++) {
+                if (lvm.tempListData.invitations[i].email == email) {
+                    lvm.duplicatedEmail = true;
+                    return;
+                }
+            }
+            lvm.tempListData.invitations.push({ email: email, confirmed: false });
             lvm.inviteEmail = "";
         }
 
@@ -71,6 +81,7 @@
                     lvm.tempListData = {
                         name: "",
                         picturePath: "",
+                        invitations: [],
                         subscribers: []
                     }
                     reloadLists();
@@ -105,13 +116,24 @@
         }
 
         $('#createListModal').on('hide.bs.modal', function () {
+            reset();
+        });
+
+        function reset() {
             lvm.editListMode = false;
+            lvm.duplicatedEmail = false;
+            lvm.inviteEmail = "";
             lvm.tempListData = {
                 name: "",
                 picturePath: "",
+                invitations: [],
                 subscribers: []
             };
-        });
+        }
+
+        function disableEditMode() {
+            lvm.editListMode = false;
+        }
 
         function reloadLists() {
             getLists(function () {

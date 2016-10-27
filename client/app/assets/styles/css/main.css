@@ -29,6 +29,11 @@
   color: #f0ad4e;
 }
 
+/* line 9, ../scss/base/_colors.scss */
+.red {
+  color: #d43f3a;
+}
+
 /* line 1, ../scss/_general.scss */
 body {
   background: #fafafa;
@@ -408,6 +413,11 @@ form .form-group.has-success .help-block {
 .modal .modal-content .modal-footer {
   margin-top: 0px;
   padding: 10px 20px;
+}
+/* line 28, ../scss/components/_modal.scss */
+.modal .modal-content .modal-content-scrollable {
+  max-height: 300px;
+  overflow-y: auto;
 }
 
 /* line 2, ../scss/components/_tooltip.scss */
