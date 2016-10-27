@@ -15,8 +15,8 @@
 						<div class="tooltip-content hidden">
 							<div class="text-left">
 								<strong>Subscribers:</strong>
-								<div ng-repeat="user in item.subscribers">
-									{{ user.email }}
+								<div class="nowrap" ng-repeat="user in item.subscribers | filter:confirmed">
+									{{ user.fullname || user.username }}
 								</div>
 							</div>
 						</div>

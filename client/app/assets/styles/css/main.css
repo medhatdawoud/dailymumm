@@ -34,6 +34,11 @@
   color: #d43f3a;
 }
 
+/* line 1, ../scss/base/_base.scss */
+.nowrap {
+  white-space: nowrap;
+}
+
 /* line 1, ../scss/_general.scss */
 body {
   background: #fafafa;
