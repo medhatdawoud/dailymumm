@@ -2,7 +2,7 @@ module.exports = function (app) {
     var express = require('express');
     var jwt = require('jsonwebtoken');
     var router = express.Router();
-	//   , users = require('../api/users');
+    var mailer = require('../helpers/mailer');
 
     var List = require('../models/lists');
 
@@ -12,13 +12,13 @@ module.exports = function (app) {
         var listData = JSON.parse(req.body.list);
         var listOwnerData = JSON.parse(req.body.owner);
         var list = new List({
-            name: listData.name, 
-            picturePath: listData.picturePath, 
+            name: listData.name,
+            picturePath: listData.picturePath,
             subscribers: listData.subscribers,
             owner: {
-                id : listOwnerData.id,
-                username : listOwnerData.username,
-                email : listOwnerData.email
+                id: listOwnerData.id,
+                username: listOwnerData.username,
+                email: listOwnerData.email
             }
         });
         list.save(function (err, data) {
@@ -29,12 +29,12 @@ module.exports = function (app) {
 
     router.get('/byuser', function (req, res) {
         var userId = req.param("userId");
-        
-        List.find({ "owner.id" : userId }, function(err, data){
+
+        List.find({ "owner.id": userId }, function (err, data) {
             if (err) return console.error(err);
 
             if (data) {
-                List.find({"subscribers":{$elemMatch:{id:userId}}}, function(err2, data2){
+                List.find({ "subscribers": { $elemMatch: { id: userId } } }, function (err2, data2) {
                     if (err2) return console.error(err2);
 
                     if (data2) {
@@ -52,8 +52,13 @@ module.exports = function (app) {
 
     router.put('/', function (req, res) {
         var listData = JSON.parse(req.body.list);
-        
-        List.update({ "_id" : listData.id },{ 
+
+        listData.invitations.forEach(function (user) {
+            mailer.sendEmail('template', { email: user.email }, "Invitation to join "+listData.name+" list on Dailymumm", user.email, function () {
+                console.log('invitation sent to ' + user.email);
+            });
+        });
+        List.update({ "_id": listData.id }, {
             name: listData.name,
             picturePath: listData.picturePath,
             $push: {
@@ -61,7 +66,7 @@ module.exports = function (app) {
                     $each: listData.invitations
                 }
             }
-         }, function(err, data){
+        }, function (err, data) {
             if (err) return console.error(err);
 
             if (data) {
@@ -75,14 +80,14 @@ module.exports = function (app) {
     router.put('/invite', function (req, res) {
         var listId = req.body.listId;
         var listOfSubscribers = JSON.parse(req.body.listOfSubscribers);
-        
-        List.update({ "_id" : listId },{ 
-            $push : { 
-                subscribers : {
+
+        List.update({ "_id": listId }, {
+            $push: {
+                subscribers: {
                     $each: listOfSubscribers
-                } 
+                }
             }
-         }, function(err, data){
+        }, function (err, data) {
             if (err) return console.error(err);
 
             if (data) {
@@ -94,7 +99,7 @@ module.exports = function (app) {
     });
 
     router.delete('/', function (req, res) {
-        
+
     });
 
 };

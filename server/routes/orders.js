@@ -2,7 +2,7 @@ module.exports = function (app) {
     var express = require('express');
     var jwt = require('jsonwebtoken');
     var router = express.Router();
-    //   , users = require('../api/users');
+    var mailer = require('../helpers/mailer');
 
     var Order = require('../models/orders');
 
@@ -23,9 +23,9 @@ module.exports = function (app) {
     router.get('/byid', function (req, res) {
         var id = req.param('id');
 
-        Order.findOne({ "_id" : id }, function(err, data){
+        Order.findOne({ "_id": id }, function (err, data) {
             if (err) return console.error(err);
-            
+
             if (data) {
                 res.json(data)
             } else {
@@ -53,10 +53,6 @@ module.exports = function (app) {
             }
         });
 
-    });
-
-    router.post('/mail', function (req, res) {
-        require('../helpers/mailer')();
     });
 
     router.delete('/', function (req, res) {
