@@ -51,9 +51,12 @@
         }
 
         function cancelOrder() {
-            CurrentOrderService.orderData = {};
-            $state.go('profile.view');
-            $rootScope.$broadcast('orderCanceled');
+            var confirmed = confirm("Are you sure you want to cancel order ? \nThis will cancel the whole order and send mail to subscribers who add orders to tell them that you are not interested in this order anymore");
+            if (confirmed) {
+                CurrentOrderService.orderData = {};
+                $state.go('profile.view');
+                $rootScope.$broadcast('orderCanceled');
+            }
         }
 
         $scope.$on('orderStart', function () {
