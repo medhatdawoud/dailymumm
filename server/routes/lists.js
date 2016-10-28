@@ -14,7 +14,7 @@ module.exports = function (app) {
         var list = new List({
             name: listData.name,
             picturePath: listData.picturePath,
-            subscribers: listData.subscribers,
+            subscribers: listData.invitations,
             owner: {
                 id: listOwnerData.id,
                 username: listOwnerData.username,
@@ -54,7 +54,7 @@ module.exports = function (app) {
         var listData = JSON.parse(req.body.list);
 
         listData.invitations.forEach(function (user) {
-            mailer.sendEmail('template', { email: user.email }, "Invitation to join "+listData.name+" list on Dailymumm", user.email, function () {
+            mailer.sendEmail('invite-user-to-list', { listname: listData.name }, "Invitation to join "+listData.name+" list on Dailymumm", user.email, function () {
                 console.log('invitation sent to ' + user.email);
             });
         });
