@@ -34,29 +34,51 @@
   color: #d43f3a;
 }
 
+/* line 13, ../scss/base/_colors.scss */
+.yellow {
+  color: #F5E156;
+}
+
+/* line 17, ../scss/base/_colors.scss */
+.bg-black {
+  background: #333333;
+}
+
 /* line 1, ../scss/base/_base.scss */
 .nowrap {
   white-space: nowrap;
 }
 
+/* line 5, ../scss/base/_base.scss */
+.center {
+  text-align: center;
+}
+
+/* line 9, ../scss/base/_base.scss */
+.top {
+  vertical-align: top;
+}
+
 /* line 1, ../scss/_general.scss */
 body {
+  padding: 0;
+  margin: 0;
   background: #fafafa;
   font-family: "Titillium";
   color: #fafafa;
 }
 
-/* line 7, ../scss/_general.scss */
+/* line 9, ../scss/_general.scss */
 h1, h2, h3, h4, h5, h6, a, span, label {
   font-family: "Titillium";
 }
 
-/* line 11, ../scss/_general.scss */
+/* line 13, ../scss/_general.scss */
 .btn {
   text-transform: uppercase;
 }
 
-/* line 15, ../scss/_general.scss */
+/* line 17, ../scss/_general.scss */
 .hero-unit {
   margin: 50px auto 0 auto;
   width: 600px;
@@ -67,39 +89,39 @@ h1, h2, h3, h4, h5, h6, a, span, label {
   border-radius: 6px;
   padding: 60px;
 }
-/* line 24, ../scss/_general.scss */
+/* line 26, ../scss/_general.scss */
 .hero-unit h1 {
   font-size: 60px;
   line-height: 1;
   letter-spacing: -1px;
 }
 
-/* line 31, ../scss/_general.scss */
+/* line 33, ../scss/_general.scss */
 .navbar-collapse.navbar-right {
   padding-right: 0px;
 }
 @media (max-width: 768px) {
-  /* line 31, ../scss/_general.scss */
+  /* line 33, ../scss/_general.scss */
   .navbar-collapse.navbar-right {
     padding-right: 15px;
   }
 }
 
-/* line 40, ../scss/_general.scss */
+/* line 42, ../scss/_general.scss */
 #count-down {
   cursor: pointer;
 }
-/* line 43, ../scss/_general.scss */
+/* line 45, ../scss/_general.scss */
 #count-down:hover, #count-down:active, #count-down:focus {
   text-decoration: none;
 }
 
-/* line 48, ../scss/_general.scss */
+/* line 50, ../scss/_general.scss */
 .numbers {
   font-family: "digital";
 }
 
-/* line 52, ../scss/_general.scss */
+/* line 54, ../scss/_general.scss */
 .white-transperant-block {
   background: rgba(200, 200, 200, 0.5);
   margin: 0px -15px 10px;
@@ -107,12 +129,12 @@ h1, h2, h3, h4, h5, h6, a, span, label {
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
 }
-/* line 59, ../scss/_general.scss */
+/* line 61, ../scss/_general.scss */
 .white-transperant-block h3, .white-transperant-block p {
   text-shadow: 1px 1px 2px #333;
 }
 
-/* line 64, ../scss/_general.scss */
+/* line 66, ../scss/_general.scss */
 .black-transperant-block {
   background: rgba(0, 0, 0, 0.5);
   margin: 0px -15px 10px;
@@ -121,27 +143,27 @@ h1, h2, h3, h4, h5, h6, a, span, label {
   border-bottom: 1px solid #000;
 }
 
-/* line 72, ../scss/_general.scss */
+/* line 74, ../scss/_general.scss */
 .no-margin-right {
   margin-right: 0px;
 }
 
-/* line 76, ../scss/_general.scss */
+/* line 78, ../scss/_general.scss */
 .no-margin-left {
   margin-left: 0px;
 }
 
-/* line 80, ../scss/_general.scss */
+/* line 82, ../scss/_general.scss */
 .no-padding-right {
   padding-right: 0px;
 }
 
-/* line 84, ../scss/_general.scss */
+/* line 86, ../scss/_general.scss */
 .no-padding-left {
   padding-left: 0px;
 }
 
-/* line 88, ../scss/_general.scss */
+/* line 90, ../scss/_general.scss */
 .padding-top {
   padding-top: 7px;
 }

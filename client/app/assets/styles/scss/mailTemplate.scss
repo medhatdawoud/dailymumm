@@ -1,0 +1,55 @@
+@import 'helpers/vars';
+@import 'helpers/mixins';
+@import 'base/colors';
+@import 'base/base';
+@import 'general';
+
+body {
+    background: #fff;
+    table {
+        width:100%;
+        color: $black;
+        font-family: Verdana, Geneva, Tahoma, sans-serif;
+        font-size: 13px;
+
+        &.body {
+            width: 600px;
+            margin: 0 auto;
+        }
+
+        tr {
+            &.header {
+                // font-size: 26px;
+                text-align: left;
+
+                h1 {
+                    margin: 20px 0px;
+                }
+
+                td {
+                    padding: 0px 20px;
+                }
+            }
+
+            &.footer {
+                color: $off-white;
+                text-align: left;
+            }
+
+            td {
+                padding: 10px 20px;
+
+                &.main-content {
+                    text-align: left;
+                    line-height: 30px;
+
+                    p , a {
+                        display: block;
+                        margin: 15px 0px;
+                        font-family: Verdana, Geneva, Tahoma, sans-serif;
+                    }
+                }
+            }
+        }
+    }
+}

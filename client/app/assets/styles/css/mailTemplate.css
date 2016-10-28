@@ -1,0 +1,197 @@
+/* line 1, ../scss/base/_colors.scss */
+.green {
+  color: #5cb85c;
+}
+
+/* line 5, ../scss/base/_colors.scss */
+.orange {
+  color: #f0ad4e;
+}
+
+/* line 9, ../scss/base/_colors.scss */
+.red {
+  color: #d43f3a;
+}
+
+/* line 13, ../scss/base/_colors.scss */
+.yellow {
+  color: #F5E156;
+}
+
+/* line 17, ../scss/base/_colors.scss */
+.bg-black {
+  background: #333333;
+}
+
+/* line 1, ../scss/base/_base.scss */
+.nowrap {
+  white-space: nowrap;
+}
+
+/* line 5, ../scss/base/_base.scss */
+.center {
+  text-align: center;
+}
+
+/* line 9, ../scss/base/_base.scss */
+.top {
+  vertical-align: top;
+}
+
+/* line 1, ../scss/_general.scss */
+body {
+  padding: 0;
+  margin: 0;
+  background: #fafafa;
+  font-family: "Titillium";
+  color: #fafafa;
+}
+
+/* line 9, ../scss/_general.scss */
+h1, h2, h3, h4, h5, h6, a, span, label {
+  font-family: "Titillium";
+}
+
+/* line 13, ../scss/_general.scss */
+.btn {
+  text-transform: uppercase;
+}
+
+/* line 17, ../scss/_general.scss */
+.hero-unit {
+  margin: 50px auto 0 auto;
+  width: 600px;
+  font-size: 18px;
+  font-weight: 200;
+  line-height: 30px;
+  background-color: #eee;
+  border-radius: 6px;
+  padding: 60px;
+}
+/* line 26, ../scss/_general.scss */
+.hero-unit h1 {
+  font-size: 60px;
+  line-height: 1;
+  letter-spacing: -1px;
+}
+
+/* line 33, ../scss/_general.scss */
+.navbar-collapse.navbar-right {
+  padding-right: 0px;
+}
+@media (max-width: 768px) {
+  /* line 33, ../scss/_general.scss */
+  .navbar-collapse.navbar-right {
+    padding-right: 15px;
+  }
+}
+
+/* line 42, ../scss/_general.scss */
+#count-down {
+  cursor: pointer;
+}
+/* line 45, ../scss/_general.scss */
+#count-down:hover, #count-down:active, #count-down:focus {
+  text-decoration: none;
+}
+
+/* line 50, ../scss/_general.scss */
+.numbers {
+  font-family: "digital";
+}
+
+/* line 54, ../scss/_general.scss */
+.white-transperant-block {
+  background: rgba(200, 200, 200, 0.5);
+  margin: 0px -15px 10px;
+  padding: 20px;
+  border-top: 1px solid #ccc;
+  border-bottom: 1px solid #ccc;
+}
+/* line 61, ../scss/_general.scss */
+.white-transperant-block h3, .white-transperant-block p {
+  text-shadow: 1px 1px 2px #333;
+}
+
+/* line 66, ../scss/_general.scss */
+.black-transperant-block {
+  background: rgba(0, 0, 0, 0.5);
+  margin: 0px -15px 10px;
+  padding: 20px;
+  border-top: 1px solid #000;
+  border-bottom: 1px solid #000;
+}
+
+/* line 74, ../scss/_general.scss */
+.no-margin-right {
+  margin-right: 0px;
+}
+
+/* line 78, ../scss/_general.scss */
+.no-margin-left {
+  margin-left: 0px;
+}
+
+/* line 82, ../scss/_general.scss */
+.no-padding-right {
+  padding-right: 0px;
+}
+
+/* line 86, ../scss/_general.scss */
+.no-padding-left {
+  padding-left: 0px;
+}
+
+/* line 90, ../scss/_general.scss */
+.padding-top {
+  padding-top: 7px;
+}
+
+/* line 7, ../scss/mailTemplate.scss */
+body {
+  background: #fff;
+}
+/* line 9, ../scss/mailTemplate.scss */
+body table {
+  width: 100%;
+  color: #333333;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-size: 13px;
+}
+/* line 15, ../scss/mailTemplate.scss */
+body table.body {
+  width: 600px;
+  margin: 0 auto;
+}
+/* line 21, ../scss/mailTemplate.scss */
+body table tr.header {
+  text-align: left;
+}
+/* line 25, ../scss/mailTemplate.scss */
+body table tr.header h1 {
+  margin: 20px 0px;
+}
+/* line 29, ../scss/mailTemplate.scss */
+body table tr.header td {
+  padding: 0px 20px;
+}
+/* line 34, ../scss/mailTemplate.scss */
+body table tr.footer {
+  color: #fafafa;
+  text-align: left;
+}
+/* line 39, ../scss/mailTemplate.scss */
+body table tr td {
+  padding: 10px 20px;
+}
+/* line 42, ../scss/mailTemplate.scss */
+body table tr td.main-content {
+  text-align: left;
+  line-height: 30px;
+}
+/* line 46, ../scss/mailTemplate.scss */
+body table tr td.main-content p, body table tr td.main-content a {
+  display: block;
+  margin: 15px 0px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}

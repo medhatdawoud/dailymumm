@@ -1,0 +1,48 @@
+<!-- Emails use the XHTML Strict doctype -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<!-- The character set should be utf-8 -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!-- Enables media queries -->
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="../../client/app/assets/styles/css/mailTemplate.css">
+    <style>
+        
+    </style>
+</head>
+
+<body>
+	<!-- Wrapper for the body of the email -->
+	<table class="body center">
+        <tr class="bg-black yellow header">
+            <td>
+                <h1>Dailymumm | <small>your platform to collect food order</small></h1>
+            </td>
+        </tr>
+		<tr>
+			<!-- The class, align, and <center> tag center the container -->
+			<td class="top main-content">
+				<!-- The body of each email you write is injected here -->
+				<p>Hey There,</p>
+                <p>
+                    You are invited to join <strong>{{listname}}</strong> list on Dailymumm.
+                </p>
+                <a href="#">Confirm Invitation Now</a>
+                <p>
+                    <em>
+                        <strong>Note that:</strong> by joining this list you will got emails once any one in this list start a new order and you can then confirm joining the order of just neglict it.
+                    </em>
+                </p> 
+			</td>
+		</tr>
+        <tr class="bg-black yellow footer">
+            <td>
+                Copy rights &copy; 2016 reserved to Dailymumm
+            </td>
+        </tr>
+	</table>
+</body>
+
+</html>
