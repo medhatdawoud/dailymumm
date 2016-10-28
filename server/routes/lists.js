@@ -21,6 +21,13 @@ module.exports = function (app) {
                 email: listOwnerData.email
             }
         });
+
+        listData.invitations.forEach(function (user) {
+            mailer.sendEmail('invite-user-to-list', { listname: listData.name }, "Invitation to join "+listData.name+" list on Dailymumm", user.email, function () {
+                console.log('invitation sent to ' + user.email);
+            });
+        });
+        
         list.save(function (err, data) {
             if (err) return console.error(err);
             res.json(data);
