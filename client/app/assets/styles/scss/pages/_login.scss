@@ -9,4 +9,21 @@
         margin: 20px 0px 30px;
         text-shadow: 0px 0px 10px $black;
     }
+
+    .black-transperant-block {
+        .col-sm-6:first-child {
+            padding-right: 30px;
+        }
+        .col-sm-6:last-child {
+            padding-left:30px;
+            &::before {
+                content : ' ';
+                height: 100%;
+                border-right: 1px solid $off-white;  
+                position: absolute;
+                left: 0px;
+                top: 0px;
+            }
+        }
+    }
 }

@@ -945,3 +945,20 @@ h4 {
   margin: 20px 0px 30px;
   text-shadow: 0px 0px 10px #333333;
 }
+/* line 14, ../scss/pages/_login.scss */
+.login-page .black-transperant-block .col-sm-6:first-child {
+  padding-right: 30px;
+}
+/* line 17, ../scss/pages/_login.scss */
+.login-page .black-transperant-block .col-sm-6:last-child {
+  padding-left: 30px;
+}
+/* line 19, ../scss/pages/_login.scss */
+.login-page .black-transperant-block .col-sm-6:last-child::before {
+  content: ' ';
+  height: 100%;
+  border-right: 1px solid #fafafa;
+  position: absolute;
+  left: 0px;
+  top: 0px;
+}
