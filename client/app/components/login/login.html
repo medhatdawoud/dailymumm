@@ -1,0 +1,13 @@
+<form ng-show="current == 'login'" name="formLogin" ng-submit="login(formLogin.$valid, formLogin)" novalidate>
+	<div class="form-group">
+		<label>Email:</label>
+		<input type="text" ng-model="logindata.email" class="form-control" />
+	</div>
+	<div class="form-group">
+		<label>Password:</label>
+		<input type="password" ng-model="logindata.password" class="form-control" />
+	</div>
+	<div class="form-group">
+		<input type="submit" class="btn btn-success" value="Login" />
+	</div>
+</form>
