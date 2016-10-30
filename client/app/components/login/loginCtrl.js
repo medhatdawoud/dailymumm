@@ -15,12 +15,9 @@
         
         //default tab (login , register)
         $scope.current = 'login';
-        
-        // an initial object to hold the registration data from ui
-        $scope.registerdata = {};
         $scope.showPanel = showPanel;
-        $scope.register = register;
         $scope.login = login;
+        $scope.logindata = {};
 
         function showPanel(panel) {
             $scope.current = panel;
