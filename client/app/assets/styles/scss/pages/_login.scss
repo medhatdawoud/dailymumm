@@ -1,0 +1,12 @@
+.login-page {
+    margin-top: 100px;
+
+    .logo {
+        font-family: $fontLogo;
+        color: $colorSecond;
+        font-size: 60px;
+        line-height: 80px;
+        margin: 20px 0px 30px;
+        text-shadow: 0px 0px 10px $black;
+    }
+}
