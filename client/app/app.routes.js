@@ -11,6 +11,12 @@
                     controller: 'HomeCtrl',
                     controllerAs: 'vm'
                 })
+                .state('login', {
+                    url: '/login',
+                    templateUrl: 'pages/login/login.html',
+                    controller: 'LoginCtrl',
+                    controllerAs: 'vm'
+                })
                 .state('startOrder', {
                     url: '/startorder',
                     templateUrl: 'pages/order/startOrder.html',
