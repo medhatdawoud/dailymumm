@@ -1,4 +1,4 @@
-<form ng-show="current == 'register'" name="formRegister" ng-submit="register(formRegister.$valid, formRegister)" novalidate>
+<form name="formRegister" ng-submit="register(formRegister.$valid, formRegister)" novalidate>
 	<div class="form-group" ng-class="formRegister.username.$invalid && (!formRegister.username.$pristine || formRegister.$submitted) ? 'has-error' : 'has-success'">
 		<label>Username:</label>
 		<input name="username" bw-validate-unique="username" ng-model="registerdata.username" ng-minlength="3" ng-maxlength="20"

@@ -18,8 +18,12 @@
 				<div ng-show="hasSuccess" class="alert alert-success">
 					{{registerSuccessMessage}}
 				</div>
-                <bw-signup></bw-signup>
-                <bw-login></bw-login>
+				<div ng-show="current == 'register'">
+					<bw-signup></bw-signup>
+				</div>
+				<div ng-show="current == 'login'">
+					<bw-login></bw-login>
+				</div>
 			</div>
 		</div>
 	</div>
