@@ -22,15 +22,20 @@ module.exports = function (app) {
             }
         });
 
-        listData.invitations.forEach(function (user) {
-            mailer.sendEmail('invite-user-to-list', { listname: listData.name }, "Invitation to join "+listData.name+" list on Dailymumm", user.email, function () {
-                console.log('invitation sent to ' + user.email);
-            });
-        });
-        
-        list.save(function (err, data) {
+        list.save(function (err, results) {
             if (err) return console.error(err);
-            res.json(data);
+            
+            listData.invitations.forEach(function (user) {
+                var data = {
+                    listname: listData.name,
+                    invitationlink: req.headers.host + "/#/login?lid=" + results._id
+                };
+                mailer.sendEmail('invite-user-to-list', data, "Invitation to join " + listData.name + " list on Dailymumm", user.email, function () {
+                    console.log('invitation sent to ' + user.email);
+                });
+            });
+
+            res.json(results);
         });
     });
 
@@ -61,7 +66,11 @@ module.exports = function (app) {
         var listData = JSON.parse(req.body.list);
 
         listData.invitations.forEach(function (user) {
-            mailer.sendEmail('invite-user-to-list', { listname: listData.name }, "Invitation to join "+listData.name+" list on Dailymumm", user.email, function () {
+            var data = {
+                listname: listData.name,
+                invitationlink: req.headers.host + "/#/login?lid=" + listData.id
+            };
+            mailer.sendEmail('invite-user-to-list', data, "Invitation to join " + listData.name + " list on Dailymumm", user.email, function () {
                 console.log('invitation sent to ' + user.email);
             });
         });
