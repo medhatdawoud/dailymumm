@@ -28,7 +28,7 @@ module.exports = function (app) {
             listData.invitations.forEach(function (user) {
                 var data = {
                     listname: listData.name,
-                    invitationlink: req.headers.host + "/#/login?lid=" + results._id
+                    invitationlink: req.headers.host + "/#/login/" + results._id
                 };
                 mailer.sendEmail('invite-user-to-list', data, "Invitation to join " + listData.name + " list on Dailymumm", user.email, function () {
                     console.log('invitation sent to ' + user.email);
@@ -68,7 +68,7 @@ module.exports = function (app) {
         listData.invitations.forEach(function (user) {
             var data = {
                 listname: listData.name,
-                invitationlink: req.headers.host + "/#/login?lid=" + listData.id
+                invitationlink: req.headers.host + "/#/login/" + listData.id
             };
             mailer.sendEmail('invite-user-to-list', data, "Invitation to join " + listData.name + " list on Dailymumm", user.email, function () {
                 console.log('invitation sent to ' + user.email);

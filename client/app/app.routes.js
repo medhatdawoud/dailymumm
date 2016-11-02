@@ -12,7 +12,7 @@
                     controllerAs: 'vm'
                 })
                 .state('login', {
-                    url: '/login',
+                    url: '/login/:lid',
                     templateUrl: 'pages/login/login.html',
                     controller: 'LoginCtrl',
                     controllerAs: 'vm'
