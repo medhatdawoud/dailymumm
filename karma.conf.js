@@ -9,10 +9,25 @@ module.exports = function (config) {
     frameworks: ['jasmine'],
 
     files: [
-      'client/app/bower_components/angular/angular.js',
-      'client/app/bower_components/angular-*/angular-*.js',
-      'client/app/**/*.js',
-      'client/test/**/*.js'
+      'bower_components/angular/angular.js',
+      'bower_components/jquery/jquery.js',
+      'bower_components/angular-cookies/angular-cookies.js',
+      'bower_components/angular-resource/angular-resource.js',
+      'bower_components/angular-sanitize/angular-sanitize.js',
+      'bower_components/angular-ui-router/release/angular-ui-router.js',
+      'bower_components/angular-rating/src/angular-rating.js',
+      'bower_components/angular-translate/angular-translate.js',
+      'bower_components/angular-translate-loader-url/angular-translate-loader-url.js',
+      'bower_components/angular-mocks/angular-mocks.js',
+      '../../node_modules/sinon/lib/sinon.js',
+      'app.module.js',
+      'app.routes.js',
+      'components/**/*.js',
+      'directives/**/*.js',
+      'filters**/*.js',
+      'pages/**/*.js',
+      'services/**/*.js',
+      '../test/**/*.js'
     ],
 
     exclude: [
@@ -32,7 +47,7 @@ module.exports = function (config) {
     autoWatch: true,
 
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS'], //,'Firefox', 'Chrome'],
+    browsers: ['PhantomJS'],//, 'Firefox', 'Chrome'],
 
     plugins: [
       'karma-jasmine',

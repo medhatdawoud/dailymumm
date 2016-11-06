@@ -2,7 +2,7 @@
 
 (function () {
     var app = angular.module('dailyMummApp',
-        ['ngCookies',
+           ['ngCookies',
             'ngResource',
             'ngSanitize',
             'ui.router',

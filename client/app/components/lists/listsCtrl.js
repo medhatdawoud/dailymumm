@@ -8,7 +8,7 @@
     ListsDirectiveController.$inject = ['$scope', 'ListsService', '$timeout', '$rootScope', 'AuthService'];
 
     function ListsDirectiveController($scope, ListsService, $timeout, $rootScope, AuthService) {
-        var lvm = this;
+        var lvm = this; 
         lvm.listOfGroups = [];
         lvm.userData = AuthService.getCurrentUserInfo();
         lvm.tempListData = {

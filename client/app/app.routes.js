@@ -1,7 +1,8 @@
 'use strict';
 
 (function () {
-    angular.module('dailyMummApp').config(["$stateProvider", "$urlRouterProvider", "$translateProvider",
+    angular.module('dailyMummApp')
+    .config(["$stateProvider", "$urlRouterProvider", "$translateProvider",
         function ($stateProvider, $urlRouterProvider, $translateProvider) {
             $urlRouterProvider.otherwise('/');
             $stateProvider
