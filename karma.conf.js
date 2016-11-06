@@ -1,7 +1,7 @@
 // Karma configuration
 // Generated on Sun Nov 06 2016 12:33:19 GMT+0200 (Egypt Standard Time)
 
-module.exports = function(config) {
+module.exports = function (config) {
   config.set({
 
     basePath: 'client/app',
@@ -32,7 +32,14 @@ module.exports = function(config) {
     autoWatch: true,
 
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['Chrome'],
+    browsers: ['PhantomJS'], //,'Firefox', 'Chrome'],
+
+    plugins: [
+      'karma-jasmine',
+      'karma-chrome-launcher',
+      'karma-firefox-launcher',
+      'karma-phantomjs-launcher'
+    ],
 
     singleRun: false,
 
