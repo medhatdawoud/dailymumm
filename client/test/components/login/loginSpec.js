@@ -9,23 +9,20 @@ describe('Controller: login', function () {
         mockLogindata = {
             email: 'medhat@gmail.com',
             password: 123456
-        },
-        $state;
+        };
 
     beforeEach(module("dailyMummApp"));
 
-    beforeEach(inject(function (_$controller_, _$rootScope_, _$state_) {
+    beforeEach(inject(function (_$controller_, _$rootScope_) {
         $controller = _$controller_;
         $scope = _$rootScope_.$new();
-        $state = _$state_;
         mockAuthService = jasmine.createSpyObj('mockAuthService', ['isLoggedIn', 'login']);
     }));
 
     beforeEach(function () {
         loginCtrl = $controller('LoginDirectiveCtrl', {
             '$scope': $scope,
-            'AuthService': mockAuthService,
-            '$state': $state
+            'AuthService': mockAuthService
         });
     });
 
