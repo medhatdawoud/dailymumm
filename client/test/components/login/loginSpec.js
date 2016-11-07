@@ -6,25 +6,26 @@ describe('Controller: login', function () {
         $controller,
         $scope,
         mockAuthService,
-        $state,
-        $stateParams;
+        mockLogindata = {
+            email: 'medhat@gmail.com',
+            password: 123456
+        },
+        $state;
 
     beforeEach(module("dailyMummApp"));
 
-    beforeEach(inject(function (_$controller_, _$rootScope_, _$state_, _$stateParams_) {
+    beforeEach(inject(function (_$controller_, _$rootScope_, _$state_) {
         $controller = _$controller_;
         $scope = _$rootScope_.$new();
         $state = _$state_;
-        $stateParams = _$stateParams_;
-        mockAuthService = jasmine.createSpyObj('mockAuthService', ['isLoggedIn','login']);
+        mockAuthService = jasmine.createSpyObj('mockAuthService', ['isLoggedIn', 'login']);
     }));
 
     beforeEach(function () {
         loginCtrl = $controller('LoginDirectiveCtrl', {
             '$scope': $scope,
             'AuthService': mockAuthService,
-            '$state': $state,
-            '$stateParams': $stateParams
+            '$state': $state
         });
     });
 
@@ -45,8 +46,20 @@ describe('Controller: login', function () {
         expect($scope.current).toBe('register');
     });
 
-    it('Login data should be empty by default', function () {
+    it('Logindata should be empty by default', function () {
         expect($scope.logindata).toEqual({});
+    });
+
+    it('logindata should has password', function () {
+        $scope.logindata = mockLogindata;
+        expect($scope.logindata.password).toBe(123456);
+    });
+
+    it('Should call authservice login with logindata parameters', function () {
+        $scope.logindata = mockLogindata;
+        $scope.login(true);
+
+        expect(mockAuthService.login).toHaveBeenCalledWith(mockLogindata.email, mockLogindata.password, jasmine.any(Function));
     });
 
 });
