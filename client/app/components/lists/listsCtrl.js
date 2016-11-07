@@ -8,7 +8,7 @@
     ListsDirectiveController.$inject = ['$scope', 'ListsService', '$timeout', '$rootScope', 'AuthService'];
 
     function ListsDirectiveController($scope, ListsService, $timeout, $rootScope, AuthService) {
-        var lvm = this; 
+        var lvm = this;
         lvm.listOfGroups = [];
         lvm.userData = AuthService.getCurrentUserInfo();
         lvm.tempListData = {
@@ -25,6 +25,7 @@
         lvm.disableEditMode = disableEditMode;
         lvm.editListMode = false;
         lvm.updateList = updateList;
+        lvm.getLists = getLists;
 
         function editList(list) {
             lvm.editListMode = true;
@@ -67,7 +68,8 @@
                     lvm.tempListData = {
                         name: "",
                         picturePath: "",
-                        subscribers: []
+                        subscribers: [],
+                        invitations: []
                     }
                     reloadLists();
                     $("#createListModal").modal('hide');
