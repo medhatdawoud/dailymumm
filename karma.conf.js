@@ -47,7 +47,7 @@ module.exports = function (config) {
     autoWatch: true,
 
     // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-    browsers: ['PhantomJS'],//, 'Firefox', 'Chrome'],
+    browsers: ['PhantomJS', 'Firefox', 'Chrome'],
 
     plugins: [
       'karma-jasmine',
