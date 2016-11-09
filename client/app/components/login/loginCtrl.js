@@ -5,9 +5,9 @@
         .module('dailyMummApp')
         .controller('LoginDirectiveCtrl', LoginDirectiveController);
 
-    LoginDirectiveController.$inject = ['$scope', '$stateParams', 'AuthService', '$state', '$translate'];
+    LoginDirectiveController.$inject = ['$scope', '$stateParams', 'AuthService', '$state', '$translate', 'ListsService'];
 
-    function LoginDirectiveController($scope, $stateParams, AuthService, $state, $translate) {
+    function LoginDirectiveController($scope, $stateParams, AuthService, $state, $translate, ListsService) {
 
         if (AuthService.isLoggedIn()) {
             $state.go('profile');
@@ -28,11 +28,14 @@
                 var data = $scope.logindata;
                 AuthService.login(data.email, data.password, function (result) {
                     if (result.success) {
-                        if ($stateParams.lid) {
-                            console.log($stateParams.lid); 
-                        }
                         AuthService.setCredintials(result.data);
-                        $state.go('profile.view');
+                        if ($stateParams.lid) {
+                            ListsService.addInvitedUserToList($stateParams.lid, result.data, function (res) {
+                                if (res.success) {
+                                    $state.go('profile.view');
+                                }
+                            })
+                        }
                     } else {
                         $scope.hasError = true;
                         $scope.hasSuccess = false;

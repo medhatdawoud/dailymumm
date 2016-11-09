@@ -5,6 +5,7 @@ module.exports = function (app) {
     var mailer = require('../helpers/mailer');
 
     var List = require('../models/lists');
+    var User = require('../models/users')
 
     app.use('/api/lists', router);
 
@@ -24,7 +25,7 @@ module.exports = function (app) {
 
         list.save(function (err, results) {
             if (err) return console.error(err);
-            
+
             listData.invitations.forEach(function (user) {
                 var data = {
                     listname: listData.name,
@@ -110,6 +111,49 @@ module.exports = function (app) {
                 res.json(data)
             } else {
                 res.json(null);
+            }
+        });
+    });
+
+    router.put('/addinviteduserdata', function (req, res) {
+        var listId = req.body.id;
+        var user = JSON.parse(req.body.user);
+
+        var userToSave = {};
+
+        User.findOne({ email: user.email }, function (err, data) {
+            if (err) return console.error(err);
+
+            userToSave = {
+                username: data.username,
+                email: data.email,
+                fullname: data.fullname || '',
+                confirmed: false
+            };
+        })
+
+        List.findOne({ "_id": listId }, function (err, data) {
+            if (err) return console.error(err);
+
+            for (var i = 0; i < data.subscribers.length; i++) {
+                if (data.subscribers[i].email === userToSave.email) {
+
+                    List.update({ "_id": listId }, {
+                        $set: {
+                            'subscribers.1': userToSave
+                        }
+                    }, function (err, data) {
+                        if (err) return console.error(err);
+
+                        if (data) {
+                            res.json(data)
+                        } else {
+                            res.json(null);
+                        }
+                    });
+                    
+                    break;
+                }
             }
         });
     });

@@ -24,7 +24,7 @@
         }
 
         function createList(ownerData, listData, callback) {
-            $http.post(apiServer + '/api/lists', { list: JSON.stringify(listData), owner: JSON.stringify(ownerData) })
+            $http.post(apiServer + '/api/lists', { list: angular.toJson(listData), owner: angular.toJson(ownerData) })
                 .then(function (response) {
                     callback({ success: true, data: response.data });
                 }, function (response) {
@@ -33,7 +33,16 @@
         }
 
         function updateList(listData, callback) {
-            $http.put(apiServer + '/api/lists', { list: JSON.stringify(listData) })
+            $http.put(apiServer + '/api/lists', { list: angular.toJson(listData) })
+                .then(function (response) {
+                    callback({ success: true, data: response.data });
+                }, function (response) {
+                    callback({ success: false, code: response.data });
+                });
+        }
+
+        function addInvitedUserToList(listId, user, callback) {
+            $http.put(apiServer + '/api/lists/addinviteduserdata', { id: listId, user: angular.toJson(user) })
                 .then(function (response) {
                     callback({ success: true, data: response.data });
                 }, function (response) {
