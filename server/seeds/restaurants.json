@@ -1,0 +1,113 @@
+{
+    "Restaurants": {
+        "_model": "Restaurants",
+        "mac": {
+            "name": "Macdonalds",
+            "rating": 3,
+            "picturePath": "/assets/images/restaurants/mac.jpg",
+            "phoneNumbers": [
+                "[\"11111111111\", \"55555555555\"]"
+            ],
+            "menus": [
+                {
+                    "sitename": "elmenus",
+                    "link": "http://elmenus.com"
+                },
+                {
+                    "sitename": "otlob",
+                    "link": "http://elmenus.com"
+                }
+            ]
+        },
+        "kfc": {
+            "name": "KFC",
+            "rating": 4,
+            "picturePath": "/assets/images/restaurants/kfc.jpg",
+            "phoneNumbers": [
+                "[\"11111111111\", \"55555555555\",\"22222222222\"]"
+            ],
+            "menus": [
+                {
+                    "sitename": "elmenus",
+                    "link": "http://elmenus.com"
+                },
+                {
+                    "sitename": "otlob",
+                    "link": "http://elmenus.com"
+                }
+            ]
+        },
+        "majesty": {
+            "name": "Majesty",
+            "rating": 5,
+            "picturePath": "/assets/images/restaurants/majesty.jpg",
+            "phoneNumbers": [
+                "[\"11111111111\", \"55555555555\",\"22222222222\"]"
+            ],
+            "menus": [
+                {
+                    "sitename": "elmenus",
+                    "link": "http://elmenus.com"
+                },
+                {
+                    "sitename": "otlob",
+                    "link": "http://elmenus.com"
+                }
+            ]
+        },
+        "momen": {
+            "name": "Mo'men",
+            "rating": 2,
+            "picturePath": "/assets/images/restaurants/momen.jpg",
+            "phoneNumbers": [
+                "[\"11111111111\", \"55555555555\",\"22222222222\"]"
+            ],
+            "menus": [
+                {
+                    "sitename": "elmenus",
+                    "link": "http://elmenus.com"
+                },
+                {
+                    "sitename": "otlob",
+                    "link": "http://elmenus.com"
+                }
+            ]
+        },
+        "pizzahut": {
+            "name": "Pizza Hut",
+            "rating": 3,
+            "picturePath": "/assets/images/restaurants/pizzahut.png",
+            "phoneNumbers": [
+                "[\"11111111111\", \"55555555555\",\"22222222222\"]"
+            ],
+            "menus": [
+                {
+                    "sitename": "elmenus",
+                    "link": "http://elmenus.com"
+                },
+                {
+                    "sitename": "otlob",
+                    "link": "http://elmenus.com"
+                }
+            ]
+        },
+        "steakout": {
+            "name": "Steakout",
+            "rating": 5,
+            "picturePath": "/assets/images/restaurants/steakout.jpg",
+            "phoneNumbers": [
+                "[\"11111111111\", \"55555555555\",\"22222222222\"]"
+            ],
+            "menus": [
+                {
+                    "sitename": "elmenus",
+                    "link": "http://elmenus.com"
+                },
+                {
+                    "sitename": "otlob",
+                    "link": "http://elmenus.com"
+                }
+            ]
+        }
+    }
+}
