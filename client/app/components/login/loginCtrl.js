@@ -29,7 +29,7 @@
                 AuthService.login(data.email, data.password, function (result) {
                     if (result.success) {
                         if ($stateParams.lid) {
-                            console.log($stateParams.lid);
+                            console.log($stateParams.lid); 
                         }
                         AuthService.setCredintials(result.data);
                         $state.go('profile.view');

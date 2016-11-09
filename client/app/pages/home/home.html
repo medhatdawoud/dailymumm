@@ -12,12 +12,6 @@
 			<div class="signup-box">
 				<h3><a ng-click="showPanel('login')" ng-class="{'active':current == 'login'}">Login</a>
                 / <a ng-click="showPanel('register')" ng-class="{'active':current == 'register'}">Register</a></h3>
-                <div ng-show="hasError" class="alert alert-danger">
-					{{errorMessage}}
-				</div>
-				<div ng-show="hasSuccess" class="alert alert-success">
-					{{registerSuccessMessage}}
-				</div>
 				<div ng-show="current == 'register'">
 					<bw-signup></bw-signup>
 				</div>

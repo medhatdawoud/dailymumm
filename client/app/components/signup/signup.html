@@ -1,3 +1,6 @@
+<div ng-show="hasSuccess" class="alert alert-success">
+	{{registerSuccessMessage}}
+</div>
 <form name="formRegister" ng-submit="register(formRegister.$valid, formRegister)" novalidate>
 	<div class="form-group" ng-class="formRegister.username.$invalid && (!formRegister.username.$pristine || formRegister.$submitted) ? 'has-error' : 'has-success'">
 		<label>Username</label>

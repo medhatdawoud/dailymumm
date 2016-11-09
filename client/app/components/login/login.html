@@ -1,3 +1,6 @@
+<div ng-show="hasError" class="alert alert-danger">
+	{{errorMessage}}
+</div>
 <form name="formLogin" ng-submit="login(formLogin.$valid, formLogin)" novalidate>
 	<div class="form-group">
 		<label>Email</label>
