@@ -19,7 +19,7 @@
         $scope.order = null;
 
         if (AuthService.isLoggedIn()) {
-            $scope.currentUsername = (AuthService.getCurrentUserInfo()).username;
+            $scope.currentUsername = (AuthService.getCurrentUserInfo()).fullname || (AuthService.getCurrentUserInfo()).username;
         }
 
         function logout() {
