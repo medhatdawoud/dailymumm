@@ -11,6 +11,7 @@ app.use(bodyParser.json());
 
 app.set('views', path.join(__dirname, '../client/app'));
 app.use(express.static(path.join(__dirname, '../client/app')));
+app.use('/scripts', express.static(path.join(__dirname, '../node_modules')));
 
 require('./routes/index')(app);
 

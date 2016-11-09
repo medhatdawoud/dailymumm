@@ -3,15 +3,30 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
+    "angular": "^1.5.8",
+    "angular-animate": "^1.5.8",
+    "angular-cookies": "^1.5.8",
+    "angular-rating": "^3.0.2",
+    "angular-resource": "^1.5.8",
+    "angular-sanitize": "^1.5.8",
+    "angular-translate": "^2.13.0",
+    "angular-translate-loader-url": "^2.13.0",
+    "angular-ui-router": "^0.3.2",
     "body-parser": "^1.14.1",
+    "bootstrap": "^3.3.7",
+    "chosen-js": "^1.6.2",
     "express": "~4.0.0",
     "express3-handlebars": "0.4.x",
+    "growl": "^1.9.2",
+    "jquery": "^3.1.1",
     "jsonwebtoken": "^5.5.4",
+    "moment": "^2.15.2",
     "mongoose": "^4.2.4",
-    "nodemailer": "^2.6.4"
+    "nodemailer": "^2.6.4",
+    "owl.carousel": "^2.2.0"
   },
   "devDependencies": {
-    "bower": "~1.6.5",
+    "angular-mocks": "^1.5.8",
     "grunt": "~0.4.1",
     "grunt-concurrent": "~0.3.0",
     "grunt-contrib-clean": "~0.5.0",
@@ -45,7 +60,6 @@
   },
   "scripts": {
     "start": "node server/app.js",
-    "test": "karma start karma.conf.js",
-    "postinstall": "./node_modules/bower/bin/bower install"
+    "test": "karma start karma.conf.js"
   }
 }
