@@ -115,7 +115,7 @@ module.exports = function (app) {
         });
     });
 
-    router.put('/addinviteduserdata', function (req, res) {
+    router.put('/confirminvitation', function (req, res) {
         var listId = req.body.id;
         var user = JSON.parse(req.body.user);
 
@@ -128,7 +128,7 @@ module.exports = function (app) {
                 username: data.username,
                 email: data.email,
                 fullname: data.fullname || '',
-                confirmed: false
+                confirmed: true
             };
         })
 
@@ -137,10 +137,10 @@ module.exports = function (app) {
 
             for (var i = 0; i < data.subscribers.length; i++) {
                 if (data.subscribers[i].email === userToSave.email) {
-
-                    List.update({ "_id": listId }, {
+                    // TODO: it should replace the old item with the new item with user data
+                    List.update({ "_id": listId, "subscribers": { $elemMatch: { "email": userToSave.email } } }, {
                         $set: {
-                            'subscribers.1': userToSave
+                            'subscribers.$': userToSave
                         }
                     }, function (err, data) {
                         if (err) return console.error(err);
@@ -151,7 +151,7 @@ module.exports = function (app) {
                             res.json(null);
                         }
                     });
-                    
+
                     break;
                 }
             }
