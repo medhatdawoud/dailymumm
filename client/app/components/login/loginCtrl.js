@@ -30,7 +30,7 @@
                     if (result.success) {
                         AuthService.setCredintials(result.data);
                         if ($stateParams.lid) {
-                            ListsService.addInvitedUserToList($stateParams.lid, result.data, function (res) {
+                            ListsService.addInvitationToUser($stateParams.lid, result.data, function (res) {
                                 if (res.success) {
                                     $state.go('profile.view');
                                 }

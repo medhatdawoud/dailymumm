@@ -4,7 +4,8 @@ var UserSchema = mongoose.Schema({
 	username: String,
 	fullname: String,
 	email: String,
-	password: String
+	password: String,
+	invitations: Array
 },{ timestamps:{createdAt:'created_at',updatedAt:'updated_at'}});
 
 var usersModel = mongoose.model('Users',UserSchema);

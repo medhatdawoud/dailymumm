@@ -2,7 +2,7 @@ module.exports = function (app) {
     var express = require('express');
     var jwt = require('jsonwebtoken');
     var router = express.Router();
-	//   , users = require('../api/users');
+    //   , users = require('../api/users');
 
     var User = require('../models/users');
 
@@ -12,7 +12,7 @@ module.exports = function (app) {
         var user = new User({ username: req.body.username, email: req.body.email, password: req.body.password });
         user.save(function (err, data) {
             if (err) return console.error(err);
-                res.json(data);
+            res.json(data);
         });
     });
 
@@ -61,7 +61,7 @@ module.exports = function (app) {
             });
         }
     });
-    
+
     app.use(function (req, res, next) {
         // check header or url parameters or post parameters for token
         var token = req.body.token || req.query.token || req.headers['x-access-token'];
@@ -72,9 +72,9 @@ module.exports = function (app) {
                 // if (err) {
                 //     return res.json({ success: false, message: 'Failed to authenticate token.' });
                 // } else {
-                    // if everything is good, save to request for use in other routes
-                    // req.decoded = decoded;
-                    next();
+                // if everything is good, save to request for use in other routes
+                // req.decoded = decoded;
+                next();
                 // }
             });
         } else {
@@ -86,7 +86,7 @@ module.exports = function (app) {
             });
         }
     });
-    
+
     router.get('/:id', function (req, res) {
         User.findOne({ '_id': req.params.id }, function (err, data) {
             if (err) return console.error(err);
@@ -107,7 +107,7 @@ module.exports = function (app) {
         var username = req.body.username;
         var fullname = req.body.fullname;
 
-        User.update({ '_id': id }, { username: username, fullname: fullname}, function (err, data) {
+        User.update({ '_id': id }, { username: username, fullname: fullname }, function (err, data) {
             if (err) return console.error(err);
             res.json(data);
         });
@@ -131,5 +131,16 @@ module.exports = function (app) {
             if (err) return console.error(err);
             res.json(data);
         });
+    });
+
+    router.put('/addinvitation', function (req, res) {
+        var listId = req.body.listid;
+        var userId = req.body.userid;
+
+        User.update({ '_id': userId },
+            { $addToSet: { invitations: listId } }, function (err, data) {
+                if (err) return console.error(err);
+                res.json(data);
+            });
     });
 };

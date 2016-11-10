@@ -13,6 +13,7 @@
         service.getLists = getLists;
         service.createList = createList;
         service.updateList = updateList;
+        service.addInvitationToUser = addInvitationToUser;
 
         function getLists(userId, callback) {
             $http.get(apiServer + '/api/lists/byuser', { params: { userId: userId } })
@@ -41,8 +42,8 @@
                 });
         }
 
-        function addInvitedUserToList(listId, user, callback) {
-            $http.put(apiServer + '/api/lists/addinviteduserdata', { id: listId, user: angular.toJson(user) })
+        function addInvitationToUser(listId, user, callback) {
+            $http.put(apiServer + '/api/user/addinvitation', { listid: listId, userid: user.id })
                 .then(function (response) {
                     callback({ success: true, data: response.data });
                 }, function (response) {
