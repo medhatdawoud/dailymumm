@@ -737,11 +737,11 @@ h4 {
   opacity: 0;
 }
 /* line 32, ../scss/pages/_startOrder.scss */
-.lists-order .one-list.selected .img-container, .lists-order .one-list:hover .img-container {
+.lists-order .one-list:hover .img-container {
   border-color: #26C6DA;
 }
 /* line 35, ../scss/pages/_startOrder.scss */
-.lists-order .one-list.selected .img-container .subscribers-count, .lists-order .one-list:hover .img-container .subscribers-count {
+.lists-order .one-list:hover .img-container .subscribers-count {
   background: #26C6DA;
 }
 /* line 42, ../scss/pages/_startOrder.scss */
