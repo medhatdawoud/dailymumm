@@ -156,11 +156,29 @@ module.exports = function (app) {
     router.put('/removeinvitation', function (req, res) {
         var listId = req.body.listid;
         var userId = req.body.userid;
+        var userEmail = req.body.useremail;
 
         User.update({ '_id': userId },
             { $pull: { invitations: {id:listId} } }, function (err, data) {
                 if (err) return console.error(err);
-                res.json(data);
+
+                List.update({ "_id": listId, "subscribers.email": userEmail }, {
+                    $set: {
+                        'subscribers.$': {
+                            email: userEmail,
+                            confirmed: false,
+                            declined: true
+                        }
+                    }
+                }, function (err, data) {
+                    if (err) return console.error(err);
+
+                    if (data) {
+                        res.json(data)
+                    } else {
+                        res.json(null);
+                    }
+                });
             });
     });
 };

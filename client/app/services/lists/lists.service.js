@@ -62,8 +62,8 @@
                 });
         }
 
-        function ignoreInvitation(listId, userId, callback) {
-            $http.put(apiServer + '/api/user/removeinvitation', { listid: listId, userid: userId })
+        function ignoreInvitation(listId, userId, userEmail, callback) {
+            $http.put(apiServer + '/api/user/removeinvitation', { listid: listId, userid: userId, useremail: userEmail })
                 .then(function (response) {
                     callback({ success: true, data: response.data });
                 }, function (response) {

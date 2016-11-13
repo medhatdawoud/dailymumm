@@ -22,7 +22,7 @@
         }
 
         function ignoreList(listId){
-            ListsService.ignoreInvitation(listId, userdata.id, function(response){
+            ListsService.ignoreInvitation(listId, userdata.id, userdata.email, function(response){
                 if(response.success) {
                     removeInvitationFromList(listId);
                 }
