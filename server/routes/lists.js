@@ -54,7 +54,7 @@ module.exports = function (app) {
                         data = data.concat(data2);
                         res.json(data)
                     } else {
-                        res.json(null);
+                        res.json(data);
                     }
                 });
             } else {
@@ -125,36 +125,43 @@ module.exports = function (app) {
             if (err) return console.error(err);
 
             userToSave = {
+                id: data._id,
                 username: data.username,
                 email: data.email,
                 fullname: data.fullname || '',
                 confirmed: true
             };
-        })
 
-        List.findOne({ "_id": listId }, function (err, data) {
-            if (err) return console.error(err);
+            User.update({ '_id': data._id },
+                { $pull: { invitations: {id:listId} } }, function (err, result) {
+                    if (err) return console.error(err);
+                    res.json(result);
+                });
 
-            for (var i = 0; i < data.subscribers.length; i++) {
-                if (data.subscribers[i].email === userToSave.email) {
-                    // TODO: it should replace the old item with the new item with user data
-                    List.update({ "_id": listId, "subscribers": { $elemMatch: { "email": userToSave.email } } }, {
-                        $set: {
-                            'subscribers.$': userToSave
-                        }
-                    }, function (err, data) {
-                        if (err) return console.error(err);
+            List.findOne({ "_id": listId }, function (err, data) {
+                if (err) return console.error(err);
 
-                        if (data) {
-                            res.json(data)
-                        } else {
-                            res.json(null);
-                        }
-                    });
+                for (var i = 0; i < data.subscribers.length; i++) {
+                    if (data.subscribers[i].email === userToSave.email) {
+                        // TODO: it should replace the old item with the new item with user data
+                        List.update({ "_id": listId, "subscribers.email": userToSave.email }, {
+                            $set: {
+                                'subscribers.$': userToSave
+                            }
+                        }, function (err, data) {
+                            if (err) return console.error(err);
 
-                    break;
+                            if (data) {
+                                res.json(data)
+                            } else {
+                                res.json(null);
+                            }
+                        });
+
+                        break;
+                    }
                 }
-            }
+            });
         });
     });
 

@@ -5,6 +5,7 @@ module.exports = function (app) {
     //   , users = require('../api/users');
 
     var User = require('../models/users');
+    var List = require('../models/lists');
 
     app.use('/api/user', router);
 
@@ -137,9 +138,27 @@ module.exports = function (app) {
     router.put('/addinvitation', function (req, res) {
         var listId = req.body.listid;
         var userId = req.body.userid;
+        var listname = "";
+
+        List.findOne({_id: listId}, function(err, result){
+            if (err) return console.error(err);
+
+            listname = result.name;
+
+            User.update({ '_id': userId },
+                { $addToSet: { invitations: {id:listId, name: listname} } }, function (err, data) {
+                    if (err) return console.error(err);
+                    res.json(data);
+                });
+        });
+    });
+
+    router.put('/removeinvitation', function (req, res) {
+        var listId = req.body.listid;
+        var userId = req.body.userid;
 
         User.update({ '_id': userId },
-            { $addToSet: { invitations: listId } }, function (err, data) {
+            { $pull: { invitations: {id:listId} } }, function (err, data) {
                 if (err) return console.error(err);
                 res.json(data);
             });

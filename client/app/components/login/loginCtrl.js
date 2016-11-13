@@ -28,14 +28,15 @@
                 var data = $scope.logindata;
                 AuthService.login(data.email, data.password, function (result) {
                     if (result.success) {
-                        AuthService.setCredintials(result.data);
                         if ($stateParams.lid) {
-                            ListsService.addInvitationToUser($stateParams.lid, result.data, function (res) {
+                            ListsService.addInvitationToUser($stateParams.lid, result.data.id, function (res) {
                                 if (res.success) {
+                                    AuthService.setCredintials(result.data);
                                     $state.go('profile.view');
                                 }
                             });
                         } else {
+                            AuthService.setCredintials(result.data);
                             $state.go('profile.view');
                         }
                     } else {

@@ -5,10 +5,11 @@
         .module('dailyMummApp')
         .controller('InvitationsDirectiveCtrl', InvitationsDirectiveController);
 
-    InvitationsDirectiveController.$inject = ['$rootScope','AuthService'];
+    InvitationsDirectiveController.$inject = ['$rootScope','AuthService','ListsService'];
 
-    function InvitationsDirectiveController($rootScope,AuthService) {
+    function InvitationsDirectiveController($rootScope,AuthService, ListsService) {
         var ivm = this;
+        var userdata = AuthService.getCurrentUserInfo();
 
         ivm.joinList = joinList;
         ivm.ignoreList = ignoreList;
@@ -17,7 +18,7 @@
         ivm.invitations = [];
 
         function loadInvitations() {
-            ivm.invitations = AuthService.getCurrentUserInfo().invitations;
+            ivm.invitations = userdata.invitations;
         }
 
         function ignoreList(listId){
@@ -26,14 +27,17 @@
         }
 
         function joinList(listId) {
-            alert('joined');
-            $rootScope.$emit('updateListOfGroups');
-            for(var i = 0; i < ivm.invitations.length; i++) {
-                if(ivm.invitations[i].id == listId) {
-                    ivm.invitations.splice(i, 1);
-                    break;
+            ListsService.confirmInvitation(listId, userdata, function (response){
+                if(response.success) {
+                    $rootScope.$emit('updateListOfGroups');
+                    for(var i = 0; i < ivm.invitations.length; i++) {
+                        if(ivm.invitations[i].id == listId) {
+                            ivm.invitations.splice(i, 1);
+                            break;
+                        }
+                    }
                 }
-            }
+            });
         }
     }
 })();

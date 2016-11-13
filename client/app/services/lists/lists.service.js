@@ -14,6 +14,8 @@
         service.createList = createList;
         service.updateList = updateList;
         service.addInvitationToUser = addInvitationToUser;
+        service.confirmInvitation = confirmInvitation;
+        service.ignoreInvitation = ignoreInvitation;
 
         function getLists(userId, callback) {
             $http.get(apiServer + '/api/lists/byuser', { params: { userId: userId } })
@@ -42,8 +44,26 @@
                 });
         }
 
-        function addInvitationToUser(listId, user, callback) {
-            $http.put(apiServer + '/api/user/addinvitation', { listid: listId, userid: user.id })
+        function addInvitationToUser(listId, userId, callback) {
+            $http.put(apiServer + '/api/user/addinvitation', { listid: listId, userid: userId })
+                .then(function (response) {
+                    callback({ success: true, data: response.data });
+                }, function (response) {
+                    callback({ success: false, code: response.data });
+                });
+        }
+
+        function confirmInvitation(listId, user, callback) {
+            $http.put(apiServer + '/api/lists/confirminvitation', { id: listId, user: angular.toJson(user) })
+                .then(function (response) {
+                    callback({ success: true, data: response.data });
+                }, function (response) {
+                    callback({ success: false, code: response.data });
+                });
+        }
+
+        function ignoreInvitation(listId, userId, callback) {
+            $http.put(apiServer + '/api/user/removeinvitation', { listid: listId, userid: userId })
                 .then(function (response) {
                     callback({ success: true, data: response.data });
                 }, function (response) {
