@@ -14,7 +14,7 @@
 	<p class="white-transperant-block no-lists" ng-show="lvm.listOfGroups.length == 0">
 		You have not Subscribed to any list yet, you can <a class="btn btn-sm btn-default" data-toggle="modal" data-target="#createListModal">Create</a>		one now.
 	</p>
-	<div class="white-transperant-block">
+	<div class="white-transperant-block" ng-if="lvm.listOfGroups.length > 0">
 		<div class="lists-profile list-groups">
 			<a href="javascript:void(0)" ng-click="lvm.editList(item)" ng-repeat="item in lvm.listOfGroups" class="one-list" ng-class="{'owned' : item.owned, 'subscribed': !item.owned}">
 				<div class="img-container">
