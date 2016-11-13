@@ -14,32 +14,10 @@
         ivm.ignoreList = ignoreList;
         ivm.$onInit = loadInvitations;
 
-        ivm.invitations = [
-            {
-                id: "123456",
-                name: "kokoawa",
-                subscribers: [
-                    {email: "medhat@gmail.com", username: "medhat"}
-                ]
-            },
-            {
-                id: "123456",
-                name: "bababebo",
-                subscribers: [
-                    {email: "medhat@gmail.com", username: "medhat"}
-                ]
-            },
-            {
-                id: "123456",
-                name: "lalalalala",
-                subscribers: [
-                    {email: "medhat@gmail.com", username: "medhat"}
-                ]
-            }
-        ];
+        ivm.invitations = [];
 
         function loadInvitations() {
-            console.log(AuthService.getCurrentUserInfo());
+            ivm.invitations = AuthService.getCurrentUserInfo().invitations;
         }
 
         function ignoreList(listId){
