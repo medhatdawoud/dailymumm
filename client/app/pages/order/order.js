@@ -43,7 +43,6 @@
             OrdersService.pushOrderItem(vm.orderData._id, vm.orderItemTemp, function (response) {
                 if (response.success) {
                     getOrderById(vm.orderData._id);
-                    console.log(vm.orderData);
 
                     $('#createOrderModal').modal('hide');
                 }

@@ -5,12 +5,29 @@
         .module('dailyMummApp')
         .controller('LoginDirectiveCtrl', LoginDirectiveController);
 
-    LoginDirectiveController.$inject = ['$scope', '$stateParams', 'AuthService', '$state', '$translate', 'ListsService'];
+    LoginDirectiveController.$inject = ['$scope', '$stateParams', 'AuthService', '$state', '$translate', 'ListsService', 'UserService'];
 
-    function LoginDirectiveController($scope, $stateParams, AuthService, $state, $translate, ListsService) {
+    function LoginDirectiveController($scope, $stateParams, AuthService, $state, $translate, ListsService, UserService) {
 
         if (AuthService.isLoggedIn()) {
-            $state.go('profile');
+            if($stateParams.lid) {
+                var userdata = AuthService.getCurrentUserInfo();
+                var listId = $stateParams.lid;
+                ListsService.addInvitationToUser(listId, userdata.id, function (res) {
+                    if (res.success) {
+                        UserService.getUserBasicInfoById(userdata.id, function(response){
+                            if(response.success) {
+                                var userInfo = AuthService.getCurrentUserInfo();
+                                userInfo.invitations = response.data.invitations;
+                                AuthService.setCredintials(userInfo);
+                            }
+                        });
+                        $state.go('profile.view');
+                    }
+                });
+            } else {
+                $state.go('profile');
+            }
         }
 
         $scope.current = 'login';
@@ -31,7 +48,15 @@
                         if ($stateParams.lid) {
                             ListsService.addInvitationToUser($stateParams.lid, result.data.id, function (res) {
                                 if (res.success) {
-                                    AuthService.setCredintials(result.data);
+                                    AuthService.setCredintials(res.data);
+                                    UserService.getUserBasicInfoById(result.data.id, function(response){
+                                        if(response.success) {
+                                            var userInfo = result.data;
+                                            userInfo.invitations = response.data.invitations;
+                                            debugger
+                                            AuthService.setCredintials(userInfo);
+                                        }
+                                    });
                                     $state.go('profile.view');
                                 }
                             });
