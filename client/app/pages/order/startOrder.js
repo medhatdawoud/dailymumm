@@ -17,6 +17,7 @@
         vm.startOrder = startOrder;
         vm.listSelected = listSelected;
         vm.selectedList = null;
+        vm.defaultListPicture = "assets/images/lists/list1.jpg";
 
         getLists();
         getAllRestaurants();
