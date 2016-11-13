@@ -19,7 +19,7 @@
 			<a href="javascript:void(0)" ng-click="lvm.editList(item)" ng-repeat="item in lvm.listOfGroups" class="one-list" ng-class="{'owned' : item.owned, 'subscribed': !item.owned}">
 				<div class="img-container">
 					<span class="subscribers-count">{{item.subscribers.length}}</span>
-					<img ng-src="{{item.picturePath}}" alt="{{item.name}}">
+					<img ng-src="{{item.picturePath || lvm.defaultListPicture}}" alt="{{item.name}}">
 				</div>
 				<p>{{item.name}}</p>
 			</a>

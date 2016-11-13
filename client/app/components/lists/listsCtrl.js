@@ -11,9 +11,10 @@
         var lvm = this;
         lvm.listOfGroups = [];
         lvm.userData = AuthService.getCurrentUserInfo();
+        lvm.defaultListPicture = "assets/images/lists/list1.jpg";
         lvm.tempListData = {
             name: "",
-            picturePath: "assets/images/lists/list1.jpg",
+            picturePath: "",
             invitations: [],
             subscribers: []
         };
