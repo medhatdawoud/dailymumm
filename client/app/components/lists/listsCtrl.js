@@ -168,5 +168,9 @@
         }
 
         loadCarousel();
+
+        $rootScope.$on('updateListOfGroups', function(){
+            reloadLists();
+        });
     }
 })();
