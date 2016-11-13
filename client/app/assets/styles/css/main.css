@@ -457,6 +457,11 @@ form .form-group.has-success .help-block {
   color: #fff;
 }
 
+/* line 3, ../scss/components/_invitations.scss */
+.invitations .one-invitation h3 {
+  margin-top: 0px;
+}
+
 /* line 1, ../scss/pages/_home.scss */
 #homepage {
   text-shadow: 0px 1px 10px #333;
