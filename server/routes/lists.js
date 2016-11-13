@@ -49,7 +49,7 @@ module.exports = function (app) {
             if (data) {
                 List.find({ "subscribers": { $elemMatch: { id: userId } } }, function (err2, data2) {
                     if (err2) return console.error(err2);
-
+                    
                     if (data2) {
                         data = data.concat(data2);
                         res.json(data)
@@ -125,14 +125,14 @@ module.exports = function (app) {
             if (err) return console.error(err);
 
             userToSave = {
-                id: data._id,
+                id: data._id.toString(),
                 username: data.username,
                 email: data.email,
                 fullname: data.fullname || '',
                 confirmed: true
             };
 
-            User.update({ '_id': data._id },
+            User.update({ '_id': data._id.toString() },
                 { $pull: { invitations: {id:listId} } }, function (err, result) {
                     if (err) return console.error(err);
                     res.json(result);
