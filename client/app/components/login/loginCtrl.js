@@ -34,7 +34,9 @@
                                 if (res.success) {
                                     $state.go('profile.view');
                                 }
-                            })
+                            });
+                        } else {
+                            $state.go('profile.view');
                         }
                     } else {
                         $scope.hasError = true;
