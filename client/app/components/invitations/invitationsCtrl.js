@@ -22,7 +22,11 @@
         }
 
         function ignoreList(listId){
-            alert('ignored');
+            ListsService.ignoreInvitation(listId, userdata.id, function(response){
+                if(response.success) {
+                    removeInvitationFromList(listId);
+                }
+            })
             
         }
 
@@ -30,14 +34,22 @@
             ListsService.confirmInvitation(listId, userdata, function (response){
                 if(response.success) {
                     $rootScope.$emit('updateListOfGroups');
-                    for(var i = 0; i < ivm.invitations.length; i++) {
-                        if(ivm.invitations[i].id == listId) {
-                            ivm.invitations.splice(i, 1);
-                            break;
-                        }
-                    }
+                    removeInvitationFromList(listId);
                 }
             });
         }
+
+        function removeInvitationFromList(listId) {
+            for(var i = 0; i < ivm.invitations.length; i++) {
+                if(ivm.invitations[i].id == listId) {
+                    ivm.invitations.splice(i, 1);
+                    break;
+                }
+            }
+
+            userdata.invitations = ivm.invitations;
+            AuthService.setCredintials(userdata);
+        }
+
     }
 })();
