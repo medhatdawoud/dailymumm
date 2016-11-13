@@ -35,6 +35,7 @@ module.exports = function (app) {
                     fullname: data.fullname,
                     username: data.username,
                     signup_date: data.created_at,
+                    invitations: data.invitations,
                     token: token
                 }
 
