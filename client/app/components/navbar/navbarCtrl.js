@@ -5,9 +5,9 @@
         .module('dailyMummApp')
         .controller('NavbarDirectiveCtrl', NavbarDirectiveController);
 
-    NavbarDirectiveController.$inject = ['$scope', 'AuthService', '$state', '$timeout', 'CountDownService', 'CurrentOrderService'];
+    NavbarDirectiveController.$inject = ['$scope', '$rootScope', 'AuthService', '$state', '$timeout', 'CountDownService', 'CurrentOrderService'];
 
-    function NavbarDirectiveController($scope, AuthService, $state, $timeout, CountDownService, CurrentOrderService) {
+    function NavbarDirectiveController($scope, $rootScope, AuthService, $state, $timeout, CountDownService, CurrentOrderService) {
 
         // 15 second
         var collectingOrderTime = 0.25 * 60 * 1000;
@@ -36,8 +36,8 @@
                     CountDownService.initializeClock("count-down", endTime, collectingOrderTime)
                     $scope.orderStarted = true;
                 } else {
-                    $scope.timeout = true;
                     $scope.orderStarted = true;
+                    $rootScope.$broadcast('timeout');
                 }
             }, 500);
         });
