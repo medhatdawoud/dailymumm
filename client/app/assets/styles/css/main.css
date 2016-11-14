@@ -865,83 +865,84 @@ h4 {
 .right-sidebar .timeout-form-block h3 {
   margin-top: 0px;
   margin-bottom: 5px;
+  color: #F5E156;
 }
-/* line 10, ../scss/pages/_order.scss */
+/* line 11, ../scss/pages/_order.scss */
 .right-sidebar .restaurant-block .menus-list, .right-sidebar .restaurant-block .phones-list {
   margin-top: 20px;
 }
-/* line 13, ../scss/pages/_order.scss */
+/* line 14, ../scss/pages/_order.scss */
 .right-sidebar .restaurant-block .menus-list .btn-block, .right-sidebar .restaurant-block .phones-list .btn-block {
   display: inline-block;
 }
-/* line 17, ../scss/pages/_order.scss */
+/* line 18, ../scss/pages/_order.scss */
 .right-sidebar .restaurant-block .rating-container {
   margin-top: 5px;
   text-align: left;
 }
-/* line 22, ../scss/pages/_order.scss */
+/* line 23, ../scss/pages/_order.scss */
 .right-sidebar .restaurant-block .restaurant-name {
   font-size: 30px;
   margin: 0px;
 }
-/* line 29, ../scss/pages/_order.scss */
+/* line 30, ../scss/pages/_order.scss */
 .right-sidebar .restaurant-block .phones-list .numbers, .right-sidebar .restaurant-block .phones-list .numbers span {
   font-size: 28px;
   line-height: 24px;
 }
-/* line 33, ../scss/pages/_order.scss */
+/* line 34, ../scss/pages/_order.scss */
 .right-sidebar .restaurant-block .phones-list .numbers i, .right-sidebar .restaurant-block .phones-list .numbers span i {
   font-size: 22px;
   color: #F5E156;
 }
 
-/* line 43, ../scss/pages/_order.scss */
+/* line 44, ../scss/pages/_order.scss */
 .main-container {
   margin-bottom: 50px;
 }
-/* line 45, ../scss/pages/_order.scss */
+/* line 46, ../scss/pages/_order.scss */
 .main-container .list-details {
   padding: 15px 20px;
   color: #F5E156;
 }
-/* line 50, ../scss/pages/_order.scss */
+/* line 51, ../scss/pages/_order.scss */
 .main-container .list-details .create-order-button {
   margin-top: -6px;
   margin-right: -6px;
   border-radius: 0px;
 }
-/* line 58, ../scss/pages/_order.scss */
+/* line 59, ../scss/pages/_order.scss */
 .main-container .list-details h4 {
   margin: 0px;
   color: #fff;
   text-transform: none;
 }
-/* line 63, ../scss/pages/_order.scss */
+/* line 64, ../scss/pages/_order.scss */
 .main-container .list-details h4 i {
   color: #F5E156;
   margin-right: 10px;
 }
-/* line 70, ../scss/pages/_order.scss */
+/* line 71, ../scss/pages/_order.scss */
 .main-container .white-transperant-block {
   font-weight: bold;
 }
-/* line 72, ../scss/pages/_order.scss */
+/* line 73, ../scss/pages/_order.scss */
 .main-container .white-transperant-block.order-item {
   padding: 7px 15px;
 }
-/* line 75, ../scss/pages/_order.scss */
+/* line 76, ../scss/pages/_order.scss */
 .main-container .white-transperant-block.order-item .meta {
   color: #333;
 }
-/* line 78, ../scss/pages/_order.scss */
+/* line 79, ../scss/pages/_order.scss */
 .main-container .white-transperant-block.order-item .item {
   font-size: 20px;
 }
-/* line 81, ../scss/pages/_order.scss */
+/* line 82, ../scss/pages/_order.scss */
 .main-container .white-transperant-block.order-item .item.owned-item {
   color: #F5E156;
 }
-/* line 86, ../scss/pages/_order.scss */
+/* line 87, ../scss/pages/_order.scss */
 .main-container .white-transperant-block.order-item + .main-container .white-transperant-block.order-item {
   margin-top: 7px;
 }
