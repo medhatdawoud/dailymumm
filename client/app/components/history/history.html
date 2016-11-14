@@ -1,6 +1,26 @@
 <div class="history">
     <h4>Orders History:</h4>
-    <div class="white-transperant-block">
-        
+    <div class="black-transperant-block">
+        <table class="table">
+            <tr>
+                <th>Creator</th>
+                <th>List</th>
+                <th>From</th>
+                <th>Via</th>
+                <th>Time</th>
+                <th>Items</th>
+                <th></th>
+            </tr>
+            <tr ng-repeat="item in hvm.orderItems">
+                <td>{{item.creator.fullname || item.creator.username}}</td>
+                <td>{{item.list.name}}</td>
+                <td>{{item.restaurant.name}}</td>
+                <td>{{item.mean}}</td>
+                <td>{{item.startTime | date:'dd MMM yyyy hh:mm a'}}</td>
+                <td>{{item.items.length}}</td>
+                <td><a ui-sref="order({id:item._id})" title="preview" class="btn btn-xs btn-info"><i class="glyphicon glyphicon-arrow-right"></i></a></td>
+            </tr>
+        </table>
+
     </div>
 </div>

@@ -13,9 +13,19 @@
         service.getOrderById = getOrderById;
         service.createOrder = createOrder;
         service.pushOrderItem = pushOrderItem;
+        service.getOrdersByUserId = getOrdersByUserId;
 
         function getOrderById(orderId, callback) {
             $http.get(apiServer + '/api/order/byid', { params: { id: orderId } })
+                .then(function (response) {
+                    callback({ success: true, data: response.data });
+                }, function (response) {
+                    callback({ success: false, code: response.data });
+                });
+        }
+
+        function getOrdersByUserId(userId, callback) {
+            $http.get(apiServer + '/api/order/byuser', { params: { userid: userId } })
                 .then(function (response) {
                     callback({ success: true, data: response.data });
                 }, function (response) {

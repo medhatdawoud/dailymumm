@@ -32,6 +32,27 @@ module.exports = function (app) {
                 res.json(null);
             }
         });
+    });
+
+    router.get('/byuser', function (req, res) {
+        var userid = req.param('userid');
+
+        Order.find({ "items.user.id": userid }, function (err, data) {
+            if (err) return console.error(err);
+
+            if (data) {
+                Order.find({ "creator.id": userid }, function (err2, data2) {
+                    if (err2) return console.log(err2);
+
+                    if (data2) {
+                        data = data.concat(data2);
+                        res.json(data)
+                    }
+                });
+            } else {
+                res.json(null);
+            }
+        });
 
     });
 

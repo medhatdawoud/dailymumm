@@ -705,6 +705,27 @@ h4 {
   color: #F5E156;
 }
 
+/* line 182, ../scss/pages/_profile.scss */
+.history {
+  margin-top: 30px;
+}
+/* line 185, ../scss/pages/_profile.scss */
+.history .black-transperant-block {
+  padding: 0px;
+}
+/* line 188, ../scss/pages/_profile.scss */
+.history .black-transperant-block table {
+  margin-bottom: 0px;
+}
+/* line 191, ../scss/pages/_profile.scss */
+.history .black-transperant-block table tr td, .history .black-transperant-block table tr th {
+  text-align: center;
+}
+/* line 195, ../scss/pages/_profile.scss */
+.history .black-transperant-block table tr:first-child {
+  background: rgba(0, 0, 0, 0.5);
+}
+
 /* line 1, ../scss/pages/_startOrder.scss */
 .selected-list {
   margin-left: 15px;
