@@ -59,5 +59,6 @@
 
             $translateProvider.useUrlLoader('localization/en.json');
             $translateProvider.preferredLanguage('en');
+            $translateProvider.useSanitizeValueStrategy('escape');
         }]);
 })();
