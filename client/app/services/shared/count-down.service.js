@@ -37,7 +37,7 @@
                 var minutes = t.minutes < 10 ? '0' + t.minutes : t.minutes;
                 var seconds = t.seconds < 10 ? '0' + t.seconds : t.seconds;
                 clock.innerHTML = '00:' + minutes + ':' + seconds;
-                console.log(t.total);
+                
                 if (t.total <= 0) {
                     $interval.cancel(timeinterval);
                     $rootScope.$broadcast('timeout');

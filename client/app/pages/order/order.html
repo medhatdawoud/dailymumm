@@ -27,35 +27,12 @@
 			</div>
 		</div>
 		<div class="col-sm-4 right-sidebar">
-			<div class="restaurant-block black-transperant-block no-margin-left no-margin-right">
-				<div class="row">
-					<div class="col-xs-4 no-padding-right">
-						<img class="img-thumbnail img-responsive logo" ng-src="{{vm.orderData.restaurant.picturePath}}" alt="vm.orderData.restaurant.name">
-					</div>
-					<div class="col-xs-8">
-						<rating value="vm.orderData.restaurant.rating" class="rating-container" color="#ffdf00" max="5"></rating>
-						<h3 class="restaurant-name">{{vm.orderData.restaurant.name}}</h3>
-					</div>
-				</div>
+			<bw-order-mean ng-if="!vm.orderTimeout"></bw-order-mean>
 
-				<div class="menus-list">
-					<h4>Menus:</h4>
-					<p>menus on sites for references on order.</p>
-					<a class="btn btn-block btn-info" ng-repeat="menu in vm.orderData.restaurant.menus" target="_blank" href="{{menu.link}}">
-                         {{ menu.sitename }} &nbsp;&nbsp;<i class="glyphicon glyphicon-arrow-right"></i>
-                    </a>
-				</div>
-				<div class="phones-list">
-					<h4>Phone numbers:</h4>
-					<p class="numbers" ng-repeat="phone in vm.orderData.restaurant.phoneNumbers track by $index">
-						<i class="glyphicon glyphicon-earphone"></i>
-						<span>{{ phone }}</span>
-					</p>
-				</div>
-			</div>
+			<bw-restaurant-card restaurant="vm.orderData.restaurant"></bw-restaurant-card>
 
 			<button class="btn btn-block btn-danger" ng-click="vm.cancelOrder()" ng-if="vm.orderData.creator.id == vm.userData.id">
-                <i class="glyphicon glyphicon-ban-circle"></i> Cancel the whole Order
+                <i class="glyphicon glyphicon-ban-circle pull-right"></i> <span class="pull-left">Cancel the whole Order</span>
             </button>
 
 		</div>
