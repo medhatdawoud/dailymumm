@@ -52,7 +52,8 @@
 									{{ user.fullname || user.username || user.email }}
 									<div class="pull-right label label-primary" ng-if="!user.confirmed && !user.declined">Pending</div>
 									<div class="pull-right label label-danger" ng-if="!user.confirmed && user.declined">Declined</div>
-									<div class="pull-right" ng-if="user.confirmed"><i class="glyphicon glyphicon-ok"></i></div>
+									<div class="pull-right" ng-if="user.confirmed && !user.owner"><i class="glyphicon glyphicon-ok"></i></div>
+									<div class="pull-right label label-success" ng-if="user.confirmed && user.owner">Owner</div>
 								</li>
 							</ul>
 						</div>
