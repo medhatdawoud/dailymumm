@@ -2,11 +2,11 @@
 	<div class="row">
 		<div class="col-sm-8 main-container">
 			<div class="row alert alert-info">
-				<strong>Here we go:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam eaque, ducimus doloremque
+				<strong>Here you go:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam eaque, ducimus doloremque
 				nam cum cumque rem quo molestias illum libero, atque iure inventore distinctio ipsa autem dicta voluptas modi! Nam?
 			</div>
 			<div class="list-details black-transperant-block">
-				<button class="btn btn-success pull-right create-order-button" data-toggle="modal" data-target="#createOrderModal">
+				<button class="btn btn-success pull-right create-order-button" ng-if="!vm.orderTimeout" data-toggle="modal" data-target="#createOrderModal">
                     <i class="glyphicon glyphicon-plus"></i> add order
                 </button>
 				<h4><i class="glyphicon glyphicon-bullhorn"></i>&nbsp; {{ vm.orderData.list.name }}</h4>

@@ -14,6 +14,7 @@
         vm.orderData = CurrentOrderService.orderData;
         vm.cancelOrder = cancelOrder;
         vm.createItem = createItem;
+        vm.orderTimeout = false;
 
         if (!$stateParams.id) {
             $state.go('profile.view');
@@ -60,6 +61,10 @@
 
         $scope.$on('orderStart', function () {
             $rootScope.$broadcast('orderStarted');
-        })
+        });
+
+        $scope.$on('timeout', function () {
+            vm.orderTimeout = true;
+        });
     }
 })();

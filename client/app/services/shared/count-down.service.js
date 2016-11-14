@@ -5,9 +5,9 @@
         .module('dailyMummApp')
         .service('CountDownService', CountDownService);
 
-    CountDownService.$inject = ['$rootScope'];
+    CountDownService.$inject = ['$rootScope', '$interval'];
 
-    function CountDownService($rootScope) {
+    function CountDownService($rootScope, $interval) {
         var service = {};
         var timeinterval;
 
@@ -30,24 +30,25 @@
             };
         }
 
-        function initializeClock(id, endtime) {
+        function initializeClock(id, endtime, timeoutPeriod) {
             var clock = document.getElementById(id);
-            timeinterval = setInterval(function () {
+            timeinterval = $interval(function () {
                 var t = getTimeRemaining(endtime);
                 var minutes = t.minutes < 10 ? '0' + t.minutes : t.minutes;
                 var seconds = t.seconds < 10 ? '0' + t.seconds : t.seconds;
                 clock.innerHTML = '00:' + minutes + ':' + seconds;
+                console.log(t.total);
                 if (t.total <= 0) {
-                    clearInterval(timeinterval);
+                    $interval.cancel(timeinterval);
                     $rootScope.$broadcast('timeout');
                 }
-            }, 1000);
+            }, 1000, timeoutPeriod / 1000);
         }
 
         function stopTimer(id) {
             var clock = document.getElementById(id);
             clock.innerHTML = "00:00:00";
-            clearInterval(timeinterval);
+            $interval.cancel(timeinterval);
         }
 
         return service;
