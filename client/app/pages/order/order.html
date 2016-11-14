@@ -2,6 +2,7 @@
 	<div class="row">
 		<div class="col-sm-8 main-container">
 			<div class="row alert alert-info">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
 				<strong>Here you go:</strong> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laboriosam eaque, ducimus doloremque
 				nam cum cumque rem quo molestias illum libero, atque iure inventore distinctio ipsa autem dicta voluptas modi! Nam?
 			</div>
@@ -11,19 +12,8 @@
                 </button>
 				<h4><i class="glyphicon glyphicon-bullhorn"></i>&nbsp; {{ vm.orderData.list.name }}</h4>
 			</div>
-			<div class="white-transperant-block order-item" ng-repeat="item in vm.orderData.items">
-				<div class="row item" ng-class="{'owned-item':item.user.id === vm.userData.id}">
-					<div class="col-xs-1">{{item.count}}</div>
-					<div class="col-sm-6 col-xs-6">{{item.item}}</div>
-					<div class="col-sm-3 col-xs-4 text-right">{{item.price | currency :"" : 2}} LE</div>
-					<div class="col-sm-2 col-xs-1 hidden-xs no-padding-left text-right">
-						<span class="label label-info">{{item.refmenu.sitename}}</span>
-					</div>
-				</div>
-				<div class="row padding-top meta">
-					<div class="col-xs-6 text-left">{{item.user.fullname || item.user.name}}</div>
-					<div class="col-xs-6 text-right">{{item.datetime | fromNow}}</div>
-				</div>
+			<div ng-repeat="item in vm.orderData.items">
+				<bw-order-item item="item"></bw-order-item>
 			</div>
 		</div>
 		<div class="col-sm-4 right-sidebar">
