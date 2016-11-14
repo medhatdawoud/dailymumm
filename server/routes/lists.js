@@ -55,20 +55,11 @@ module.exports = function (app) {
     router.get('/byuser', function (req, res) {
         var userId = req.param("userId");
 
-        List.find({ "owner.id": userId }, function (err, data) {
+        List.find({ "subscribers": { $elemMatch: { id: userId } } }, function (err, data) {
             if (err) return console.error(err);
 
             if (data) {
-                List.find({ "subscribers": { $elemMatch: { id: userId } } }, function (err2, data2) {
-                    if (err2) return console.error(err2);
-
-                    if (data2) {
-                        data = data.concat(data2);
-                        res.json(data)
-                    } else {
-                        res.json(data);
-                    }
-                });
+                res.json(data);
             } else {
                 res.json(null);
             }
