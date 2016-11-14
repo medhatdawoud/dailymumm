@@ -15,12 +15,14 @@ module.exports = function (app) {
         var list = new List({
             name: listData.name,
             picturePath: listData.picturePath,
-            subscribers: listData.invitations,
-            owner: {
+            subscribers: [{
                 id: listOwnerData.id,
                 username: listOwnerData.username,
-                email: listOwnerData.email
-            }
+                fullname: listOwnerData.fullname || "",
+                email: listOwnerData.email,
+                confirmed: true,
+                owner: true
+            }]
         });
 
         list.save(function (err, results) {
@@ -36,6 +38,16 @@ module.exports = function (app) {
                 });
             });
 
+            List.update({ "_id": results._id.toString() }, {
+                $push: {
+                    subscribers: {
+                        $each: listData.invitations
+                    }
+                }
+            }, function (err, data) {
+                if (err) return console.error(err);
+            });
+
             res.json(results);
         });
     });
@@ -49,7 +61,7 @@ module.exports = function (app) {
             if (data) {
                 List.find({ "subscribers": { $elemMatch: { id: userId } } }, function (err2, data2) {
                     if (err2) return console.error(err2);
-                    
+
                     if (data2) {
                         data = data.concat(data2);
                         res.json(data)
@@ -133,7 +145,7 @@ module.exports = function (app) {
             };
 
             User.update({ '_id': data._id.toString() },
-                { $pull: { invitations: {id:listId} } }, function (err, result) {
+                { $pull: { invitations: { id: listId } } }, function (err, result) {
                     if (err) return console.error(err);
                     res.json(result);
                 });
