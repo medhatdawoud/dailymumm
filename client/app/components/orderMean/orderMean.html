@@ -1,0 +1,18 @@
+<div class="timeout-form-block black-transperant-block no-margin-left no-margin-right">
+    <h3>Order has been timedout</h3>
+    <p>Now you should start sort the order and get a copy to order with, use the following dropdownlist to determine how will
+        you make this order</p>
+    <div class="form-group">
+        <label for="OrderMean">Order Mean</label>
+        <select class="form-control" ng-model="vm.orderSelectedMean" ng-options="mean for mean in vm.orderMeans track by mean"></select>
+    </div>
+    <div class="form-group" ng-if="vm.orderSelectedMean == 'Others'">
+        <label for="writeYourMean">Write how you order</label>
+        <textarea class="form-control"></textarea>
+    </div>
+    <div class="form-group">
+        <button class="btn btn-block btn-warning">
+            <i class="glyphicon glyphicon-ok pull-right"></i> <span class="pull-left">Click here after ordering</span>
+        </button>
+    </div>
+</div>
