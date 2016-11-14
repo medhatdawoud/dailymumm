@@ -1,4 +1,5 @@
 .right-sidebar{
+
     .timeout-form-block {
         h3 {
             margin-top: 0px;
@@ -43,6 +44,12 @@
 
 .main-container {
     margin-bottom: 50px;
+
+    .sorting-container {
+        margin-top: -6px;
+        margin-right: -15px;
+    }
+    
     .list-details {
         // margin-bottom: 0px;
         padding: 15px 20px;

@@ -10,6 +10,10 @@
 				<button class="btn btn-success pull-right create-order-button" ng-if="!vm.orderTimeout" data-toggle="modal" data-target="#createOrderModal">
                     <i class="glyphicon glyphicon-plus"></i> add order
                 </button>
+				<div class="col-sm-3 pull-right sorting-container">
+					<select class="form-control pull-right" ng-model="vm.sort" ng-if="vm.orderTimeout" 
+					ng-options="s as s.name for s in vm.sortByOptions track by s.id"></select>
+				</div>
 				<h4><i class="glyphicon glyphicon-bullhorn"></i>&nbsp; {{ vm.orderData.list.name }}</h4>
 			</div>
 			<div ng-repeat="item in vm.orderData.items">

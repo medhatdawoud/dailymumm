@@ -1,6 +1,6 @@
 'use strict';
 
-(function () {
+(function() {
     angular
         .module('dailyMummApp')
         .controller('OrderCtrl', OrderController);
@@ -15,6 +15,11 @@
         vm.cancelOrder = cancelOrder;
         vm.createItem = createItem;
         vm.orderTimeout = false;
+        vm.sortByOptions = [
+            { id: 1, name: "Sort by order" },
+            { id: 2, name: "Sort by user" }
+        ];
+        vm.sort = vm.sortByOptions[0];
 
         if (!$stateParams.id) {
             $state.go('profile.view');
@@ -25,7 +30,7 @@
         }
 
         function getOrderById(orderId) {
-            OrdersService.getOrderById(orderId, function (response) {
+            OrdersService.getOrderById(orderId, function(response) {
                 if (response.success) {
                     vm.orderData = response.data;
                     CurrentOrderService.orderData = response.data;
@@ -41,7 +46,7 @@
                 name: vm.userData.username,
                 id: vm.userData.id
             }
-            OrdersService.pushOrderItem(vm.orderData._id, vm.orderItemTemp, function (response) {
+            OrdersService.pushOrderItem(vm.orderData._id, vm.orderItemTemp, function(response) {
                 if (response.success) {
                     getOrderById(vm.orderData._id);
 
@@ -59,11 +64,11 @@
             }
         }
 
-        $scope.$on('orderStart', function () {
+        $scope.$on('orderStart', function() {
             $rootScope.$broadcast('orderStarted');
         });
 
-        $scope.$on('timeout', function () {
+        $scope.$on('timeout', function() {
             vm.orderTimeout = true;
         });
     }
