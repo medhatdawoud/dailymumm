@@ -60,8 +60,12 @@
                             name: item.name,
                             createdAt: item.created_at,
                             picturePath: item.picturePath,
-                            owned: item.owner.id === userId,
-                            owner: item.owner,
+                            owned: item.subscribers.filter(function (val) {
+                                return val.id === userId && val.owner === true;
+                            }).length === 1,
+                            owner: item.subscribers.filter(function (val) {
+                                return val.owner === true;
+                            })[0] || false,
                             subscribers: item.subscribers
                         };
                         newLists.push(list);
@@ -91,7 +95,7 @@
             if (confirmed) {
                 OrdersService.createOrder(vm.userData, vm.selectedList, vm.restaurant, function (response) {
                     if (response.success) {
-                        CurrentOrderService.orderData=response.data;
+                        CurrentOrderService.orderData = response.data;
 
                         $state.go("order", { id: response.data._id });
 
