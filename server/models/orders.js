@@ -1,13 +1,15 @@
 var mongoose = require('./../mongo.config');
 
 var OrderSchema = mongoose.Schema({
+    tips: Number,
+    wholeBill: Number,
     mean: {
         name: String,
         details: String
     },
     status: String,
-	creator: {
-        id : String,
+    creator: {
+        id: String,
         username: String,
         fullname: String,
         email: String
@@ -26,7 +28,7 @@ var OrderSchema = mongoose.Schema({
         phoneNumbers: Array
     },
     items: Array
-},{ timestamps:{createdAt:'startTime',updatedAt:'updated_at'}});
+}, { timestamps: { createdAt: 'startTime', updatedAt: 'updated_at' } });
 
-var ordersModel = mongoose.model('Orders',OrderSchema);
+var ordersModel = mongoose.model('Orders', OrderSchema);
 module.exports = ordersModel;

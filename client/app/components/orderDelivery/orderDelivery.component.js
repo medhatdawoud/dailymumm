@@ -21,12 +21,18 @@
 
         function submitDelivery() {
             vm.order.status = "Done";
+            vm.order.tips = vm.tips;
+            vm.order.wholeBill = vm.bill;
 
-            OrdersService.updateOrder(vm.order, function (response) {
-                if (response.success) {
-                    console.log(response.data);
-                }
-            })
+            var confirmed = confirm('Are you sure that the bill and tips you entered are accurate, because this will affect the whole calculations for other people who order with you ?');
+
+            if (confirmed) {
+                OrdersService.updateOrder(vm.order, function (response) {
+                    if (!response.success) {
+                        console.log(response.data);
+                    }
+                });
+            }
         }
     }
 })();
