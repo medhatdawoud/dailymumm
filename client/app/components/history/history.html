@@ -3,6 +3,7 @@
     <div class="black-transperant-block">
         <table class="table">
             <tr>
+                <th></th>
                 <th>Creator</th>
                 <th>List</th>
                 <th>From</th>
@@ -12,6 +13,19 @@
                 <th></th>
             </tr>
             <tr ng-repeat="item in hvm.orderItems">
+                <td>
+                    <div class="label" ng-class="{'label-success': item.status == 'Done', 
+                                                'label-info': item.status == 'Now', 
+                                                'label-warning': item.status == 'waiting', 
+                                                'label-danger': item.status =='canceled', 
+                                                'label-default': item.status == 'NotCompleted'}">
+                        <span ng-if="item.status == 'NotCompleted'">Not Completed</span>
+                        <span ng-if="item.status == 'Now'">Now</span>
+                        <span ng-if="item.status == 'Waiting'">Waiting</span>
+                        <span ng-if="item.status == 'Done'">Done</span>
+                        <span ng-if="item.status == 'Canceled'">Canceled</span>
+                    </div>
+                </td>
                 <td>{{item.creator.fullname || item.creator.username}}</td>
                 <td>{{item.list.name}}</td>
                 <td>{{item.restaurant.name}}</td>
