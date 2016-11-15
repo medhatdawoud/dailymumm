@@ -56,7 +56,7 @@ module.exports = function (app) {
 
     });
 
-    router.put('/', function (req, res) {
+    router.put('/additems', function (req, res) {
         var orderId = req.body.orderId,
             orderItem = JSON.parse(req.body.orderItem);
 
@@ -73,7 +73,23 @@ module.exports = function (app) {
                 res.json(null);
             }
         });
+    });
 
+    router.put('/', function (req, res) {
+        var order = JSON.parse(req.body.order);
+
+        Order.update({ "_id": order._id }, {
+            mean : order.mean,
+            status: order.status
+        }, function (err, data) {
+            if (err) return console.error(err);
+
+            if (data) {
+                res.json(data)
+            } else {
+                res.json(null);
+            }
+        });
     });
 
     router.delete('/', function (req, res) {
