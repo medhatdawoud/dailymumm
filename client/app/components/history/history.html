@@ -16,7 +16,7 @@
                 <td>{{item.list.name}}</td>
                 <td>{{item.restaurant.name}}</td>
                 <td>{{item.mean}}</td>
-                <td>{{item.startTime | date:'dd MMM yyyy hh:mm a'}}</td>
+                <td>{{item.startTime | fromNow}}</td>
                 <td>{{item.items.length}}</td>
                 <td><a ui-sref="order({id:item._id})" title="preview" class="btn btn-xs btn-info"><i class="glyphicon glyphicon-arrow-right"></i></a></td>
             </tr>
