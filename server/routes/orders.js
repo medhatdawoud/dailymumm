@@ -13,7 +13,7 @@ module.exports = function (app) {
             list = JSON.parse(req.body.list),
             restaurant = JSON.parse(req.body.restaurant),
             orders = [];
-        var order = new Order({ creator: creator, list: list, restaurant: restaurant });
+        var order = new Order({ mean: null, status: "Now", creator: creator, list: list, restaurant: restaurant });
         order.save(function (err, data) {
             if (err) return console.error(err);
             res.json(data);
