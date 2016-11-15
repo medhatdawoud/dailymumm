@@ -1,0 +1,16 @@
+<div class="timeout-form-block black-transperant-block no-margin-left no-margin-right">
+    <h3 class="text-center">Ordered {{ vm.order.updated_at | fromNow }}</h3>
+    <hr>
+    <h3>You must be waiting for pilot to deliver your order now</h3>
+    <p>After you recieve the order you should provide the following data and submit Order delivered.</p>
+    <div class="form-group">
+        <label for="OrderMean">Tips you paid</label>
+        <input type="number" min="0" class="form-control" ng-model="vm.tips" placeholder="2 LE" />
+    </div>
+    
+    <div class="form-group">
+        <button class="btn btn-block btn-success" ng-click="vm.submitMean()">
+            <i class="glyphicon glyphicon-ok pull-right"></i> <span class="pull-left">Order Delivered Successfully</span>
+        </button>
+    </div>
+</div>

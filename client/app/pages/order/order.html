@@ -11,8 +11,7 @@
                     <i class="glyphicon glyphicon-plus"></i> add order
                 </button>
 				<div class="col-sm-3 pull-right sorting-container">
-					<select class="form-control pull-right" ng-model="vm.sort" ng-if="vm.orderTimeout" 
-					ng-options="s as s.name for s in vm.sortByOptions track by s.id"></select>
+					<select class="form-control pull-right" ng-model="vm.sort" ng-if="vm.orderTimeout" ng-options="s as s.name for s in vm.sortByOptions track by s.id"></select>
 				</div>
 				<h4><i class="glyphicon glyphicon-bullhorn"></i>&nbsp; {{ vm.orderData.list.name }}</h4>
 			</div>
@@ -21,7 +20,9 @@
 			</div>
 		</div>
 		<div class="col-sm-4 right-sidebar">
-			<bw-order-mean order="vm.orderData" ng-if="vm.orderTimeout"></bw-order-mean>
+			<bw-order-mean order="vm.orderData" ng-if="vm.orderTimeout && vm.orderData.status == 'Now'"></bw-order-mean>
+
+			<bw-order-delivery order="vm.orderData" ng-if="vm.orderTimeout && vm.orderData.status == 'Waiting'"></bw-order-delivery>
 
 			<bw-restaurant-card restaurant="vm.orderData.restaurant"></bw-restaurant-card>
 
