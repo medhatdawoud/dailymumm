@@ -1,6 +1,6 @@
 'use strict';
 
-(function () {
+(function() {
     angular
         .module('dailyMummApp')
         .service('OrdersService', OrdersService);
@@ -14,39 +14,49 @@
         service.createOrder = createOrder;
         service.pushOrderItem = pushOrderItem;
         service.getOrdersByUserId = getOrdersByUserId;
+        service.updateOrder = updateOrder;
 
         function getOrderById(orderId, callback) {
             $http.get(apiServer + '/api/order/byid', { params: { id: orderId } })
-                .then(function (response) {
+                .then(function(response) {
                     callback({ success: true, data: response.data });
-                }, function (response) {
+                }, function(response) {
                     callback({ success: false, code: response.data });
                 });
         }
 
         function getOrdersByUserId(userId, callback) {
             $http.get(apiServer + '/api/order/byuser', { params: { userid: userId } })
-                .then(function (response) {
+                .then(function(response) {
                     callback({ success: true, data: response.data });
-                }, function (response) {
+                }, function(response) {
                     callback({ success: false, code: response.data });
                 });
         }
 
         function createOrder(creator, list, restaurant, callback) {
             $http.post(apiServer + '/api/order', { creator: angular.toJson(creator), list: angular.toJson(list), restaurant: angular.toJson(restaurant) })
-                .then(function (response) {
+                .then(function(response) {
                     callback({ success: true, data: response.data });
-                }, function (response) {
+                }, function(response) {
+                    callback({ success: false, code: response.data });
+                });
+        }
+
+        function updateOrder(orderObj, callback) {
+            $http.put(apiServer + '/api/order', { order: angular.toJson(orderObj) })
+                .then(function(response) {
+                    callback({ success: true, data: response.data });
+                }, function(response) {
                     callback({ success: false, code: response.data });
                 });
         }
 
         function pushOrderItem(orderId, orderItem, callback) {
-            $http.put(apiServer + '/api/order', { orderId: orderId, orderItem: angular.toJson(orderItem) })
-                .then(function (response) {
+            $http.put(apiServer + '/api/order/additems', { orderId: orderId, orderItem: angular.toJson(orderItem) })
+                .then(function(response) {
                     callback({ success: true, data: response.data });
-                }, function (response) {
+                }, function(response) {
                     callback({ success: false, code: response.data });
                 });
         }
