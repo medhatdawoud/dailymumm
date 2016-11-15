@@ -1,7 +1,10 @@
 var mongoose = require('./../mongo.config');
 
 var OrderSchema = mongoose.Schema({
-    mean: String,
+    mean: {
+        name: String,
+        details: String
+    },
     status: String,
 	creator: {
         id : String,

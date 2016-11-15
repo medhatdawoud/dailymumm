@@ -21,7 +21,7 @@
 			</div>
 		</div>
 		<div class="col-sm-4 right-sidebar">
-			<bw-order-mean ng-if="vm.orderTimeout"></bw-order-mean>
+			<bw-order-mean order="vm.orderData" ng-if="vm.orderTimeout"></bw-order-mean>
 
 			<bw-restaurant-card restaurant="vm.orderData.restaurant"></bw-restaurant-card>
 

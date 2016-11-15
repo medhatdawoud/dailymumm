@@ -8,10 +8,10 @@
     </div>
     <div class="form-group" ng-if="vm.orderSelectedMean == 'Others'">
         <label for="writeYourMean">Write how you order</label>
-        <textarea class="form-control"></textarea>
+        <textarea class="form-control" placeholder="tell us the mean you will use" ng-model="vm.orderSelectedMeanDetails"></textarea>
     </div>
     <div class="form-group">
-        <button class="btn btn-block btn-warning">
+        <button class="btn btn-block btn-warning" ng-click="vm.submitMean()">
             <i class="glyphicon glyphicon-ok pull-right"></i> <span class="pull-left">Click here after ordering</span>
         </button>
     </div>
