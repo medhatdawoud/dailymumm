@@ -20,13 +20,14 @@
         vm.submitDelivery = submitDelivery;
 
         function submitDelivery() {
-            vm.order.status = "Done";
-            vm.order.tips = vm.tips;
-            vm.order.extras = vm.extras;
-
-            var confirmed = confirm('Are you sure that the extras and tips you entered are accurate, because this will affect the whole calculations for other people who order with you ?');
+            var confirmed = confirm('Are you sure that the place, extras and tips you entered are accurate, because this will affect the whole calculations for other people who order with you ?');
 
             if (confirmed) {
+                vm.order.status = "Done";
+                vm.order.tips = vm.tips;
+                vm.order.extras = vm.extras;
+                vm.order.place = vm.place;
+                
                 OrdersService.updateOrder(vm.order, function (response) {
                     if (!response.success) {
                         console.log(response.data);
