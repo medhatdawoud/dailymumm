@@ -1,4 +1,4 @@
-<div class="timeout-form-block black-transperant-block no-margin-left no-margin-right">
+<div ng-if="vm.isCreator" class="timeout-form-block black-transperant-block no-margin-left no-margin-right">
     <h3 class="text-center">Ordered {{ vm.order.updated_at | fromNow }}</h3>
     <hr>
     <h3>You must be waiting for pilot to deliver your order now</h3>
@@ -22,4 +22,10 @@
             <i class="glyphicon glyphicon-ok pull-right"></i> <span class="pull-left">Order Delivered Successfully</span>
         </button>
     </div>
+</div>
+
+<div ng-if="!vm.isCreator" class="timeout-form-block black-transperant-block no-margin-left no-margin-right">
+    <h3>You must be waiting for order now, expect an email <i class="glyphicon glyphicon-send"></i></h3>
+    <p>After the order is delivered dailymumm will send each one an email on behalf of "<em>{{vm.order.creator.username}}</em>"
+        the creator of the order, with your order and your bill and the place you will be collected to eat in. </p>
 </div>

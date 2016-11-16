@@ -20,9 +20,14 @@
         vm.tips = 0;
         vm.extras = 0;
         vm.submitDelivery = submitDelivery;
+        vm.isCreator = OrdersService.checkCreatorOfOrder(vm.order);
 
         function submitDelivery() {
-            var confirmed = confirm('Are you sure that the place, extras and tips you entered are accurate, because this will affect the whole calculations for other people who order with you ?');
+            var confirmed = confirm('Are you sure that the place, extras and tips you entered are accurate,' +
+                ' because this will affect the whole calculations for other people who order with you ?' +
+                '\n\n' +
+                'Note that: an email will be sent to each one who write items in this order with his/her ' +
+                'bill including part of the extras and tips you paid based on his/her order price');
 
             if (confirmed) {
                 vm.order.status = "Done";
