@@ -1,30 +1,30 @@
 # Daily Mumm #
 
-It's a single page app that help colleges in work place with collecting food orders from the same restaurant, it's fast and stright forward and also divid the extras and tips on people based on their orders, send them notification emails on order delivery.
+It's a single page app that enable colleges in work place to collect food orders from the same restaurant, it's fast and straight forward and also divide the extras and tips on people based on their orders, send them notification emails on order delivery.
 
 There are an online staging version for Dailymumm (check it out from [here](https://goo.gl/JBw542))
 
 ### what technologies that i used ? ###
 
 * MongoDB - as a database, light and convenient for application purpose.
-* NodeJs - as server side application representing apis.
-* Express - used as a framework on node to enable creating routes and apis in an easy way.
-* SocketIO - a node package for realtime send/recieve data.
+* NodeJs - as server side application representing APIs.
+* Express - used as a framework on node to enable creating routes and APIs in an easy way.
+* SocketIO - a node package for real-time send/receive data.
 * AngularJS - as a frontend framework.
-* Angular UI Router - to faciliate routing and for its features.
+* Angular UI Router - to facilitate routing and for its features.
 * Karma - as a test runner.
-* Jasmine - as a unit testing framework , easy and efficient.
+* Jasmine - as a unit testing framework, easy and efficient.
 * HTML5/CSS3 - for sure they are used for views UI creating and styling.
 * Twitter Bootstrap - as UI framework.
-* SASS - as css preprocessor.
-* Over all it's MEAN stack.
+* SASS - as CSS preprocessor.
+* Over all its MEAN stack.
 
 ### What is the pattern and the archeticture that i used ? ###
 
 * I've applied the IIFE pattern in all my files to isolate contexts.
-* I've depend on separation of dependancies so each page has a folder that hold its controller file and view file as well.
+* I've depend on separation of dependencies so each page has a folder that hold its controller file and view file as well.
 * I've separate app module initialization and app routes in 2 files.
-* About the UI, i've did what i see simple and good in the same time for this application, video background.
+* About the UI, I’ve did what I see simple and good in the same time for this application, video background.
 * I've created a custom component for each segment in code that might be reusable later.
 * I've applied components of angular 1.5 instead of directives old style.
 
