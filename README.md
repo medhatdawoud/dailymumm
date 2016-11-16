@@ -45,3 +45,10 @@ There are an online staging version for Dailymumm (check it out from [here](http
 * then write `npm test` to run tests and make sure that they are all green.
 * Finally write `npm start` to start application and run it in the browser at `http://localhost` as i've used port 80.
 * Cool !!
+
+### What's next ? ###
+
+* planing to convert it from angularjs to angular 2.
+* convert every thing to TypeScript and ES7.
+* using webpack to bundle every thing.
+* add more features ... 
