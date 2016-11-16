@@ -22,6 +22,7 @@
         ];
         vm.orderSelectedMean = vm.orderMeans[0];
         vm.submitMean = submitMean;
+        vm.isCreator = OrdersService.checkCreatorOfOrder(vm.order);
 
         function submitMean() {
             vm.order.mean = {
