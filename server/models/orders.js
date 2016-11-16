@@ -2,7 +2,8 @@ var mongoose = require('./../mongo.config');
 
 var OrderSchema = mongoose.Schema({
     tips: Number,
-    wholeBill: Number,
+    extras: Number,
+    place: String,
     mean: {
         name: String,
         details: String
