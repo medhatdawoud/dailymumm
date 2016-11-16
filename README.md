@@ -1,12 +1,46 @@
-**The Idea:**
-I found that we need some sort of solution for the daily orders of food all over the company, and for sure after we are in separate buildings it’s very difficult to order food with our friends, then I decided to start a new web application to solve this issue by sending a mail to all the subscribed people in the application when someone shout “I’ll make an order from Majesty” for example if they are interested in the same restaurant or not they will enter the application and add their orders and submit it, in the end the shouter will sort the orders and print them, give this printed order to any office body to order them or order it him/her self, then when the order arrive, he will enter the application again and sort orders by person, and send an email with one click to all the people in the same order that the Mumm is here now.
+# Daily Mumm #
 
-**The Technologies:**
-I’ve planned to use the MEAN stack and socket IO to make it real time and as a proof of concept that we are good in these technologies, like:
- * Node.js
- * AngularJS.
- * MongoDB.
- * CSS3.
- * HTML5.
- * Socket IO.
- * Twitter Bootstrap.
+It's a single page app that service colleges in work place in collecting food orders from the same restaurant, it's fast and stright forward and also divid the extras and tips on people based on their orders.
+
+There are an online staging version for Dailymumm (check it out from [here](https://goo.gl/JBw542))
+
+### what technologies that i used ? ###
+
+* MongoDB - as a database, light and convenient for application purpose.
+* NodeJs - as server side application representing apis.
+* Express - used as a framework on node to enable creating routes and apis in an easy way.
+* SocketIO - a node package for realtime send/recieve data.
+* AngularJS - as a frontend framework.
+* Angular UI Router - to faciliate routing and for its features.
+* Karma - as a test runner.
+* Jasmine - as a unit testing framework , easy and efficient.
+* HTML5/CSS3 - for sure they are used for views UI creating and styling.
+* Twitter Bootstrap - as UI framework.
+* SASS - as css preprocessor.
+* Over all it's MEAN stack.
+
+### What is the pattern and the archeticture that i used ? ###
+
+* I've applied the IIFE pattern in all my files to isolate contexts.
+* I've depend on separation of dependancies so each page has a folder that hold its controller file and view file as well.
+* I've separate app module initialization and app routes in 2 files.
+* About the UI, i've did what i see simple and good in the same time for this application.
+* I've created a custom component for each segment in code that might be reusable later.
+* I've applied components of angular 1.5 instead of directives old style.
+
+### Setup prerequists ###
+
+* you have to install NodeJS as it's the service and also to use its package manager npm.
+* you have to install sass. ([way to install sass](http://sass-lang.com/install)).
+* you should install compass to facilitate the compilation of sass to css ([Here you go](http://compass-style.org/install/)).
+* you have to install MongoDb locally.
+
+### How to run the application ###
+
+* clone or download files in some place.
+* open CMD or Terminal in the root folder you just cloned.
+* write this command `npm install` to install dependencies.
+* then write this command `compass compile` to compile sass files into css files.
+* then write `npm test` to run tests and make sure that they are all green.
+* Finally write `npm start` to start application and run it in the browser at `http://localhost` as i've used port 80.
+* Cool !!
