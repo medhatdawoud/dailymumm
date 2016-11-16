@@ -7,6 +7,9 @@
 				nam cum cumque rem quo molestias illum libero, atque iure inventore distinctio ipsa autem dicta voluptas modi! Nam?
 			</div>
 			<div class="list-details black-transperant-block">
+				<div class="pull-right refresh-button" title="refresh order items" ng-click="vm.refreshItems()">
+					<i class="glyphicon glyphicon-refresh"></i>
+				</div>
 				<button class="btn btn-success pull-right create-order-button" ng-if="!vm.orderTimeout" data-toggle="modal" data-target="#createOrderModal">
                     <i class="glyphicon glyphicon-plus"></i> add order
                 </button>

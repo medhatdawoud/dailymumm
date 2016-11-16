@@ -928,51 +928,57 @@ h4 {
 /* line 52, ../scss/pages/_order.scss */
 .main-container .sorting-container {
   margin-top: -6px;
-  margin-right: -15px;
 }
-/* line 57, ../scss/pages/_order.scss */
+/* line 56, ../scss/pages/_order.scss */
+.main-container .refresh-button {
+  margin-top: -6px;
+  font-size: 28px;
+  color: #F5E156;
+  cursor: pointer;
+}
+/* line 63, ../scss/pages/_order.scss */
 .main-container .list-details {
   padding: 15px 20px;
   color: #F5E156;
 }
-/* line 62, ../scss/pages/_order.scss */
+/* line 68, ../scss/pages/_order.scss */
 .main-container .list-details .create-order-button {
   margin-top: -6px;
-  margin-right: -6px;
+  margin-right: 15px;
   border-radius: 0px;
 }
-/* line 70, ../scss/pages/_order.scss */
+/* line 76, ../scss/pages/_order.scss */
 .main-container .list-details h4 {
   margin: 0px;
   color: #fff;
   text-transform: none;
 }
-/* line 75, ../scss/pages/_order.scss */
+/* line 81, ../scss/pages/_order.scss */
 .main-container .list-details h4 i {
   color: #F5E156;
   margin-right: 10px;
 }
-/* line 82, ../scss/pages/_order.scss */
+/* line 88, ../scss/pages/_order.scss */
 .main-container .white-transperant-block {
   font-weight: bold;
 }
-/* line 84, ../scss/pages/_order.scss */
+/* line 90, ../scss/pages/_order.scss */
 .main-container .white-transperant-block.order-item {
   padding: 7px 15px;
 }
-/* line 87, ../scss/pages/_order.scss */
+/* line 93, ../scss/pages/_order.scss */
 .main-container .white-transperant-block.order-item .meta {
   color: #333;
 }
-/* line 90, ../scss/pages/_order.scss */
+/* line 96, ../scss/pages/_order.scss */
 .main-container .white-transperant-block.order-item .item {
   font-size: 20px;
 }
-/* line 93, ../scss/pages/_order.scss */
+/* line 99, ../scss/pages/_order.scss */
 .main-container .white-transperant-block.order-item .item.owned-item {
   color: #F5E156;
 }
-/* line 98, ../scss/pages/_order.scss */
+/* line 104, ../scss/pages/_order.scss */
 .main-container .white-transperant-block.order-item + .main-container .white-transperant-block.order-item {
   margin-top: 7px;
 }
