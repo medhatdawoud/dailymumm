@@ -17,6 +17,8 @@
     function OrderDeliveryController(OrdersService) {
         var vm = this;
 
+        vm.tips = 0;
+        vm.extras = 0;
         vm.submitDelivery = submitDelivery;
 
         function submitDelivery() {
@@ -27,7 +29,7 @@
                 vm.order.tips = vm.tips;
                 vm.order.extras = vm.extras;
                 vm.order.place = vm.place;
-                
+
                 OrdersService.updateOrder(vm.order, function (response) {
                     if (!response.success) {
                         console.log(response.data);
