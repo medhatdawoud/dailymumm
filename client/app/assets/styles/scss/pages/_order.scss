@@ -6,6 +6,10 @@
             margin-bottom: 5px;
             color: $colorSecond;
         }
+
+        .form-group:last-child {
+            margin: 0px;
+        }
     }
 
     .restaurant-block{

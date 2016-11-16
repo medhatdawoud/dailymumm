@@ -888,87 +888,91 @@ h4 {
   margin-bottom: 5px;
   color: #F5E156;
 }
-/* line 12, ../scss/pages/_order.scss */
+/* line 10, ../scss/pages/_order.scss */
+.right-sidebar .timeout-form-block .form-group:last-child {
+  margin: 0px;
+}
+/* line 16, ../scss/pages/_order.scss */
 .right-sidebar .restaurant-block .menus-list, .right-sidebar .restaurant-block .phones-list {
   margin-top: 20px;
 }
-/* line 15, ../scss/pages/_order.scss */
+/* line 19, ../scss/pages/_order.scss */
 .right-sidebar .restaurant-block .menus-list .btn-block, .right-sidebar .restaurant-block .phones-list .btn-block {
   display: inline-block;
 }
-/* line 19, ../scss/pages/_order.scss */
+/* line 23, ../scss/pages/_order.scss */
 .right-sidebar .restaurant-block .rating-container {
   margin-top: 5px;
   text-align: left;
 }
-/* line 24, ../scss/pages/_order.scss */
+/* line 28, ../scss/pages/_order.scss */
 .right-sidebar .restaurant-block .restaurant-name {
   font-size: 30px;
   margin: 0px;
 }
-/* line 31, ../scss/pages/_order.scss */
+/* line 35, ../scss/pages/_order.scss */
 .right-sidebar .restaurant-block .phones-list .numbers, .right-sidebar .restaurant-block .phones-list .numbers span {
   font-size: 28px;
   line-height: 24px;
 }
-/* line 35, ../scss/pages/_order.scss */
+/* line 39, ../scss/pages/_order.scss */
 .right-sidebar .restaurant-block .phones-list .numbers i, .right-sidebar .restaurant-block .phones-list .numbers span i {
   font-size: 22px;
   color: #F5E156;
 }
 
-/* line 45, ../scss/pages/_order.scss */
+/* line 49, ../scss/pages/_order.scss */
 .main-container {
   margin-bottom: 50px;
 }
-/* line 48, ../scss/pages/_order.scss */
+/* line 52, ../scss/pages/_order.scss */
 .main-container .sorting-container {
   margin-top: -6px;
   margin-right: -15px;
 }
-/* line 53, ../scss/pages/_order.scss */
+/* line 57, ../scss/pages/_order.scss */
 .main-container .list-details {
   padding: 15px 20px;
   color: #F5E156;
 }
-/* line 58, ../scss/pages/_order.scss */
+/* line 62, ../scss/pages/_order.scss */
 .main-container .list-details .create-order-button {
   margin-top: -6px;
   margin-right: -6px;
   border-radius: 0px;
 }
-/* line 66, ../scss/pages/_order.scss */
+/* line 70, ../scss/pages/_order.scss */
 .main-container .list-details h4 {
   margin: 0px;
   color: #fff;
   text-transform: none;
 }
-/* line 71, ../scss/pages/_order.scss */
+/* line 75, ../scss/pages/_order.scss */
 .main-container .list-details h4 i {
   color: #F5E156;
   margin-right: 10px;
 }
-/* line 78, ../scss/pages/_order.scss */
+/* line 82, ../scss/pages/_order.scss */
 .main-container .white-transperant-block {
   font-weight: bold;
 }
-/* line 80, ../scss/pages/_order.scss */
+/* line 84, ../scss/pages/_order.scss */
 .main-container .white-transperant-block.order-item {
   padding: 7px 15px;
 }
-/* line 83, ../scss/pages/_order.scss */
+/* line 87, ../scss/pages/_order.scss */
 .main-container .white-transperant-block.order-item .meta {
   color: #333;
 }
-/* line 86, ../scss/pages/_order.scss */
+/* line 90, ../scss/pages/_order.scss */
 .main-container .white-transperant-block.order-item .item {
   font-size: 20px;
 }
-/* line 89, ../scss/pages/_order.scss */
+/* line 93, ../scss/pages/_order.scss */
 .main-container .white-transperant-block.order-item .item.owned-item {
   color: #F5E156;
 }
-/* line 94, ../scss/pages/_order.scss */
+/* line 98, ../scss/pages/_order.scss */
 .main-container .white-transperant-block.order-item + .main-container .white-transperant-block.order-item {
   margin-top: 7px;
 }
