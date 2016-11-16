@@ -1,6 +1,6 @@
 # Daily Mumm #
 
-It's a single page app that service colleges in work place in collecting food orders from the same restaurant, it's fast and stright forward and also divid the extras and tips on people based on their orders.
+It's a single page app that help colleges in work place with collecting food orders from the same restaurant, it's fast and stright forward and also divid the extras and tips on people based on their orders, send them notification emails on order delivery.
 
 There are an online staging version for Dailymumm (check it out from [here](https://goo.gl/JBw542))
 
@@ -24,7 +24,7 @@ There are an online staging version for Dailymumm (check it out from [here](http
 * I've applied the IIFE pattern in all my files to isolate contexts.
 * I've depend on separation of dependancies so each page has a folder that hold its controller file and view file as well.
 * I've separate app module initialization and app routes in 2 files.
-* About the UI, i've did what i see simple and good in the same time for this application.
+* About the UI, i've did what i see simple and good in the same time for this application, video background.
 * I've created a custom component for each segment in code that might be reusable later.
 * I've applied components of angular 1.5 instead of directives old style.
 
@@ -41,6 +41,7 @@ There are an online staging version for Dailymumm (check it out from [here](http
 * open CMD or Terminal in the root folder you just cloned.
 * write this command `npm install` to install dependencies.
 * then write this command `compass compile` to compile sass files into css files.
+* start mongodb, if you add it to your variables on windows create a folder name it data in c drive and write this command `mongod --dbpath c:/data`.
 * then write `npm test` to run tests and make sure that they are all green.
 * Finally write `npm start` to start application and run it in the browser at `http://localhost` as i've used port 80.
 * Cool !!
