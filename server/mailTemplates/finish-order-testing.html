@@ -1,0 +1,52 @@
+<!-- Emails use the XHTML Strict doctype -->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<!-- The character set should be utf-8 -->
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!-- Enables media queries -->
+	<meta name="viewport" content="width=device-width" />
+	<link rel="stylesheet" href="../../client/app/assets/styles/css/mailTemplate.css">
+    <style>
+        
+    </style>
+</head>
+
+<body>
+	<!-- Wrapper for the body of the email -->
+	<table class="body center">
+        <tr class="bg-black yellow header">
+            <td>
+                <h1>Dailymumm | <small>your platform to collect food order</small></h1>
+            </td>
+        </tr>
+		<tr>
+			<!-- The class, align, and <center> tag center the container -->
+			<td class="top main-content">
+				<!-- The body of each email you write is injected here -->
+				<p>Hey {{username}},</p>
+                <p>
+                    <strong>{{creatorUser}}</strong> is inviting you to order with him from <strong>{{restaurant}}</strong> restaurant.
+                    <br> 
+                    As you are a member at <strong>{{listname}}</strong> list on Dailymumm.
+                    <br>
+                    If you need to join this order click Join button,otherwise just ignore this email
+                </p>
+                <a href="{{orderlink}}">Join This Order</a>
+                <p>
+                    <em>
+                        <strong>Note that:</strong> adding items to this order will be expired after {{orderTimeout}} minutes.
+                    </em>
+                </p> 
+			</td>
+		</tr>
+        <tr class="bg-black yellow footer">
+            <td>
+                Copy rights &copy; 2016 reserved to Dailymumm
+            </td>
+        </tr>
+	</table>
+</body>
+
+</html>
