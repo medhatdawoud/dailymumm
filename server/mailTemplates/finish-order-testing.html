@@ -28,12 +28,12 @@
                 <p>Hey {{username}},</p>
                 <p>
                     Good news! , your order number
-                    <a class="inline" href="{{orderlink}}">{{ordernumber}}</a> that you ordered with list
-                    <strong>{{listname}}</strong> from <strong>{{restaurant}}</strong> has arrived, you must be so hungry.
+                    <a class="inline" href="{{orderlink}}">{{ordernumber}}</a> that you ordered with
+                    <strong>{{listname}}</strong> list from <strong>{{restaurant}}</strong> has arrived, you must be so hungry.
                 </p>
                 <p>
                     <h4>Place of gathering</h4>
-                    <u>{{creator}}</u> added the place of gathering to be at <em>{{place}}</em>
+                    <u>{{creator}}</u> as the creator of the order has added the place of gathering to be at <em>{{place}}</em> don't be late they are waiting for you
                 </p>
                 <h4>Your order items (and bill)</h4>
                 <table class="items-list">
@@ -46,7 +46,7 @@
                     <tr>
                         <td>{{count}}</td>
                         <td>{{item}}</td>
-                        <td>{{price}}</td>
+                        <td>{{price}} LE</td>
                     </tr>
                     {{/each}}
                     <tr class="extras">

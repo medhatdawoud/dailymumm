@@ -131,7 +131,7 @@ module.exports = function (app) {
                             });
 
                             itemsList.forEach(function (val) {
-                                orderToBind.items.push({ "count": val.count, "item": val.item, "price": val.price })
+                                orderToBind.items.push({ "count": val.count, "item": val.item, "price": val.price * val.count })
                                 orderToBind.duePayment += val.price * val.count;
                             })
 
@@ -140,14 +140,14 @@ module.exports = function (app) {
                         }
                         // }
                     }
-                    console.log(emailsList);
-                    // emailsList.forEach(function (oneEmail) {
-                    //     var email = oneEmail.userEmail;
-                    //     var orderToBind = email.order;
-                    //     mailer.sendEmail('finish-order', orderToBind, "Good news! your order from " + orderToBind.restaurant + "has arrived", email, function () {
-                    //         console.log('Order summary sent to ' + orderToBind.username + ' in ' + orderToBind.listname + ' list');
-                    //     });
-                    // });
+                    // console.log(emailsList);
+                    emailsList.forEach(function (oneEmail) {
+                        var email = oneEmail.userEmail;
+                        var orderToBind = oneEmail.order;
+                        mailer.sendEmail('finish-order', orderToBind, "Good news! your order from " + orderToBind.restaurant + " has arrived", email, function () {
+                            console.log('Order summary sent to ' + orderToBind.username + ' in ' + orderToBind.listname + ' list');
+                        });
+                    });
 
                 }
                 res.json(data);

@@ -179,54 +179,59 @@ body table.items-list tr.extras, body table.items-list tr.tips {
 body table.items-list tr.summary {
   background: #f9f1be;
   font-weight: bold;
+  white-space: nowrap;
 }
-/* line 37, ../scss/mailTemplate.scss */
+/* line 38, ../scss/mailTemplate.scss */
 body table.items-list tr th, body table.items-list tr td {
   padding: 3px 20px;
   text-align: left;
 }
-/* line 41, ../scss/mailTemplate.scss */
-body table.items-list tr th:first-child, body table.items-list tr th:last-child, body table.items-list tr td:first-child, body table.items-list tr td:last-child {
-  width: 10%;
+/* line 42, ../scss/mailTemplate.scss */
+body table.items-list tr th:first-child, body table.items-list tr td:first-child {
+  width: 8%;
 }
-/* line 48, ../scss/mailTemplate.scss */
+/* line 46, ../scss/mailTemplate.scss */
+body table.items-list tr th:last-child, body table.items-list tr td:last-child {
+  width: 12%;
+}
+/* line 53, ../scss/mailTemplate.scss */
 body table h4 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin-bottom: 5px;
 }
-/* line 54, ../scss/mailTemplate.scss */
+/* line 59, ../scss/mailTemplate.scss */
 body table tr.header {
   text-align: left;
 }
-/* line 58, ../scss/mailTemplate.scss */
+/* line 63, ../scss/mailTemplate.scss */
 body table tr.header h1 {
   margin: 20px 0px;
 }
-/* line 62, ../scss/mailTemplate.scss */
+/* line 67, ../scss/mailTemplate.scss */
 body table tr.header td {
   padding: 0px 20px;
 }
-/* line 67, ../scss/mailTemplate.scss */
+/* line 72, ../scss/mailTemplate.scss */
 body table tr.footer {
   color: #fafafa;
   text-align: left;
 }
-/* line 72, ../scss/mailTemplate.scss */
+/* line 77, ../scss/mailTemplate.scss */
 body table tr td {
   padding: 10px 20px;
 }
-/* line 75, ../scss/mailTemplate.scss */
+/* line 80, ../scss/mailTemplate.scss */
 body table tr td.main-content {
   text-align: left;
   line-height: 30px;
 }
-/* line 79, ../scss/mailTemplate.scss */
+/* line 84, ../scss/mailTemplate.scss */
 body table tr td.main-content p, body table tr td.main-content a {
   display: block;
   margin: 15px 0px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-/* line 84, ../scss/mailTemplate.scss */
+/* line 89, ../scss/mailTemplate.scss */
 body table tr td.main-content p.inline, body table tr td.main-content a.inline {
   display: inline-block;
   margin: 0px;

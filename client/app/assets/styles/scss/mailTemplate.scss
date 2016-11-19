@@ -32,14 +32,19 @@ body {
                 &.summary {
                     background: #f9f1be;
                     font-weight: bold;
+                    white-space: nowrap;
                 }
 
                 th, td {
                     padding: 3px 20px;
                     text-align: left;
 
-                    &:first-child, &:last-child {
-                        width:10%;
+                    &:first-child {
+                        width:8%;
+                    }
+
+                    &:last-child {
+                        width: 12%;
                     }
                 }
             }

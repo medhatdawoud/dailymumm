@@ -48,6 +48,7 @@
             vm.orderItemTemp.user = {
                 fullname: vm.userData.fullname,
                 name: vm.userData.username,
+                email: vm.userData.email,
                 id: vm.userData.id
             }
             OrdersService.pushOrderItem(vm.orderData._id, vm.orderItemTemp, function (response) {
