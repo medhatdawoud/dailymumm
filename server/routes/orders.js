@@ -118,8 +118,8 @@ module.exports = function (app) {
                             creator: order.creator.fullname || order.creator.username,
                             place: order.place,
                             items: [],
-                            shareOfExtras: 5,
-                            shareOfTips: 1,
+                            shareOfExtras: 0,
+                            shareOfTips: 0,
                             duePayment: 0
                         };
                         orderToBind.duePayment = orderToBind.shareOfTips + orderToBind.shareOfExtras;
@@ -144,6 +144,8 @@ module.exports = function (app) {
                     emailsList.forEach(function (oneEmail) {
                         var email = oneEmail.userEmail;
                         var orderToBind = oneEmail.order;
+                        orderToBind.shareOfTips = order.tips / users.length;
+                        orderToBind.shareOfExtras = order.extras / users.length;
                         mailer.sendEmail('finish-order', orderToBind, "Good news! your order from " + orderToBind.restaurant + " has arrived", email, function () {
                             console.log('Order summary sent to ' + orderToBind.username + ' in ' + orderToBind.listname + ' list');
                         });
