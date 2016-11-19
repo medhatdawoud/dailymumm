@@ -16,7 +16,7 @@
 }
 </style>
     <!-- Wrapper for the body of the email -->
-    <table class="body center" style="text-align: center; width: 600px; color: #333333; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 13px; margin: 0 auto;"><tr class="bg-black yellow header" style="color: #F5E156; text-align: left; background: #333333;" align="left" bgcolor="#333333"><td style="padding: 0px 20px;">
+    <table class="body center" style="text-align: center; width: 100%; color: #333333; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 13px; margin: 0 auto;"><tr class="bg-black yellow header" style="color: #F5E156; text-align: left; background: #333333;" align="left" bgcolor="#333333"><td style="padding: 0px 20px;">
                 <h1 style="font-family: 'Titillium'; margin: 20px 0px;">Dailymumm | <small>your platform to collect food order</small></h1>
             </td>
         </tr><tr><!-- The class, align, and <center> tag center the container --><td class="top main-content" style="vertical-align: top; text-align: left; line-height: 30px; padding: 10px 20px;" align="left" valign="top">
@@ -28,27 +28,30 @@
                     <strong>{{listname}}</strong> list from <strong>{{restaurant}}</strong> has arrived, you must be so hungry.
                 </p>
                 <p style="display: block; font-family: Verdana, Geneva, Tahoma, sans-serif; margin: 15px 0px;">
-                    </p><h4 style="font-family: Verdana, Geneva, Tahoma, sans-serif; margin-bottom: 5px;">Place of gathering</h4>
-                    <u>{{creator}}</u> as the creator of the order has added the place of gathering to be at <em>{{place}}</em> don't be late they are waiting for you
+                    </p><h4 style="font-family: Verdana, Geneva, Tahoma, sans-serif; margin-bottom: 5px; font-size: 12px;">Place of gathering</h4>
+                    <u>{{creator}}</u> as the creator of the order has added the place of gathering to be at <em>{{place}}</em>.
                 
-                <h4 style="font-family: Verdana, Geneva, Tahoma, sans-serif; margin-bottom: 5px;">Your order items (and bill)</h4>
+                <h4 style="font-family: Verdana, Geneva, Tahoma, sans-serif; margin-bottom: 5px; font-size: 12px;">Your order items (and bill)</h4>
                 <table class="items-list" style="width: 100%; color: #333333; font-family: Verdana, Geneva, Tahoma, sans-serif; font-size: 13px;"><tr style="background: #aaa;" bgcolor="#aaa"><th style="text-align: left; width: 8%; padding: 3px 20px;" align="left">Count</th>
-                        <th style="text-align: left; padding: 3px 20px;" align="left">Item</th>
-                        <th style="text-align: left; width: 12%; padding: 3px 20px;" align="left">Price</th>
+                        <th style="text-align: left; width: 80%; padding: 3px 20px;" align="left">Item</th>
+                        <th style="text-align: left; width: 12%; min-width: 100px; padding: 3px 20px;" align="left">Price</th>
                     </tr>
                     {{#each items}}
                     <tr style="background: #eee;" bgcolor="#eee"><td style="text-align: left; width: 8%; padding: 3px 20px;" align="left">{{count}}</td>
-                        <td style="text-align: left; padding: 3px 20px;" align="left">{{item}}</td>
-                        <td style="text-align: left; width: 12%; padding: 3px 20px;" align="left">{{price}} LE</td>
+                        <td style="text-align: left; width: 80%; padding: 3px 20px;" align="left">{{item}}</td>
+                        <td style="text-align: left; width: 12%; min-width: 100px; padding: 3px 20px;" align="left">{{price}} LE</td>
                     </tr>
                     {{/each}}
                     <tr class="extras" style="background: #ddedf7;" bgcolor="#ddedf7"><td colspan="2" style="text-align: left; width: 8%; padding: 3px 20px;" align="left">Your share of extras (service + delivery)</td>
-                        <td style="text-align: left; width: 12%; padding: 3px 20px;" align="left">{{shareOfExtras}} LE</td>
+                        <td style="text-align: left; width: 12%; min-width: 100px; padding: 3px 20px;" align="left">{{shareOfExtras}} LE</td>
                     </tr><tr class="tips" style="background: #ddedf7;" bgcolor="#ddedf7"><td colspan="2" style="text-align: left; width: 8%; padding: 3px 20px;" align="left">Your share of tips paid to the pilot</td>
-                        <td style="text-align: left; width: 12%; padding: 3px 20px;" align="left">{{shareOfTips}} LE</td>
+                        <td style="text-align: left; width: 12%; min-width: 100px; padding: 3px 20px;" align="left">{{shareOfTips}} LE</td>
                     </tr><tr class="summary" style="font-weight: bold; white-space: nowrap; background: #f9f1be;" bgcolor="#f9f1be"><td colspan="2" style="text-align: left; width: 8%; padding: 3px 20px;" align="left">Summary (what you have to pay)</td>
-                        <td style="text-align: left; width: 12%; padding: 3px 20px;" align="left">{{duePayment}} LE</td>
-                    </tr></table></td>
+                        <td style="text-align: left; width: 12%; min-width: 100px; padding: 3px 20px;" align="left">{{duePayment}} LE</td>
+                    </tr></table><p style="display: block; font-family: Verdana, Geneva, Tahoma, sans-serif; margin: 15px 0px;">
+                    Don't be late they are waiting for you.
+                </p>
+            </td>
         </tr><tr class="bg-black yellow footer" style="color: #fafafa; text-align: left; background: #333333;" align="left" bgcolor="#333333"><td style="padding: 10px 20px;">
                 Copy rights © 2016 reserved to Dailymumm
             </td>

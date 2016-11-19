@@ -100,7 +100,10 @@ module.exports = function (app) {
         // console.log(order);
         Order.update({ "_id": order._id }, {
             mean: order.mean,
-            status: "Waiting"//order.status
+            tips: order.tips,
+            extras: order.extras,
+            place: order.place || "",
+            status: order.status
         }, function (err, data) {
             if (err) return console.error(err);
 
@@ -116,7 +119,7 @@ module.exports = function (app) {
                             listname: order.list.name,
                             restaurant: order.restaurant.name,
                             creator: order.creator.fullname || order.creator.username,
-                            place: order.place,
+                            place: order.place || "",
                             items: [],
                             shareOfExtras: 0,
                             shareOfTips: 0,
@@ -146,7 +149,7 @@ module.exports = function (app) {
                         orderToBind.shareOfTips = parseFloat((order.tips / users.length).toFixed(2));
                         orderToBind.shareOfExtras = parseFloat((order.extras / users.length).toFixed(2));
                         orderToBind.duePayment = (orderToBind.duePayment + orderToBind.shareOfTips + orderToBind.shareOfExtras).toFixed(2);
-                        mailer.sendEmail('finish-order', orderToBind, "Good news! your order from " + orderToBind.restaurant + " has arrived", email, function () {
+                        mailer.sendEmail('finish-order', orderToBind, "Good news! your order on Dailymumm from " + orderToBind.restaurant + " has arrived", email, function () {
                             console.log('Order summary sent to ' + orderToBind.username + ' in ' + orderToBind.listname + ' list');
                         });
                     });

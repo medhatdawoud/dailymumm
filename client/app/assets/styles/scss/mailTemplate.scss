@@ -13,7 +13,7 @@ body {
         font-size: 13px;
 
         &.body {
-            width: 600px;
+            /*width: 600px;*/
             margin: 0 auto;
         }
 
@@ -43,8 +43,13 @@ body {
                         width:8%;
                     }
 
+                    &:nth-child(2) {
+                        width: 80%;
+                    }
+
                     &:last-child {
                         width: 12%;
+                        min-width: 100px; 
                     }
                 }
             }
@@ -53,6 +58,7 @@ body {
         h4 {
             font-family: Verdana, Geneva, Tahoma, sans-serif;
             margin-bottom: 5px;
+            font-size: 12px;
         }
 
         tr {
