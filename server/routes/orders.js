@@ -97,7 +97,7 @@ module.exports = function (app) {
 
     router.put('/', function (req, res) {
         var order = JSON.parse(req.body.order);
-
+        // console.log(order);
         Order.update({ "_id": order._id }, {
             mean: order.mean,
             status: "Waiting"//order.status
@@ -122,7 +122,6 @@ module.exports = function (app) {
                             shareOfTips: 0,
                             duePayment: 0
                         };
-                        orderToBind.duePayment = orderToBind.shareOfTips + orderToBind.shareOfExtras;
                         // if (order.items[i].user.id !== order.creator.email) {
                         if (users.indexOf(order.items[i].user.id) < 0) {
                             orderToBind.username = order.items[i].user.fullname || order.items[i].user.username;
@@ -131,7 +130,7 @@ module.exports = function (app) {
                             });
 
                             itemsList.forEach(function (val) {
-                                orderToBind.items.push({ "count": val.count, "item": val.item, "price": val.price * val.count })
+                                orderToBind.items.push({ "count": val.count, "item": val.item, "price": (val.price * val.count).toFixed(2) })
                                 orderToBind.duePayment += val.price * val.count;
                             })
 
@@ -144,8 +143,9 @@ module.exports = function (app) {
                     emailsList.forEach(function (oneEmail) {
                         var email = oneEmail.userEmail;
                         var orderToBind = oneEmail.order;
-                        orderToBind.shareOfTips = order.tips / users.length;
-                        orderToBind.shareOfExtras = order.extras / users.length;
+                        orderToBind.shareOfTips = parseFloat((order.tips / users.length).toFixed(2));
+                        orderToBind.shareOfExtras = parseFloat((order.extras / users.length).toFixed(2));
+                        orderToBind.duePayment = (orderToBind.duePayment + orderToBind.shareOfTips + orderToBind.shareOfExtras).toFixed(2);
                         mailer.sendEmail('finish-order', orderToBind, "Good news! your order from " + orderToBind.restaurant + " has arrived", email, function () {
                             console.log('Order summary sent to ' + orderToBind.username + ' in ' + orderToBind.listname + ' list');
                         });
