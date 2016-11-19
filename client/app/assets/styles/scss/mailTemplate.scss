@@ -17,6 +17,39 @@ body {
             margin: 0 auto;
         }
 
+        &.items-list {
+            tr {
+                background: #eee;
+
+                &:first-child {
+                    background: #aaa;
+                }
+
+                &.extras, &.tips {
+                    background: #ddedf7;
+                }
+
+                &.summary {
+                    background: #f9f1be;
+                    font-weight: bold;
+                }
+
+                th, td {
+                    padding: 3px 20px;
+                    text-align: left;
+
+                    &:first-child {
+                        width:80%;
+                    }
+                }
+            }
+        }
+
+        h4 {
+            font-family: Verdana, Geneva, Tahoma, sans-serif;
+            margin-bottom: 5px;
+        }
+
         tr {
             &.header {
                 // font-size: 26px;
@@ -47,6 +80,11 @@ body {
                         display: block;
                         margin: 15px 0px;
                         font-family: Verdana, Geneva, Tahoma, sans-serif;
+
+                        &.inline {
+                            display: inline-block;
+                            margin: 0px;
+                        }
                     }
                 }
             }

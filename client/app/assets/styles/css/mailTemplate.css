@@ -164,34 +164,70 @@ body table.body {
   margin: 0 auto;
 }
 /* line 21, ../scss/mailTemplate.scss */
+body table.items-list tr {
+  background: #eee;
+}
+/* line 24, ../scss/mailTemplate.scss */
+body table.items-list tr:first-child {
+  background: #aaa;
+}
+/* line 28, ../scss/mailTemplate.scss */
+body table.items-list tr.extras, body table.items-list tr.tips {
+  background: #ddedf7;
+}
+/* line 32, ../scss/mailTemplate.scss */
+body table.items-list tr.summary {
+  background: #f9f1be;
+  font-weight: bold;
+}
+/* line 37, ../scss/mailTemplate.scss */
+body table.items-list tr th, body table.items-list tr td {
+  padding: 3px 20px;
+  text-align: left;
+}
+/* line 41, ../scss/mailTemplate.scss */
+body table.items-list tr th:first-child, body table.items-list tr td:first-child {
+  width: 80%;
+}
+/* line 48, ../scss/mailTemplate.scss */
+body table h4 {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin-bottom: 5px;
+}
+/* line 54, ../scss/mailTemplate.scss */
 body table tr.header {
   text-align: left;
 }
-/* line 25, ../scss/mailTemplate.scss */
+/* line 58, ../scss/mailTemplate.scss */
 body table tr.header h1 {
   margin: 20px 0px;
 }
-/* line 29, ../scss/mailTemplate.scss */
+/* line 62, ../scss/mailTemplate.scss */
 body table tr.header td {
   padding: 0px 20px;
 }
-/* line 34, ../scss/mailTemplate.scss */
+/* line 67, ../scss/mailTemplate.scss */
 body table tr.footer {
   color: #fafafa;
   text-align: left;
 }
-/* line 39, ../scss/mailTemplate.scss */
+/* line 72, ../scss/mailTemplate.scss */
 body table tr td {
   padding: 10px 20px;
 }
-/* line 42, ../scss/mailTemplate.scss */
+/* line 75, ../scss/mailTemplate.scss */
 body table tr td.main-content {
   text-align: left;
   line-height: 30px;
 }
-/* line 46, ../scss/mailTemplate.scss */
+/* line 79, ../scss/mailTemplate.scss */
 body table tr td.main-content p, body table tr td.main-content a {
   display: block;
   margin: 15px 0px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/* line 84, ../scss/mailTemplate.scss */
+body table tr td.main-content p.inline, body table tr td.main-content a.inline {
+  display: inline-block;
+  margin: 0px;
 }
