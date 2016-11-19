@@ -38,32 +38,28 @@
                 <h4>Your order items (and bill)</h4>
                 <table class="items-list">
                     <tr>
+                        <th>Count</th>
                         <th>Item</th>
                         <th>Price</th>
                     </tr>
+                    {{#each items}}
                     <tr>
-                        <td>Burger</td>
-                        <td>25 LE</td>
+                        <td>{{count}}</td>
+                        <td>{{item}}</td>
+                        <td>{{price}}</td>
                     </tr>
-                    <tr>
-                        <td>Fries</td>
-                        <td>15 LE</td>
-                    </tr>
-                    <tr>
-                        <td>Pepsi</td>
-                        <td>8 LE</td>
-                    </tr>
+                    {{/each}}
                     <tr class="extras">
-                        <td>Your share of extras (service + delivery)</td>
-                        <td>5 LE</td>
+                        <td colspan="2">Your share of extras (service + delivery)</td>
+                        <td>{{shareOfExtras}} LE</td>
                     </tr>
                     <tr class="tips">
-                        <td>Your share of tips paid to the pilot</td>
-                        <td>1 LE</td>
+                        <td colspan="2">Your share of tips paid to the pilot</td>
+                        <td>{{shareOfTips}} LE</td>
                     </tr>
                     <tr class="summary">
-                        <td>Summary (what you have to pay)</td>
-                        <td>54 LE</td>
+                        <td colspan="2">Summary (what you have to pay)</td>
+                        <td>{{duePayment}} LE</td>
                     </tr>
                 </table>
             </td>

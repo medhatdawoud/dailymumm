@@ -28,8 +28,9 @@ module.exports = function (app) {
                 if (list.subscribers[i].confirmed) {
                     if (list.subscribers[i].email !== creator.email) {
                         dataForEmail.username = list.subscribers[i].fullname || list.subscribers[i].username;
+                        var username = dataForEmail.username;
                         mailer.sendEmail('start-order', dataForEmail, "Order started from " + restaurant.name + " with " + list.name + " list on Dailymumm", list.subscribers[i].email, function () {
-                            console.log('Order call sent to ' + dataForEmail.username + ' in ' + list.name + ' list');
+                            console.log('Order call sent to ' + username + ' in ' + list.name + ' list');
                         });
                     }
                 }
@@ -99,12 +100,57 @@ module.exports = function (app) {
 
         Order.update({ "_id": order._id }, {
             mean: order.mean,
-            status: order.status
+            status: "Waiting"//order.status
         }, function (err, data) {
             if (err) return console.error(err);
 
             if (data) {
-                res.json(data)
+                if (order.status == "Done") {
+                    var users = [];
+                    var emailsList = [];
+                    for (var i = 0; i < order.items.length; i++) {
+                        var orderToBind = {
+                            username: "",
+                            ordernumber: order._id,
+                            orderlink: req.headers.host + "/#/order/" + order._id,
+                            listname: order.list.name,
+                            restaurant: order.restaurant.name,
+                            creator: order.creator.fullname || order.creator.username,
+                            place: order.place,
+                            items: [],
+                            shareOfExtras: 5,
+                            shareOfTips: 1,
+                            duePayment: 0
+                        };
+                        orderToBind.duePayment = orderToBind.shareOfTips + orderToBind.shareOfExtras;
+                        // if (order.items[i].user.id !== order.creator.email) {
+                        if (users.indexOf(order.items[i].user.id) < 0) {
+                            orderToBind.username = order.items[i].user.fullname || order.items[i].user.username;
+                            var itemsList = order.items.filter(function (oneItem) {
+                                return oneItem.user.id == order.items[i].user.id;
+                            });
+
+                            itemsList.forEach(function (val) {
+                                orderToBind.items.push({ "count": val.count, "item": val.item, "price": val.price })
+                                orderToBind.duePayment += val.price * val.count;
+                            })
+
+                            users.push(order.items[i].user.id);
+                            emailsList.push({ "userEmail": order.items[i].user.email, "order": orderToBind });
+                        }
+                        // }
+                    }
+                    console.log(emailsList);
+                    // emailsList.forEach(function (oneEmail) {
+                    //     var email = oneEmail.userEmail;
+                    //     var orderToBind = email.order;
+                    //     mailer.sendEmail('finish-order', orderToBind, "Good news! your order from " + orderToBind.restaurant + "has arrived", email, function () {
+                    //         console.log('Order summary sent to ' + orderToBind.username + ' in ' + orderToBind.listname + ' list');
+                    //     });
+                    // });
+
+                }
+                res.json(data);
             } else {
                 res.json(null);
             }

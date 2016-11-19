@@ -186,8 +186,8 @@ body table.items-list tr th, body table.items-list tr td {
   text-align: left;
 }
 /* line 41, ../scss/mailTemplate.scss */
-body table.items-list tr th:first-child, body table.items-list tr td:first-child {
-  width: 80%;
+body table.items-list tr th:first-child, body table.items-list tr th:last-child, body table.items-list tr td:first-child, body table.items-list tr td:last-child {
+  width: 10%;
 }
 /* line 48, ../scss/mailTemplate.scss */
 body table h4 {

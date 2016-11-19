@@ -38,8 +38,8 @@ body {
                     padding: 3px 20px;
                     text-align: left;
 
-                    &:first-child {
-                        width:80%;
+                    &:first-child, &:last-child {
+                        width:10%;
                     }
                 }
             }
