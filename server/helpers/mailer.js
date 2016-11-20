@@ -14,6 +14,7 @@ var mailer = {
         });
 
         transporter.sendMail(mailOptions, next, function (error, info) {
+            console.log("transporter.sendMail: ", arguments);
             if (error) {
                 console.log(error);
                 if (next) {
