@@ -100,8 +100,8 @@ module.exports = function (app) {
         // console.log(order);
         Order.update({ "_id": order._id }, {
             mean: order.mean,
-            tips: order.tips,
-            extras: order.extras,
+            tips: order.tips || 0,
+            extras: order.extras || 0,
             place: order.place || "",
             status: order.status
         }, function (err, data) {
