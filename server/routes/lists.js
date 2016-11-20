@@ -75,7 +75,7 @@ module.exports = function (app) {
                 invitationlink: req.headers.host + "/#/login/" + listData.id
             };
             mailer.sendEmail('invite-user-to-list', data, "Invitation to join " + listData.name + " list on Dailymumm", user.email, function () {
-                console.log('invitation sent to ' + user.email);
+                // console.log('invitation sent to ' + user.email);
                 console.log('Arguments: ', arguments);
 
             });
