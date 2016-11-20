@@ -2,17 +2,12 @@ var nodemailer = require('nodemailer');
 var templateBinder = require('../helpers/templateBinder');
 var path = require('path');
 var mailTemplatesPath = path.join(__dirname, '../mailTemplates/');
+var transporter;
+
+initMailer();
 
 var mailer = {
     finishSend: function (mailOptions, next) {
-        var transporter = nodemailer.createTransport({
-            service: 'hotmail',
-            auth: {
-                user: 'irvine-devs-2@hotmail.com',
-                pass: '1rv!n3P@$$'
-            }
-        });
-
         transporter.sendMail(mailOptions, next, function (error, info) {
             console.log("transporter.sendMail: ", arguments);
             if (error) {
@@ -36,11 +31,43 @@ var mailer = {
                 subject: subject, // Subject line
                 html: result // You can choose to send an HTML body instead
             };
-            mailer.finishSend(mailOptions, function () {
-                next();
-            });
+            mailer.finishSend(mailOptions, next);
         });
     }
+}
+
+
+
+function initMailer() {
+    transporter = nodemailer.createTransport({
+        "aliases": [
+            "Outlook",
+            "Outlook.com",
+            "Hotmail.com"
+        ],
+        "domains": [
+            "hotmail.com",
+            "outlook.com"
+        ],
+        "host": "smtp.live.com",
+        "port": 587,
+        "tls": {
+            "ciphers": "SSLv3"
+        },
+        auth: {
+            user: 'irvine-devs-2@hotmail.com',
+            pass: '1rv!n3P@$$'
+        }
+    });
+
+    // verify connection configuration
+    transporter.verify(function (error, success) {
+        if (error) {
+            console.log(error);
+        } else {
+            console.log('Server is ready to take our messages');
+        }
+    });
 }
 
 module.exports = mailer;
