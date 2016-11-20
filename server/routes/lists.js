@@ -76,6 +76,8 @@ module.exports = function (app) {
             };
             mailer.sendEmail('invite-user-to-list', data, "Invitation to join " + listData.name + " list on Dailymumm", user.email, function () {
                 console.log('invitation sent to ' + user.email);
+                console.log('Arguments: ', arguments);
+
             });
         });
         List.update({ "_id": listData.id }, {
