@@ -40,20 +40,11 @@ var mailer = {
 
 function initMailer() {
     transporter = nodemailer.createTransport({
-        "aliases": [
-            "Outlook",
-            "Outlook.com",
-            "Hotmail.com"
-        ],
-        "domains": [
-            "hotmail.com",
-            "outlook.com"
-        ],
+        "aliases": ["Outlook", "Outlook.com", "Hotmail.com"],
+        "domains": ["hotmail.com", "outlook.com"],
         "host": "smtp.live.com",
-        "port": 587,
-        "tls": {
-            "ciphers": "SSLv3"
-        },
+        "port": 25,
+         secure: false, // use SSL
         auth: {
             user: 'irvine-devs-2@hotmail.com',
             pass: '1rv!n3P@$$'
