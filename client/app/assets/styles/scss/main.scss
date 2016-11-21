@@ -1,12 +1,24 @@
-@import 'helpers/vars';
-@import 'helpers/mixins';
-@import 'helpers/fonts';
-
-@import 'base/colors';
-@import 'base/base';
-
-@import 'general';
-
+//
+// Main stylesheet.
+//
+// Variables, functions, mixins and utils
+@import "base/_variables";
+@import "base/_mixins";
+@import "base/_functions";
+@import "base/_utils";
+// Base/generic style rules
+@import "base/_reset";
+@import "base/_responsive";
+@import "base/_fonts";
+@import "base/_typography";
+@import "base/_base";
+@import "base/_icons";
+// Layout
+@import "layout/_layout";
+@import "layout/_theme";
+@import "layout/_app-header";
+@import "layout/_print";
+// Components
 @import 'components/signup';
 @import 'components/navbar';
 @import 'components/videoBackground';
@@ -16,7 +28,7 @@
 @import 'components/modal';
 @import 'components/tooltip';
 @import 'components/invitations';
-
+// Pages
 @import 'pages/home';
 @import 'pages/profile';
 @import 'pages/startOrder';

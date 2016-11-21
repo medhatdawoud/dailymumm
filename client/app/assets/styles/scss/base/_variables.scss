@@ -1,0 +1,60 @@
+//
+// Variables
+//
+//
+
+// font size
+$default-font-size: 14; // Default
+
+// Icons
+
+// colors
+// blues
+$colorFirst:            #fafafa;
+$off-white: $colorFirst;
+$bw-blue-base:          #45aaf2;
+$bw-blue-lighter:       #A2B6C8;
+$bw-blue-darker:        #1785d4;
+
+// Reds
+$red:                   #d43f3a;
+
+// Greens
+$bw-green-base:         #36b641;
+$green:                 #5cb85c;
+
+// Oranges
+$bw-orange-base:        #ffa200;
+$orange:                #f0ad4e; 
+
+// Yellows
+$bw-yellow-base:        #ffcc33;
+$colorSecond:           #F5E156;
+
+// Grays (overwriting bootstrap variables)
+$gray-base:             #000 !default;
+$gray-darker:           #222a32 !default;
+$gray-dark:             #4d4d4d !default;
+$gray:                  #999 !default;
+$gray-light:            #e7e7e7 !default;
+$gray-lighter:          #eee !default;
+$white:                 #fff !default;
+$black:                 $gray-darker;
+
+$colorBlackLight: rgba(50,50,50, 0.65);
+$colorWhiteLight: rgba(200,200,200, 0.65);
+
+$fontColorDefault:      $gray-dark;
+$textSelectionColor:    $gray;
+
+// Boldness
+$bw-light-weight:       300;
+$bw-normal-weight:      500;
+$bw-bold-weight:        700;
+$bw-bolder-weight:      900;
+
+// Fonts
+$fontPrimary: "Titillium";
+$fontLogo   : "logo";
+$fontNumber : "digital";
+

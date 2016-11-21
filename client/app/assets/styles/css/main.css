@@ -1,3 +1,165 @@
+/*
+html, body, div, span, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+*/
+/* line 26, ../scss/base/_reset.scss */
+html, body, div, span, object,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  vertical-align: baseline;
+}
+
+/* line 47, ../scss/base/_reset.scss */
+html {
+  height: 100%;
+}
+
+/* line 51, ../scss/base/_reset.scss */
+body {
+  min-height: 100%;
+}
+
+/* line 56, ../scss/base/_reset.scss */
+body {
+  line-height: 1.4;
+}
+
+/* line 61, ../scss/base/_reset.scss */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section, main, li {
+  display: block;
+}
+
+/* line 69, ../scss/base/_reset.scss */
+html {
+  box-sizing: border-box;
+}
+
+/* line 73, ../scss/base/_reset.scss */
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* line 80, ../scss/base/_reset.scss */
+h1, h2, h3, h4, h5, h6 {
+  font-size: inherit;
+}
+
+/* line 89, ../scss/base/_reset.scss */
+a,
+button {
+  color: inherit;
+  transition: .3s;
+}
+
+/* line 95, ../scss/base/_reset.scss */
+a {
+  text-decoration: none;
+}
+
+/* line 101, ../scss/base/_reset.scss */
+button {
+  overflow: visible;
+  border: 0;
+  font: inherit;
+  -webkit-font-smoothing: inherit;
+  letter-spacing: inherit;
+  background: none;
+  cursor: pointer;
+}
+
+/* line 112, ../scss/base/_reset.scss */
+::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+
+/* line 120, ../scss/base/_reset.scss */
+input,
+textarea,
+button,
+select,
+a {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* line 131, ../scss/base/_reset.scss */
+::-moz-selection {
+  background: #999;
+  text-shadow: none;
+}
+
+/* line 136, ../scss/base/_reset.scss */
+::selection {
+  background: #999;
+  text-shadow: none;
+}
+
+/* line 143, ../scss/base/_reset.scss */
+audio,
+canvas,
+iframe,
+img,
+svg,
+video {
+  vertical-align: middle;
+}
+
+/* line 153, ../scss/base/_reset.scss */
+textarea {
+  resize: vertical;
+}
+
+/* line 158, ../scss/base/_reset.scss */
+ol,
+ul {
+  list-style: none;
+}
+
+/* line 166, ../scss/base/_reset.scss */
+[tabindex="-1"]:focus {
+  outline: none !important;
+}
+
+/* line 172, ../scss/base/_reset.scss */
+button:focus {
+  outline: 1px dotted;
+  outline: 5px auto -webkit-focus-ring-color;
+}
+
+/* line 177, ../scss/base/_reset.scss */
+input, input:focus {
+  outline: none;
+  -webkit-box-shadow: none !important;
+  -moz-box-shadow: none !important;
+  box-shadow: none !important;
+}
+
 @font-face {
   font-family: "Titillium";
   src: url("../fonts/Titillium/Titillium-Thin.eot");
@@ -19,47 +181,7 @@
   font-weight: normal;
   font-style: normal;
 }
-/* line 1, ../scss/base/_colors.scss */
-.green {
-  color: #5cb85c;
-}
-
-/* line 5, ../scss/base/_colors.scss */
-.orange {
-  color: #f0ad4e;
-}
-
-/* line 9, ../scss/base/_colors.scss */
-.red {
-  color: #d43f3a;
-}
-
-/* line 13, ../scss/base/_colors.scss */
-.yellow {
-  color: #F5E156;
-}
-
-/* line 17, ../scss/base/_colors.scss */
-.bg-black {
-  background: #333333;
-}
-
 /* line 1, ../scss/base/_base.scss */
-.nowrap {
-  white-space: nowrap;
-}
-
-/* line 5, ../scss/base/_base.scss */
-.center {
-  text-align: center;
-}
-
-/* line 9, ../scss/base/_base.scss */
-.top {
-  vertical-align: top;
-}
-
-/* line 1, ../scss/_general.scss */
 body {
   padding: 0;
   margin: 0;
@@ -68,60 +190,31 @@ body {
   color: #fafafa;
 }
 
-/* line 9, ../scss/_general.scss */
+/* line 9, ../scss/base/_base.scss */
 h1, h2, h3, h4, h5, h6, a, span, label {
   font-family: "Titillium";
 }
 
-/* line 13, ../scss/_general.scss */
+/* line 13, ../scss/base/_base.scss */
 .btn {
   text-transform: uppercase;
 }
 
-/* line 17, ../scss/_general.scss */
-.hero-unit {
-  margin: 50px auto 0 auto;
-  width: 600px;
-  font-size: 18px;
-  font-weight: 200;
-  line-height: 30px;
-  background-color: #eee;
-  border-radius: 6px;
-  padding: 60px;
-}
-/* line 26, ../scss/_general.scss */
-.hero-unit h1 {
-  font-size: 60px;
-  line-height: 1;
-  letter-spacing: -1px;
-}
-
-/* line 33, ../scss/_general.scss */
-.navbar-collapse.navbar-right {
-  padding-right: 0px;
-}
-@media (max-width: 768px) {
-  /* line 33, ../scss/_general.scss */
-  .navbar-collapse.navbar-right {
-    padding-right: 15px;
-  }
-}
-
-/* line 42, ../scss/_general.scss */
+/* line 17, ../scss/base/_base.scss */
 #count-down {
   cursor: pointer;
 }
-/* line 45, ../scss/_general.scss */
+/* line 20, ../scss/base/_base.scss */
 #count-down:hover, #count-down:active, #count-down:focus {
   text-decoration: none;
 }
 
-/* line 50, ../scss/_general.scss */
+/* line 26, ../scss/base/_base.scss */
 .numbers {
   font-family: "digital";
 }
 
-/* line 54, ../scss/_general.scss */
+/* line 31, ../scss/base/_base.scss */
 .white-transperant-block {
   background: rgba(200, 200, 200, 0.5);
   margin: 0px -15px 10px;
@@ -129,12 +222,12 @@ h1, h2, h3, h4, h5, h6, a, span, label {
   border-top: 1px solid #ccc;
   border-bottom: 1px solid #ccc;
 }
-/* line 61, ../scss/_general.scss */
+/* line 38, ../scss/base/_base.scss */
 .white-transperant-block h3, .white-transperant-block p {
   text-shadow: 1px 1px 2px #333;
 }
 
-/* line 66, ../scss/_general.scss */
+/* line 42, ../scss/base/_base.scss */
 .black-transperant-block {
   background: rgba(0, 0, 0, 0.5);
   margin: 0px -15px 10px;
@@ -143,29 +236,69 @@ h1, h2, h3, h4, h5, h6, a, span, label {
   border-bottom: 1px solid #000;
 }
 
-/* line 74, ../scss/_general.scss */
+/* line 51, ../scss/base/_base.scss */
 .no-margin-right {
   margin-right: 0px;
 }
 
-/* line 78, ../scss/_general.scss */
+/* line 55, ../scss/base/_base.scss */
 .no-margin-left {
   margin-left: 0px;
 }
 
-/* line 82, ../scss/_general.scss */
+/* line 59, ../scss/base/_base.scss */
 .no-padding-right {
   padding-right: 0px;
 }
 
-/* line 86, ../scss/_general.scss */
+/* line 63, ../scss/base/_base.scss */
 .no-padding-left {
   padding-left: 0px;
 }
 
-/* line 90, ../scss/_general.scss */
+/* line 67, ../scss/base/_base.scss */
 .padding-top {
   padding-top: 7px;
+}
+
+/* line 71, ../scss/base/_base.scss */
+.nowrap {
+  white-space: nowrap;
+}
+
+/* line 76, ../scss/base/_base.scss */
+.center {
+  text-align: center;
+}
+
+/* line 80, ../scss/base/_base.scss */
+.top {
+  vertical-align: top;
+}
+
+/* line 87, ../scss/base/_base.scss */
+.green {
+  color: #5cb85c;
+}
+
+/* line 91, ../scss/base/_base.scss */
+.orange {
+  color: #f0ad4e;
+}
+
+/* line 95, ../scss/base/_base.scss */
+.red {
+  color: #d43f3a;
+}
+
+/* line 99, ../scss/base/_base.scss */
+.yellow {
+  color: #F5E156;
+}
+
+/* line 103, ../scss/base/_base.scss */
+.bg-black {
+  background: #222a32;
 }
 
 /* line 1, ../scss/components/_signup.scss */
@@ -994,7 +1127,7 @@ h4 {
   font-size: 60px;
   line-height: 80px;
   margin: 20px 0px 30px;
-  text-shadow: 0px 0px 10px #333333;
+  text-shadow: 0px 0px 10px #222a32;
 }
 /* line 14, ../scss/pages/_login.scss */
 .login-page .black-transperant-block h4 {
