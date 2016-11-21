@@ -1,6 +1,6 @@
 'use strict';
 
-(function () {
+(function() {
     angular
         .module('dailyMummApp')
         .controller('OrderCtrl', OrderController);
@@ -16,11 +16,13 @@
         vm.createItem = createItem;
         vm.orderTimeout = false;
         vm.sortByOptions = [
-            { id: 1, name: "Sort by order" },
+            { id: 1, name: "Sort by item" },
             { id: 2, name: "Sort by user" }
         ];
         vm.sort = vm.sortByOptions[0];
         vm.refreshItems = getOrderById;
+        vm.sortOrderItems = sortOrderItems;
+        vm.ordersPerUser = [];
 
         if (!$stateParams.id) {
             $state.go('profile.view');
@@ -34,7 +36,7 @@
             if (!orderId)
                 orderId = vm.orderData._id;
 
-            OrdersService.getOrderById(orderId, function (response) {
+            OrdersService.getOrderById(orderId, function(response) {
                 if (response.success) {
                     vm.orderData = response.data;
                     CurrentOrderService.orderData = response.data;
@@ -51,7 +53,7 @@
                 email: vm.userData.email,
                 id: vm.userData.id
             }
-            OrdersService.pushOrderItem(vm.orderData._id, vm.orderItemTemp, function (response) {
+            OrdersService.pushOrderItem(vm.orderData._id, vm.orderItemTemp, function(response) {
                 if (response.success) {
                     getOrderById(vm.orderData._id);
 
@@ -69,11 +71,32 @@
             }
         }
 
-        $scope.$on('orderStart', function () {
+        function sortOrderItems() {
+            vm.ordersPerUser = [];
+            var users = [];
+            vm.orderData.items.forEach(function(item) {
+                if (users.indexOf(item.user.id) < 0) {
+                    users.push(item.user.id);
+                }
+            });
+
+            users.forEach(function(user) {
+                var userItems = vm.orderData.items.filter(function(val) {
+                    return val.user.id == user;
+                });
+
+                vm.ordersPerUser.push({
+                    user: userItems[0].user,
+                    items: userItems
+                });
+            })
+        }
+
+        $scope.$on('orderStart', function() {
             $rootScope.$broadcast('orderStarted');
         });
 
-        $scope.$on('timeout', function () {
+        $scope.$on('timeout', function() {
             vm.orderTimeout = true;
         });
     }

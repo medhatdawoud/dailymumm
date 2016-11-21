@@ -87,7 +87,8 @@
     }
     .white-transperant-block{
         font-weight: bold;
-        &.order-item {
+
+        &.order-item, &.order-items {
             padding: 7px 15px;
 
             .meta {
@@ -103,6 +104,25 @@
 
             & + & {
                 margin-top: 7px;
+            }
+        }
+
+        &.order-items {
+            .meta {
+                color: $colorSecond;
+            }
+            .total {
+                font-size: 18px;
+                background: rgba(0,0,0,0.4);
+
+                small {
+                    font-size: 12px;
+                }
+            }
+            .item {
+                font-size: 16px;
+                margin-top: 7px;
+                margin-bottom: 7px;
             }
         }
     }

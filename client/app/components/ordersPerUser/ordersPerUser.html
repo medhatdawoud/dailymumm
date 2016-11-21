@@ -1,0 +1,21 @@
+<div class="white-transperant-block order-items">
+    <div class="row meta">
+        <div class="col-xs-6 text-left">{{vm.user.user.fullname || vm.user.user.name}}</div>
+    </div>
+    <div class="row item" ng-repeat="item in vm.user.items">
+        <div class="col-xs-1">{{item.count}}</div>
+        <div class="col-sm-7 col-xs-6">{{item.item}}</div>
+        <div class="col-sm-2 col-xs-1 hidden-xs text-right">
+            <span class="label label-default">{{item.refmenu.sitename}}</span>
+        </div>
+        <div class="col-sm-2 col-xs-3 text-right">{{item.price * item.count | currency :"" : 2}} LE</div>
+    </div>
+    <div class="row total">
+        <div class="col-sm-9">
+            Total <small>(without delivery, service, or tips)</small>:
+        </div>
+        <div class="col-sm-3 text-right">
+            {{vm.total | currency: "" : 2}} LE
+        </div>
+    </div>
+</div>

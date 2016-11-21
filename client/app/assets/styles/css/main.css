@@ -1095,25 +1095,44 @@ h4 {
 .main-container .white-transperant-block {
   font-weight: bold;
 }
-/* line 90, ../scss/pages/_order.scss */
-.main-container .white-transperant-block.order-item {
+/* line 91, ../scss/pages/_order.scss */
+.main-container .white-transperant-block.order-item, .main-container .white-transperant-block.order-items {
   padding: 7px 15px;
 }
-/* line 93, ../scss/pages/_order.scss */
-.main-container .white-transperant-block.order-item .meta {
+/* line 94, ../scss/pages/_order.scss */
+.main-container .white-transperant-block.order-item .meta, .main-container .white-transperant-block.order-items .meta {
   color: #333;
 }
-/* line 96, ../scss/pages/_order.scss */
-.main-container .white-transperant-block.order-item .item {
+/* line 97, ../scss/pages/_order.scss */
+.main-container .white-transperant-block.order-item .item, .main-container .white-transperant-block.order-items .item {
   font-size: 20px;
 }
-/* line 99, ../scss/pages/_order.scss */
-.main-container .white-transperant-block.order-item .item.owned-item {
+/* line 100, ../scss/pages/_order.scss */
+.main-container .white-transperant-block.order-item .item.owned-item, .main-container .white-transperant-block.order-items .item.owned-item {
   color: #F5E156;
 }
-/* line 104, ../scss/pages/_order.scss */
-.main-container .white-transperant-block.order-item + .main-container .white-transperant-block.order-item {
+/* line 105, ../scss/pages/_order.scss */
+.main-container .white-transperant-block.order-item + .main-container .white-transperant-block.order-item, .main-container .white-transperant-block.order-items + .main-container .white-transperant-block.order-item, .main-container .white-transperant-block.order-item + .main-container .white-transperant-block.order-items, .main-container .white-transperant-block.order-items + .main-container .white-transperant-block.order-items {
   margin-top: 7px;
+}
+/* line 111, ../scss/pages/_order.scss */
+.main-container .white-transperant-block.order-items .meta {
+  color: #F5E156;
+}
+/* line 114, ../scss/pages/_order.scss */
+.main-container .white-transperant-block.order-items .total {
+  font-size: 18px;
+  background: rgba(0, 0, 0, 0.4);
+}
+/* line 118, ../scss/pages/_order.scss */
+.main-container .white-transperant-block.order-items .total small {
+  font-size: 12px;
+}
+/* line 122, ../scss/pages/_order.scss */
+.main-container .white-transperant-block.order-items .item {
+  font-size: 16px;
+  margin-top: 7px;
+  margin-bottom: 7px;
 }
 
 /* line 1, ../scss/pages/_login.scss */
