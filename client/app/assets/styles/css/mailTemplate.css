@@ -118,97 +118,107 @@ h1, h2, h3, h4, h5, h6, a, span, label {
   background: #222a32;
 }
 
-/* line 6, ../scss/mailTemplate.scss */
+/* line 109, ../scss/base/_base.scss */
+.tooltip .tooltip-inner {
+  font-family: arial;
+  color: #ddd;
+}
+/* line 113, ../scss/base/_base.scss */
+.tooltip .tooltip-inner strong {
+  color: #fff;
+}
+
+/* line 5, ../scss/mailTemplate.scss */
 body {
   background: #fff;
 }
-/* line 8, ../scss/mailTemplate.scss */
+/* line 7, ../scss/mailTemplate.scss */
 body table {
   width: 100%;
   color: #222a32;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   font-size: 13px;
 }
-/* line 14, ../scss/mailTemplate.scss */
+/* line 13, ../scss/mailTemplate.scss */
 body table.body {
   /*width: 600px;*/
   margin: 0 auto;
 }
-/* line 20, ../scss/mailTemplate.scss */
+/* line 19, ../scss/mailTemplate.scss */
 body table.items-list tr {
   background: #eee;
 }
-/* line 23, ../scss/mailTemplate.scss */
+/* line 22, ../scss/mailTemplate.scss */
 body table.items-list tr:first-child {
   background: #aaa;
 }
-/* line 27, ../scss/mailTemplate.scss */
+/* line 26, ../scss/mailTemplate.scss */
 body table.items-list tr.extras, body table.items-list tr.tips {
   background: #ddedf7;
 }
-/* line 31, ../scss/mailTemplate.scss */
+/* line 30, ../scss/mailTemplate.scss */
 body table.items-list tr.summary {
   background: #f9f1be;
   font-weight: bold;
   white-space: nowrap;
 }
-/* line 37, ../scss/mailTemplate.scss */
+/* line 36, ../scss/mailTemplate.scss */
 body table.items-list tr th, body table.items-list tr td {
   padding: 3px 20px;
   text-align: left;
 }
-/* line 41, ../scss/mailTemplate.scss */
+/* line 40, ../scss/mailTemplate.scss */
 body table.items-list tr th:first-child, body table.items-list tr td:first-child {
   width: 8%;
 }
-/* line 45, ../scss/mailTemplate.scss */
+/* line 44, ../scss/mailTemplate.scss */
 body table.items-list tr th:nth-child(2), body table.items-list tr td:nth-child(2) {
   width: 80%;
 }
-/* line 49, ../scss/mailTemplate.scss */
+/* line 48, ../scss/mailTemplate.scss */
 body table.items-list tr th:last-child, body table.items-list tr td:last-child {
   width: 12%;
   min-width: 100px;
 }
-/* line 57, ../scss/mailTemplate.scss */
+/* line 56, ../scss/mailTemplate.scss */
 body table h4 {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
   margin-bottom: 5px;
   font-size: 12px;
 }
-/* line 64, ../scss/mailTemplate.scss */
+/* line 63, ../scss/mailTemplate.scss */
 body table tr.header {
   text-align: left;
 }
-/* line 68, ../scss/mailTemplate.scss */
+/* line 67, ../scss/mailTemplate.scss */
 body table tr.header h1 {
   margin: 20px 0px;
 }
-/* line 72, ../scss/mailTemplate.scss */
+/* line 71, ../scss/mailTemplate.scss */
 body table tr.header td {
   padding: 0px 20px;
 }
-/* line 77, ../scss/mailTemplate.scss */
+/* line 76, ../scss/mailTemplate.scss */
 body table tr.footer {
   color: #fafafa;
   text-align: left;
 }
-/* line 82, ../scss/mailTemplate.scss */
+/* line 81, ../scss/mailTemplate.scss */
 body table tr td {
   padding: 10px 20px;
 }
-/* line 85, ../scss/mailTemplate.scss */
+/* line 84, ../scss/mailTemplate.scss */
 body table tr td.main-content {
   text-align: left;
   line-height: 30px;
 }
-/* line 89, ../scss/mailTemplate.scss */
+/* line 88, ../scss/mailTemplate.scss */
 body table tr td.main-content p, body table tr td.main-content a {
   display: block;
   margin: 15px 0px;
   font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
-/* line 94, ../scss/mailTemplate.scss */
+/* line 93, ../scss/mailTemplate.scss */
 body table tr td.main-content p.inline, body table tr td.main-content a.inline {
   display: inline-block;
   margin: 0px;

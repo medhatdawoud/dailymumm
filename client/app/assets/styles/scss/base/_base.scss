@@ -103,3 +103,15 @@ h1, h2, h3, h4, h5, h6, a, span, label {
 .bg-black {
     background: $black;
 }
+
+// Tooltips
+.tooltip {
+    .tooltip-inner {
+        font-family: arial;
+        color: #ddd;
+
+        strong {
+            color: #fff;
+        }
+    }
+}
