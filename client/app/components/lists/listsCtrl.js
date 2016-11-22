@@ -103,6 +103,7 @@
                 if (response.success) {
                     var newLists = [];
                     response.data.forEach(function (item) {
+                        debugger
                         var list = {
                             id: item._id,
                             name: item.name,

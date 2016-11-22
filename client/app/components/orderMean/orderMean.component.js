@@ -18,7 +18,12 @@
         var vm = this;
 
         vm.orderMeans = [
-            "Phone Call", "Passby the Restaurant", "Will go all to there", "Otlob.com", "elmenus.com", "Others"
+            "Phone Call", 
+            "Passby the Restaurant", 
+            "Will go all to there", 
+            "Otlob.com", 
+            "elmenus.com", 
+            "Others"
         ];
         vm.orderSelectedMean = vm.orderMeans[0];
         vm.submitMean = submitMean;
