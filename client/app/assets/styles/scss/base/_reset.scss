@@ -81,6 +81,14 @@ h1, h2, h3, h4, h5, h6 {
   font-size: inherit;
 }
 
+h3 {
+  font-size: 24px;
+}
+
+h4 {
+  font-size: 18px;
+}
+
 // less surprises when linking to things
 // links are styled many different ways on the same page (e.g., menus, sidebars, footers, buttons and within text).
 // some parts of the text is light-on-dark, some is dark-on-light

@@ -93,7 +93,7 @@ h1, h2, h3, h4, h5, h6, a, span, label {
 }
 
 .red {
-    color: $red;
+    color: $bw-red;
 }
 
 .yellow {
@@ -113,5 +113,11 @@ h1, h2, h3, h4, h5, h6, a, span, label {
         strong {
             color: #fff;
         }
+    }
+}
+
+.help-block {
+    &.error {
+        color: $bw-red;
     }
 }

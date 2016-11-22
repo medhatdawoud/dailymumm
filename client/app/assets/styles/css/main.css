@@ -69,19 +69,29 @@ h1, h2, h3, h4, h5, h6 {
   font-size: inherit;
 }
 
-/* line 89, ../scss/base/_reset.scss */
+/* line 84, ../scss/base/_reset.scss */
+h3 {
+  font-size: 24px;
+}
+
+/* line 88, ../scss/base/_reset.scss */
+h4 {
+  font-size: 18px;
+}
+
+/* line 97, ../scss/base/_reset.scss */
 a,
 button {
   color: inherit;
   transition: .3s;
 }
 
-/* line 95, ../scss/base/_reset.scss */
+/* line 103, ../scss/base/_reset.scss */
 a {
   text-decoration: none;
 }
 
-/* line 101, ../scss/base/_reset.scss */
+/* line 109, ../scss/base/_reset.scss */
 button {
   overflow: visible;
   border: 0;
@@ -92,13 +102,13 @@ button {
   cursor: pointer;
 }
 
-/* line 112, ../scss/base/_reset.scss */
+/* line 120, ../scss/base/_reset.scss */
 ::-moz-focus-inner {
   padding: 0;
   border: 0;
 }
 
-/* line 120, ../scss/base/_reset.scss */
+/* line 128, ../scss/base/_reset.scss */
 input,
 textarea,
 button,
@@ -108,19 +118,19 @@ a {
   -webkit-tap-highlight-color: transparent;
 }
 
-/* line 131, ../scss/base/_reset.scss */
+/* line 139, ../scss/base/_reset.scss */
 ::-moz-selection {
   background: #999;
   text-shadow: none;
 }
 
-/* line 136, ../scss/base/_reset.scss */
+/* line 144, ../scss/base/_reset.scss */
 ::selection {
   background: #999;
   text-shadow: none;
 }
 
-/* line 143, ../scss/base/_reset.scss */
+/* line 151, ../scss/base/_reset.scss */
 audio,
 canvas,
 iframe,
@@ -130,29 +140,29 @@ video {
   vertical-align: middle;
 }
 
-/* line 153, ../scss/base/_reset.scss */
+/* line 161, ../scss/base/_reset.scss */
 textarea {
   resize: vertical;
 }
 
-/* line 158, ../scss/base/_reset.scss */
+/* line 166, ../scss/base/_reset.scss */
 ol,
 ul {
   list-style: none;
 }
 
-/* line 166, ../scss/base/_reset.scss */
+/* line 174, ../scss/base/_reset.scss */
 [tabindex="-1"]:focus {
   outline: none !important;
 }
 
-/* line 172, ../scss/base/_reset.scss */
+/* line 180, ../scss/base/_reset.scss */
 button:focus {
   outline: 1px dotted;
   outline: 5px auto -webkit-focus-ring-color;
 }
 
-/* line 177, ../scss/base/_reset.scss */
+/* line 185, ../scss/base/_reset.scss */
 input, input:focus {
   outline: none;
   -webkit-box-shadow: none !important;
@@ -309,6 +319,11 @@ h1, h2, h3, h4, h5, h6, a, span, label {
 /* line 113, ../scss/base/_base.scss */
 .tooltip .tooltip-inner strong {
   color: #fff;
+}
+
+/* line 120, ../scss/base/_base.scss */
+.help-block.error {
+  color: #d43f3a;
 }
 
 /* line 2, ../scss/base/_modal.scss */

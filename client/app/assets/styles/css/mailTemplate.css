@@ -128,6 +128,11 @@ h1, h2, h3, h4, h5, h6, a, span, label {
   color: #fff;
 }
 
+/* line 120, ../scss/base/_base.scss */
+.help-block.error {
+  color: #d43f3a;
+}
+
 /* line 5, ../scss/mailTemplate.scss */
 body {
   background: #fff;
