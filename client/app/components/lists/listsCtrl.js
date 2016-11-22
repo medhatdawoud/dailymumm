@@ -15,6 +15,7 @@
         lvm.tempListData = {
             name: "",
             picturePath: "",
+            shippingAddress: "",
             invitations: [],
             subscribers: []
         };
@@ -34,6 +35,7 @@
                 id: list.id,
                 name: list.name,
                 picturePath: list.picturePath,
+                shippingAddress: list.shippingAddress,
                 owned: list.owned,
                 invitations: [],
                 subscribers: list.subscribers
@@ -69,6 +71,7 @@
                     lvm.tempListData = {
                         name: "",
                         picturePath: "",
+                        shippingAddress: "",
                         subscribers: [],
                         invitations: []
                     }
@@ -84,6 +87,7 @@
                     lvm.tempListData = {
                         name: "",
                         picturePath: "",
+                        shippingAddress: "",
                         invitations: [],
                         subscribers: []
                     }
@@ -102,6 +106,7 @@
                         var list = {
                             id: item._id,
                             name: item.name,
+                            shippingAddress: item.shippingAddress,
                             createdAt: item.created_at,
                             picturePath: item.picturePath,
                             owned: item.subscribers.filter(function (val) {
@@ -133,6 +138,7 @@
             lvm.tempListData = {
                 name: "",
                 picturePath: "",
+                shippingAddress: "",
                 invitations: [],
                 subscribers: []
             };
