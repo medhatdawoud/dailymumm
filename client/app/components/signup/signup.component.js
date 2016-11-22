@@ -3,19 +3,27 @@
 (function () {
     angular
         .module('dailyMummApp')
-        .controller('SignupDirectiveCtrl', SignupDirectiveController);
+        .component('bwSignup', {
+            templateUrl: "components/signup/signup.html",
+            bindings: {
+                order: '='
+            },
+            controllerAs: 'vm',
+            controller: SignupController
+        });
 
-    SignupDirectiveController.$inject = ['$scope', 'UserService', 'AuthService', '$state', '$translate'];
+    SignupController.$inject = ['$scope', 'UserService', 'AuthService', '$state', '$translate'];
 
-    function SignupDirectiveController($scope, UserService, AuthService, $state, $translate) {
+    function SignupController($scope, UserService, AuthService, $state, $translate) {
+        var vm = this;
 
         if (AuthService.isLoggedIn()) {
             $state.go('profile');
         }
-        
+
         //default tab (login , register)
         $scope.current = 'login';
-        
+
         // an initial object to hold the registration data from ui
         $scope.registerdata = {};
         $scope.showPanel = showPanel;
