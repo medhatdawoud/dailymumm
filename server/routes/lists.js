@@ -1,4 +1,4 @@
-module.exports = function (app) {
+module.exports = function(app) {
     var express = require('express');
     var jwt = require('jsonwebtoken');
     var router = express.Router();
@@ -9,12 +9,13 @@ module.exports = function (app) {
 
     app.use('/api/lists', router);
 
-    router.post('/', function (req, res) {
+    router.post('/', function(req, res) {
         var listData = JSON.parse(req.body.list);
         var listOwnerData = JSON.parse(req.body.owner);
         var list = new List({
             name: listData.name,
             picturePath: listData.picturePath,
+            shippingAddress: listData.shippingAddress,
             subscribers: [{
                 id: listOwnerData.id,
                 username: listOwnerData.username,
@@ -25,15 +26,15 @@ module.exports = function (app) {
             }]
         });
 
-        list.save(function (err, results) {
+        list.save(function(err, results) {
             if (err) return console.error(err);
 
-            listData.invitations.forEach(function (user) {
+            listData.invitations.forEach(function(user) {
                 var data = {
                     listname: listData.name,
                     invitationlink: req.headers.host + "/#/login/" + results._id
                 };
-                mailer.sendEmail('invite-user-to-list', data, "Invitation to join " + listData.name + " list on Dailymumm", user.email, function () {
+                mailer.sendEmail('invite-user-to-list', data, "Invitation to join " + listData.name + " list on Dailymumm", user.email, function() {
                     console.log('invitation sent to ' + user.email);
                 });
             });
@@ -44,7 +45,7 @@ module.exports = function (app) {
                         $each: listData.invitations
                     }
                 }
-            }, function (err, data) {
+            }, function(err, data) {
                 if (err) return console.error(err);
             });
 
@@ -52,10 +53,10 @@ module.exports = function (app) {
         });
     });
 
-    router.get('/byuser', function (req, res) {
+    router.get('/byuser', function(req, res) {
         var userId = req.param("userId");
 
-        List.find({ "subscribers": { $elemMatch: { id: userId } } }, function (err, data) {
+        List.find({ "subscribers": { $elemMatch: { id: userId } } }, function(err, data) {
             if (err) return console.error(err);
 
             if (data) {
@@ -66,15 +67,15 @@ module.exports = function (app) {
         });
     });
 
-    router.put('/', function (req, res) {
+    router.put('/', function(req, res) {
         var listData = JSON.parse(req.body.list);
 
-        listData.invitations.forEach(function (user) {
+        listData.invitations.forEach(function(user) {
             var data = {
                 listname: listData.name,
                 invitationlink: req.headers.host + "/#/login/" + listData.id
             };
-            mailer.sendEmail('invite-user-to-list', data, "Invitation to join " + listData.name + " list on Dailymumm", user.email, function () {
+            mailer.sendEmail('invite-user-to-list', data, "Invitation to join " + listData.name + " list on Dailymumm", user.email, function() {
                 console.log('invitation sent to ' + user.email);
                 console.log('Arguments: ', arguments);
 
@@ -83,12 +84,13 @@ module.exports = function (app) {
         List.update({ "_id": listData.id }, {
             name: listData.name,
             picturePath: listData.picturePath,
+            shippingAddress: listData.shippingAddress,
             $push: {
                 subscribers: {
                     $each: listData.invitations
                 }
             }
-        }, function (err, data) {
+        }, function(err, data) {
             if (err) return console.error(err);
 
             if (data) {
@@ -99,7 +101,7 @@ module.exports = function (app) {
         });
     });
 
-    router.put('/invite', function (req, res) {
+    router.put('/invite', function(req, res) {
         var listId = req.body.listId;
         var listOfSubscribers = JSON.parse(req.body.listOfSubscribers);
 
@@ -109,7 +111,7 @@ module.exports = function (app) {
                     $each: listOfSubscribers
                 }
             }
-        }, function (err, data) {
+        }, function(err, data) {
             if (err) return console.error(err);
 
             if (data) {
@@ -120,13 +122,13 @@ module.exports = function (app) {
         });
     });
 
-    router.put('/confirminvitation', function (req, res) {
+    router.put('/confirminvitation', function(req, res) {
         var listId = req.body.id;
         var user = JSON.parse(req.body.user);
 
         var userToSave = {};
 
-        User.findOne({ email: user.email }, function (err, data) {
+        User.findOne({ email: user.email }, function(err, data) {
             if (err) return console.error(err);
 
             userToSave = {
@@ -138,12 +140,12 @@ module.exports = function (app) {
             };
 
             User.update({ '_id': data._id.toString() },
-                { $pull: { invitations: { id: listId } } }, function (err, result) {
+                { $pull: { invitations: { id: listId } } }, function(err, result) {
                     if (err) return console.error(err);
                     res.json(result);
                 });
 
-            List.findOne({ "_id": listId }, function (err, data) {
+            List.findOne({ "_id": listId }, function(err, data) {
                 if (err) return console.error(err);
 
                 for (var i = 0; i < data.subscribers.length; i++) {
@@ -153,7 +155,7 @@ module.exports = function (app) {
                             $set: {
                                 'subscribers.$': userToSave
                             }
-                        }, function (err, data) {
+                        }, function(err, data) {
                             if (err) return console.error(err);
 
                             if (data) {
@@ -170,7 +172,7 @@ module.exports = function (app) {
         });
     });
 
-    router.delete('/', function (req, res) {
+    router.delete('/', function(req, res) {
 
     });
 
