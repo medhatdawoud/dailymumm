@@ -21,7 +21,7 @@
                 element.on('blur', function () {
                     var field = attrs.bwValidateUnique;
                     if (ctrl.$viewValue != scope.initialValue) {
-                        $http.get('/api/verifyuserunique?' + field + '=' + ctrl.$viewValue)
+                        $http.get('/api/user/verifyuserunique?' + field + '=' + ctrl.$viewValue)
                             .success(function (data) {
                                 ctrl.$setValidity('isunique', !data);
                             }).error(function (data, status) {
