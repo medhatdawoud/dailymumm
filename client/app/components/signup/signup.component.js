@@ -12,9 +12,9 @@
             controller: SignupController
         });
 
-    SignupController.$inject = ['$scope', 'UserService', 'AuthService', '$state', '$translate'];
+    SignupController.$inject = ['UserService', 'AuthService', '$state', '$translate'];
 
-    function SignupController($scope, UserService, AuthService, $state, $translate) {
+    function SignupController(UserService, AuthService, $state, $translate) {
         var vm = this;
 
         if (AuthService.isLoggedIn()) {
@@ -22,35 +22,36 @@
         }
 
         //default tab (login , register)
-        $scope.current = 'login';
+        vm.current = 'login';
 
         // an initial object to hold the registration data from ui
-        $scope.registerdata = {};
-        $scope.showPanel = showPanel;
-        $scope.register = register;
+        vm.registerdata = {};
+        vm.showPanel = showPanel;
+        vm.register = register;
 
         function showPanel(panel) {
-            $scope.current = panel;
+            vm.current = panel;
         }
 
         function register(isValid, form) {
-            $scope.processing = true;
+            vm.processing = true;
             if (isValid) {
-                var data = $scope.registerdata;
-                UserService.createNewUser(data.username, data.email, data.password, function (data) {
+                var data = vm.registerdata;
+                var fullname = data.fname.trim() + " " + data.lname.trim();
+                UserService.createNewUser(data.username, fullname, data.email, data.password, function (data) {
                     if (data.success) {
-                        $scope.hasError = false;
-                        $scope.hasSuccess = true;
+                        vm.hasError = false;
+                        vm.hasSuccess = true;
                         $translate("ALERT_REGISTER_SUCCESS").then(function (translatedValue) {
-                            $scope.registerSuccessMessage = translatedValue;
+                            vm.registerSuccessMessage = translatedValue;
                         });
-                        $scope.current = 'login';
-                        $scope.registerdata = {};
+                        vm.current = 'login';
+                        vm.registerdata = {};
                         form.$setPristine();
                     }
                 });
             }
-            $scope.processing = false;
+            vm.processing = false;
         }
 
     }

@@ -16,8 +16,8 @@
         service.changeUserPassword = changeUserPassword;
         service.getUserBasicInfoById = getUserBasicInfoById;
 
-        function createNewUser(username, email, password, callback) {
-            $http.post(apiServer + '/api/user', { "username": username, "email": email, "password": password })
+        function createNewUser(username, fullname, email, password, callback) {
+            $http.post(apiServer + '/api/user', { "username": username, "fullname": fullname, "email": email, "password": password })
                 .then(function (response) {
                     callback({ success: true, data: response.data });
                 }, function (response) {
@@ -39,7 +39,7 @@
         }
 
         function getUserBasicInfoById(userid, callback) {
-            $http.get(apiServer + '/api/user/'+userid)
+            $http.get(apiServer + '/api/user/' + userid)
                 .then(function (response) {
                     callback({ success: true, data: response.data });
                 }, function (response) {

@@ -10,7 +10,7 @@ module.exports = function (app) {
     app.use('/api/user', router);
 
     router.post('/', function (req, res) {
-        var user = new User({ username: req.body.username, email: req.body.email, password: req.body.password });
+        var user = new User({ username: req.body.username, fullname: req.body.fullname, email: req.body.email, password: req.body.password });
         user.save(function (err, data) {
             if (err) return console.error(err);
             res.json(data);
@@ -140,13 +140,13 @@ module.exports = function (app) {
         var userId = req.body.userid;
         var listname = "";
 
-        List.findOne({_id: listId}, function(err, result){
+        List.findOne({ _id: listId }, function (err, result) {
             if (err) return console.error(err);
 
             listname = result.name;
 
             User.update({ '_id': userId },
-                { $addToSet: { invitations: {id:listId, name: listname} } }, function (err, data) {
+                { $addToSet: { invitations: { id: listId, name: listname } } }, function (err, data) {
                     if (err) return console.error(err);
                     res.json(data);
                 });
@@ -159,7 +159,7 @@ module.exports = function (app) {
         var userEmail = req.body.useremail;
 
         User.update({ '_id': userId },
-            { $pull: { invitations: {id:listId} } }, function (err, data) {
+            { $pull: { invitations: { id: listId } } }, function (err, data) {
                 if (err) return console.error(err);
 
                 List.update({ "_id": listId, "subscribers.email": userEmail }, {
