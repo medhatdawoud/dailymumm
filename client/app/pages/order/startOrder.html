@@ -37,24 +37,9 @@
 					data-placeholder="choose Restaurant .."
 					ng-model="vm.restaurant"></select>
 			</div>
-			<div class="one-restautant" ng-show="vm.restaurant && vm.restaurant.id">
-				<div class="row">
-					<div class="col-sm-3 rest-logo hidden-xs">
-						<img class="img-thumbnail" src="{{vm.restaurant.picturePath}}" alt="{{vm.restaurant.name}}">
-					</div>
-					<div class="col-sm-9 rest-details">
-						<h1 class="title">{{vm.restaurant.name}}</h1>
-						<rating value="vm.restaurant.rating" color="#ffdf00" size="26px" class="text-left" max="5"></rating>
-						<div class="menus">
-							<ul>
-								<li ng-repeat="menu in vm.restaurant.menus">
-									<a class="btn-warning" target="_blank" href="{{menu.link}}"><i class="glyphicon glyphicon-new-window"></i>&nbsp; {{menu.sitename}}</a>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
+			
+			<bw-one-restaurant restaurant="vm.restaurant"></bw-one-restaurant>
+
 			<div class="action-panel">
 				<button class="btn btn-success btn-lg pull-right" ng-disabled="!vm.restaurant.id || !vm.selectedList" ng-click="vm.startOrder()">
 					<i class="glyphicon glyphicon-cutlery"></i>&nbsp; Let's make an order
