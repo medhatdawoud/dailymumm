@@ -1,24 +1,24 @@
 <div class="restaurant-block black-transperant-block no-margin-left no-margin-right">
     <div class="row">
         <div class="col-xs-4 no-padding-right">
-            <img class="img-thumbnail img-responsive logo" ng-src="{{restaurant.picturePath}}" alt="restaurant.name">
+            <img class="img-thumbnail img-responsive logo" ng-src="{{vm.restaurant.picturePath}}" alt="vm.restaurant.name">
         </div>
         <div class="col-xs-8">
-            <rating value="restaurant.rating" class="rating-container" color="#ffdf00" max="5"></rating>
-            <h3 class="restaurant-name">{{restaurant.name}}</h3>
+            <rating value="vm.restaurant.rating" class="rating-container" color="#ffdf00" max="5"></rating>
+            <h3 class="restaurant-name">{{vm.restaurant.name}}</h3>
         </div>
     </div>
 
     <div class="menus-list">
         <h4>Menus:</h4>
         <p>menus on sites for references on order.</p>
-        <a class="btn btn-block btn-info" ng-repeat="menu in restaurant.menus" target="_blank" href="{{menu.link}}">
+        <a class="btn btn-block btn-info" ng-repeat="menu in vm.restaurant.menus" target="_blank" href="{{menu.link}}">
             <i class="glyphicon glyphicon-link pull-right"></i> <span class="pull-left">{{ menu.sitename }}</span>
         </a>
     </div>
     <div class="phones-list">
         <h4>Phone numbers:</h4>
-        <p class="numbers" ng-repeat="phone in restaurant.phoneNumbers track by $index">
+        <p class="numbers" ng-repeat="phone in vm.restaurant.phoneNumbers track by $index">
             <i class="glyphicon glyphicon-earphone"></i>
             <span>{{ phone }}</span>
         </p>
