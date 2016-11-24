@@ -1,14 +1,14 @@
 <div class="white-transperant-block order-item">
-    <div class="row item" ng-class="{'owned-item':item.user.id === vm.userData.id}">
-        <div class="col-xs-1">{{item.count}}</div>
-        <div class="col-sm-6 col-xs-6">{{item.item}}</div>
-        <div class="col-sm-3 col-xs-4 text-right">{{item.price * item.count | currency :"" : 2}} LE</div>
+    <div class="row item" ng-class="{'owned-item':vm.item.user.id === vm.userData.id}">
+        <div class="col-xs-1">{{vm.item.count}}</div>
+        <div class="col-sm-6 col-xs-6">{{vm.item.item}}</div>
+        <div class="col-sm-3 col-xs-4 text-right">{{vm.item.price * vm.item.count | currency :"" : 2}} LE</div>
         <div class="col-sm-2 col-xs-1 hidden-xs no-padding-left text-right">
-            <span class="label label-info">{{item.refmenu.sitename}}</span>
+            <span class="label label-info">{{vm.item.refmenu.sitename}}</span>
         </div>
     </div>
     <div class="row padding-top meta">
-        <div class="col-xs-6 text-left">{{item.user.fullname || item.user.name}}</div>
-        <div class="col-xs-6 text-right">{{item.datetime | fromNow}}</div>
+        <div class="col-xs-6 text-left">{{vm.item.user.fullname || vm.item.user.name}}</div>
+        <div class="col-xs-6 text-right">{{vm.item.datetime | fromNow}}</div>
     </div>
 </div>
