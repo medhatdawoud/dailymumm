@@ -3,11 +3,14 @@
 (function () {
     angular
         .module('dailyMummApp')
-        .controller('NavbarDirectiveCtrl', NavbarDirectiveController);
+        .component('bwNavbar', {
+            templateUrl: "components/navbar/navbar.html",
+            controller: NavbarCtrl
+        });
 
-    NavbarDirectiveController.$inject = ['$scope', '$rootScope', 'AuthService', '$state', '$timeout', 'CountDownService', 'CurrentOrderService'];
+    NavbarCtrl.$inject = ['$scope', '$rootScope', 'AuthService', '$state', '$timeout', 'CountDownService', 'CurrentOrderService'];
 
-    function NavbarDirectiveController($scope, $rootScope, AuthService, $state, $timeout, CountDownService, CurrentOrderService) {
+    function NavbarCtrl($scope, $rootScope, AuthService, $state, $timeout, CountDownService, CurrentOrderService) {
 
         // 15 second
         var collectingOrderTime = 10 * 60 * 1000;
