@@ -3,11 +3,16 @@
 (function () {
     angular
         .module('dailyMummApp')
-        .controller('ListsDirectiveCtrl', ListsDirectiveController);
+        .component('bwLists', {
+            templateUrl: "components/lists/lists.html",
+            controllerAs: 'lvm',
+            controller: ListsController
+        });
 
-    ListsDirectiveController.$inject = ['$scope', 'ListsService', '$timeout', '$rootScope', 'AuthService'];
 
-    function ListsDirectiveController($scope, ListsService, $timeout, $rootScope, AuthService) {
+    ListsController.$inject = ['$scope', 'ListsService', '$timeout', '$rootScope', 'AuthService'];
+
+    function ListsController($scope, ListsService, $timeout, $rootScope, AuthService) {
         var lvm = this;
         lvm.listOfGroups = [];
         lvm.userData = AuthService.getCurrentUserInfo();
@@ -103,7 +108,6 @@
                 if (response.success) {
                     var newLists = [];
                     response.data.forEach(function (item) {
-                        debugger
                         var list = {
                             id: item._id,
                             name: item.name,
