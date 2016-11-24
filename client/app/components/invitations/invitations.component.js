@@ -3,11 +3,15 @@
 (function () {
     angular
         .module('dailyMummApp')
-        .controller('InvitationsDirectiveCtrl', InvitationsDirectiveController);
+        .component('bwInvitations', {
+            templateUrl: "components/invitations/invitations.html",
+            controllerAs: 'ivm',
+            controller: InvitationsController
+        });
 
-    InvitationsDirectiveController.$inject = ['$rootScope','AuthService','ListsService'];
+    InvitationsController.$inject = ['$rootScope', 'AuthService', 'ListsService'];
 
-    function InvitationsDirectiveController($rootScope,AuthService, ListsService) {
+    function InvitationsController($rootScope, AuthService, ListsService) {
         var ivm = this;
         var userdata = AuthService.getCurrentUserInfo();
 
@@ -21,18 +25,18 @@
             ivm.invitations = userdata.invitations;
         }
 
-        function ignoreList(listId){
-            ListsService.ignoreInvitation(listId, userdata.id, userdata.email, function(response){
-                if(response.success) {
+        function ignoreList(listId) {
+            ListsService.ignoreInvitation(listId, userdata.id, userdata.email, function (response) {
+                if (response.success) {
                     removeInvitationFromList(listId);
                 }
             })
-            
+
         }
 
         function joinList(listId) {
-            ListsService.confirmInvitation(listId, userdata, function (response){
-                if(response.success) {
+            ListsService.confirmInvitation(listId, userdata, function (response) {
+                if (response.success) {
                     $rootScope.$emit('updateListOfGroups');
                     removeInvitationFromList(listId);
                 }
@@ -40,8 +44,8 @@
         }
 
         function removeInvitationFromList(listId) {
-            for(var i = 0; i < ivm.invitations.length; i++) {
-                if(ivm.invitations[i].id == listId) {
+            for (var i = 0; i < ivm.invitations.length; i++) {
+                if (ivm.invitations[i].id == listId) {
                     ivm.invitations.splice(i, 1);
                     break;
                 }
