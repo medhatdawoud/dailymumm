@@ -9,7 +9,6 @@
             controller: ListsController
         });
 
-
     ListsController.$inject = ['$scope', 'ListsService', '$timeout', '$rootScope', 'AuthService'];
 
     function ListsController($scope, ListsService, $timeout, $rootScope, AuthService) {

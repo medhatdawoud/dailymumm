@@ -3,20 +3,23 @@
 (function () {
     angular
         .module('dailyMummApp')
-        .controller('LoginDirectiveCtrl', LoginDirectiveController);
+        .component('bwLogin', {
+            templateUrl: "components/login/login.html",
+            controller: LoginController
+        });
 
-    LoginDirectiveController.$inject = ['$scope', '$stateParams', 'AuthService', '$state', '$translate', 'ListsService', 'UserService'];
+    LoginController.$inject = ['$scope', '$stateParams', 'AuthService', '$state', '$translate', 'ListsService', 'UserService'];
 
-    function LoginDirectiveController($scope, $stateParams, AuthService, $state, $translate, ListsService, UserService) {
+    function LoginController($scope, $stateParams, AuthService, $state, $translate, ListsService, UserService) {
 
         if (AuthService.isLoggedIn()) {
-            if($stateParams.lid) {
+            if ($stateParams.lid) {
                 var userdata = AuthService.getCurrentUserInfo();
                 var listId = $stateParams.lid;
                 ListsService.addInvitationToUser(listId, userdata.id, function (res) {
                     if (res.success) {
-                        UserService.getUserBasicInfoById(userdata.id, function(response){
-                            if(response.success) {
+                        UserService.getUserBasicInfoById(userdata.id, function (response) {
+                            if (response.success) {
                                 var userInfo = AuthService.getCurrentUserInfo();
                                 userInfo.invitations = response.data.invitations;
                                 AuthService.setCredintials(userInfo);
@@ -49,8 +52,8 @@
                             ListsService.addInvitationToUser($stateParams.lid, result.data.id, function (res) {
                                 if (res.success) {
                                     AuthService.setCredintials(res.data);
-                                    UserService.getUserBasicInfoById(result.data.id, function(response){
-                                        if(response.success) {
+                                    UserService.getUserBasicInfoById(result.data.id, function (response) {
+                                        if (response.success) {
                                             var userInfo = result.data;
                                             userInfo.invitations = response.data.invitations;
                                             debugger
