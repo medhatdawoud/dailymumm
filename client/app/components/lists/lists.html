@@ -59,21 +59,23 @@
 						</div>
 					</div>
 					<div ng-class="{'col-sm-12':!lvm.editListMode, 'col-sm-6':lvm.editListMode}">
-						<form action="">
-							<div class="form-group">
+						<form name="formList">
+							<div class="form-group" ng-class="{'has-error':formList.listName.$error.required}">
 								<label for="">Name</label>
-								<input type="text" ng-model="lvm.tempListData.name" placeholder="pick a name for the list" ng-disabled="lvm.editListMode && !lvm.tempListData.owned"
+								<input type="text" name="listName" ng-model="lvm.tempListData.name" placeholder="pick a name for the list" ng-disabled="lvm.editListMode && !lvm.tempListData.owned"
 									class="form-control" required>
+								<div ng-show="formList.listName.$error.required" class="help-block">List name is required</div>
 							</div>
 							<div class="form-group">
 								<label for="">Picture</label>
 								<!--<input type="file" ng-model="lvm.tempListData.picturePath" class="form-control">-->
-								<input type="text" ng-model="lvm.tempListData.picturePath" class="form-control" ng-disabled="lvm.editListMode && !lvm.tempListData.owned">
+								<input type="text" name="listPicturePath" ng-model="lvm.tempListData.picturePath" class="form-control" ng-disabled="lvm.editListMode && !lvm.tempListData.owned">
 							</div>
-							<div class="form-group">
+							<div class="form-group" ng-class="{'has-error':formList.listShippingAddress.$error.required}">
 								<label for="shippingAddress">Shipping Address</label>
-								<textarea placeholder="address of the company or house that people in list should be" 
-										ng-model="lvm.tempListData.shippingAddress" class="form-control" ng-disabled="lvm.editListMode && !lvm.tempListData.owned"></textarea>
+								<textarea name="listShippingAddress" placeholder="address of the company or house that people in list should be" ng-model="lvm.tempListData.shippingAddress"
+									class="form-control" ng-disabled="lvm.editListMode && !lvm.tempListData.owned" required></textarea>
+								<div ng-show="formList.listShippingAddress.$error.required" class="help-block">Shipping address is required</div>
 							</div>
 							<div class="form-group">
 								<label for="">Invite Subscribers</label>
@@ -100,10 +102,10 @@
 			</div>
 			<div class="modal-footer">
 				<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-				<button type="button" ng-hide="lvm.editListMode" class="btn btn-primary" ng-click="lvm.createList()">
+				<button type="button" ng-disabled="formList.$invalid" ng-hide="lvm.editListMode" class="btn btn-primary" ng-click="lvm.createList()">
 					Create list
 				</button>
-				<button type="button" ng-show="lvm.editListMode" class="btn btn-primary" ng-click="lvm.updateList()">
+				<button type="button" ng-disabled="formList.$invalid" ng-show="lvm.editListMode" class="btn btn-primary" ng-click="lvm.updateList()">
 					Save list
 				</button>
 			</div>
