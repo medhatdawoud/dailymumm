@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "dependencies": {
-    "angular": "^1.5.8",
+    "angular": "^1.6.1",
     "angular-animate": "^1.5.8",
     "angular-cookies": "^1.5.8",
     "angular-rating": "^3.0.2",
