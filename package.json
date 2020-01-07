@@ -16,7 +16,7 @@
     "bootstrap": "^3.3.7",
     "chosen-js": "^1.6.2",
     "express": "~4.0.0",
-    "express3-handlebars": "0.4.x",
+    "express3-handlebars": "0.5.x",
     "growl": "^1.9.2",
     "jquery": "^3.1.1",
     "jsonwebtoken": "^5.5.4",
