@@ -15,7 +15,7 @@
     "body-parser": "^1.14.1",
     "bootstrap": "^3.3.7",
     "chosen-js": "^1.6.2",
-    "express": "~4.0.0",
+    "express": "~4.17.1",
     "express3-handlebars": "0.4.x",
     "growl": "^1.9.2",
     "jquery": "^3.1.1",
