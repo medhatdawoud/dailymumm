@@ -23,7 +23,7 @@
     "moment": "^2.15.2",
     "mongoose": "^4.2.4",
     "mongoose-seeder": "^1.2.1",
-    "nodemailer": "^2.6.4",
+    "nodemailer": "^6.4.8",
     "owl.carousel": "^2.2.0"
   },
   "devDependencies": {
