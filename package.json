@@ -29,7 +29,7 @@
   "devDependencies": {
     "angular-mocks": "^1.5.8",
     "grunt": "~0.4.1",
-    "grunt-concurrent": "~0.3.0",
+    "grunt-concurrent": "~2.3.1",
     "grunt-contrib-clean": "~0.5.0",
     "grunt-contrib-concat": "~0.3.0",
     "grunt-contrib-connect": "~0.5.0",
